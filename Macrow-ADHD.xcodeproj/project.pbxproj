@@ -11,6 +11,9 @@
 		3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613772AC5C66F00F0A792 /* ContentView.swift */; };
 		3DB6137A2AC5C67100F0A792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB613792AC5C67100F0A792 /* Assets.xcassets */; };
 		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
+		B69C52EE2ACBD52A009B3493 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */; };
+		B69C52F22ACBD575009B3493 /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F12ACBD575009B3493 /* MWMInstance.swift */; };
+		B69C52F42ACBD62D009B3493 /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F32ACBD62D009B3493 /* MWMModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +22,13 @@
 		3DB613772AC5C66F00F0A792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DB613792AC5C67100F0A792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B69C52EA2ACBD52A009B3493 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
+		B69C52EB2ACBD52A009B3493 /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDelegate.h; sourceTree = "<group>"; };
+		B69C52EC2ACBD52A009B3493 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
+		B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMWMSDK.a; sourceTree = "<group>"; };
+		B69C52F02ACBD554009B3493 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		B69C52F12ACBD575009B3493 /* MWMInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
+		B69C52F32ACBD62D009B3493 /* MWMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69C52EE2ACBD52A009B3493 /* libMWMSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,6 +62,8 @@
 		3DB613742AC5C66F00F0A792 /* Macrow-ADHD */ = {
 			isa = PBXGroup;
 			children = (
+				B69C52F02ACBD554009B3493 /* Bridging-Header.h */,
+				B69C52E72ACBD392009B3493 /* Utilities */,
 				3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */,
 				3DB613772AC5C66F00F0A792 /* ContentView.swift */,
 				3DB613792AC5C67100F0A792 /* Assets.xcassets */,
@@ -65,6 +78,35 @@
 				3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B69C52E72ACBD392009B3493 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B69C52EF2ACBD545009B3493 /* NeuroskyHelper */,
+				B69C52E92ACBD52A009B3493 /* lib */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B69C52E92ACBD52A009B3493 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B69C52EA2ACBD52A009B3493 /* MWMEnum.h */,
+				B69C52EB2ACBD52A009B3493 /* MWMDelegate.h */,
+				B69C52EC2ACBD52A009B3493 /* MWMDevice.h */,
+				B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B69C52EF2ACBD545009B3493 /* NeuroskyHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B69C52F12ACBD575009B3493 /* MWMInstance.swift */,
+				B69C52F32ACBD62D009B3493 /* MWMModel.swift */,
+			);
+			path = NeuroskyHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -137,8 +179,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B69C52F22ACBD575009B3493 /* MWMInstance.swift in Sources */,
 				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
+				B69C52F42ACBD62D009B3493 /* MWMModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,10 +328,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-ADHD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -313,10 +362,15 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-ADHD";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
