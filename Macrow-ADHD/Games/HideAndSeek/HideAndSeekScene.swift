@@ -7,6 +7,7 @@
 
 import SpriteKit
 import GameplayKit
+import CoreData
 
 class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
@@ -23,12 +24,17 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = true
-    private var timerValue: Int = 600 // timer 10 menit
+    private var timerValue: Int = 10 // timer 10 menit
     
     public var focusCount = 0 // focus point
     public var isSpawning = false
     
+    var dataController: DataController!
+    var context: NSManagedObjectContext!
+    
+    
     override func didMove(to view: SKView) {
+        
         physicsWorld.contactDelegate = self
         
         scene?.size = view.bounds.size
@@ -201,6 +207,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func timesUpFunc() {
+        dataController.fetchAndPrintFocusData() // Fetch and print the data when the timer ends
+        
         run(SKAction.sequence([
             SKAction.run { [weak self] in
                 guard let `self` = self else { return }
@@ -213,6 +221,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // Initialize the data controller and obtain the managed object context
+        dataController = DataController()
+        let context = DataController().container.viewContext
+        
         for touch in touches {
             let location = touch.location(in: self)
             
@@ -222,6 +234,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     rabbit.texture = SKTexture(imageNamed: "Rabbit_Tap")
                     rabbit.removeAllActions()
                     rabbitCount += 1
+                    
+                    // Save the updated rabbit count to Core Data
+                    dataController.addFocus(value: Double(rabbitCount), gameID: 1, context: context)
+
                     updateRabbitCountLabel()
                     isTouched.toggle()
                     
