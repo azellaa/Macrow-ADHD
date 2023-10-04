@@ -12,10 +12,11 @@ struct ContentView: View {
     @Environment (\.managedObjectContext) var managedObjContext
     var body: some View {
         SpriteView(scene: HideAndSeekScene())
-//            .environment(\.managedObjectContext, self.managedObjContext)
+            .ignoresSafeArea()
     }
 }
 
 #Preview {
     ContentView()
 }
+

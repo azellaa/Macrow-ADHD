@@ -8,15 +8,16 @@
 import Foundation
 import Combine
 
-class MWMInstance: NSObject, MWMDelegate {
+class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     public var mwmDevice = MWMDevice.sharedInstance()
     
     private var scannedDevice: Set<MWMModel> = []
     private var mwmDataSubject = PassthroughSubject<MWMData, Never>()
     private var scannedDeviceDataSubject = PassthroughSubject<Set<MWMModel>, Never>()
-    private var didConnectSubject = PassthroughSubject<Bool, Never>()
+    private var signalStatusSubject = PassthroughSubject<Int, Never>()
     
     public static let shared = MWMInstance()
+    
     
     override init() {
         super.init()
@@ -39,12 +40,12 @@ class MWMInstance: NSObject, MWMDelegate {
         print("didConnect");
         scannedDevice.removeAll()
         self.mwmDevice?.enableLogging(withOptions: 1)
-        didConnectSubject.send(true)
+        signalStatusSubject.send(1)
     }
     
     func didDisconnect() {
+        signalStatusSubject.send(0)
         print("didDisconnect");
-        didConnectSubject.send(false)
     }
     
     func eSense(_ poorSignal: Int32, attention: Int32, meditation: Int32) {
@@ -53,19 +54,32 @@ class MWMInstance: NSObject, MWMDelegate {
             attention: attention,
             meditation: meditation
         )
+        switch updatedData.poorSignal {
+            case 133...199:
+            signalStatusSubject.send(1)
+            case 67...132:
+            signalStatusSubject.send(2)
+            case 1...66:
+            signalStatusSubject.send(3)
+            case 0:
+            signalStatusSubject.send(4)
+            default:
+            signalStatusSubject.send(0)
+            }
         mwmDataSubject.send(updatedData)
     }
     var mwmDataPublisher: AnyPublisher<MWMData, Never> {
         return mwmDataSubject.eraseToAnyPublisher()
     }
     
+    var signalStatusPublisher: AnyPublisher<Int, Never> {
+        return signalStatusSubject.eraseToAnyPublisher()
+    }
+    
     var scannedMwmPublisher: AnyPublisher<Set<MWMModel>, Never> {
         return scannedDeviceDataSubject.eraseToAnyPublisher()
     }
     
-    var deviceConnectPublisher: AnyPublisher<Bool, Never> {
-        return didConnectSubject.eraseToAnyPublisher()
-    }
     func exceptionMessage(_ eventType: TGBleExceptionEvent) {
         print("Error: \(eventType.rawValue)")
     }

@@ -52,7 +52,7 @@ class ProgressBar: SKNode {
     }
     
     func updateProgressBar(_ progress: CGFloat) {
-        print(progress)
+//        print(progress)
         progressBar.run(SKAction.resize(toWidth: CGFloat(progress / maxProgress) * maxProgressBarWidth, duration: 0.2))
     }
     
