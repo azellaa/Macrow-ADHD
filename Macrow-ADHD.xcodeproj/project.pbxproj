@@ -1,0 +1,462 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */; };
+		26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */; };
+		26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6692ACBCC5F00117948 /* ProgressBar.swift */; };
+		26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */; };
+		26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */; };
+		26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66F2ACBCC9700117948 /* NodeElement.swift */; };
+		26A9C6722ACBCCC600117948 /* NewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6712ACBCCC600117948 /* NewPage.swift */; };
+		3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */; };
+		3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613772AC5C66F00F0A792 /* ContentView.swift */; };
+		3DB6137A2AC5C67100F0A792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB613792AC5C67100F0A792 /* Assets.xcassets */; };
+		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
+		B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */; };
+		B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
+		B69C52EE2ACBD52A009B3493 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */; };
+		B69C52F22ACBD575009B3493 /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F12ACBD575009B3493 /* MWMInstance.swift */; };
+		B69C52F42ACBD62D009B3493 /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F32ACBD62D009B3493 /* MWMModel.swift */; };
+		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideAndSeekScene.swift; sourceTree = "<group>"; };
+		26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideAndSeekTutorialView.swift; sourceTree = "<group>"; };
+		26A9C6692ACBCC5F00117948 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideAndSeekBackground.swift; sourceTree = "<group>"; };
+		26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughBackground.swift; sourceTree = "<group>"; };
+		26A9C66F2ACBCC9700117948 /* NodeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeElement.swift; sourceTree = "<group>"; };
+		26A9C6712ACBCCC600117948 /* NewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPage.swift; sourceTree = "<group>"; };
+		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macrow_ADHDApp.swift; sourceTree = "<group>"; };
+		3DB613772AC5C66F00F0A792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		3DB613792AC5C67100F0A792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPopup.swift; sourceTree = "<group>"; };
+		B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadpieceIndicator.swift; sourceTree = "<group>"; };
+		B69C52EA2ACBD52A009B3493 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
+		B69C52EB2ACBD52A009B3493 /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDelegate.h; sourceTree = "<group>"; };
+		B69C52EC2ACBD52A009B3493 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
+		B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMWMSDK.a; sourceTree = "<group>"; };
+		B69C52F02ACBD554009B3493 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
+		B69C52F12ACBD575009B3493 /* MWMInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
+		B69C52F32ACBD62D009B3493 /* MWMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
+		B69C52F52ACBD9CC009B3493 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		3DB6136F2AC5C66F00F0A792 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69C52EE2ACBD52A009B3493 /* libMWMSDK.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		3D2B49832ACBD1B400DA8827 /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				3D2B49842ACBD1BF00DA8827 /* HideAndSeek */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		3D2B49842ACBD1BF00DA8827 /* HideAndSeek */ = {
+			isa = PBXGroup;
+			children = (
+				26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */,
+				26A9C6712ACBCCC600117948 /* NewPage.swift */,
+				26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */,
+				26A9C6692ACBCC5F00117948 /* ProgressBar.swift */,
+				26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */,
+				26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */,
+				26A9C66F2ACBCC9700117948 /* NodeElement.swift */,
+				B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */,
+				B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */,
+			);
+			path = HideAndSeek;
+			sourceTree = "<group>";
+		};
+		3DB613692AC5C66F00F0A792 = {
+			isa = PBXGroup;
+			children = (
+				3DB613742AC5C66F00F0A792 /* Macrow-ADHD */,
+				3DB613732AC5C66F00F0A792 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		3DB613732AC5C66F00F0A792 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		3DB613742AC5C66F00F0A792 /* Macrow-ADHD */ = {
+			isa = PBXGroup;
+			children = (
+				B69C52F02ACBD554009B3493 /* Bridging-Header.h */,
+				B69C52E72ACBD392009B3493 /* Utilities */,
+				3D2B49832ACBD1B400DA8827 /* Games */,
+				3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */,
+				3DB613772AC5C66F00F0A792 /* ContentView.swift */,
+				B69C52F52ACBD9CC009B3493 /* Homepage.swift */,
+				3DB613792AC5C67100F0A792 /* Assets.xcassets */,
+				3DB6137B2AC5C67100F0A792 /* Preview Content */,
+			);
+			path = "Macrow-ADHD";
+			sourceTree = "<group>";
+		};
+		3DB6137B2AC5C67100F0A792 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B69C52E72ACBD392009B3493 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				B69C52EF2ACBD545009B3493 /* NeuroskyHelper */,
+				B69C52E92ACBD52A009B3493 /* lib */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B69C52E92ACBD52A009B3493 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B69C52EA2ACBD52A009B3493 /* MWMEnum.h */,
+				B69C52EB2ACBD52A009B3493 /* MWMDelegate.h */,
+				B69C52EC2ACBD52A009B3493 /* MWMDevice.h */,
+				B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */,
+			);
+			path = lib;
+			sourceTree = "<group>";
+		};
+		B69C52EF2ACBD545009B3493 /* NeuroskyHelper */ = {
+			isa = PBXGroup;
+			children = (
+				B69C52F12ACBD575009B3493 /* MWMInstance.swift */,
+				B69C52F32ACBD62D009B3493 /* MWMModel.swift */,
+			);
+			path = NeuroskyHelper;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		3DB613712AC5C66F00F0A792 /* Macrow-ADHD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Macrow-ADHD" */;
+			buildPhases = (
+				3DB6136E2AC5C66F00F0A792 /* Sources */,
+				3DB6136F2AC5C66F00F0A792 /* Frameworks */,
+				3DB613702AC5C66F00F0A792 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Macrow-ADHD";
+			productName = "Macrow-ADHD";
+			productReference = 3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		3DB6136A2AC5C66F00F0A792 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
+				LastUpgradeCheck = 1500;
+				TargetAttributes = {
+					3DB613712AC5C66F00F0A792 = {
+						CreatedOnToolsVersion = 15.0;
+					};
+				};
+			};
+			buildConfigurationList = 3DB6136D2AC5C66F00F0A792 /* Build configuration list for PBXProject "Macrow-ADHD" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 3DB613692AC5C66F00F0A792;
+			productRefGroup = 3DB613732AC5C66F00F0A792 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				3DB613712AC5C66F00F0A792 /* Macrow-ADHD */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		3DB613702AC5C66F00F0A792 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */,
+				3DB6137A2AC5C67100F0A792 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3DB6136E2AC5C66F00F0A792 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69C52F22ACBD575009B3493 /* MWMInstance.swift in Sources */,
+				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
+				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
+				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
+				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
+				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
+				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
+				26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */,
+				26A9C6722ACBCCC600117948 /* NewPage.swift in Sources */,
+				26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */,
+				B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */,
+				26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */,
+				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
+				B69C52F42ACBD62D009B3493 /* MWMModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		3DB6137E2AC5C67100F0A792 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		3DB6137F2AC5C67100F0A792 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		3DB613812AC5C67100F0A792 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
+				DEVELOPMENT_TEAM = U43A7X58YW;
+				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need to access bluetooth in order connecting to Neurosky headpiece";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-ADHD";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		3DB613822AC5C67100F0A792 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
+				DEVELOPMENT_TEAM = U43A7X58YW;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need to access bluetooth in order connecting to Neurosky headpiece";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-ADHD";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		3DB6136D2AC5C66F00F0A792 /* Build configuration list for PBXProject "Macrow-ADHD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DB6137E2AC5C67100F0A792 /* Debug */,
+				3DB6137F2AC5C67100F0A792 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Macrow-ADHD" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3DB613812AC5C67100F0A792 /* Debug */,
+				3DB613822AC5C67100F0A792 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 3DB6136A2AC5C66F00F0A792 /* Project object */;
+}
