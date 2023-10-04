@@ -9,6 +9,7 @@ import SwiftUI
 import _SpriteKit_SwiftUI
 
 struct ContentView: View {
+    @Environment (\.managedObjectContext) var managedObjContext
     var body: some View {
         SpriteView(scene: HideAndSeekScene())
             .ignoresSafeArea()
