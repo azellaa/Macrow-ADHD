@@ -27,7 +27,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var isTutorialOpened = true
     private var timerValue: Int = 10 // timer 10 menit
     
-    public var focusCount = 0 // focus point
+    public var focusCount = 100 // focus point
     public var isSpawning = false
     
     private var cancellables: Set<AnyCancellable> = []
@@ -40,7 +40,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     public var isCompleted = false
     private var attentionPopup = AttentionPopup()
     private var headpieceStatus = HeadpieceIndicator()
-    private var signalStatus: Int = 0
+    private var signalStatus: Int = 4
     var dataController: DataController!
     var context: NSManagedObjectContext!
     
@@ -254,7 +254,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func timesUpFunc() {
-        dataController.fetchAndPrintFocusData() // Fetch and print the data when the timer ends
+//        dataController.fetchAndPrintFocusData() // Fetch and print the data when the timer ends
         
         run(SKAction.sequence([
             SKAction.run { [weak self] in
@@ -331,11 +331,17 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         focusBar.updateProgressBar(CGFloat(self.focusCount))
         if tutorialView.isHidden {
-            if self.focusCount < 50 || self.signalStatus != 4 {
+            if self.focusCount < 50  {
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
                 attentionPopup.isHidden = false
-            } else {
+            } else if self.signalStatus != 4 {
+                self.fox.isPaused = true
+                self.rabbit.isPaused = true
+                attentionPopup.isHidden = true
+            }
+            
+            else {
                 self.fox.isPaused = false
                 self.rabbit.isPaused = false
                 attentionPopup.isHidden = true

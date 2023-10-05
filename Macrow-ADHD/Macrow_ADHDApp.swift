@@ -10,11 +10,12 @@ import SwiftUI
 @main
 struct Macrow_ADHDApp: App {
     
-    @StateObject private var dataController = DataController()
+//    @StateObject private var dataController = DataController()
     
     var body: some Scene {
         WindowGroup {
-            Homepage().environment(\.managedObjectContext, dataController.container.viewContext)
+//            Homepage().environment(\.managedObjectContext, dataController.container.viewContext)
+            ContentView()
         }
     }
 }
