@@ -32,7 +32,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    var mwmObject = MWMInstance.shared
+//    var mwmObject = MWMInstance.shared
     
     private var listFocusData: [Double] = [Double]()
     
@@ -74,35 +74,35 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             }
         }
         
-        mwmObject.mwmDataPublisher
-            .sink { [weak self] mwmData in
-                // Handle the emitted MWMData here
-                self?.handleMWMData(mwmData)
-                
-            }
-            .store(in: &cancellables)
-        mwmObject.signalStatusPublisher
-            .sink { signalStatus in
-                self.signalStatus = signalStatus
-                print("Signal: \(self.signalStatus)")
-            }
-            .store(in: &cancellables)
+//        mwmObject.mwmDataPublisher
+//            .sink { [weak self] mwmData in
+//                // Handle the emitted MWMData here
+//                self?.handleMWMData(mwmData)
+//                
+//            }
+//            .store(in: &cancellables)
+//        mwmObject.signalStatusPublisher
+//            .sink { signalStatus in
+//                self.signalStatus = signalStatus
+//                print("Signal: \(self.signalStatus)")
+//            }
+//            .store(in: &cancellables)
     }
     
     func tutorialIsOpen(_ tutorialView: TutorialView, isTutorialOpened: Bool) {
         self.isTutorialOpened = isTutorialOpened
     }
     
-    private func handleMWMData(_ mwmData: MWMData) {
-        // Update your UI or perform other actions with the received data
-        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
-        focusCount = Int(mwmData.attention)
-        if !isCompleted {
-            listFocusData.append(Double(focusCount))
-        }
-        // Example: Update a UILabel
-        // self.yourLabel.text = "Poor Signal: \(mwmData.poorSignal), Attention: \(mwmData.attention), Meditation: \(mwmData.meditation)"
-    }
+//    private func handleMWMData(_ mwmData: MWMData) {
+//        // Update your UI or perform other actions with the received data
+//        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
+//        focusCount = Int(mwmData.attention)
+//        if !isCompleted {
+//            listFocusData.append(Double(focusCount))
+//        }
+//        // Example: Update a UILabel
+//        // self.yourLabel.text = "Poor Signal: \(mwmData.poorSignal), Attention: \(mwmData.attention), Meditation: \(mwmData.meditation)"
+//    }
     
     func spawnNextEntity() {
         isSpawning = false
@@ -231,9 +231,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         attentionPopup.zPosition = 20
         addChild(attentionPopup)
         
-        headpieceStatus.getSceneFrame(sceneFrame: frame)
-        headpieceStatus.buildIndicator()
-        addChild(headpieceStatus)
+//        headpieceStatus.getSceneFrame(sceneFrame: frame)
+//        headpieceStatus.buildIndicator()
+//        addChild(headpieceStatus)
         
     }
     
@@ -254,7 +254,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func timesUpFunc() {
-        dataController.fetchAndPrintFocusData() // Fetch and print the data when the timer ends
+//        dataController.fetchAndPrintFocusData() // Fetch and print the data when the timer ends
         
         run(SKAction.sequence([
             SKAction.run { [weak self] in
@@ -329,17 +329,17 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         updateRabbitCountLabel()
         openTutorial()
         
-        focusBar.updateProgressBar(CGFloat(self.focusCount))
-        if tutorialView.isHidden {
-            if self.focusCount < 50 || self.signalStatus != 4 {
-                self.fox.isPaused = true
-                self.rabbit.isPaused = true
-                attentionPopup.isHidden = false
-            } else {
-                self.fox.isPaused = false
-                self.rabbit.isPaused = false
-                attentionPopup.isHidden = true
-            }
-        }
+//        focusBar.updateProgressBar(CGFloat(self.focusCount))
+//        if tutorialView.isHidden {
+//            if self.focusCount < 50 || self.signalStatus != 4 {
+//                self.fox.isPaused = true
+//                self.rabbit.isPaused = true
+//                attentionPopup.isHidden = false
+//            } else {
+//                self.fox.isPaused = false
+//                self.rabbit.isPaused = false
+//                attentionPopup.isHidden = true
+//            }
+//        }
     }
 }

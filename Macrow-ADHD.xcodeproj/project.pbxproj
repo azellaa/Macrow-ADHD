@@ -22,9 +22,6 @@
 		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
 		B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */; };
 		B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
-		B69C52EE2ACBD52A009B3493 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */; };
-		B69C52F22ACBD575009B3493 /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F12ACBD575009B3493 /* MWMInstance.swift */; };
-		B69C52F42ACBD62D009B3493 /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F32ACBD62D009B3493 /* MWMModel.swift */; };
 		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
 /* End PBXBuildFile section */
 
@@ -45,13 +42,6 @@
 		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPopup.swift; sourceTree = "<group>"; };
 		B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadpieceIndicator.swift; sourceTree = "<group>"; };
-		B69C52EA2ACBD52A009B3493 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
-		B69C52EB2ACBD52A009B3493 /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDelegate.h; sourceTree = "<group>"; };
-		B69C52EC2ACBD52A009B3493 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
-		B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMWMSDK.a; sourceTree = "<group>"; };
-		B69C52F02ACBD554009B3493 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		B69C52F12ACBD575009B3493 /* MWMInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
-		B69C52F32ACBD62D009B3493 /* MWMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 		B69C52F52ACBD9CC009B3493 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,7 +50,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69C52EE2ACBD52A009B3493 /* libMWMSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,7 +109,6 @@
 			isa = PBXGroup;
 			children = (
 				3D2B49852ACBD2C000DA8827 /* Data Model */,
-				B69C52F02ACBD554009B3493 /* Bridging-Header.h */,
 				B69C52E72ACBD392009B3493 /* Utilities */,
 				3D2B49832ACBD1B400DA8827 /* Games */,
 				3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */,
@@ -143,30 +131,8 @@
 		B69C52E72ACBD392009B3493 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B69C52EF2ACBD545009B3493 /* NeuroskyHelper */,
-				B69C52E92ACBD52A009B3493 /* lib */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		B69C52E92ACBD52A009B3493 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				B69C52EA2ACBD52A009B3493 /* MWMEnum.h */,
-				B69C52EB2ACBD52A009B3493 /* MWMDelegate.h */,
-				B69C52EC2ACBD52A009B3493 /* MWMDevice.h */,
-				B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		B69C52EF2ACBD545009B3493 /* NeuroskyHelper */ = {
-			isa = PBXGroup;
-			children = (
-				B69C52F12ACBD575009B3493 /* MWMInstance.swift */,
-				B69C52F32ACBD62D009B3493 /* MWMModel.swift */,
-			);
-			path = NeuroskyHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -239,7 +205,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69C52F22ACBD575009B3493 /* MWMInstance.swift in Sources */,
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
 				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
 				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
@@ -254,7 +219,6 @@
 				26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */,
 				3D2B49882ACBD2F100DA8827 /* FocusModel.xcdatamodeld in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
-				B69C52F42ACBD62D009B3493 /* MWMModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -413,7 +377,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -451,7 +415,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
