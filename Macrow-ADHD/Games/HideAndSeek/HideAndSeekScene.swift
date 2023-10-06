@@ -25,7 +25,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = true
-    private var timerValue: Int = 10 // timer 10 menit
+    private var timerValue: Int = 300 // timer 10 menit
     
     public var focusCount = 0 // focus point
     public var isSpawning = false
@@ -87,6 +87,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
 //                print("Signal: \(self.signalStatus)")
 //            }
 //            .store(in: &cancellables)
+        
+    
+              
+            
     }
     
     func tutorialIsOpen(_ tutorialView: TutorialView, isTutorialOpened: Bool) {
@@ -235,11 +239,14 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
 //        headpieceStatus.buildIndicator()
 //        addChild(headpieceStatus)
         
+        
+        
     }
     
     func updateRabbitCountLabel() {
         rabbitCountLabel.text = "x\(rabbitCount)"
     }
+    
     
     func openTutorial() {
         if !isTutorialOpened {
@@ -259,7 +266,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         run(SKAction.sequence([
             SKAction.run { [weak self] in
                 guard let `self` = self else { return }
-                let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+                let reveal = SKTransition.fade(withDuration: 0.5)
                 
                 let scene = NewPage()
                 view?.presentScene(scene, transition: reveal)
@@ -285,6 +292,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     rabbit.removeAllActions()
                     rabbitCount += 1
                     
+                    // Update rabbitCount in GameData
+                    GameData.rabbitCount = rabbitCount
+                    
                     // Save the updated rabbit count to Core Data
                     dataController.addFocus(value: Double(rabbitCount), gameID: 1, context: context)
 
@@ -299,6 +309,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     fox.texture = SKTexture(imageNamed: "Fox_Tap")
                     fox.removeAllActions()
                     rabbitCount -= 1
+                    
+                    // Update rabbitCount in GameData
+                    GameData.rabbitCount = rabbitCount
+                                    
                     updateRabbitCountLabel()
                     isTouched.toggle()
                     
