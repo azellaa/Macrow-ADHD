@@ -15,6 +15,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbit = SKSpriteNode()
     private var fox = SKSpriteNode()
     private var rabbitCounter = SKSpriteNode()
+    private var connection = SKSpriteNode()
     private var focusBar = ProgressBar()
     private var bg = BackgroundHideAndSeek()
     private var rabbitPos = [NodeElement]()
@@ -205,9 +206,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     func addNodes() {
         rabbitCountLabel.fontName = "AvenirNext-Bold"
-        rabbitCountLabel.fontSize = 25
+        rabbitCountLabel.fontSize = 30
         rabbitCountLabel.name = "rabbitCountLabel"
-        rabbitCountLabel.position = CGPoint(x: frame.width * 0.905, y: frame.height * 0.873)
+        rabbitCountLabel.position = CGPoint(x: frame.width * 0.835, y: frame.height * 0.873)
         rabbitCountLabel.zPosition = 15
         addChild(rabbitCountLabel)
         
@@ -220,9 +221,15 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         rabbitCounter = .init(imageNamed: "RabbitCounter")
 //        rabbitCounter.setScale(0.9)
 //        rabbitCounter.size.width = rabbitCounter.size.width * 1.05
-        rabbitCounter.position = CGPoint(x: frame.width * 0.885, y: frame.height * 0.89)
+        rabbitCounter.position = CGPoint(x: frame.width * 0.815, y: frame.height * 0.89)
         rabbitCounter.zPosition = 10
         addChild(rabbitCounter)
+        
+        connection = .init(imageNamed: "nosignal")
+        connection.position = CGPoint(x: frame.width * 0.930, y: frame.height * 0.89)
+        connection.size = CGSize(width: 83, height: 79)
+        connection.zPosition = 10
+        addChild(connection)
         
         focusBar.getSceneFrame(sceneFrame: frame)
         focusBar.setScale(0.9)
