@@ -27,7 +27,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var isTutorialOpened = true
     private var timerValue: Int = 600 // timer 10 menit
     
-    public var focusCount = 100 // focus point
+    public var focusCount = 30 // focus point
     public var isSpawning = false
     
     private var cancellables: Set<AnyCancellable> = []
