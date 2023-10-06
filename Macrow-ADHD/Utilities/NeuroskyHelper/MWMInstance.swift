@@ -46,6 +46,7 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     func didDisconnect() {
         signalStatusSubject.send(0)
         print("didDisconnect");
+        mwmDevice?.scanDevice()
     }
     
     func eSense(_ poorSignal: Int32, attention: Int32, meditation: Int32) {
