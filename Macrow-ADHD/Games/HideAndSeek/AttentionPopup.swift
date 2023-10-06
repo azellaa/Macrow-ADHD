@@ -10,8 +10,16 @@ import SpriteKit
 class AttentionPopup: SKNode {
     private var sceneFrame = CGRect()
     public var popUpText = SKLabelNode(text: "Paused")
-    private var background = SKSpriteNode()
+    private var blackAlphaBackground = SKSpriteNode()
+    private let cropNode = SKCropNode()
     
+    private var bgOverlay = BackgroundHideAndSeek()
+    private var circleOverlay = SKShapeNode()
+    private var focusCat = SKSpriteNode(imageNamed: "focusCat")
+    
+    
+    var moveRate = TimeInterval(2)
+    var lastMove = TimeInterval(0)
     
     override init() {
         super.init()
@@ -21,56 +29,37 @@ class AttentionPopup: SKNode {
         super.init()
         self.sceneFrame = sceneFrame
         
-        background.size = CGSize(width: sceneFrame.width, height: sceneFrame.height)
-        background.color = .black
-        background.alpha = 0.5
-        background.position = CGPoint(x: sceneFrame.width / 2 , y: sceneFrame.height / 2)
-        addChild(background)
+        blackAlphaBackground.size = CGSize(width: sceneFrame.width, height: sceneFrame.height)
+        blackAlphaBackground.color = .black
+        blackAlphaBackground.alpha = 0.5
+        blackAlphaBackground.position = CGPoint(x: sceneFrame.width / 2 , y: sceneFrame.height / 2)
+        addChild(blackAlphaBackground)
         
-        // dim the entire background of the scene to 70% darker
-//        SKSpriteNode* background = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:0
-//                                                                                     green:0
-//                                                                                      blue:0
-//                                                                                     alpha:0.7]
-//                                                                size:self.frame.size];
-//
-//        // make a square of 100,100. This could be an image or shapenode rendered to a spritenode
-//        // make the cut out only dim 20% - this is because no dim will look very harsh
-//        SKSpriteNode* cutOut = [SKSpriteNode spriteNodeWithColor:[UIColor colorWithRed:0
-//                                                                                 green:0
-//                                                                                  blue:0
-//                                                                                 alpha:0.2]
-//                                                            size:CGSizeMake(100,100)];
-//
-//        // add the cut out to the background and make the blend mode replace the colors
-//        cutOut.blendMode = SKBlendModeReplace;
-//        [background addChild:cutOut];
-//
-//        // we now need to make a texture from this node, otherwise the cutout will replace the underlying
-//        // background completely
-//
-//        SKTexture* newTexture = [self.view textureFromNode:background];
-//        SKSpriteNode* newBackground = [SKSpriteNode spriteNodeWithTexture:newTexture];
-//
-//        // position our background over the entire scene by adjusting the anchor point (or position)
-//        newBackground.anchorPoint = CGPointMake(0,0);
-//        [self addChild:newBackground];
-//
-//        // if you have other items in the scene, you'll want to increaes the Z position to make it go ontop.
-//        newBackground.zPosition = 5;
-        
-        var circleOverlay = SKShapeNode(circleOfRadius: 20)
-        circleOverlay.alpha = 0.2
+        cropNode.zPosition = 2 // Ensure it's above other nodes
+        circleOverlay = SKShapeNode(ellipseIn: CGRect(origin: CGPoint(x: sceneFrame.width * 0.5 , y: sceneFrame.height * 0.5), size: CGSize(width: 140, height: 140)))
+        circleOverlay.position = CGPoint(x: 0 , y: 0)
         circleOverlay.fillColor = .white
+//        circleOverlay.blendMode = .alpha
         circleOverlay.strokeColor = .clear
-        circleOverlay.blendMode = .subtract
-        background.addChild(circleOverlay)
         
-        var newBackground = BackgroundHideAndSeek()
+        cropNode.scene?.anchorPoint = CGPoint(x: 0, y: 0)
         
-//        newBackground.anchorPoint = CGPoint(x: 0, y: 0)
-        addChild(newBackground)
-        newBackground.zPosition = 5
+        bgOverlay.getSceneFrame(sceneFrame: sceneFrame)
+        bgOverlay.addBackground()
+        bgOverlay.position = CGPoint(x: 0, y: 0)
+        
+        cropNode.maskNode = circleOverlay
+        cropNode.addChild(bgOverlay)
+        
+        addChild(cropNode)
+        
+//        let focusCat = SKSpriteNode(imageNamed: "focusCat")
+        focusCat.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        focusCat.position = CGPoint(x: circleOverlay.position.x + self.sceneFrame.width/2 + focusCat.frame.size.width/2, y: circleOverlay.position.y + self.sceneFrame.height/2 + focusCat.frame.size.height/2)
+        focusCat.zPosition = 5
+        addChild(focusCat)
+        
+        
         
 //        popUpText.position = CGPoint(x: sceneFrame.width / 2 , y: sceneFrame.height / 2)
 //        popUpText.zPosition = 25
@@ -80,5 +69,52 @@ class AttentionPopup: SKNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func generateMaskNode(from mask:SKNode) -> SKNode
+    {
+        var returningNode : SKNode!
+        autoreleasepool
+        {
+            let view = SKView()
+            //First let's flatten the node
+            let texture = view.texture(from: mask)
+            let node = SKSpriteNode(texture:texture)
+            //Next apply the shader to the flattened node to allow for color swapping
+            node.shader = SKShader(fileNamed: "shader.fsh")
+            let texture2 = view.texture(from: node)
+            returningNode = SKSpriteNode(texture:texture2)
+
+        }
+        return returningNode
+    }
+    
+    func update(_ currentTime: TimeInterval) {
+        
+//        let randomX = CGFloat.random(in: -(self.sceneFrame.width/2)...self.sceneFrame.width/2)
+//        let randomY = CGFloat.random(in: -(self.sceneFrame.height/2)...self.sceneFrame.height/2)
+//        
+//        circleOverlay.position = CGPoint(x: randomX, y: randomY)
+        startCircleMovement()
+        lastMove = CACurrentMediaTime()
+    }
+    
+    func startCircleMovement() {
+        let randomX = CGFloat.random(in: -(self.sceneFrame.width/2)...self.sceneFrame.width/2)
+        let randomY = CGFloat.random(in: -(self.sceneFrame.height/2)...self.sceneFrame.height/2)
+        let newPosition = CGPoint(x: randomX, y: randomY)
+        
+        let moveAction = SKAction.move(to: newPosition, duration: moveRate)
+        
+        // Add an optional completion block to perform actions after the animation completes
+        let completionAction = SKAction.run {
+            // Animation has completed, you can perform additional actions here if needed
+        }
+        
+        let sequence = SKAction.sequence([moveAction, completionAction])
+        
+        // Run the sequence on the circleOverlay
+        circleOverlay.run(sequence)
+        focusCat.run(SKAction.move(to: CGPoint(x: randomX + self.sceneFrame.width/2 + focusCat.frame.size.width/2, y: randomY + self.sceneFrame.height/2 + focusCat.frame.size.height/2), duration: moveRate))
     }
 }

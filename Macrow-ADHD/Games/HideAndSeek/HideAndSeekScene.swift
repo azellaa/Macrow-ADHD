@@ -335,6 +335,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
                 attentionPopup.isHidden = false
+                if CACurrentMediaTime() - attentionPopup.lastMove > attentionPopup.moveRate {
+                    attentionPopup.update(currentTime)
+                    
+                }
             } else if self.signalStatus != 4 {
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
