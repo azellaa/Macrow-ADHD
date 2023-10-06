@@ -25,9 +25,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = true
-    private var timerValue: Int = 10 // timer 10 menit
+    private var timerValue: Int = 600 // timer 10 menit
     
-    public var focusCount = 100 // focus point
+    public var focusCount = 30 // focus point
     public var isSpawning = false
     
     private var cancellables: Set<AnyCancellable> = []
@@ -335,6 +335,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
                 attentionPopup.isHidden = false
+                if CACurrentMediaTime() - attentionPopup.lastMove > attentionPopup.moveRate {
+                    attentionPopup.update(currentTime)
+                    
+                }
             } else if self.signalStatus != 4 {
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
