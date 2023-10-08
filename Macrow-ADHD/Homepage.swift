@@ -70,12 +70,12 @@ struct Homepage: View {
                 } else {
                     Text("No data available")
                 }
-                if isConnected {
+//                if isConnected {
                     NavigationLink(destination: ContentView()) {
                         Text("Play")
                     }
                     .navigationBarBackButtonHidden(true)
-                }
+//                }
                 
             }
         }

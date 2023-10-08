@@ -14,8 +14,8 @@ struct Macrow_ADHDApp: App {
     
     var body: some Scene {
         WindowGroup {
-            Homepage().environment(\.managedObjectContext, dataController.container.viewContext)
-//            ContentView()
+//            Homepage().environment(\.managedObjectContext, dataController.container.viewContext)
+            Homepage()
         }
     }
 }

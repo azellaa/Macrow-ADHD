@@ -27,7 +27,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var isTutorialOpened = true
     private var timerValue: Int = 600 // timer 10 menit
     
-    public var focusCount = 30 // focus point
+    public var focusCount = 80 // focus point
     public var isSpawning = false
     
     private var cancellables: Set<AnyCancellable> = []
@@ -201,9 +201,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     func addNodes() {
         rabbitCountLabel.fontName = "AvenirNext-Bold"
-        rabbitCountLabel.fontSize = 25
+        rabbitCountLabel.fontSize = 30
         rabbitCountLabel.name = "rabbitCountLabel"
-        rabbitCountLabel.position = CGPoint(x: frame.width * 0.905, y: frame.height * 0.873)
+        rabbitCountLabel.position = CGPoint(x: frame.width * 0.835, y: frame.height * 0.873)
         rabbitCountLabel.zPosition = 15
         addChild(rabbitCountLabel)
         
@@ -216,7 +216,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         rabbitCounter = .init(imageNamed: "RabbitCounter")
 //        rabbitCounter.setScale(0.9)
 //        rabbitCounter.size.width = rabbitCounter.size.width * 1.05
-        rabbitCounter.position = CGPoint(x: frame.width * 0.885, y: frame.height * 0.89)
+        rabbitCounter.position = CGPoint(x: frame.width * 0.815, y: frame.height * 0.89)
         rabbitCounter.zPosition = 10
         addChild(rabbitCounter)
         
@@ -225,6 +225,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         focusBar.buildProgressBar()
         focusBar.position = CGPoint(x: frame.width * 0.47 , y: frame.height * 0.89)
         addChild(focusBar)
+        
         
         attentionPopup = AttentionPopup(sceneFrame: frame)
         attentionPopup.isHidden = true
