@@ -15,6 +15,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbit = SKSpriteNode()
     private var fox = SKSpriteNode()
     private var rabbitCounter = SKSpriteNode()
+    private var connection = SKSpriteNode()
     private var focusBar = ProgressBar()
     private var bg = BackgroundHideAndSeek()
     private var rabbitPos = [NodeElement]()
@@ -25,7 +26,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = true
-    private var timerValue: Int = 10 // timer 10 menit
+    private var timerValue: Int = 300 // timer 10 menit
     
     public var focusCount = 0 // focus point
     public var isSpawning = false
@@ -87,6 +88,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
 //                print("Signal: \(self.signalStatus)")
 //            }
 //            .store(in: &cancellables)
+        
+    
+              
+            
     }
     
     func tutorialIsOpen(_ tutorialView: TutorialView, isTutorialOpened: Bool) {
@@ -201,9 +206,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     func addNodes() {
         rabbitCountLabel.fontName = "AvenirNext-Bold"
-        rabbitCountLabel.fontSize = 25
+        rabbitCountLabel.fontSize = 30
         rabbitCountLabel.name = "rabbitCountLabel"
-        rabbitCountLabel.position = CGPoint(x: frame.width * 0.905, y: frame.height * 0.873)
+        rabbitCountLabel.position = CGPoint(x: frame.width * 0.835, y: frame.height * 0.873)
         rabbitCountLabel.zPosition = 15
         addChild(rabbitCountLabel)
         
@@ -216,9 +221,15 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         rabbitCounter = .init(imageNamed: "RabbitCounter")
 //        rabbitCounter.setScale(0.9)
 //        rabbitCounter.size.width = rabbitCounter.size.width * 1.05
-        rabbitCounter.position = CGPoint(x: frame.width * 0.885, y: frame.height * 0.89)
+        rabbitCounter.position = CGPoint(x: frame.width * 0.815, y: frame.height * 0.89)
         rabbitCounter.zPosition = 10
         addChild(rabbitCounter)
+        
+        connection = .init(imageNamed: "nosignal")
+        connection.position = CGPoint(x: frame.width * 0.930, y: frame.height * 0.89)
+        connection.size = CGSize(width: 83, height: 79)
+        connection.zPosition = 10
+        addChild(connection)
         
         focusBar.getSceneFrame(sceneFrame: frame)
         focusBar.setScale(0.9)
@@ -235,11 +246,14 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
 //        headpieceStatus.buildIndicator()
 //        addChild(headpieceStatus)
         
+        
+        
     }
     
     func updateRabbitCountLabel() {
         rabbitCountLabel.text = "x\(rabbitCount)"
     }
+    
     
     func openTutorial() {
         if !isTutorialOpened {
@@ -259,7 +273,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         run(SKAction.sequence([
             SKAction.run { [weak self] in
                 guard let `self` = self else { return }
-                let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+                let reveal = SKTransition.fade(withDuration: 0.5)
                 
                 let scene = NewPage()
                 view?.presentScene(scene, transition: reveal)
@@ -285,6 +299,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     rabbit.removeAllActions()
                     rabbitCount += 1
                     
+                    // Update rabbitCount in GameData
+                    GameData.rabbitCount = rabbitCount
+                    
                     // Save the updated rabbit count to Core Data
                     dataController.addFocus(value: Double(rabbitCount), gameID: 1, context: context)
 
@@ -299,6 +316,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     fox.texture = SKTexture(imageNamed: "Fox_Tap")
                     fox.removeAllActions()
                     rabbitCount -= 1
+                    
+                    // Update rabbitCount in GameData
+                    GameData.rabbitCount = rabbitCount
+                                    
                     updateRabbitCountLabel()
                     isTouched.toggle()
                     

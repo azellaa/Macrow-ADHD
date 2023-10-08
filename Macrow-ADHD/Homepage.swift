@@ -27,10 +27,10 @@ struct Homepage: View {
                 Text("mfgID: \(mfgID)")
                 Text("deviceID: \(deviceID)")
                 
-//                Button("Connect Device") {
+                Button("Connect Device") {
 //                    mwmObject.mwmDevice?.scanDevice()
-//                    isShowingSheet.toggle()
-//                }
+                    isShowingSheet.toggle()
+                }
                 
 //                if let mwmData = mwmData {
 //                    Text("Poor Signal: \(mwmData.poorSignal)")
@@ -83,7 +83,7 @@ struct Homepage: View {
     }
 
 }
-
-#Preview {
-    Homepage()
-}
+//
+//#Preview {
+//    Homepage()
+//}
