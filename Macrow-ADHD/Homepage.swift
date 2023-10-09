@@ -71,10 +71,16 @@ struct Homepage: View {
                     Text("No data available")
                 }
 //                if isConnected {
-                    NavigationLink(destination: ContentView()) {
+                #if DEBUG
+                    NavigationLink(destination: ContentView()
+                                   .navigationBarBackButtonHidden(true)) {
                         Text("Play")
                     }
-                    .navigationBarBackButtonHidden(true)
+                #else
+                NavigationLink(destination: ContentView()) {
+                    Text("Play")
+                }
+                #endif
 //                }
                 
             }

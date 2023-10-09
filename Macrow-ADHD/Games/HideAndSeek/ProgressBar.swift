@@ -72,12 +72,11 @@ class ProgressBar: SKNode {
     }
 
     func updateProgressBar(_ progress: CGFloat) {
-        // Calculate the start angle of the progress circle based on the progress
-        let startAngle = CGFloat.pi
-
+        // Calculate the end angle of the progress circle based on the progress
+        let endAngle = -CGFloat.pi / 2 + 2 * CGFloat.pi * (progress / maxProgress)
+        
         // Create the new path for the progress circle
-        let progressCirclePath = UIBezierPath(arcCenter: .zero, radius: progressBarRadius/2, startAngle: startAngle, endAngle: CGFloat.pi * (progress / maxProgress), clockwise: false)
-
+        let progressCirclePath = UIBezierPath(arcCenter: .zero, radius: progressBarRadius/2, startAngle: -CGFloat.pi / 2, endAngle: endAngle, clockwise: false)
         progressCircle.path = progressCirclePath.cgPath
     }
 
