@@ -9,7 +9,7 @@ import Foundation
 import SpriteKit
 class AttentionPopup: SKNode {
     private var sceneFrame = CGRect()
-    public var popUpText = SKLabelNode(text: "Paused")
+    public var popUpText = SKLabelNode(fontNamed: "Jua-Regular")
     private var blackAlphaBackground = SKSpriteNode()
     private let cropNode = SKCropNode()
     
@@ -17,10 +17,8 @@ class AttentionPopup: SKNode {
     private var circleOverlay = SKShapeNode()
     private var focusCat = SKSpriteNode(imageNamed: "focusCat")
     
-    
-    var moveRate = TimeInterval(2)
-    var lastMove = TimeInterval(0)
-    
+    var isShowing = false
+    private var moveTransform = CGAffineTransform(translationX: 1.0, y: 1.0)
     override init() {
         super.init()
     }
@@ -36,13 +34,12 @@ class AttentionPopup: SKNode {
         addChild(blackAlphaBackground)
         
         cropNode.zPosition = 2 // Ensure it's above other nodes
-        circleOverlay = SKShapeNode(ellipseIn: CGRect(origin: CGPoint(x: sceneFrame.width * 0.5 , y: sceneFrame.height * 0.5), size: CGSize(width: 140, height: 140)))
-        circleOverlay.position = CGPoint(x: 0 , y: 0)
+        circleOverlay = SKShapeNode(ellipseOf: CGSize(width: 140, height: 140))
+        circleOverlay.position = CGPoint(x: self.sceneFrame.midX, y: self.sceneFrame.midY)
         circleOverlay.fillColor = .white
-//        circleOverlay.blendMode = .alpha
+        //        circleOverlay.blendMode = .alpha
         circleOverlay.strokeColor = .clear
         
-        cropNode.scene?.anchorPoint = CGPoint(x: 0, y: 0)
         
         bgOverlay.getSceneFrame(sceneFrame: sceneFrame)
         bgOverlay.addBackground()
@@ -53,17 +50,18 @@ class AttentionPopup: SKNode {
         
         addChild(cropNode)
         
-//        let focusCat = SKSpriteNode(imageNamed: "focusCat")
-        focusCat.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        focusCat.position = CGPoint(x: circleOverlay.position.x + self.sceneFrame.width/2 + focusCat.frame.size.width/2, y: circleOverlay.position.y + self.sceneFrame.height/2 + focusCat.frame.size.height/2)
+        //        let focusCat = SKSpriteNode(imageNamed: "focusCat")
+        //        focusCat.anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        focusCat.position = circleOverlay.position
         focusCat.zPosition = 5
         addChild(focusCat)
         
-        
-        
-//        popUpText.position = CGPoint(x: sceneFrame.width / 2 , y: sceneFrame.height / 2)
-//        popUpText.zPosition = 25
-//        addChild(popUpText)
+        popUpText.text = "Follow Me!"
+        popUpText.fontSize = 64
+        popUpText.position = CGPoint(x: sceneFrame.width / 2 , y: sceneFrame.height / 2 + 31)
+        popUpText.alpha = 0
+        popUpText.zPosition = 25
+        addChild(popUpText)
         
     }
     
@@ -71,50 +69,77 @@ class AttentionPopup: SKNode {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func generateMaskNode(from mask:SKNode) -> SKNode
-    {
-        var returningNode : SKNode!
-        autoreleasepool
-        {
-            let view = SKView()
-            //First let's flatten the node
-            let texture = view.texture(from: mask)
-            let node = SKSpriteNode(texture:texture)
-            //Next apply the shader to the flattened node to allow for color swapping
-            node.shader = SKShader(fileNamed: "shader.fsh")
-            let texture2 = view.texture(from: node)
-            returningNode = SKSpriteNode(texture:texture2)
-
-        }
-        return returningNode
-    }
-    
-    func update(_ currentTime: TimeInterval) {
+    func startShowPause() {
+        // Reset the circleOverlay size to a larger initial size
+        circleOverlay.position = CGPoint(x: self.sceneFrame.midX, y: self.sceneFrame.midY)
+        focusCat.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 26)
+        let initialScale: CGFloat = 10 // You can adjust the scale as needed
+        circleOverlay.setScale(initialScale)
+        let scaleAction = SKAction.scale(to: 1.0, duration: 1) // Adjust duration as needed
         
-//        let randomX = CGFloat.random(in: -(self.sceneFrame.width/2)...self.sceneFrame.width/2)
-//        let randomY = CGFloat.random(in: -(self.sceneFrame.height/2)...self.sceneFrame.height/2)
-//        
-//        circleOverlay.position = CGPoint(x: randomX, y: randomY)
-        startCircleMovement()
-        lastMove = CACurrentMediaTime()
-    }
-    
-    func startCircleMovement() {
-        let randomX = CGFloat.random(in: -(self.sceneFrame.width/2)...self.sceneFrame.width/2)
-        let randomY = CGFloat.random(in: -(self.sceneFrame.height/2)...self.sceneFrame.height/2)
-        let newPosition = CGPoint(x: randomX, y: randomY)
-        
-        let moveAction = SKAction.move(to: newPosition, duration: moveRate)
-        
-        // Add an optional completion block to perform actions after the animation completes
-        let completionAction = SKAction.run {
-            // Animation has completed, you can perform additional actions here if needed
-        }
-        
-        let sequence = SKAction.sequence([moveAction, completionAction])
+        // After the scale animation, start the bounce animation
+        let sequence = SKAction.sequence([
+            scaleAction,
+            SKAction.wait(forDuration: 3),
+            SKAction.run { [ self] in
+                //            self?.startBounce()
+                self.popUpText.run(SKAction.fadeIn(withDuration: 0.3))
+                self.isShowing = true
+            },
+            SKAction.wait(forDuration: 3),
+            SKAction.run {
+                self.popUpText.run(SKAction.fadeOut(withDuration: 0.3))
+            }
+        ])
         
         // Run the sequence on the circleOverlay
-        circleOverlay.run(sequence)
-        focusCat.run(SKAction.move(to: CGPoint(x: randomX + self.sceneFrame.width/2 + focusCat.frame.size.width/2, y: randomY + self.sceneFrame.height/2 + focusCat.frame.size.height/2), duration: moveRate))
+        if !isShowing {
+            circleOverlay.run(sequence)
+        }
+        
+        // Reset the focusCat position
     }
+    
+    func stopShowPause() {
+        self.isShowing = false
+    }
+    
+    
+    func update(_ currentTime: TimeInterval) {
+        //        startCircleMovement()
+        if isShowing {
+            startBounce()
+        }
+    }
+    
+    
+    func startBounce() {
+        let currentFrame = circleOverlay.calculateAccumulatedFrame()
+        
+        // Top bound
+        if currentFrame.maxY >= self.sceneFrame.maxY {
+            moveTransform.ty = -1.0
+        }
+        
+        // Right bound
+        if currentFrame.maxX >= self.sceneFrame.maxX {
+            moveTransform.tx = -1.0
+        }
+        
+        // Bottom bound
+        if currentFrame.minY <= self.sceneFrame.minY {
+            moveTransform.ty = 1.0
+        }
+        
+        // Left bound
+        if currentFrame.minX <= self.sceneFrame.minX {
+            moveTransform.tx = 1.0
+        }
+        
+        // Update the node's position by applying the transform
+        circleOverlay.position = circleOverlay.position.applying(moveTransform)
+        focusCat.position = focusCat.position.applying(moveTransform)
+    }
+    
 }
+

@@ -62,12 +62,12 @@ class ProgressBar: SKNode {
         progressCircle.position = CGPoint(x: sceneFrame.width * -0.45, y: frame.height * -0.89)
         progressCircle.strokeColor = SKColor(hex: 0x986922) // Change the color to your preference
         progressCircle.lineWidth = progressBarRadius/1.3 // Adjust the width as needed
-        progressCircle.zPosition = 20
+        progressCircle.zPosition = 15
         addChild(progressCircle)
         
         let bee = SKSpriteNode(imageNamed: "Bee")
         bee.position = CGPoint(x: sceneFrame.width * -0.45, y: frame.height * -0.89)
-        bee.zPosition = 20
+        bee.zPosition = 15
         addChild(bee)
     }
 

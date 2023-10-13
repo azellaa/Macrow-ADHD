@@ -72,12 +72,12 @@ struct Homepage: View {
                 }
 //                if isConnected {
                 #if DEBUG
-                    NavigationLink(destination: ContentView()
-                                   .navigationBarBackButtonHidden(true)) {
+                    NavigationLink(destination: ContentView()) {
                         Text("Play")
                     }
                 #else
-                NavigationLink(destination: ContentView()) {
+                NavigationLink(destination: ContentView()
+                    .navigationBarBackButtonHidden(true)) {
                     Text("Play")
                 }
                 #endif

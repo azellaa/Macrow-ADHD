@@ -29,6 +29,7 @@ class TutorialView: SKNode {
     private let rabbitCountLabel = SKLabelNode(text: "x0")
     private let rabbitAlpha = SKSpriteNode(imageNamed: "Rabbit_Tap")
     private let foxAlpha = SKSpriteNode(imageNamed: "Fox_Tap")
+    private var rabbitCounter = SKSpriteNode()
     
     override init() {
         super.init()
@@ -48,6 +49,11 @@ class TutorialView: SKNode {
         rabbitAlpha.position = CGPoint(x: sceneFrame.width * 0.58 , y: sceneFrame.height * 0.32)
         rabbitAlpha.zPosition = blackAlphaBackground.parent!.zPosition - 15
         addChild(rabbitAlpha)
+        
+        rabbitCounter = .init(imageNamed: "RabbitCounter")
+        rabbitCounter.position = CGPoint(x: sceneFrame.width * 0.815, y: sceneFrame.height * 0.89)
+        rabbitCounter.zPosition = blackAlphaBackground.parent!.zPosition - 2
+        addChild(rabbitCounter)
         
         rabbitCountLabel.fontName = "AvenirNext-Bold"
         rabbitCountLabel.fontSize = 30
@@ -94,29 +100,16 @@ class TutorialView: SKNode {
         tapHandLabel.zPosition = 7
         addChild(tapHandLabel)
         
-        rectangleOverlay = SKShapeNode(rect: CGRect(x: sceneFrame.width * 0.734, y: sceneFrame.height * 0.842, width: 184, height: 104), cornerRadius: 19)
+        rectangleOverlay = SKShapeNode(rect: CGRect(x: sceneFrame.width * 0.734, y: sceneFrame.height * 0.83, width: 184, height: 104), cornerRadius: 19)
         rectangleOverlay.fillColor = .white
         rectangleOverlay.strokeColor = .clear
         
-        
-//        rectangleOverlay.isHidden = true
-        
-//        popUp = .init(imageNamed: "Popup")
-//        popUp.name = "popup"
-//        popUp.position = CGPoint(x: sceneFrame.width / 2 , y: sceneFrame.height / 2)
-//        popUp.setScale(1)
-//        popUp.zPosition = 25
-//        addChild(popUp)
-//        
-//        popUpButton = .init(imageNamed: "Button")
-//        popUpButton.name = "button"
-//        popUpButton.position = CGPoint(x: sceneFrame.width / 2 , y: sceneFrame.height * 0.35)
-//        popUpButton.setScale(1)
-//        popUpButton.zPosition = 30
-//        addChild(popUpButton)
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+    }
+    override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
             let touchedNode = self.atPoint(location)
@@ -147,6 +140,10 @@ class TutorialView: SKNode {
                     rabbitCountLabel.zPosition = bg.zPosition + 1
                     bg.addChild(rabbitCountLabel)
                     
+                    rabbitCounter.removeFromParent()
+                    rabbitCounter.zPosition = bg.zPosition
+                    bg.addChild(rabbitCounter)
+                    
                     addChild(plusOne)
                     plusOne.alpha = 0
                     
@@ -163,9 +160,15 @@ class TutorialView: SKNode {
                             rectangleOverlay.run(SKAction.fadeOut(withDuration: 0.3))
                             cropNode.maskNode = circleOverlay
                             circleOverlay.isHidden = false
+                            
                             rabbitCountLabel.removeFromParent()
                             rabbitCountLabel.zPosition = blackAlphaBackground.zPosition - 1
                             addChild(rabbitCountLabel)
+                            
+                            rabbitCounter.removeFromParent()
+                            rabbitCounter.zPosition = blackAlphaBackground.zPosition - 2
+                            addChild(rabbitCounter)
+                            
                             tapLabel.text = "Yeay!"
                             tapLabel.isHidden = false
                         },
@@ -194,7 +197,7 @@ class TutorialView: SKNode {
                             tapLabel.run(SKAction.fadeIn(withDuration: 1))
                             
                             tapHandLabel.position = CGPoint(x: sceneFrame.width * 0.5, y: sceneFrame.height * 0.287)
-                            tapHandLabel.run(SKAction.fadeIn(withDuration: 1))
+                            tapHandLabel.run(SKAction.fadeIn(withDuration: 0.3))
                             
                             let fox = SKSpriteNode(imageNamed: "Fox_Tap")
                             fox.name = "fox"
@@ -241,6 +244,10 @@ class TutorialView: SKNode {
                         rabbitCountLabel.zPosition = bg.zPosition + 1
                         bg.addChild(rabbitCountLabel)
                         
+                        rabbitCounter.removeFromParent()
+                        rabbitCounter.zPosition = bg.zPosition
+                        bg.addChild(rabbitCounter)
+                        
                         var plusOne = SKLabelNode(fontNamed: "Jua-Regular")
                         plusOne.text = "- 1"
                         plusOne.fontColor = .red
@@ -259,9 +266,14 @@ class TutorialView: SKNode {
                             SKAction.fadeOut(withDuration: 1),
                             SKAction.run { [self] in
                                 rectangleOverlay.run(SKAction.fadeOut(withDuration: 1))
+                                
                                 rabbitCountLabel.removeFromParent()
                                 rabbitCountLabel.zPosition = blackAlphaBackground.zPosition - 1
                                 addChild(rabbitCountLabel)
+                                
+                                rabbitCounter.removeFromParent()
+                                rabbitCounter.zPosition = blackAlphaBackground.zPosition - 2
+                                addChild(rabbitCounter)
                                 
                                 foxAlpha.removeFromParent()
                                 var letStart = SKLabelNode(fontNamed: "Jua-Regular")

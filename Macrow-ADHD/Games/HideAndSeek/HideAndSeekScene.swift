@@ -27,7 +27,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var isTutorialOpened = true
     private var timerValue: Int = 600 // timer 10 menit
     
-    public var focusCount = 0 // focus point
+    public var focusCount = 30 // focus point
     public var isSpawning = false
     
     private var cancellables: Set<AnyCancellable> = []
@@ -247,10 +247,12 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             tutorialView.isHidden = true
             self.fox.isPaused = false
             self.rabbit.isPaused = false
+            self.focusBar.isPaused = false
         } else {
             tutorialView.isHidden = false
             self.fox.isPaused = true
             self.rabbit.isPaused = true
+            self.focusBar.isPaused = true
         }
     }
     
@@ -331,14 +333,14 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         openTutorial()
         
         focusBar.updateProgressBar(CGFloat(self.focusCount))
+        attentionPopup.update(currentTime)
         if tutorialView.isHidden {
             if self.focusCount < 50  {
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
-                attentionPopup.isHidden = false
-                if CACurrentMediaTime() - attentionPopup.lastMove > attentionPopup.moveRate {
-                    attentionPopup.update(currentTime)
-                    
+                if !attentionPopup.isShowing {
+                    attentionPopup.startShowPause()
+                    attentionPopup.isHidden = false
                 }
             } else if self.signalStatus != 4 {
                 self.fox.isPaused = true
@@ -350,6 +352,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 self.fox.isPaused = false
                 self.rabbit.isPaused = false
                 attentionPopup.isHidden = true
+                attentionPopup.stopShowPause()
             }
         }
     }
