@@ -16,6 +16,8 @@ class AttentionPopup: SKNode {
     private var bgOverlay = BackgroundHideAndSeek()
     private var circleOverlay = SKShapeNode()
     private var focusCat = SKSpriteNode(imageNamed: "focusCat")
+    private var focusCatNoHand = SKSpriteNode(imageNamed: "focusCatNoHand")
+    private var focusCatHand = SKSpriteNode(imageNamed: "focusCatHand")
     
     var isShowing = false
     private var moveTransform = CGAffineTransform(translationX: 1.0, y: 1.0)
@@ -54,7 +56,18 @@ class AttentionPopup: SKNode {
         //        focusCat.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         focusCat.position = circleOverlay.position
         focusCat.zPosition = 5
+        focusCat.alpha = 0
         addChild(focusCat)
+        
+        focusCatNoHand.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - focusCatNoHand.size.height)
+        //        focusCatNoHand.zPosition = 1
+        focusCatNoHand.alpha = 0
+        cropNode.addChild(focusCatNoHand)
+        
+        focusCatHand.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - focusCatNoHand.frame.height/2)
+        focusCatHand.zPosition = 5
+        focusCatHand.alpha = 0
+        addChild(focusCatHand)
         
         popUpText.text = "Follow Me!"
         popUpText.fontSize = 64
@@ -72,29 +85,47 @@ class AttentionPopup: SKNode {
     func startShowPause() {
         // Reset the circleOverlay size to a larger initial size
         circleOverlay.position = CGPoint(x: self.sceneFrame.midX, y: self.sceneFrame.midY)
-        focusCat.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 26)
+        focusCat.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25)
         let initialScale: CGFloat = 10 // You can adjust the scale as needed
         circleOverlay.setScale(initialScale)
         let scaleAction = SKAction.scale(to: 1.0, duration: 1) // Adjust duration as needed
-        
         // After the scale animation, start the bounce animation
         let sequence = SKAction.sequence([
             scaleAction,
             SKAction.wait(forDuration: 3),
+            SKAction.run { [self] in
+                self.focusCatNoHand.run(SKAction.fadeIn(withDuration: 1))
+                self.focusCatNoHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25), duration: 0.5))
+                
+            },
+            SKAction.wait(forDuration: 1.5),
+            SKAction.run { [self] in
+                self.focusCatHand.run(SKAction.fadeIn(withDuration: 1))
+            },
+            SKAction.wait(forDuration: 1),
+            
+            SKAction.run { [self] in
+                self.focusCatNoHand.run(SKAction.fadeOut(withDuration: 0.5))
+                self.focusCat.run(SKAction.fadeIn(withDuration: 0.5))
+                self.focusCatHand.run(SKAction.fadeOut(withDuration: 0.5))
+            },
+            SKAction.wait(forDuration: 2),
             SKAction.run { [ self] in
                 //            self?.startBounce()
                 self.popUpText.run(SKAction.fadeIn(withDuration: 0.3))
-                self.isShowing = true
             },
-            SKAction.wait(forDuration: 3),
-            SKAction.run {
-                self.popUpText.run(SKAction.fadeOut(withDuration: 0.3))
-            }
+//            SKAction.wait(forDuration: 3),
+
         ])
         
         // Run the sequence on the circleOverlay
         if !isShowing {
-            circleOverlay.run(sequence)
+            circleOverlay.run(sequence) {
+                SKAction.run {
+                    self.popUpText.run(SKAction.fadeOut(withDuration: 0.3))
+                }
+                self.isShowing = true
+            }
         }
         
         // Reset the focusCat position
