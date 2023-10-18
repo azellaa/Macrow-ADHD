@@ -92,40 +92,44 @@ class AttentionPopup: SKNode {
         // After the scale animation, start the bounce animation
         let sequence = SKAction.sequence([
             scaleAction,
-            SKAction.wait(forDuration: 3),
-            SKAction.run { [self] in
-                self.focusCatNoHand.run(SKAction.fadeIn(withDuration: 1))
-                self.focusCatNoHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25), duration: 0.5))
-                
-            },
-            SKAction.wait(forDuration: 1.5),
-            SKAction.run { [self] in
-                self.focusCatHand.run(SKAction.fadeIn(withDuration: 1))
-            },
-            SKAction.wait(forDuration: 1),
-            
-            SKAction.run { [self] in
-                self.focusCatNoHand.run(SKAction.fadeOut(withDuration: 0.5))
-                self.focusCat.run(SKAction.fadeIn(withDuration: 0.5))
-                self.focusCatHand.run(SKAction.fadeOut(withDuration: 0.5))
-            },
-            SKAction.wait(forDuration: 2),
-            SKAction.run { [ self] in
-                //            self?.startBounce()
-                self.popUpText.run(SKAction.fadeIn(withDuration: 0.3))
-            },
-//            SKAction.wait(forDuration: 3),
 
         ])
         
         // Run the sequence on the circleOverlay
         if !isShowing {
-            circleOverlay.run(sequence) {
+            circleOverlay.run(sequence)
+            self.run(SKAction.sequence([
+                SKAction.wait(forDuration: 3),
+                SKAction.run { [self] in
+                    self.focusCatNoHand.run(SKAction.fadeIn(withDuration: 1))
+                    self.focusCatNoHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25), duration: 0.5))
+                    
+                },
+                SKAction.wait(forDuration: 1.5),
+                SKAction.run { [self] in
+                    self.focusCatHand.run(SKAction.fadeIn(withDuration: 1))
+                },
+                SKAction.wait(forDuration: 1.2),
+                SKAction.run { [self] in
+    //                self.focusCatNoHand.run(SKAction.fadeOut(withDuration: 0.5))
+                    focusCatNoHand.alpha = 0
+                    focusCatHand.removeAllActions()
+                    focusCatHand.alpha = 0
+                    self.focusCat.run(SKAction.fadeIn(withDuration: 0.5))
+    //                self.focusCatHand.run(SKAction.fadeOut(withDuration: 0.5))
+                },
+                SKAction.wait(forDuration: 2),
+                SKAction.run { [ self] in
+                    //            self?.startBounce()
+                    self.popUpText.run(SKAction.fadeIn(withDuration: 0.3))
+                },
+                SKAction.wait(forDuration: 1),
+                
                 SKAction.run {
                     self.popUpText.run(SKAction.fadeOut(withDuration: 0.3))
+                    self.isShowing = true
                 }
-                self.isShowing = true
-            }
+            ]))
         }
         
         // Reset the focusCat position
