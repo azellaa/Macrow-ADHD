@@ -24,7 +24,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var rabbitCount = 0
     private var isTouched = false
-    private var isTutorialOpened = true
+    private var isTutorialOpened = false
     private var timerValue: Int = 600 // timer 10 menit
     
     public var focusCount = 30 // focus point
@@ -201,9 +201,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     func addNodes() {
         rabbitCountLabel.fontName = "AvenirNext-Bold"
-        rabbitCountLabel.fontSize = 25
+        rabbitCountLabel.fontSize = 30
         rabbitCountLabel.name = "rabbitCountLabel"
-        rabbitCountLabel.position = CGPoint(x: frame.width * 0.905, y: frame.height * 0.873)
+        rabbitCountLabel.position = CGPoint(x: frame.width * 0.835, y: frame.height * 0.873)
         rabbitCountLabel.zPosition = 15
         addChild(rabbitCountLabel)
         
@@ -216,7 +216,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         rabbitCounter = .init(imageNamed: "RabbitCounter")
 //        rabbitCounter.setScale(0.9)
 //        rabbitCounter.size.width = rabbitCounter.size.width * 1.05
-        rabbitCounter.position = CGPoint(x: frame.width * 0.885, y: frame.height * 0.89)
+        rabbitCounter.position = CGPoint(x: frame.width * 0.815, y: frame.height * 0.89)
         rabbitCounter.zPosition = 10
         addChild(rabbitCounter)
         
@@ -225,6 +225,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         focusBar.buildProgressBar()
         focusBar.position = CGPoint(x: frame.width * 0.47 , y: frame.height * 0.89)
         addChild(focusBar)
+        
         
         attentionPopup = AttentionPopup(sceneFrame: frame)
         attentionPopup.isHidden = true
@@ -246,10 +247,12 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             tutorialView.isHidden = true
             self.fox.isPaused = false
             self.rabbit.isPaused = false
+            self.focusBar.isPaused = false
         } else {
             tutorialView.isHidden = false
             self.fox.isPaused = true
             self.rabbit.isPaused = true
+            self.focusBar.isPaused = true
         }
     }
     
@@ -330,14 +333,14 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         openTutorial()
         
         focusBar.updateProgressBar(CGFloat(self.focusCount))
+        attentionPopup.update(currentTime)
         if tutorialView.isHidden {
             if self.focusCount < 50  {
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
-                attentionPopup.isHidden = false
-                if CACurrentMediaTime() - attentionPopup.lastMove > attentionPopup.moveRate {
-                    attentionPopup.update(currentTime)
-                    
+                if !attentionPopup.isShowing {
+                    attentionPopup.startShowPause()
+                    attentionPopup.isHidden = false
                 }
             } else if self.signalStatus != 4 {
                 self.fox.isPaused = true
@@ -349,6 +352,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 self.fox.isPaused = false
                 self.rabbit.isPaused = false
                 attentionPopup.isHidden = true
+                attentionPopup.stopShowPause()
             }
         }
     }
