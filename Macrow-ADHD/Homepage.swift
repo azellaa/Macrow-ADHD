@@ -15,7 +15,7 @@ struct Homepage: View {
     
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
-    @State private var scannedMwm: Set<MWMModel>?
+//    @State private var scannedMwm: Set<MWMModel>?
     @State private var isConnected: Bool = false
     
     var body: some View {
@@ -28,7 +28,7 @@ struct Homepage: View {
                 Text("deviceID: \(deviceID)")
                 
                 Button("Connect Device") {
-                    mwmObject.mwmDevice?.scanDevice()
+//                    mwmObject.mwmDevice?.scanDevice()
                     isShowingSheet.toggle()
                 }
                 
@@ -86,45 +86,12 @@ struct Homepage: View {
             }
         }
         
-        .onReceive(mwmObject.mwmDataPublisher, perform: { mwmData in
-            self.mwmData = mwmData
-            print(mwmData.attention)
-        })
-        .onReceive(mwmObject.scannedMwmPublisher, perform: { scannedDevice in
-            self.scannedMwm = scannedDevice
-        })
-        .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
-            if signalStatus == 0 {
-                self.isConnected = false
-            }
-            else {
-                self.isConnected = true
-                self.isShowingSheet = false
-            }
-        })
-        .sheet(isPresented: $isShowingSheet) {
-            List() {
-                if let scannedMwm = scannedMwm {
-                    ForEach(Array(scannedMwm), id: \.self){ device in
-                        Text(device.devName)
-                        Text(device.deviceID)
-                            .onTapGesture {
-                                
-                                mwmObject.mwmDevice?.connect(device.deviceID)
-                                devName = device.devName
-                                mfgID = device.mfgID
-                                deviceID = device.deviceID
-                            }
-                    }
-                }
-            }
-        }
         
         
     }
 
 }
-
-#Preview {
-    Homepage()
-}
+//
+//#Preview {
+//    Homepage()
+//}
