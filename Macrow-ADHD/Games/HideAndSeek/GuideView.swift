@@ -11,11 +11,10 @@ struct GuideView: View {
     
     var body: some View {
         ZStack {
-            Image("guideBg")
-                .resizable()
-                .scaledToFill()
+            Color("bgColor")
                 .edgesIgnoringSafeArea(.all)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
+           
             VStack {
                 HStack {
                     Image("backButton")
@@ -31,7 +30,9 @@ struct GuideView: View {
                         .font(.custom("Jua-Regular", size: 72))
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                    .foregroundColor(Color(red: 152 / 255, green: 105 / 255, blue: 30 / 255))                }
+                        .foregroundColor(Color("brownColor"))
+                    
+                }
                 
                 HStack {
                     Image(isNoSignalTapped ? "noSignalTapped" : "noSignal")
@@ -129,7 +130,7 @@ struct GuideView: View {
                             .font(.largeTitle)
                             .multilineTextAlignment(.center)
                             .fontWeight(.bold)
-                            .foregroundColor(Color(red: 152 / 255, green: 105 / 255, blue: 30 / 255))
+                            .foregroundColor(Color("brownColor"))
                             .frame(width: 975)
                     }
                 } .padding(.top, 10)
