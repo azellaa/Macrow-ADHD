@@ -13,8 +13,8 @@ struct Homepage: View {
     @State private var deviceID: String = ""
     @State var isShowingSheet = false
     
-//    @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
-//    @State private var mwmData: MWMData?
+    @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
+    @State private var mwmData: MWMData?
 //    @State private var scannedMwm: Set<MWMModel>?
     @State private var isConnected: Bool = false
     

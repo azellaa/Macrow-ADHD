@@ -30,7 +30,7 @@ struct GuideView: View {
                         .font(.custom("Jua-Regular", size: 72))
                         .font(.largeTitle)
                         .fontWeight(.bold)
-                        .foregroundColor(Color("brownColor"))
+                        .foregroundColor(Color("brownGuideColor"))
                     
                 }
                 
@@ -130,7 +130,7 @@ struct GuideView: View {
                             .font(.largeTitle)
                             .multilineTextAlignment(.center)
                             .fontWeight(.bold)
-                            .foregroundColor(Color("brownColor"))
+                            .foregroundColor(Color("brownGuideColor"))
                             .frame(width: 975)
                     }
                 } .padding(.top, 10)
