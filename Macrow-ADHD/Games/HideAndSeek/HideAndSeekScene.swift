@@ -278,7 +278,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 guard let `self` = self else { return }
                 let reveal = SKTransition.fade(withDuration: 0.5)
                 
-                let scene = NewPage()
+                let scene = GameOverPage()
                 view?.presentScene(scene, transition: reveal)
             }
         ]))

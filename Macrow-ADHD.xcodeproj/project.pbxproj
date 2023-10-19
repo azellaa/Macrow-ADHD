@@ -13,7 +13,7 @@
 		26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */; };
 		26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */; };
 		26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66F2ACBCC9700117948 /* NodeElement.swift */; };
-		26A9C6722ACBCCC600117948 /* NewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6712ACBCCC600117948 /* NewPage.swift */; };
+		26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6712ACBCCC600117948 /* GameOverPage.swift */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
 		3D2B49882ACBD2F100DA8827 /* FocusModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49862ACBD2F100DA8827 /* FocusModel.xcdatamodeld */; };
 		3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49892ACBD31100DA8827 /* DataController.swift */; };
@@ -22,14 +22,14 @@
 		3DB6137A2AC5C67100F0A792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB613792AC5C67100F0A792 /* Assets.xcassets */; };
 		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
 		B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */; };
+		B64EFB5E2AE13FF0002190EA /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64EFB5C2AE13FF0002190EA /* MWMInstance.swift */; };
+		B64EFB5F2AE13FF0002190EA /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64EFB5D2AE13FF0002190EA /* MWMModel.swift */; };
 		B66E747E2ADF7C4300CCA69A /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E747D2ADF7C4300CCA69A /* AppColor.swift */; };
 		B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D3E0D2AD347D900DDA7D4 /* GameData.swift */; };
 		B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */; };
 		B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
 		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
 		B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
-		B6BFD4762AE13C7E00D3AAB1 /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD4742AE13C7E00D3AAB1 /* MWMInstance.swift */; };
-		B6BFD4772AE13C7E00D3AAB1 /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD4752AE13C7E00D3AAB1 /* MWMModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,7 +39,7 @@
 		26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideAndSeekBackground.swift; sourceTree = "<group>"; };
 		26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughBackground.swift; sourceTree = "<group>"; };
 		26A9C66F2ACBCC9700117948 /* NodeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeElement.swift; sourceTree = "<group>"; };
-		26A9C6712ACBCCC600117948 /* NewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPage.swift; sourceTree = "<group>"; };
+		26A9C6712ACBCCC600117948 /* GameOverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverPage.swift; sourceTree = "<group>"; };
 		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		3D2B49872ACBD2F100DA8827 /* FocusModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FocusModel.xcdatamodel; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -50,6 +50,8 @@
 		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jua-Regular.ttf"; sourceTree = "<group>"; };
 		B61C40472ACF0B27007CCC72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B64EFB5C2AE13FF0002190EA /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
+		B64EFB5D2AE13FF0002190EA /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 		B66E747D2ADF7C4300CCA69A /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
 		B67D3E0D2AD347D900DDA7D4 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPopup.swift; sourceTree = "<group>"; };
@@ -60,8 +62,6 @@
 		B6BFD4672AE139D300D3AAB1 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
 		B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMWMSDK.a; sourceTree = "<group>"; };
 		B6BFD4732AE139E400D3AAB1 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		B6BFD4742AE13C7E00D3AAB1 /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
-		B6BFD4752AE13C7E00D3AAB1 /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,7 +88,7 @@
 			isa = PBXGroup;
 			children = (
 				26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */,
-				26A9C6712ACBCCC600117948 /* NewPage.swift */,
+				26A9C6712ACBCCC600117948 /* GameOverPage.swift */,
 				26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */,
 				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
 				26A9C6692ACBCC5F00117948 /* ProgressBar.swift */,
@@ -193,8 +193,8 @@
 		B6BFD46A2AE139D400D3AAB1 /* NeuroskyHelper */ = {
 			isa = PBXGroup;
 			children = (
-				B6BFD4742AE13C7E00D3AAB1 /* MWMInstance.swift */,
-				B6BFD4752AE13C7E00D3AAB1 /* MWMModel.swift */,
+				B64EFB5C2AE13FF0002190EA /* MWMInstance.swift */,
+				B64EFB5D2AE13FF0002190EA /* MWMModel.swift */,
 			);
 			name = NeuroskyHelper;
 			path = "../../../../../../../Desktop/Macrow-ADHD-tutoria/Macrow-ADHD/Utilities/NeuroskyHelper";
@@ -281,13 +281,13 @@
 				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
 				26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
-				26A9C6722ACBCCC600117948 /* NewPage.swift in Sources */,
+				26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */,
 				26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */,
-				B6BFD4762AE13C7E00D3AAB1 /* MWMInstance.swift in Sources */,
+				B64EFB5E2AE13FF0002190EA /* MWMInstance.swift in Sources */,
 				B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */,
 				26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */,
 				3D2B49882ACBD2F100DA8827 /* FocusModel.xcdatamodeld in Sources */,
-				B6BFD4772AE13C7E00D3AAB1 /* MWMModel.swift in Sources */,
+				B64EFB5F2AE13FF0002190EA /* MWMModel.swift in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
 				B66E747E2ADF7C4300CCA69A /* AppColor.swift in Sources */,
 			);

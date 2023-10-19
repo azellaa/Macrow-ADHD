@@ -8,9 +8,9 @@
 import SpriteKit
 import GameplayKit
 
-class NewPage: SKScene, SKPhysicsContactDelegate {
+class GameOverPage: SKScene, SKPhysicsContactDelegate {
     
-    var progressBar = ProgressBar()
+//    var progressBar = ProgressBar()
     var timerEnded = false
     var endImage: SKSpriteNode!
     // Access the shared rabbitCount
