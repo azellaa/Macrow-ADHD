@@ -14,6 +14,9 @@
 		26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */; };
 		26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66F2ACBCC9700117948 /* NodeElement.swift */; };
 		26A9C6722ACBCCC600117948 /* NewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6712ACBCCC600117948 /* NewPage.swift */; };
+		2A1020682ACED23D006D638D /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A1020672ACED23D006D638D /* GameData.swift */; };
+		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
+		2A563CFF2ADF8FFE00AFEF4C /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2A563CFE2ADF8FFE00AFEF4C /* Jua-Regular.ttf */; };
 		3D2B49882ACBD2F100DA8827 /* FocusModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49862ACBD2F100DA8827 /* FocusModel.xcdatamodeld */; };
 		3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49892ACBD31100DA8827 /* DataController.swift */; };
 		3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */; };
@@ -25,9 +28,6 @@
 		B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D3E0D2AD347D900DDA7D4 /* GameData.swift */; };
 		B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */; };
 		B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
-		B69C52EE2ACBD52A009B3493 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */; };
-		B69C52F22ACBD575009B3493 /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F12ACBD575009B3493 /* MWMInstance.swift */; };
-		B69C52F42ACBD62D009B3493 /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F32ACBD62D009B3493 /* MWMModel.swift */; };
 		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +39,10 @@
 		26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughBackground.swift; sourceTree = "<group>"; };
 		26A9C66F2ACBCC9700117948 /* NodeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeElement.swift; sourceTree = "<group>"; };
 		26A9C6712ACBCCC600117948 /* NewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPage.swift; sourceTree = "<group>"; };
+		2A1020672ACED23D006D638D /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		2A563CFE2ADF8FFE00AFEF4C /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jua-Regular.ttf"; sourceTree = "<group>"; };
+		2A563D002ADF907700AFEF4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		3D2B49872ACBD2F100DA8827 /* FocusModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = FocusModel.xcdatamodel; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -52,13 +56,6 @@
 		B67D3E0D2AD347D900DDA7D4 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
 		B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPopup.swift; sourceTree = "<group>"; };
 		B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadpieceIndicator.swift; sourceTree = "<group>"; };
-		B69C52EA2ACBD52A009B3493 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
-		B69C52EB2ACBD52A009B3493 /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDelegate.h; sourceTree = "<group>"; };
-		B69C52EC2ACBD52A009B3493 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
-		B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMWMSDK.a; sourceTree = "<group>"; };
-		B69C52F02ACBD554009B3493 /* Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		B69C52F12ACBD575009B3493 /* MWMInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
-		B69C52F32ACBD62D009B3493 /* MWMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 		B69C52F52ACBD9CC009B3493 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -67,7 +64,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69C52EE2ACBD52A009B3493 /* libMWMSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +84,7 @@
 				26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */,
 				26A9C6712ACBCCC600117948 /* NewPage.swift */,
 				26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */,
+				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
 				26A9C6692ACBCC5F00117948 /* ProgressBar.swift */,
 				26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */,
 				26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */,
@@ -130,7 +127,6 @@
 				B61C40472ACF0B27007CCC72 /* Info.plist */,
 				B61C40432ACF0AA8007CCC72 /* Resources */,
 				3D2B49852ACBD2C000DA8827 /* Data Model */,
-				B69C52F02ACBD554009B3493 /* Bridging-Header.h */,
 				B69C52E72ACBD392009B3493 /* Utilities */,
 				3D2B49832ACBD1B400DA8827 /* Games */,
 				3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */,
@@ -170,30 +166,8 @@
 		B69C52E72ACBD392009B3493 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
-				B69C52EF2ACBD545009B3493 /* NeuroskyHelper */,
-				B69C52E92ACBD52A009B3493 /* lib */,
 			);
 			path = Utilities;
-			sourceTree = "<group>";
-		};
-		B69C52E92ACBD52A009B3493 /* lib */ = {
-			isa = PBXGroup;
-			children = (
-				B69C52EA2ACBD52A009B3493 /* MWMEnum.h */,
-				B69C52EB2ACBD52A009B3493 /* MWMDelegate.h */,
-				B69C52EC2ACBD52A009B3493 /* MWMDevice.h */,
-				B69C52ED2ACBD52A009B3493 /* libMWMSDK.a */,
-			);
-			path = lib;
-			sourceTree = "<group>";
-		};
-		B69C52EF2ACBD545009B3493 /* NeuroskyHelper */ = {
-			isa = PBXGroup;
-			children = (
-				B69C52F12ACBD575009B3493 /* MWMInstance.swift */,
-				B69C52F32ACBD62D009B3493 /* MWMModel.swift */,
-			);
-			path = NeuroskyHelper;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,9 +241,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B69C52F22ACBD575009B3493 /* MWMInstance.swift in Sources */,
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
+				2A1020682ACED23D006D638D /* GameData.swift in Sources */,
 				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
+				2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */,
 				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
 				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
 				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
@@ -418,7 +393,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -429,6 +404,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -444,7 +420,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};
@@ -458,7 +434,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
@@ -468,6 +444,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -483,7 +460,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
 			};

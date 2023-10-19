@@ -15,6 +15,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbit = SKSpriteNode()
     private var fox = SKSpriteNode()
     private var rabbitCounter = SKSpriteNode()
+    private var connection = SKSpriteNode()
     private var focusBar = ProgressBar()
     private var bg = BackgroundHideAndSeek()
     private var rabbitPos = [NodeElement]()
@@ -32,7 +33,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var cancellables: Set<AnyCancellable> = []
     
-    var mwmObject = MWMInstance.shared
+//    var mwmObject = MWMInstance.shared
     
     private var listFocusData: [Double] = [Double]()
     
@@ -74,35 +75,39 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             }
         }
         
-        mwmObject.mwmDataPublisher
-            .sink { [weak self] mwmData in
-                // Handle the emitted MWMData here
-                self?.handleMWMData(mwmData)
-                
-            }
-            .store(in: &cancellables)
-        mwmObject.signalStatusPublisher
-            .sink { signalStatus in
-                self.signalStatus = signalStatus
-                print("Signal: \(self.signalStatus)")
-            }
-            .store(in: &cancellables)
+//        mwmObject.mwmDataPublisher
+//            .sink { [weak self] mwmData in
+//                // Handle the emitted MWMData here
+//                self?.handleMWMData(mwmData)
+//                
+//            }
+//            .store(in: &cancellables)
+//        mwmObject.signalStatusPublisher
+//            .sink { signalStatus in
+//                self.signalStatus = signalStatus
+//                print("Signal: \(self.signalStatus)")
+//            }
+//            .store(in: &cancellables)
+        
+    
+              
+            
     }
     
     func tutorialIsOpen(_ tutorialView: TutorialView, isTutorialOpened: Bool) {
         self.isTutorialOpened = isTutorialOpened
     }
     
-    private func handleMWMData(_ mwmData: MWMData) {
-        // Update your UI or perform other actions with the received data
-        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
-        focusCount = Int(mwmData.attention)
-        if !isCompleted {
-            listFocusData.append(Double(focusCount))
-        }
-        // Example: Update a UILabel
-        // self.yourLabel.text = "Poor Signal: \(mwmData.poorSignal), Attention: \(mwmData.attention), Meditation: \(mwmData.meditation)"
-    }
+//    private func handleMWMData(_ mwmData: MWMData) {
+//        // Update your UI or perform other actions with the received data
+//        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
+//        focusCount = Int(mwmData.attention)
+//        if !isCompleted {
+//            listFocusData.append(Double(focusCount))
+//        }
+//        // Example: Update a UILabel
+//        // self.yourLabel.text = "Poor Signal: \(mwmData.poorSignal), Attention: \(mwmData.attention), Meditation: \(mwmData.meditation)"
+//    }
     
     func spawnNextEntity() {
         isSpawning = false
@@ -220,6 +225,12 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         rabbitCounter.zPosition = 10
         addChild(rabbitCounter)
         
+        connection = .init(imageNamed: "nosignal")
+        connection.position = CGPoint(x: frame.width * 0.930, y: frame.height * 0.89)
+        connection.size = CGSize(width: 83, height: 79)
+        connection.zPosition = 10
+        addChild(connection)
+        
         focusBar.getSceneFrame(sceneFrame: frame)
         focusBar.setScale(0.9)
         focusBar.buildProgressBar()
@@ -232,15 +243,18 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         attentionPopup.zPosition = 20
         addChild(attentionPopup)
         
-        headpieceStatus.getSceneFrame(sceneFrame: frame)
-        headpieceStatus.buildIndicator()
-        addChild(headpieceStatus)
+//        headpieceStatus.getSceneFrame(sceneFrame: frame)
+//        headpieceStatus.buildIndicator()
+//        addChild(headpieceStatus)
+        
+        
         
     }
     
     func updateRabbitCountLabel() {
         rabbitCountLabel.text = "x\(rabbitCount)"
     }
+    
     
     func openTutorial() {
         if !isTutorialOpened {
@@ -262,7 +276,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         run(SKAction.sequence([
             SKAction.run { [weak self] in
                 guard let `self` = self else { return }
-                let reveal = SKTransition.flipHorizontal(withDuration: 0.5)
+                let reveal = SKTransition.fade(withDuration: 0.5)
                 
                 let scene = NewPage()
                 view?.presentScene(scene, transition: reveal)
@@ -288,6 +302,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     rabbit.removeAllActions()
                     rabbitCount += 1
                     
+                    // Update rabbitCount in GameData
+                    GameData.rabbitCount = rabbitCount
+                    
                     // Save the updated rabbit count to Core Data
                     dataController.addFocus(value: Double(rabbitCount), gameID: 1, context: context)
 
@@ -302,6 +319,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     fox.texture = SKTexture(imageNamed: "Fox_Tap")
                     fox.removeAllActions()
                     rabbitCount -= 1
+                    
+                    // Update rabbitCount in GameData
+                    GameData.rabbitCount = rabbitCount
+                                    
                     updateRabbitCountLabel()
                     isTouched.toggle()
                     
