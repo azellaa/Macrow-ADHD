@@ -8,6 +8,7 @@
 import SpriteKit
 import GameplayKit
 
+
 class NewPage: SKScene, SKPhysicsContactDelegate {
     
     var progressBar = ProgressBar()

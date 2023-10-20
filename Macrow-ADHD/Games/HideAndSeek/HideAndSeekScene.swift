@@ -26,7 +26,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = false
-    private var timerValue: Int = 600 // timer 10 menit
+    private var timerValue: Int = 10 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -42,7 +42,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var attentionPopup = AttentionPopup()
     private var headpieceStatus = HeadpieceIndicator()
     private var signalStatus: Int = 4
-    var dataController: DataController!
+    var dataController: DataController = DataController()
     var context: NSManagedObjectContext!
     
     
@@ -271,7 +271,12 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func timesUpFunc() {
-//        dataController.fetchAndPrintFocusData() // Fetch and print the data when the timer ends
+        do {
+            dataController.fetchAndPrintFocusData()
+        } // Fetch and print the data when the timer ends
+        catch {
+            print(error.localizedDescription)
+        }
         
         run(SKAction.sequence([
             SKAction.run { [weak self] in
@@ -289,8 +294,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         // Initialize the data controller and obtain the managed object context
-        dataController = DataController()
-        let context = DataController().container.viewContext
+//        dataController = DataController()
+        let context = dataController.container.viewContext
         
         for touch in touches {
             let location = touch.location(in: self)
