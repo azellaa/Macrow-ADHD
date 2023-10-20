@@ -64,7 +64,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     func spawnNextEntity() {
         isSpawning = false
         isTouched.toggle()
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
             self?.spawnEntity()
         }
     }
@@ -102,7 +102,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             // Define a sequence of actions
             let sequence = SKAction.sequence([
                 slideUpAction,
-                SKAction.wait(forDuration: 5.0),
+                SKAction.wait(forDuration: 2.0),
                 slideDownAction,
                 SKAction.removeFromParent(),
                 spawnCompletionAction
