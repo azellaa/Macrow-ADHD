@@ -9,6 +9,7 @@ import SwiftUI
 import _SpriteKit_SwiftUI
 
 struct ContentView: View {
+//    @Environment (\.managedObjectContext) var managedObjContext
     var body: some View {
         NavigationStack {
             HomeView()
@@ -16,6 +17,7 @@ struct ContentView: View {
     }
 }
 
-#Preview {
-    ContentView()
-}
+//#Preview {
+//    ContentView()
+//}
+

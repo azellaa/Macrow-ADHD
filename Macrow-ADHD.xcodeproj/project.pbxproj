@@ -13,7 +13,6 @@
 		268DE24A2ADF85500097E3F2 /* HomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268DE2492ADF85500097E3F2 /* HomeItemView.swift */; };
 		268DE24C2ADF85FC0097E3F2 /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268DE24B2ADF85FC0097E3F2 /* GameView.swift */; };
 		268DE24E2ADF87230097E3F2 /* GameDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268DE24D2ADF87230097E3F2 /* GameDescriptionView.swift */; };
-		268DE2522ADF905E0097E3F2 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 268DE2512ADF905E0097E3F2 /* Jua-Regular.ttf */; };
 		26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */; };
 		26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */; };
 		26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6692ACBCC5F00117948 /* ProgressBar.swift */; };
@@ -22,10 +21,31 @@
 		26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66F2ACBCC9700117948 /* NodeElement.swift */; };
 		26A9C6722ACBCCC600117948 /* NewPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6712ACBCCC600117948 /* NewPage.swift */; };
 		26ECF09D2AE0CC71005F06E1 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */; };
+		26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6712ACBCCC600117948 /* GameOverPage.swift */; };
+		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
+		3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49892ACBD31100DA8827 /* DataController.swift */; };
 		3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */; };
 		3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613772AC5C66F00F0A792 /* ContentView.swift */; };
 		3DB6137A2AC5C67100F0A792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB613792AC5C67100F0A792 /* Assets.xcassets */; };
 		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
+		542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88B2AE58F4A0024387C /* Array+average.swift */; };
+		542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */; };
+		542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8972AE596D80024387C /* Report+CoreDataClass.swift */; };
+		542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */; };
+		542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD89F2AE59E230024387C /* Game+GetAnimal.swift */; };
+		542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8A12AE59E5A0024387C /* Game+CoreDataClass.swift */; };
+		542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8A22AE59E5A0024387C /* Game+CoreDataProperties.swift */; };
+		54A4217A2AE25E4200C51A6C /* AnimalTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */; };
+		54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */; };
+		54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F22AE5B1F6003D874D /* MWMModel.swift */; };
+		B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */; };
+		B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B64EFB602AE22B5A002190EA /* ReportModel.xcdatamodeld */; };
+		B66E747E2ADF7C4300CCA69A /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E747D2ADF7C4300CCA69A /* AppColor.swift */; };
+		B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D3E0D2AD347D900DDA7D4 /* GameData.swift */; };
+		B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */; };
+		B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
+		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
+		B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,11 +65,37 @@
 		26A9C66F2ACBCC9700117948 /* NodeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeElement.swift; sourceTree = "<group>"; };
 		26A9C6712ACBCCC600117948 /* NewPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPage.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
+		26A9C6712ACBCCC600117948 /* GameOverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverPage.swift; sourceTree = "<group>"; };
+		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macrow_ADHDApp.swift; sourceTree = "<group>"; };
 		3DB613772AC5C66F00F0A792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DB613792AC5C67100F0A792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		542DD88B2AE58F4A0024387C /* Array+average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+average.swift"; sourceTree = "<group>"; };
+		542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+GetFocusPause.swift"; sourceTree = "<group>"; };
+		542DD8972AE596D80024387C /* Report+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataClass.swift"; sourceTree = "<group>"; };
+		542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		542DD89F2AE59E230024387C /* Game+GetAnimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+GetAnimal.swift"; sourceTree = "<group>"; };
+		542DD8A12AE59E5A0024387C /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
+		542DD8A22AE59E5A0024387C /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeEnum.swift; sourceTree = "<group>"; };
+		54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
+		54F6B0F22AE5B1F6003D874D /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
+		B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jua-Regular.ttf"; sourceTree = "<group>"; };
+		B61C40472ACF0B27007CCC72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B64EFB612AE22B5A002190EA /* ReportModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReportModel.xcdatamodel; sourceTree = "<group>"; };
+		B66E747D2ADF7C4300CCA69A /* AppColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppColor.swift; sourceTree = "<group>"; };
+		B67D3E0D2AD347D900DDA7D4 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
+		B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPopup.swift; sourceTree = "<group>"; };
+		B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadpieceIndicator.swift; sourceTree = "<group>"; };
+		B69C52F52ACBD9CC009B3493 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		B6BFD4652AE139D300D3AAB1 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
+		B6BFD4662AE139D300D3AAB1 /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDelegate.h; sourceTree = "<group>"; };
+		B6BFD4672AE139D300D3AAB1 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
+		B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMWMSDK.a; sourceTree = "<group>"; };
+		B6BFD4732AE139E400D3AAB1 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +103,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,12 +124,30 @@
 				26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */,
 				26A9C6712ACBCCC600117948 /* NewPage.swift */,
 				26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */,
+				26A9C6712ACBCCC600117948 /* GameOverPage.swift */,
+				26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */,
+				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
 				26A9C6692ACBCC5F00117948 /* ProgressBar.swift */,
 				26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */,
 				26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */,
 				26A9C66F2ACBCC9700117948 /* NodeElement.swift */,
+				B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */,
+				B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */,
+				B67D3E0D2AD347D900DDA7D4 /* GameData.swift */,
 			);
 			path = HideAndSeek;
+			sourceTree = "<group>";
+		};
+		3D2B49852ACBD2C000DA8827 /* Data Model */ = {
+			isa = PBXGroup;
+			children = (
+				542DD8A72AE59F280024387C /* Animal */,
+				542DD8A62AE59EA50024387C /* Report */,
+				542DD8A52AE59E9A0024387C /* Game */,
+				3D2B49892ACBD31100DA8827 /* DataController.swift */,
+				B64EFB602AE22B5A002190EA /* ReportModel.xcdatamodeld */,
+			);
+			path = "Data Model";
 			sourceTree = "<group>";
 		};
 		3DB613692AC5C66F00F0A792 = {
@@ -106,10 +171,15 @@
 			children = (
 				268DE2512ADF905E0097E3F2 /* Jua-Regular.ttf */,
 				268DE2502ADF8BC10097E3F2 /* Info.plist */,
+				B61C40472ACF0B27007CCC72 /* Info.plist */,
+				B61C40432ACF0AA8007CCC72 /* Resources */,
+				B6BFD4732AE139E400D3AAB1 /* Bridging-Header.h */,
+				3D2B49852ACBD2C000DA8827 /* Data Model */,
+				B69C52E72ACBD392009B3493 /* Utilities */,
 				3D2B49832ACBD1B400DA8827 /* Games */,
 				3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */,
 				3DB613772AC5C66F00F0A792 /* ContentView.swift */,
-				3DB613792AC5C67100F0A792 /* Assets.xcassets */,
+				B69C52F52ACBD9CC009B3493 /* Homepage.swift */,
 				3DB6137B2AC5C67100F0A792 /* Preview Content */,
 				268DE2432ADF756C0097E3F2 /* HomeView.swift */,
 				268DE2452ADF786B0097E3F2 /* ButtonView.swift */,
@@ -128,6 +198,90 @@
 				3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		542DD88A2AE58F310024387C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				542DD88B2AE58F4A0024387C /* Array+average.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		542DD8A52AE59E9A0024387C /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				542DD8A12AE59E5A0024387C /* Game+CoreDataClass.swift */,
+				542DD8A22AE59E5A0024387C /* Game+CoreDataProperties.swift */,
+				542DD89F2AE59E230024387C /* Game+GetAnimal.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		542DD8A62AE59EA50024387C /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				542DD8972AE596D80024387C /* Report+CoreDataClass.swift */,
+				542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */,
+				542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		542DD8A72AE59F280024387C /* Animal */ = {
+			isa = PBXGroup;
+			children = (
+				54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */,
+			);
+			path = Animal;
+			sourceTree = "<group>";
+		};
+		54F6B0F02AE5B1F6003D874D /* NeuroskyHelper */ = {
+			isa = PBXGroup;
+			children = (
+				54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */,
+				54F6B0F22AE5B1F6003D874D /* MWMModel.swift */,
+			);
+			path = NeuroskyHelper;
+			sourceTree = "<group>";
+		};
+		B61C40432ACF0AA8007CCC72 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B61C40442ACF0AB3007CCC72 /* Fonts */,
+				3DB613792AC5C67100F0A792 /* Assets.xcassets */,
+				B66E747D2ADF7C4300CCA69A /* AppColor.swift */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B61C40442ACF0AB3007CCC72 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B69C52E72ACBD392009B3493 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				54F6B0F02AE5B1F6003D874D /* NeuroskyHelper */,
+				542DD88A2AE58F310024387C /* Extension */,
+				B6BFD4642AE139D300D3AAB1 /* lib */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		B6BFD4642AE139D300D3AAB1 /* lib */ = {
+			isa = PBXGroup;
+			children = (
+				B6BFD4652AE139D300D3AAB1 /* MWMEnum.h */,
+				B6BFD4662AE139D300D3AAB1 /* MWMDelegate.h */,
+				B6BFD4672AE139D300D3AAB1 /* MWMDevice.h */,
+				B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */,
+			);
+			path = lib;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -189,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				268DE2522ADF905E0097E3F2 /* Jua-Regular.ttf in Resources */,
+				B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */,
 				3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */,
 				3DB6137A2AC5C67100F0A792 /* Assets.xcassets in Resources */,
 			);
@@ -217,6 +372,33 @@
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
 				268DE2462ADF786B0097E3F2 /* ButtonView.swift in Sources */,
 				26ECF09D2AE0CC71005F06E1 /* GameInfo.swift in Sources */,
+				54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */,
+				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
+				542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */,
+				B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */,
+				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
+				2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */,
+				542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */,
+				542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */,
+				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
+				542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */,
+				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
+				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
+				B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */,
+				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
+				26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */,
+				54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */,
+				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
+				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
+				26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */,
+				26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */,
+				B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */,
+				54A4217A2AE25E4200C51A6C /* AnimalTypeEnum.swift in Sources */,
+				26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */,
+				542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */,
+				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
+				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,
+				B66E747E2ADF7C4300CCA69A /* AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -350,24 +532,38 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = ZVGYNW47J9;
+				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
+				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need to access bluetooth in order connecting to Neurosky headpiece";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-ADHD";
+				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-ADHD-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -379,24 +575,37 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = ZVGYNW47J9;
+				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need to access bluetooth in order connecting to Neurosky headpiece";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-ADHD";
+				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-ADHD-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
@@ -422,6 +631,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		B64EFB602AE22B5A002190EA /* ReportModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				B64EFB612AE22B5A002190EA /* ReportModel.xcdatamodel */,
+			);
+			currentVersion = B64EFB612AE22B5A002190EA /* ReportModel.xcdatamodel */;
+			path = ReportModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 3DB6136A2AC5C66F00F0A792 /* Project object */;
 }
