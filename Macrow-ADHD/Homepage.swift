@@ -8,14 +8,11 @@
 import SwiftUI
 
 struct Homepage: View {
-    @State private var devName: String = ""
-    @State private var mfgID: String = ""
-    @State private var deviceID: String = ""
     @State var isShowingSheet = false
     
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
-//    @State private var scannedMwm: Set<MWMModel>?
+    @State private var scannedMwm: Set<MWMModel>?
     @State private var isConnected: Bool = false
     
     var body: some View {
@@ -23,12 +20,12 @@ struct Homepage: View {
             VStack {
                 Text("Hello from SwiftUI")
                 
-                Text("devName: \(devName)")
-                Text("mfgID: \(mfgID)")
-                Text("deviceID: \(deviceID)")
+                Text("devName: \(mwmObject.devName)")
+                Text("mfgID: \(mwmObject.mfgID)")
+                Text("deviceID: \(mwmObject.deviceID)")
                 
                 Button("Connect Device") {
-//                    mwmObject.mwmDevice?.scanDevice()
+                    mwmObject.mwmDevice?.scanDevice()
                     isShowingSheet.toggle()
                 }
                 
@@ -85,8 +82,36 @@ struct Homepage: View {
                 
             }
         }
-        
-        
+        .onReceive(mwmObject.mwmDataPublisher, perform: { mwmData in
+            self.mwmData = mwmData
+//            print(mwmData.attention)
+        })
+        .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
+            if signalStatus == 0 {
+                self.isConnected = false
+            }
+            else {
+                self.isConnected = true
+                self.isShowingSheet = false
+            }
+        })
+        .sheet(isPresented: $isShowingSheet) {
+            List() {
+                if let scannedMwm = scannedMwm {
+                    ForEach(Array(scannedMwm), id: \.self){ device in
+                        Text(device.devName)
+                        Text(device.deviceID)
+//                            .onTapGesture {
+//                                
+//                                mwmObject.mwmDevice?.connect(device.deviceID)
+//                                devName = device.devName
+//                                mfgID = device.mfgID
+//                                deviceID = device.deviceID
+//                            }
+                    }
+                }
+            }
+        }
         
     }
 

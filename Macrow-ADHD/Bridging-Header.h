@@ -7,3 +7,5 @@
 
 
 #import "MWMDevice.h"
+#import "MWMDelegate.h"
+#import "MWMEnum.h"

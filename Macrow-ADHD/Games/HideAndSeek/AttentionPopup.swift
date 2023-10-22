@@ -136,6 +136,18 @@ class AttentionPopup: SKNode {
     }
     
     func stopShowPause() {
+        self.removeAllActions()
+        focusCat.position = circleOverlay.position
+        focusCat.alpha = 0
+        
+        focusCatNoHand.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - focusCatNoHand.size.height)
+        focusCatNoHand.alpha = 0
+        
+        focusCatHand.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - focusCatNoHand.frame.height/2)
+        focusCatHand.alpha = 0
+        
+        popUpText.alpha = 0
+        
         self.isShowing = false
     }
     
