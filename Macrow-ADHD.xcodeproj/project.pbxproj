@@ -27,9 +27,9 @@
 		542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD89F2AE59E230024387C /* Game+GetAnimal.swift */; };
 		542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8A12AE59E5A0024387C /* Game+CoreDataClass.swift */; };
 		542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8A22AE59E5A0024387C /* Game+CoreDataProperties.swift */; };
-		54A421732AE25A0B00C51A6C /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421702AE2595500C51A6C /* MWMModel.swift */; };
-		54A421742AE25A0E00C51A6C /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421712AE2595500C51A6C /* MWMInstance.swift */; };
 		54A4217A2AE25E4200C51A6C /* AnimalTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */; };
+		54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */; };
+		54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F22AE5B1F6003D874D /* MWMModel.swift */; };
 		B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */; };
 		B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B64EFB602AE22B5A002190EA /* ReportModel.xcdatamodeld */; };
 		B66E747E2ADF7C4300CCA69A /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E747D2ADF7C4300CCA69A /* AppColor.swift */; };
@@ -62,9 +62,9 @@
 		542DD89F2AE59E230024387C /* Game+GetAnimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+GetAnimal.swift"; sourceTree = "<group>"; };
 		542DD8A12AE59E5A0024387C /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
 		542DD8A22AE59E5A0024387C /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		54A421702AE2595500C51A6C /* MWMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
-		54A421712AE2595500C51A6C /* MWMInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
 		54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeEnum.swift; sourceTree = "<group>"; };
+		54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
+		54F6B0F22AE5B1F6003D874D /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 		B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jua-Regular.ttf"; sourceTree = "<group>"; };
 		B61C40472ACF0B27007CCC72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B64EFB612AE22B5A002190EA /* ReportModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReportModel.xcdatamodel; sourceTree = "<group>"; };
@@ -207,14 +207,13 @@
 			path = Animal;
 			sourceTree = "<group>";
 		};
-		54A421722AE2595E00C51A6C /* NeuroskyHelper */ = {
+		54F6B0F02AE5B1F6003D874D /* NeuroskyHelper */ = {
 			isa = PBXGroup;
 			children = (
-				54A421712AE2595500C51A6C /* MWMInstance.swift */,
-				54A421702AE2595500C51A6C /* MWMModel.swift */,
+				54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */,
+				54F6B0F22AE5B1F6003D874D /* MWMModel.swift */,
 			);
-			name = NeuroskyHelper;
-			path = lib/NeuroskyHelper;
+			path = NeuroskyHelper;
 			sourceTree = "<group>";
 		};
 		B61C40432ACF0AA8007CCC72 /* Resources */ = {
@@ -238,8 +237,8 @@
 		B69C52E72ACBD392009B3493 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				54F6B0F02AE5B1F6003D874D /* NeuroskyHelper */,
 				542DD88A2AE58F310024387C /* Extension */,
-				54A421722AE2595E00C51A6C /* NeuroskyHelper */,
 				B6BFD4642AE139D300D3AAB1 /* lib */,
 			);
 			path = Utilities;
@@ -327,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */,
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
 				542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */,
 				B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */,
@@ -338,11 +338,10 @@
 				542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */,
 				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
 				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
-				54A421742AE25A0E00C51A6C /* MWMInstance.swift in Sources */,
 				B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */,
 				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
-				54A421732AE25A0B00C51A6C /* MWMModel.swift in Sources */,
 				26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */,
+				54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */,
 				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
 				26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */,

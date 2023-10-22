@@ -9,15 +9,20 @@ import Foundation
 import Combine
 
 class MWMInstance: NSObject, MWMDelegate, ObservableObject {
+    
+    
     public var mwmDevice = MWMDevice.sharedInstance()
     
-    private var scannedDevice: Set<MWMModel> = []
+//    private var scannedDevice: Set<MWMModel> = []
     private var mwmDataSubject = PassthroughSubject<MWMData, Never>()
-    private var scannedDeviceDataSubject = PassthroughSubject<Set<MWMModel>, Never>()
+//    private var scannedDeviceDataSubject = PassthroughSubject<Set<MWMModel>, Never>()
     private var signalStatusSubject = PassthroughSubject<Int, Never>()
     
     public static let shared = MWMInstance()
     
+    public var devName: String = ""
+    public var mfgID: String = ""
+    public var deviceID: String = ""
     
     override init() {
         super.init()
@@ -25,20 +30,24 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     }
     func deviceFound(_ devName: String!, mfgID: String!, deviceID: String!) {
         
-        scannedDevice.insert(MWMModel(devName: devName, mfgID: mfgID, deviceID: deviceID))
+//        scannedDevice.insert(MWMModel(devName: devName, mfgID: mfgID, deviceID: deviceID))
         
-        for device in scannedDevice {
-            print(device.devName)
-            print(device.deviceID)
-            print(device.mfgID)
-        }
-        scannedDeviceDataSubject.send(scannedDevice)
+//        for device in scannedDevice {
+//            print(device.devName)
+//            print(device.deviceID)
+//            print(device.mfgID)
+//        }
+//        scannedDeviceDataSubject.send(scannedDevice)
         mwmDevice?.connect(deviceID)
+        
+        self.devName = devName
+        self.mfgID = mfgID
+        self.deviceID = deviceID
     }
     
     func didConnect() {
         print("didConnect");
-        scannedDevice.removeAll()
+//        scannedDevice.removeAll()
         self.mwmDevice?.enableLogging(withOptions: 1)
         signalStatusSubject.send(1)
     }
@@ -77,13 +86,15 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
         return signalStatusSubject.eraseToAnyPublisher()
     }
     
-    var scannedMwmPublisher: AnyPublisher<Set<MWMModel>, Never> {
-        return scannedDeviceDataSubject.eraseToAnyPublisher()
-    }
+//    var scannedMwmPublisher: AnyPublisher<Set<MWMModel>, Never> {
+//        return scannedDeviceDataSubject.eraseToAnyPublisher()
+//    }
     
     func exceptionMessage(_ eventType: TGBleExceptionEvent) {
-        print("Error: \(eventType.rawValue)")
+        print("Error: \(eventType.rawValue) ")
     }
+    
+    
 }
 
 class MWMData: ObservableObject {
