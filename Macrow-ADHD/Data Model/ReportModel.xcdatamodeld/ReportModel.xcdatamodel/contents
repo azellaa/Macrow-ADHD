@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22222" systemVersion="22G120" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="Animal" representedClassName="Animal" syncable="YES" codeGenerationType="class">
+        <attribute name="animalId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="appearTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="tapTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="animalToAnimalType" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AnimalType" inverseName="animalTypeToAnimal" inverseEntity="AnimalType"/>
+        <relationship name="animalToGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameToAnimal" inverseEntity="Game"/>
+    </entity>
+    <entity name="AnimalType" representedClassName="AnimalType" syncable="YES" codeGenerationType="class">
+        <attribute name="animalTypeId" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="animalTypeName" optional="YES" attributeType="String"/>
+        <relationship name="animalTypeToAnimal" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Animal" inverseName="animalToAnimalType" inverseEntity="Animal"/>
+    </entity>
+    <entity name="Focus" representedClassName="Focus" syncable="YES" codeGenerationType="class">
+        <attribute name="focusId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="time" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="value" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="focusToReport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" inverseName="reportToFocus" inverseEntity="Report"/>
+    </entity>
+    <entity name="Game" representedClassName="Game" syncable="YES">
+        <attribute name="gameId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="gameName" optional="YES" attributeType="String"/>
+        <attribute name="level" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="gameToAnimal" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Animal" inverseName="animalToGame" inverseEntity="Animal"/>
+        <relationship name="gameToReport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" inverseName="reportToGame" inverseEntity="Report"/>
+    </entity>
+    <entity name="Pause" representedClassName="Pause" syncable="YES" codeGenerationType="class">
+        <attribute name="endTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="pauseId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="startTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="pauseToReport" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Report" inverseName="reportToPause" inverseEntity="Report"/>
+    </entity>
+    <entity name="Report" representedClassName="Report" syncable="YES">
+        <attribute name="avgAttention" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="reportId" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="timestamp" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="reportToFocus" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Focus" inverseName="focusToReport" inverseEntity="Focus"/>
+        <relationship name="reportToGame" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Game" inverseName="gameToReport" inverseEntity="Game"/>
+        <relationship name="reportToPause" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Pause" inverseName="pauseToReport" inverseEntity="Pause"/>
+    </entity>
+</model>
