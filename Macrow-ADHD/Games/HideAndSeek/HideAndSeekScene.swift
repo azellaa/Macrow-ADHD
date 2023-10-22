@@ -35,7 +35,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var listFocusData: [Double] = [Double]()
     
-    var mwmObject = MWMInstance.shared
+    //MARK: Uncomment if using neurosky
+//    var mwmObject = MWMInstance.shared
     
     public var isCompleted = false
     private var attentionPopup = AttentionPopup()
@@ -101,17 +102,17 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     
-    
-    private func handleMWMData(_ mwmData: MWMData) {
-        // Update your UI or perform other actions with the received data
-        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
-        focusCount = Int(mwmData.attention)
-        
-        if signalStatus == 4 && !isCompleted{
-            dataController.addFocus(value: Int16(self.focusCount), time: Date(), report: self.reportEntity, context: self.context)
-            listFocusData.append(Double(focusCount))
-        }
-    }
+    //MARK: Uncomment if using neurosky
+//    private func handleMWMData(_ mwmData: MWMData) {
+//        // Update your UI or perform other actions with the received data
+//        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
+//        focusCount = Int(mwmData.attention)
+//        
+//        if signalStatus == 4 && !isCompleted{
+//            dataController.addFocus(value: Int16(self.focusCount), time: Date(), report: self.reportEntity, context: self.context)
+//            listFocusData.append(Double(focusCount))
+//        }
+//    }
     
     func tutorialIsOpen(_ tutorialView: TutorialView, isTutorialOpened: Bool) {
         self.isTutorialOpened = isTutorialOpened
@@ -359,19 +360,20 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     fileprivate func startMWMPublisher() {
-        mwmObject.mwmDataPublisher
-            .sink { [weak self] mwmData in
-                // Handle the emitted MWMData here
-                self?.handleMWMData(mwmData)
-                
-            }
-            .store(in: &cancellables)
-        mwmObject.signalStatusPublisher
-            .sink { signalStatus in
-                self.signalStatus = signalStatus
-                print("Signal: \(self.signalStatus)")
-            }
-            .store(in: &cancellables)
+        //MARK: Uncomment if using neurosky
+//        mwmObject.mwmDataPublisher
+//            .sink { [weak self] mwmData in
+//                // Handle the emitted MWMData here
+//                self?.handleMWMData(mwmData)
+//                
+//            }
+//            .store(in: &cancellables)
+//        mwmObject.signalStatusPublisher
+//            .sink { signalStatus in
+//                self.signalStatus = signalStatus
+//                print("Signal: \(self.signalStatus)")
+//            }
+//            .store(in: &cancellables)
     }
     
     override func update(_ currentTime: TimeInterval) {

@@ -9,9 +9,9 @@ import SwiftUI
 
 struct Homepage: View {
     @State var isShowingSheet = false
-    
-    @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
-    @State private var mwmData: MWMData?
+    //MARK: Uncomment if using neurosky
+//    @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
+//    @State private var mwmData: MWMData?
     @State private var scannedMwm: Set<MWMModel>?
     @State private var isConnected: Bool = false
     
@@ -20,53 +20,54 @@ struct Homepage: View {
             VStack {
                 Text("Hello from SwiftUI")
                 
-                Text("devName: \(mwmObject.devName)")
-                Text("mfgID: \(mwmObject.mfgID)")
-                Text("deviceID: \(mwmObject.deviceID)")
+                //MARK: Uncomment if using neurosky
+//                Text("devName: \(mwmObject.devName)")
+//                Text("mfgID: \(mwmObject.mfgID)")
+//                Text("deviceID: \(mwmObject.deviceID)")
+//                
+//                Button("Connect Device") {
+//                    mwmObject.mwmDevice?.scanDevice()
+//                    isShowingSheet.toggle()
+//                }
                 
-                Button("Connect Device") {
-                    mwmObject.mwmDevice?.scanDevice()
-                    isShowingSheet.toggle()
-                }
-                
-                if let mwmData = mwmData {
-                    Text("Poor Signal: \(mwmData.poorSignal)")
-                    Text("Attention: \(mwmData.attention)")
-                    Text("Meditation: \(mwmData.meditation)")
-                    HStack {
-                        switch mwmData.poorSignal {
-                        case 1...66:
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                        case 67...132:
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                        case 133...199:
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                        case 0:
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                            Rectangle()
-                                .frame(width: 10,  height: 10)
-                        default:
-                            Rectangle()
-                                .frame(width: 10, height: 10)
-                        }
-                    }
-                } else {
-                    Text("No data available")
-                }
+//                if let mwmData = mwmData {
+//                    Text("Poor Signal: \(mwmData.poorSignal)")
+//                    Text("Attention: \(mwmData.attention)")
+//                    Text("Meditation: \(mwmData.meditation)")
+//                    HStack {
+//                        switch mwmData.poorSignal {
+//                        case 1...66:
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                        case 67...132:
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                        case 133...199:
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                        case 0:
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                            Rectangle()
+//                                .frame(width: 10,  height: 10)
+//                        default:
+//                            Rectangle()
+//                                .frame(width: 10, height: 10)
+//                        }
+//                    }
+//                } else {
+//                    Text("No data available")
+//                }
 //                if isConnected {
                 #if DEBUG
                     NavigationLink(destination: ContentView()) {
@@ -82,19 +83,22 @@ struct Homepage: View {
                 
             }
         }
-        .onReceive(mwmObject.mwmDataPublisher, perform: { mwmData in
-            self.mwmData = mwmData
-//            print(mwmData.attention)
-        })
-        .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
-            if signalStatus == 0 {
-                self.isConnected = false
-            }
-            else {
-                self.isConnected = true
-                self.isShowingSheet = false
-            }
-        })
+        //MARK: Uncomment if using neurosky
+//        
+//        .onReceive(mwmObject.mwmDataPublisher, perform: { mwmData in
+//            self.mwmData = mwmData
+////            print(mwmData.attention)
+//        })
+//        .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
+//            if signalStatus == 0 {
+//                self.isConnected = false
+//            }
+//            else {
+//                self.isConnected = true
+//                self.isShowingSheet = false
+//            }
+//        })
+        //MARK: Uncomment if using neurosky
         .sheet(isPresented: $isShowingSheet) {
             List() {
                 if let scannedMwm = scannedMwm {

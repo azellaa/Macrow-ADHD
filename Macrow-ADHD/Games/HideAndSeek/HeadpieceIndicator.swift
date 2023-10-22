@@ -17,7 +17,9 @@ class HeadpieceIndicator: SKNode {
     private var sceneFrame = CGRect()
     
     private var cancellables: Set<AnyCancellable> = []
-    var mwmObject = MWMInstance.shared
+    
+    //MARK: Uncomment if using neurosky
+//    var mwmObject = MWMInstance.shared
     
     override init() {
         super.init()
@@ -67,28 +69,29 @@ class HeadpieceIndicator: SKNode {
 //            SKAction.moveTo(y: sceneFrame.height + pausedPopup.size.height / 2, duration: 0.5)
 //        ]))
         
-        mwmObject.signalStatusPublisher
-            .sink { [weak self] signalStatus in
-                // Handle the emitted MWMData here
-                switch signalStatus {
-                case 1:
-                    self?.headpieceStatus.texture = self?.updateIcon("connecting1")
-                    self?.showPopupConnecting()
-                case 2:
-                    self?.headpieceStatus.texture = self?.updateIcon("connecting2")
-                    self?.showPopupConnecting()
-                case 3:
-                    self?.headpieceStatus.texture = self?.updateIcon("connecting3")
-                    self?.showPopupConnecting()
-                case 4:
-                    self?.headpieceStatus.texture = self?.updateIcon("connected")
-                    self?.hidePopupAnimation()
-                default:
-                    self?.headpieceStatus.texture = self?.updateIcon("nosignal")
-                    self?.showPopupDisconnect()
-                }
-            }
-            .store(in: &cancellables)
+        // MARK: Uncomment if using neurosky
+//        mwmObject.signalStatusPublisher
+//            .sink { [weak self] signalStatus in
+//                // Handle the emitted MWMData here
+//                switch signalStatus {
+//                case 1:
+//                    self?.headpieceStatus.texture = self?.updateIcon("connecting1")
+//                    self?.showPopupConnecting()
+//                case 2:
+//                    self?.headpieceStatus.texture = self?.updateIcon("connecting2")
+//                    self?.showPopupConnecting()
+//                case 3:
+//                    self?.headpieceStatus.texture = self?.updateIcon("connecting3")
+//                    self?.showPopupConnecting()
+//                case 4:
+//                    self?.headpieceStatus.texture = self?.updateIcon("connected")
+//                    self?.hidePopupAnimation()
+//                default:
+//                    self?.headpieceStatus.texture = self?.updateIcon("nosignal")
+//                    self?.showPopupDisconnect()
+//                }
+//            }
+//            .store(in: &cancellables)
     }
     
     func updateIcon(_ imageName: String) -> SKTexture{
