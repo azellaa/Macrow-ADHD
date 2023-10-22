@@ -41,7 +41,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var attentionPopup = AttentionPopup()
     private var headpieceStatus = HeadpieceIndicator()
     private var signalStatus: Int = 4
-    var dataController: DataController = DataController()
+    var dataController: DataController!
     var context: NSManagedObjectContext!
     
     var gameEntity: Game!
@@ -58,11 +58,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     override init(size: CGSize) {
         super.init(size: size)
-        self.context = dataController.container.viewContext
-        
-        self.gameEntity = dataController.addGame(gameName: "Hide And Seek", level: 1, context: self.context)
-        
-        self.reportEntity = dataController.addInitialReport(game: self.gameEntity, context: self.context)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -70,6 +65,12 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     override func didMove(to view: SKView) {
+        dataController = DataController()
+        self.context = dataController.container.viewContext
+        
+        self.gameEntity = dataController.addGame(gameName: "Hide And Seek", level: 1, context: self.context)
+        
+        self.reportEntity = dataController.addInitialReport(game: self.gameEntity, context: self.context)
         
         physicsWorld.contactDelegate = self
         

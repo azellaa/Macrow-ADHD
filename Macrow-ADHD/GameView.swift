@@ -19,5 +19,5 @@ struct GameView: View {
 }
 
 #Preview {
-    GameView(scene: HideAndSeekScene())
+    GameView(scene: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)))
 }

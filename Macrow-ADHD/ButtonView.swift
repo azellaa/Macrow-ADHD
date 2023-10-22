@@ -21,15 +21,16 @@ struct ButtonView: View {
             AnyView(destination)
         } label: {
             ZStack {
-                imageName == "headpieceLogo" ?
-                Image(imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .padding(20) :
+                imageName == "chart.bar.fill" || imageName == "play.fill" ?
                 Image(systemName: imageName)
                     .resizable()
                     .scaledToFit()
                     .padding(22)
+                :
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .padding(20)
             }
             .foregroundColor(iconColor)
             .frame(width: width, height: height)
