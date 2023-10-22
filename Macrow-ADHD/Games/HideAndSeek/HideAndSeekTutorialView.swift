@@ -112,7 +112,6 @@ class TutorialView: SKNode {
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
-            let touchedNode = self.atPoint(location)
             if popUpIdx >= 3 {
                 delegate?.tutorialIsOpen(self, isTutorialOpened: false)
                 return
@@ -127,7 +126,7 @@ class TutorialView: SKNode {
                     
                     cropNode.maskNode = rectangleOverlay
                     
-                    var plusOne = SKLabelNode(fontNamed: "Jua-Regular")
+                    let plusOne = SKLabelNode(fontNamed: "Jua-Regular")
                     plusOne.text = "+ 1"
                     plusOne.fontColor = .white
                     plusOne.fontSize = 84
@@ -248,7 +247,7 @@ class TutorialView: SKNode {
                         rabbitCounter.zPosition = bg.zPosition
                         bg.addChild(rabbitCounter)
                         
-                        var plusOne = SKLabelNode(fontNamed: "Jua-Regular")
+                        let plusOne = SKLabelNode(fontNamed: "Jua-Regular")
                         plusOne.text = "- 1"
                         plusOne.fontColor = AppColor.redTutorial!
                         plusOne.fontSize = 84
@@ -276,7 +275,7 @@ class TutorialView: SKNode {
                                 addChild(rabbitCounter)
                                 
                                 foxAlpha.removeFromParent()
-                                var letStart = SKLabelNode(fontNamed: "Jua-Regular")
+                                let letStart = SKLabelNode(fontNamed: "Jua-Regular")
                                 letStart.text = "Lets Start!"
                                 letStart.position = CGPoint(x: sceneFrame.width/2, y: sceneFrame.height/2)
                                 letStart.fontColor = .white

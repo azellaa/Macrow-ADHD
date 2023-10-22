@@ -25,7 +25,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var rabbitCount = 0
     private var isTouched = false
-    private var isTutorialOpened = false
+    private var isTutorialOpened = true
     private var timerValue: Int = 10 // timer 10 menit
     
     public var focusCount = 80 // focus point
@@ -33,10 +33,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var cancellables: Set<AnyCancellable> = []
     
-//    var mwmObject = MWMInstance.shared
-    
     private var listFocusData: [Double] = [Double]()
     
+    var mwmObject = MWMInstance.shared
     
     public var isCompleted = false
     private var attentionPopup = AttentionPopup()
@@ -45,6 +44,30 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     var dataController: DataController = DataController()
     var context: NSManagedObjectContext!
     
+    var gameEntity: Game!
+    
+    var reportEntity: Report!
+    
+    var pauseDataEntity: Pause!
+    
+    var currentAnimalEntity: Animal!
+    
+    var isSavingPauseData = false
+    var isPublisherStarted = false
+    var firstAnimalSpawned = false
+    
+    override init(size: CGSize) {
+        super.init(size: size)
+        self.context = dataController.container.viewContext
+        
+        self.gameEntity = dataController.addGame(gameName: "Hide And Seek", level: 1, context: self.context)
+        
+        self.reportEntity = dataController.addInitialReport(game: self.gameEntity, context: self.context)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func didMove(to view: SKView) {
         
@@ -63,55 +86,41 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         addChild(bg)
         
         openTutorial()
-        spawnEntity()
         
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { timer in
             if self.timerValue <= 1 {
                 timer.invalidate()
                 self.timesUpFunc()
             }
-            if !self.isTutorialOpened {
+            if !self.isTutorialOpened && self.signalStatus == 4{
                 self.timerValue -= 1
             }
         }
         
-//        mwmObject.mwmDataPublisher
-//            .sink { [weak self] mwmData in
-//                // Handle the emitted MWMData here
-//                self?.handleMWMData(mwmData)
-//                
-//            }
-//            .store(in: &cancellables)
-//        mwmObject.signalStatusPublisher
-//            .sink { signalStatus in
-//                self.signalStatus = signalStatus
-//                print("Signal: \(self.signalStatus)")
-//            }
-//            .store(in: &cancellables)
         
+    }
     
-              
-            
+    
+    
+    private func handleMWMData(_ mwmData: MWMData) {
+        // Update your UI or perform other actions with the received data
+        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
+        focusCount = Int(mwmData.attention)
+        
+        if signalStatus == 4 && !isCompleted{
+            dataController.addFocus(value: Int16(self.focusCount), time: Date(), report: self.reportEntity, context: self.context)
+            listFocusData.append(Double(focusCount))
+        }
     }
     
     func tutorialIsOpen(_ tutorialView: TutorialView, isTutorialOpened: Bool) {
         self.isTutorialOpened = isTutorialOpened
     }
     
-//    private func handleMWMData(_ mwmData: MWMData) {
-//        // Update your UI or perform other actions with the received data
-//        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
-//        focusCount = Int(mwmData.attention)
-//        if !isCompleted {
-//            listFocusData.append(Double(focusCount))
-//        }
-//        // Example: Update a UILabel
-//        // self.yourLabel.text = "Poor Signal: \(mwmData.poorSignal), Attention: \(mwmData.attention), Meditation: \(mwmData.meditation)"
-//    }
     
     func spawnNextEntity() {
         isSpawning = false
-        isTouched.toggle()
+        isTouched = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 5) { [weak self] in
             self?.spawnEntity()
         }
@@ -128,25 +137,25 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         let spawnCompletionAction = SKAction.run { [weak self] in
             self?.spawnNextEntity()
         }
-
+        
         if randomValue <= 5 {
             // Spawn a rabbit
             guard let randomRabbit = rabbitPos.randomElement() else { return }
-            rabbit = .init(imageNamed: randomRabbit.textureName)
-            rabbit.name = randomRabbit.name
-            rabbit.position = randomRabbit.position
-            rabbit.setScale(randomRabbit.scale)
-            rabbit.zPosition = randomRabbit.zIndex
-            addChild(rabbit)
+            self.rabbit = .init(imageNamed: randomRabbit.textureName)
+            self.rabbit.name = randomRabbit.name
+            self.rabbit.position = randomRabbit.position
+            self.rabbit.setScale(randomRabbit.scale)
+            self.rabbit.zPosition = randomRabbit.zIndex
+            self.addChild(self.rabbit)
             
             // Define a slide-up action
-            let slideUpAction = SKAction.move(by: CGVector(dx: 0, dy: rabbit.size.height), duration: 1.0)
+            let slideUpAction = SKAction.move(by: CGVector(dx: 0, dy: self.rabbit.size.height), duration: 1.0)
             slideUpAction.timingMode = .easeIn
             
             // Define a slide-down action
-            let slideDownAction = SKAction.move(by: CGVector(dx: 0, dy: -rabbit.size.height), duration: 1.0)
+            let slideDownAction = SKAction.move(by: CGVector(dx: 0, dy: -self.rabbit.size.height), duration: 1.0)
             slideDownAction.timingMode = .easeIn
-
+            
             // Define a sequence of actions
             let sequence = SKAction.sequence([
                 slideUpAction,
@@ -155,26 +164,27 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 SKAction.removeFromParent(),
                 spawnCompletionAction
             ])
-
-
-            rabbit.run(sequence)
+            
+            self.rabbit.run(sequence)
+            
+            currentAnimalEntity = dataController.addAnimal(appearTime: Date(), animalTypeEnum: .rabbit, game: self.gameEntity, context: self.context)
             
         } else {
             // Spawn a fox
             guard let randomFox = foxPos.randomElement() else { return }
-            fox = .init(imageNamed: randomFox.textureName)
-            fox.name = randomFox.name
-            fox.position = randomFox.position
-            fox.setScale(randomFox.scale)
-            fox.zPosition = randomFox.zIndex
-            addChild(fox)
+            self.fox = .init(imageNamed: randomFox.textureName)
+            self.fox.name = randomFox.name
+            self.fox.position = randomFox.position
+            self.fox.setScale(randomFox.scale)
+            self.fox.zPosition = randomFox.zIndex
+            self.addChild(self.fox)
             
-            let slideUpAction = SKAction.move(by: CGVector(dx: 0, dy: fox.size.height), duration: 1.0)
+            let slideUpAction = SKAction.move(by: CGVector(dx: 0, dy: self.fox.size.height), duration: 1.0)
             slideUpAction.timingMode = .easeIn
             
-            let slideDownAction = SKAction.move(by: CGVector(dx: 0, dy: -fox.size.height), duration: 1.0)
+            let slideDownAction = SKAction.move(by: CGVector(dx: 0, dy: -self.fox.size.height), duration: 1.0)
             slideDownAction.timingMode = .easeIn
-
+            
             // Define a sequence of actions
             let sequence = SKAction.sequence([
                 slideUpAction,
@@ -183,8 +193,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 SKAction.removeFromParent(),
                 spawnCompletionAction
             ])
-
-            fox.run(sequence)
+            
+            self.fox.run(sequence)
+            currentAnimalEntity = dataController.addAnimal(appearTime: Date(), animalTypeEnum: .fox, game: self.gameEntity, context: self.context)
+            
         }
     }
     
@@ -219,8 +231,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         addChild(tutorialView)
         
         rabbitCounter = .init(imageNamed: "RabbitCounter")
-//        rabbitCounter.setScale(0.9)
-//        rabbitCounter.size.width = rabbitCounter.size.width * 1.05
+        //        rabbitCounter.setScale(0.9)
+        //        rabbitCounter.size.width = rabbitCounter.size.width * 1.05
         rabbitCounter.position = CGPoint(x: frame.width * 0.815, y: frame.height * 0.89)
         rabbitCounter.zPosition = 10
         addChild(rabbitCounter)
@@ -239,15 +251,14 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         
         attentionPopup = AttentionPopup(sceneFrame: frame)
+        attentionPopup.isShowing = false
         attentionPopup.isHidden = true
         attentionPopup.zPosition = 20
         addChild(attentionPopup)
         
-//        headpieceStatus.getSceneFrame(sceneFrame: frame)
-//        headpieceStatus.buildIndicator()
-//        addChild(headpieceStatus)
-        
-        
+        headpieceStatus.getSceneFrame(sceneFrame: frame)
+        headpieceStatus.buildIndicator()
+        addChild(headpieceStatus)
         
     }
     
@@ -271,12 +282,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func timesUpFunc() {
-        do {
-            dataController.fetchAndPrintFocusData()
-        } // Fetch and print the data when the timer ends
-        catch {
-            print(error.localizedDescription)
-        }
+        dataController.editAvgAttentionReport(report: self.reportEntity, avgAttention: listFocusData.average(), context: self.context)
+        dataController.fetchAndPrintFocusData()
         
         run(SKAction.sequence([
             SKAction.run { [weak self] in
@@ -289,13 +296,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         ]))
         
         isCompleted = true
-
+        
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        // Initialize the data controller and obtain the managed object context
-//        dataController = DataController()
-        let context = dataController.container.viewContext
         
         for touch in touches {
             let location = touch.location(in: self)
@@ -310,13 +314,11 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     // Update rabbitCount in GameData
                     GameData.rabbitCount = rabbitCount
                     
-                    // Save the updated rabbit count to Core Data
-                    dataController.addFocus(value: Double(rabbitCount), gameID: 1, context: context)
-
                     updateRabbitCountLabel()
-                    isTouched.toggle()
+                    isTouched = true
                     
                     rabbit.run(slideSequence(y: rabbit.size.height))
+                    dataController.editAnimalTapTime(animal: self.currentAnimalEntity, tapTime: Date(), context: self.context)
                 }
                 
                 if fox.contains(location) {
@@ -327,11 +329,13 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     
                     // Update rabbitCount in GameData
                     GameData.rabbitCount = rabbitCount
-                                    
+                    
                     updateRabbitCountLabel()
-                    isTouched.toggle()
+                    isTouched = true
                     
                     fox.run(slideSequence(y: fox.size.height))
+                    
+                    dataController.editAnimalTapTime(animal: self.currentAnimalEntity, tapTime: Date(), context: self.context)
                 }
             }
         }
@@ -344,7 +348,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         let slideDownAction = SKAction.move(by: CGVector(dx: 0, dy: -y), duration: 1.0)
         slideDownAction.timingMode = .easeIn
-
+        
         let sequence = SKAction.sequence([
             slideDownAction,
             SKAction.removeFromParent(),
@@ -354,9 +358,37 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         return sequence
     }
     
+    fileprivate func startMWMPublisher() {
+        mwmObject.mwmDataPublisher
+            .sink { [weak self] mwmData in
+                // Handle the emitted MWMData here
+                self?.handleMWMData(mwmData)
+                
+            }
+            .store(in: &cancellables)
+        mwmObject.signalStatusPublisher
+            .sink { signalStatus in
+                self.signalStatus = signalStatus
+                print("Signal: \(self.signalStatus)")
+            }
+            .store(in: &cancellables)
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         updateRabbitCountLabel()
         openTutorial()
+        
+        if !isTutorialOpened {
+            if !isPublisherStarted {
+                startMWMPublisher()
+                isPublisherStarted = true
+            }
+            
+            if !firstAnimalSpawned {
+                spawnEntity()
+                firstAnimalSpawned = true
+            }
+        }
         
         focusBar.updateProgressBar(CGFloat(self.focusCount))
         attentionPopup.update(currentTime)
@@ -365,8 +397,14 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
                 if !attentionPopup.isShowing {
-                    attentionPopup.startShowPause()
                     attentionPopup.isHidden = false
+                    attentionPopup.startShowPause()
+                    if !isSavingPauseData {
+                        pauseDataEntity = dataController.addPause(startTime: Date(), report: self.reportEntity, context: self.context)
+                        isSavingPauseData = true
+                    }
+                    
+                    
                 }
             } else if self.signalStatus != 4 {
                 self.fox.isPaused = true
@@ -379,6 +417,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 self.rabbit.isPaused = false
                 attentionPopup.isHidden = true
                 attentionPopup.stopShowPause()
+                if isSavingPauseData {
+                    dataController.editPauseEndTime(pause: pauseDataEntity, endTime: Date(), context: self.context)
+                    isSavingPauseData = false
+                }
             }
         }
     }

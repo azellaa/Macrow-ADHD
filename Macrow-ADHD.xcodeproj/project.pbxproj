@@ -20,6 +20,16 @@
 		3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613772AC5C66F00F0A792 /* ContentView.swift */; };
 		3DB6137A2AC5C67100F0A792 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB613792AC5C67100F0A792 /* Assets.xcassets */; };
 		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
+		542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88B2AE58F4A0024387C /* Array+average.swift */; };
+		542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */; };
+		542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8972AE596D80024387C /* Report+CoreDataClass.swift */; };
+		542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */; };
+		542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD89F2AE59E230024387C /* Game+GetAnimal.swift */; };
+		542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8A12AE59E5A0024387C /* Game+CoreDataClass.swift */; };
+		542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8A22AE59E5A0024387C /* Game+CoreDataProperties.swift */; };
+		54A421732AE25A0B00C51A6C /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421702AE2595500C51A6C /* MWMModel.swift */; };
+		54A421742AE25A0E00C51A6C /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421712AE2595500C51A6C /* MWMInstance.swift */; };
+		54A4217A2AE25E4200C51A6C /* AnimalTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */; };
 		B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */; };
 		B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B64EFB602AE22B5A002190EA /* ReportModel.xcdatamodeld */; };
 		B66E747E2ADF7C4300CCA69A /* AppColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E747D2ADF7C4300CCA69A /* AppColor.swift */; };
@@ -28,8 +38,6 @@
 		B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
 		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
 		B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
-		B6BFD4762AE13C7E00D3AAB1 /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD4742AE13C7E00D3AAB1 /* MWMInstance.swift */; };
-		B6BFD4772AE13C7E00D3AAB1 /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6BFD4752AE13C7E00D3AAB1 /* MWMModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -47,6 +55,16 @@
 		3DB613772AC5C66F00F0A792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DB613792AC5C67100F0A792 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		542DD88B2AE58F4A0024387C /* Array+average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+average.swift"; sourceTree = "<group>"; };
+		542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+GetFocusPause.swift"; sourceTree = "<group>"; };
+		542DD8972AE596D80024387C /* Report+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataClass.swift"; sourceTree = "<group>"; };
+		542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		542DD89F2AE59E230024387C /* Game+GetAnimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+GetAnimal.swift"; sourceTree = "<group>"; };
+		542DD8A12AE59E5A0024387C /* Game+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataClass.swift"; sourceTree = "<group>"; };
+		542DD8A22AE59E5A0024387C /* Game+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Game+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		54A421702AE2595500C51A6C /* MWMModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
+		54A421712AE2595500C51A6C /* MWMInstance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
+		54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeEnum.swift; sourceTree = "<group>"; };
 		B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jua-Regular.ttf"; sourceTree = "<group>"; };
 		B61C40472ACF0B27007CCC72 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B64EFB612AE22B5A002190EA /* ReportModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReportModel.xcdatamodel; sourceTree = "<group>"; };
@@ -60,8 +78,6 @@
 		B6BFD4672AE139D300D3AAB1 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
 		B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMWMSDK.a; sourceTree = "<group>"; };
 		B6BFD4732AE139E400D3AAB1 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		B6BFD4742AE13C7E00D3AAB1 /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
-		B6BFD4752AE13C7E00D3AAB1 /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +121,9 @@
 		3D2B49852ACBD2C000DA8827 /* Data Model */ = {
 			isa = PBXGroup;
 			children = (
+				542DD8A72AE59F280024387C /* Animal */,
+				542DD8A62AE59EA50024387C /* Report */,
+				542DD8A52AE59E9A0024387C /* Game */,
 				3D2B49892ACBD31100DA8827 /* DataController.swift */,
 				B64EFB602AE22B5A002190EA /* ReportModel.xcdatamodeld */,
 			);
@@ -152,6 +171,52 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		542DD88A2AE58F310024387C /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				542DD88B2AE58F4A0024387C /* Array+average.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		542DD8A52AE59E9A0024387C /* Game */ = {
+			isa = PBXGroup;
+			children = (
+				542DD8A12AE59E5A0024387C /* Game+CoreDataClass.swift */,
+				542DD8A22AE59E5A0024387C /* Game+CoreDataProperties.swift */,
+				542DD89F2AE59E230024387C /* Game+GetAnimal.swift */,
+			);
+			path = Game;
+			sourceTree = "<group>";
+		};
+		542DD8A62AE59EA50024387C /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				542DD8972AE596D80024387C /* Report+CoreDataClass.swift */,
+				542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */,
+				542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
+		542DD8A72AE59F280024387C /* Animal */ = {
+			isa = PBXGroup;
+			children = (
+				54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */,
+			);
+			path = Animal;
+			sourceTree = "<group>";
+		};
+		54A421722AE2595E00C51A6C /* NeuroskyHelper */ = {
+			isa = PBXGroup;
+			children = (
+				54A421712AE2595500C51A6C /* MWMInstance.swift */,
+				54A421702AE2595500C51A6C /* MWMModel.swift */,
+			);
+			name = NeuroskyHelper;
+			path = lib/NeuroskyHelper;
+			sourceTree = "<group>";
+		};
 		B61C40432ACF0AA8007CCC72 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -173,8 +238,9 @@
 		B69C52E72ACBD392009B3493 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				542DD88A2AE58F310024387C /* Extension */,
+				54A421722AE2595E00C51A6C /* NeuroskyHelper */,
 				B6BFD4642AE139D300D3AAB1 /* lib */,
-				B6BFD46A2AE139D400D3AAB1 /* NeuroskyHelper */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -188,16 +254,6 @@
 				B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */,
 			);
 			path = lib;
-			sourceTree = "<group>";
-		};
-		B6BFD46A2AE139D400D3AAB1 /* NeuroskyHelper */ = {
-			isa = PBXGroup;
-			children = (
-				B6BFD4742AE13C7E00D3AAB1 /* MWMInstance.swift */,
-				B6BFD4752AE13C7E00D3AAB1 /* MWMModel.swift */,
-			);
-			name = NeuroskyHelper;
-			path = "../../../../../../../Desktop/Macrow-ADHD-tutoria/Macrow-ADHD/Utilities/NeuroskyHelper";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -272,23 +328,31 @@
 			buildActionMask = 2147483647;
 			files = (
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
+				542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */,
 				B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */,
 				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
 				2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */,
+				542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */,
+				542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */,
 				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
+				542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */,
 				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
 				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
+				54A421742AE25A0E00C51A6C /* MWMInstance.swift in Sources */,
 				B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */,
 				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
+				54A421732AE25A0B00C51A6C /* MWMModel.swift in Sources */,
 				26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */,
+				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
 				26A9C6722ACBCCC600117948 /* NewPage.swift in Sources */,
 				26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */,
-				B6BFD4762AE13C7E00D3AAB1 /* MWMInstance.swift in Sources */,
 				B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */,
+				54A4217A2AE25E4200C51A6C /* AnimalTypeEnum.swift in Sources */,
 				26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */,
-				B6BFD4772AE13C7E00D3AAB1 /* MWMModel.swift in Sources */,
+				542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
+				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,
 				B66E747E2ADF7C4300CCA69A /* AppColor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,6 +496,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -473,6 +538,7 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UIRequiresFullScreen = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;

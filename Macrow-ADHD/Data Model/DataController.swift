@@ -29,33 +29,46 @@ class DataController: ObservableObject {
         }
     }
     
-    func addInitialReport(context: NSManagedObjectContext) {
+    func addInitialReport(game: Game, context: NSManagedObjectContext) -> Report{
         let report = Report(context: context)
         report.reportId = UUID()
         report.timestamp = Date()
         report.avgAttention = 0.0
+        report.reportToGame = game
         
         save(context: context)
+        
+        return report
     }
     
-    func addGame(gameName: String, level: Int16, context: NSManagedObjectContext){
+    func addGame(gameName: String, level: Int16, context: NSManagedObjectContext) -> Game{
         let game = Game(context: context)
         game.gameId = UUID()
         game.level = level
         
         save(context: context)
+        
+        return game
     }
     
-    func addAnimal(appearTime: Date, animalTypeId: Int16, animalTYpeName: String, context: NSManagedObjectContext){
+    func addAnimal(appearTime: Date, animalTypeEnum: AnimalTypeEnum, game: Game, context: NSManagedObjectContext) -> Animal{
         let animal = Animal(context: context)
         animal.animalId = UUID()
         animal.appearTime = appearTime
         let animalType = AnimalType(context: context)
-        animalType.animalTypeId = animalTypeId
-        animalType.animalTypeName = animalTYpeName
+        animalType.animalTypeId =  Int16(animalTypeEnum.id)
+        animalType.animalTypeName = animalTypeEnum.name
         animal.animalToAnimalType = animalType
         
+        animal.animalToGame = game
+        
+        #if DEBUG
+        print(animal)
+        #endif
+        
         save(context: context)
+        
+        return animal
     }
     
     func addFocus(value: Int16, time: Date, report: Report, context: NSManagedObjectContext) {
@@ -68,13 +81,15 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
-    func addPause(startTime: Date, report: Report, context: NSManagedObjectContext){
+    func addPause(startTime: Date, report: Report, context: NSManagedObjectContext) -> Pause{
         let pause = Pause(context: context)
         pause.pauseId = UUID()
         pause.startTime = startTime
         pause.pauseToReport = report
         
         save(context: context)
+        
+        return pause
     }
     
     func addreportToGame(report: Report, game: Game, context: NSManagedObjectContext){
@@ -83,36 +98,62 @@ class DataController: ObservableObject {
         save(context: context)
     }
     
-    
-    
-    
-    func addFocus(value: Int16, context: NSManagedObjectContext) {
-        let focus = Focus(context: context)
-        focus.focusId = UUID()
-        focus.value = value
-        focus.time = Date()
+    func editPauseEndTime(pause: Pause, endTime: Date, context: NSManagedObjectContext) {
+        pause.endTime = endTime
         
         save(context: context)
     }
     
-//    func fetchAndPrintFocusData() {
-//
-//        do {
-//            let context = container.viewContext
-//            let fetchRequest: NSFetchRequest<Focus> = Focus.fetchRequest()
-//            let focusData = try context.fetch(fetchRequest)
-//
-//            for focus in focusData {
-//                print("Focus ID: \(focus.id ?? UUID())")
-//                print("Focus Value: \(focus.value)")
+    func editAvgAttentionReport(report: Report, avgAttention: Double, context: NSManagedObjectContext){
+        report.avgAttention = avgAttention
+        
+        save(context: context)
+    }
+    
+    func editAnimalTapTime(animal: Animal, tapTime: Date, context: NSManagedObjectContext){
+        animal.tapTime = tapTime
+        #if DEBUG
+        print(animal)
+        #endif
+        save(context: context)
+        
+    }
+    
+
+    
+    
+    
+//    func addFocus(value: Int16, context: NSManagedObjectContext) {
+//        let focus = Focus(context: context)
+//        focus.focusId = UUID()
+//        focus.value = value
+//        focus.time = Date()
+//        
+//        save(context: context)
+//    }
+    
+    func fetchAndPrintFocusData() {
+
+        do {
+            let context = container.viewContext
+            let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
+            let reportData = try context.fetch(fetchRequest)
+
+            for report in reportData {
+                
+                print("Report ID: \(report.reportId ?? UUID())")
+                print("FocusData: \(report.focuses)")
+                print("PauseData: \(report.pauses)")
+                
+                print("Average Focus Value: \(report.avgAttention)")
 //                print("Focus Date: \(focus.date ?? Date())")
 //                print("Game ID: \(focus.gameID)")
-//
-//            }
-//        } catch {
-//            print("Failed to fetch focus data: \(error.localizedDescription)")
-//        }
-//    }
+
+            }
+        } catch {
+            print("Failed to fetch focus data: \(error.localizedDescription)")
+        }
+    }
 
     
 }
