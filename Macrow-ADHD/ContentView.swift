@@ -11,8 +11,9 @@ import _SpriteKit_SwiftUI
 struct ContentView: View {
 //    @Environment (\.managedObjectContext) var managedObjContext
     var body: some View {
-        SpriteView(scene: HideAndSeekScene(size: UIScreen.main.bounds.size))
-            .ignoresSafeArea()
+        NavigationStack {
+            HomeView()
+        }
     }
 }
 

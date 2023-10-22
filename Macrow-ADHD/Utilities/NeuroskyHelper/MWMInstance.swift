@@ -13,7 +13,6 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     
     public var mwmDevice = MWMDevice.sharedInstance()
     
-//    private var scannedDevice: Set<MWMModel> = []
     private var mwmDataSubject = PassthroughSubject<MWMData, Never>()
 //    private var scannedDeviceDataSubject = PassthroughSubject<Set<MWMModel>, Never>()
     private var signalStatusSubject = PassthroughSubject<Int, Never>()
@@ -29,14 +28,6 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
         mwmDevice?.delegate = self
     }
     func deviceFound(_ devName: String!, mfgID: String!, deviceID: String!) {
-        
-//        scannedDevice.insert(MWMModel(devName: devName, mfgID: mfgID, deviceID: deviceID))
-        
-//        for device in scannedDevice {
-//            print(device.devName)
-//            print(device.deviceID)
-//            print(device.mfgID)
-//        }
 //        scannedDeviceDataSubject.send(scannedDevice)
         mwmDevice?.connect(deviceID)
         
@@ -49,6 +40,7 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
         print("didConnect");
 //        scannedDevice.removeAll()
         self.mwmDevice?.enableLogging(withOptions: 1)
+        mwmDevice?.stopScanDevice()
         signalStatusSubject.send(1)
     }
     
@@ -89,6 +81,8 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
 //    var scannedMwmPublisher: AnyPublisher<Set<MWMModel>, Never> {
 //        return scannedDeviceDataSubject.eraseToAnyPublisher()
 //    }
+    
+    
     
     func exceptionMessage(_ eventType: TGBleExceptionEvent) {
         print("Error: \(eventType.rawValue) ")

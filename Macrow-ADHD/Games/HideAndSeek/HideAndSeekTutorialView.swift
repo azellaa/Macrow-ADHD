@@ -213,14 +213,14 @@ class TutorialView: SKNode {
             case 2:
                 let redAlphaBackground = SKSpriteNode()
                 redAlphaBackground.size = CGSize(width: sceneFrame.width, height: sceneFrame.height)
-                redAlphaBackground.color = AppColor.redTutorial!
+                redAlphaBackground.color = .redTutorial
                 redAlphaBackground.alpha = 0.5
                 redAlphaBackground.position = CGPoint(x: sceneFrame.width / 2 , y: sceneFrame.height / 2)
                 redAlphaBackground.zPosition = blackAlphaBackground.zPosition + 100
                 
                 bg.addChild(redAlphaBackground)
                 tapLabel.text = "Oh No!"
-                tapLabel.fontColor = AppColor.redTutorial!
+                tapLabel.fontColor = .redTutorial
                 tapHandLabel.run(SKAction.fadeOut(withDuration: 0.3))
                 
                 foxAlpha.position = CGPoint(x: sceneFrame.width * 0.419 , y: sceneFrame.height * 0.328)
@@ -249,7 +249,7 @@ class TutorialView: SKNode {
                         
                         let plusOne = SKLabelNode(fontNamed: "Jua-Regular")
                         plusOne.text = "- 1"
-                        plusOne.fontColor = AppColor.redTutorial!
+                        plusOne.fontColor = .redTutorial
                         plusOne.fontSize = 84
                         
                         plusOne.zPosition = rectangleOverlay.zPosition + 2
