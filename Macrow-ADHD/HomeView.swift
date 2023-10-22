@@ -36,7 +36,8 @@ struct HomeView: View {
                         .font(.custom("Jua-Regular", size: 86))
                         .foregroundColor(Color.brownColor)
                     Spacer()
-                    ButtonView(imageName: self.imageName, destination: EmptyView(), buttonColor: .brownColor, iconColor: .white, width: geo.size.width * 0.08, height: geo.size.height * 0.11)
+                    ButtonView(imageName: self.imageName, destination: GuideView()
+                        .navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: geo.size.width * 0.08, height: geo.size.height * 0.11)
                         .padding(.trailing)
                         .padding()
                 }

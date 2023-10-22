@@ -61,7 +61,7 @@
 		26A9C66F2ACBCC9700117948 /* NodeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeElement.swift; sourceTree = "<group>"; };
 		26A9C6712ACBCCC600117948 /* GameOverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverPage.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
-		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
+		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideView.swift; path = Games/HideAndSeek/GuideView.swift; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macrow_ADHDApp.swift; sourceTree = "<group>"; };
@@ -119,7 +119,6 @@
 				26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */,
 				26A9C6712ACBCCC600117948 /* GameOverPage.swift */,
 				26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */,
-				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
 				26A9C6692ACBCC5F00117948 /* ProgressBar.swift */,
 				26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */,
 				26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */,
@@ -177,6 +176,7 @@
 				268DE24D2ADF87230097E3F2 /* GameDescriptionView.swift */,
 				26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */,
 				B69C52F52ACBD9CC009B3493 /* Homepage.swift */,
+				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
 			);
 			path = "Macrow-ADHD";
 			sourceTree = "<group>";

@@ -17,14 +17,8 @@ struct GuideView: View {
            
             VStack {
                 HStack {
-                    Image("backButton")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 89, height: 79)
+                    BackButton(width: 89, height: 79)
                         .padding(.leading, -450)
-                        .onTapGesture {
-                            
-                        }
                     
                     Text("Guide")
                         .font(.custom("Jua-Regular", size: 72))
