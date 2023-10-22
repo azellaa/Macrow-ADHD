@@ -8,12 +8,8 @@
 import SpriteKit
 import GameplayKit
 
-<<<<<<< HEAD:Macrow-ADHD/Games/HideAndSeek/NewPage.swift
 
-class NewPage: SKScene, SKPhysicsContactDelegate {
-=======
 class GameOverPage: SKScene, SKPhysicsContactDelegate {
->>>>>>> main:Macrow-ADHD/Games/HideAndSeek/GameOverPage.swift
     
 //    var progressBar = ProgressBar()
     var timerEnded = false

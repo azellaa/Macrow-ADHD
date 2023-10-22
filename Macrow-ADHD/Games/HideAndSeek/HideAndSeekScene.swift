@@ -25,7 +25,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var rabbitCount = 0
     private var isTouched = false
-    private var isTutorialOpened = texture
+    private var isTutorialOpened = true
     private var timerValue: Int = 600 // timer 10 menit
     
     public var focusCount = 80 // focus point
