@@ -130,24 +130,81 @@ struct GuideView: View {
                 } .padding(.top, 10)
                 
                 HStack {
-                    Image("warning")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 338, height: 321)
-                        .padding(.trailing, 10)
+                    ZStack{
+                        Image("clearCard")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 338, height: 321)
+                            .padding(.trailing, 10)
+                        VStack{
+                            Image("warningIcon")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 100, height: 100)
+                                .padding(.trailing, 10)
+                                .padding(.bottom, 23)
+                            
+                            Text("Game requires the companion device for full functionality.")
+                                .font(.custom("Jua-Regular", size: 24))
+                                .font(.largeTitle)
+                                .multilineTextAlignment(.center)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 295, height: 90)
+                                .padding(.top, 10)
+                        }
+                        
+                    }
+                    ZStack{
+                        Image("clearCard")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 338, height: 321)
+                            .padding(.trailing, 10)
+                        VStack{
+                            Image("headpieceIcon")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 120, height: 120)
+                                .padding(.trailing, 10)
+                                .padding(.bottom, 18)
+                            
+                            Text("Ensure the sensor touches the child's forehead and properly clip the ear.")
+                                .font(.custom("Jua-Regular", size: 24))
+                                .font(.largeTitle)
+                                .multilineTextAlignment(.center)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 295, height: 90)
+                            
+                        }
+                    }
                     
-                    Image("clip")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 338, height: 321)
-                        .padding(.trailing, 10)
-                    
-                    Image("connection")
-                        .resizable()
-                        .scaledToFit()
-                        .frame(width: 338, height: 321)
-                }
-                .padding(.top, 40)
+                    ZStack{
+                        Image("clearCard")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 338, height: 321)
+                        VStack{
+                            Image("connectionIcon")
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 132, height: 20)
+                                .padding(.trailing, 10)
+                                .padding(.bottom, 25)
+                                .padding(.top, 60)
+                            
+                            Text("The device helps show focus levels. It's crucial for adults to ensure it's connected correctly.")
+                                .font(.custom("Jua-Regular", size: 24))
+                                .font(.largeTitle)
+                                .multilineTextAlignment(.center)
+                                .fontWeight(.bold)
+                                .foregroundColor(.white)
+                                .frame(width: 295, height: 120)
+                                .padding(.top, 25)
+                        }
+                    }
+                } .padding(.top)
             }
         }
     }

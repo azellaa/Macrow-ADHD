@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "connectingTapped.png",
+      "filename" : "mdi_customer-service.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "connectingTapped@2x.png",
+      "filename" : "mdi_customer-service@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "connectingTapped@3x.png",
+      "filename" : "mdi_customer-service@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

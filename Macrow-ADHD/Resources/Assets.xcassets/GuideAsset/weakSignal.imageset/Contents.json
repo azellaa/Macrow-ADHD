@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "weak signal.png",
+      "filename" : "weakSignal.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "weakSignal@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "weakSignal@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

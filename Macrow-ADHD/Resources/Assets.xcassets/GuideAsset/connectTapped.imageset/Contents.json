@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "connectedTapped.png",
+      "filename" : "connectTapped.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "connectTapped@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "connectTapped@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
