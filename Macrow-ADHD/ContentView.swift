@@ -11,6 +11,8 @@ import _SpriteKit_SwiftUI
 struct ContentView: View {
     var body: some View {
         SpriteView(scene: HideAndSeekScene())
+            .ignoresSafeArea()
+            .navigationBarBackButtonHidden()
     }
 }
 
