@@ -13,6 +13,7 @@ struct Homepage: View {
     @State private var deviceID: String = ""
     @State var isShowingSheet = false
     
+    
 //    @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
 //    @State private var mwmData: MWMData?
 //    @State private var scannedMwm: Set<MWMModel>?
@@ -87,3 +88,10 @@ struct Homepage: View {
 //#Preview {
 //    Homepage()
 //}
+
+struct Homepage_Previews: PreviewProvider {
+    static var previews: some View {
+        Homepage()
+    }
+}
+
