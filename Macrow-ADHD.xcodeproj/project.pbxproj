@@ -39,7 +39,6 @@
 		54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F22AE5B1F6003D874D /* MWMModel.swift */; };
 		B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */; };
 		B608653F2AE62B3000424FCA /* HomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60865052AE62B3000424FCA /* HomeItemView.swift */; };
-		B60865402AE62B3000424FCA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B60865062AE62B3000424FCA /* Assets.xcassets */; };
 		B60865412AE62B3000424FCA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60865072AE62B3000424FCA /* ContentView.swift */; };
 		B60865422AE62B3000424FCA /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60865082AE62B3000424FCA /* ButtonView.swift */; };
 		B60865432AE62B3000424FCA /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60865092AE62B3000424FCA /* GameInfo.swift */; };
@@ -118,7 +117,6 @@
 		B60864952AE62AE600424FCA /* MacroADHD-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacroADHD-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroADHD_simulatorApp.swift; sourceTree = "<group>"; };
 		B60865052AE62B3000424FCA /* HomeItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeItemView.swift; sourceTree = "<group>"; };
-		B60865062AE62B3000424FCA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B60865072AE62B3000424FCA /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B60865082AE62B3000424FCA /* ButtonView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		B60865092AE62B3000424FCA /* GameInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
@@ -322,7 +320,6 @@
 			isa = PBXGroup;
 			children = (
 				B60865672AE62BC900424FCA /* Info.plist */,
-				B60865062AE62B3000424FCA /* Assets.xcassets */,
 				B608652E2AE62B3000424FCA /* Bridging-Header.h */,
 				B60865082AE62B3000424FCA /* ButtonView.swift */,
 				B60865072AE62B3000424FCA /* ContentView.swift */,
@@ -583,7 +580,6 @@
 				B60865442AE62B3000424FCA /* Preview Assets.xcassets in Resources */,
 				B60865502AE62B3000424FCA /* Assets.xcassets in Resources */,
 				B60865522AE62B3000424FCA /* Jua-Regular.ttf in Resources */,
-				B60865402AE62B3000424FCA /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
