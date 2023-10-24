@@ -238,7 +238,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         rabbitCounter.zPosition = 10
         addChild(rabbitCounter)
         
-        connection = .init(imageNamed: "nosignal")
+//        connection = .init(imageNamed: "noSignalIcon")
         connection.position = CGPoint(x: frame.width * 0.930, y: frame.height * 0.89)
         connection.size = CGSize(width: 83, height: 79)
         connection.zPosition = 10

@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Group 89.png",
+      "filename" : "rabbitCounter.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "rabbitCounter@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "rabbitCounter@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

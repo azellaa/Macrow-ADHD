@@ -33,7 +33,7 @@ class HeadpieceIndicator: SKNode {
     
     func buildIndicator() {
         
-        headpieceStatus = SKSpriteNode(imageNamed: "nosignal")
+        headpieceStatus = SKSpriteNode(imageNamed: "noSignalIcon")
         headpieceStatus.zPosition = 10
         headpieceStatus.position = CGPoint(x: sceneFrame.width * 0.930, y: sceneFrame.height * 0.89)
         addChild(headpieceStatus)
@@ -72,19 +72,19 @@ class HeadpieceIndicator: SKNode {
                 // Handle the emitted MWMData here
                 switch signalStatus {
                 case 1:
-                    self?.headpieceStatus.texture = self?.updateIcon("connecting1")
+                    self?.headpieceStatus.texture = self?.updateIcon("poorSignalIcon")
                     self?.showPopupConnecting()
                 case 2:
-                    self?.headpieceStatus.texture = self?.updateIcon("connecting2")
+                    self?.headpieceStatus.texture = self?.updateIcon("weakSignalIcon")
                     self?.showPopupConnecting()
                 case 3:
-                    self?.headpieceStatus.texture = self?.updateIcon("connecting3")
+                    self?.headpieceStatus.texture = self?.updateIcon("connectingIcon")
                     self?.showPopupConnecting()
                 case 4:
-                    self?.headpieceStatus.texture = self?.updateIcon("connected")
+                    self?.headpieceStatus.texture = self?.updateIcon("connectedIcon")
                     self?.hidePopupAnimation()
                 default:
-                    self?.headpieceStatus.texture = self?.updateIcon("nosignal")
+                    self?.headpieceStatus.texture = self?.updateIcon("noSignalIcon")
                     self?.showPopupDisconnect()
                 }
             }
