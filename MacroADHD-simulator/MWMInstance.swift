@@ -11,7 +11,7 @@ import Combine
 class MWMInstance: NSObject, ObservableObject {
     
     
-    public var mwmDevice = MWMDevice.shared
+    public var mwmDevice: MWMDevice? = MWMDevice.shared
     
     private var mwmDataSubject = PassthroughSubject<MWMData, Never>()
     private var signalStatusSubject = PassthroughSubject<Int, Never>()
@@ -24,7 +24,7 @@ class MWMInstance: NSObject, ObservableObject {
     
     func deviceFound(_ devName: String!, mfgID: String!, deviceID: String!) {
 //        scannedDeviceDataSubject.send(scannedDevice)
-//        mwmDevice?.connect(deviceID)
+        mwmDevice?.connect(deviceID)
         
         self.devName = devName
         self.mfgID = mfgID
@@ -35,7 +35,7 @@ class MWMInstance: NSObject, ObservableObject {
         print("didConnect");
 //        scannedDevice.removeAll()
 //        self.mwmDevice?.enableLogging(withOptions: 1)
-//        mwmDevice?.stopScanDevice()
+        mwmDevice?.stopScanDevice()
         signalStatusSubject.send(1)
     }
     

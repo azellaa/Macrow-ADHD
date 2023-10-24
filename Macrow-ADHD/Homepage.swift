@@ -10,12 +10,9 @@ import SwiftUI
 struct Homepage: View {
     @State var isShowingSheet = false
     
-    #if targetEnvironment(simulator)
-    
-    #else
+
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
-    #endif
     @State private var isConnected: Bool = false
     
     var body: some View {
@@ -23,25 +20,17 @@ struct Homepage: View {
             VStack {
                 Text("Hello from SwiftUI")
                 
-                #if targetEnvironment(simulator)
-                
-                #else
+
                 Text("devName: \(mwmObject.devName)")
                 Text("mfgID: \(mwmObject.mfgID)")
                 Text("deviceID: \(mwmObject.deviceID)")
-                #endif
                 Button("Connect Device") {
-                    #if targetEnvironment(simulator)
-                    
-                    #else
+
                     mwmObject.mwmDevice?.scanDevice()
-                    #endif
                     isShowingSheet.toggle()
                 }
                 
-                #if targetEnvironment(simulator)
-                
-                #else
+
                 if let mwmData = mwmData {
                     Text("Poor Signal: \(mwmData.poorSignal)")
                     Text("Attention: \(mwmData.attention)")
@@ -80,28 +69,26 @@ struct Homepage: View {
                 } else {
                     Text("No data available")
                 }
-                #endif
-//                if isConnected {
-                #if DEBUG
-                    NavigationLink(destination: ContentView()) {
-                        Text("Play")
-                    }
-                #else
-                NavigationLink(destination: ContentView()
-                    .navigationBarBackButtonHidden(true)) {
+                //                if isConnected {
+#if DEBUG
+                NavigationLink(destination: ContentView()) {
                     Text("Play")
                 }
-                #endif
-//                }
+#else
+                NavigationLink(destination: ContentView()
+                    .navigationBarBackButtonHidden(true)) {
+                        Text("Play")
+                    }
+#endif
+                //                }
                 
             }
+            
         }
-        #if targetEnvironment(simulator)
         
-        #else
         .onReceive(mwmObject.mwmDataPublisher, perform: { mwmData in
             self.mwmData = mwmData
-//            print(mwmData.attention)
+            //            print(mwmData.attention)
         })
         .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
             if signalStatus == 0 {
@@ -112,10 +99,8 @@ struct Homepage: View {
                 self.isShowingSheet = false
             }
         })
-        #endif
-        
     }
-
+    
 }
 //
 //#Preview {

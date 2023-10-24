@@ -113,9 +113,6 @@ struct HomeView: View {
                 break
             }
         }
-        #if targetEnvironment(simulator)
-        
-        #else
         .onChange(of: centralManager.isBluetoothOn) { isBluetoothOn in
             
             if isBluetoothOn {
@@ -123,7 +120,6 @@ struct HomeView: View {
                 mwmObject.mwmDevice?.scanDevice()
             }
         }
-        #endif
 
         
         

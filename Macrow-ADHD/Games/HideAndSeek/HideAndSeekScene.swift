@@ -358,7 +358,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         if !isTutorialOpened {
             if !isPublisherStarted {
-                startMWMPublisher()
+                self.startMWMPublisher()
                 isPublisherStarted = true
             }
             

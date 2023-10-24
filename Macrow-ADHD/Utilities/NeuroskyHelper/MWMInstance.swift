@@ -39,7 +39,6 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     func didConnect() {
         print("didConnect");
 //        scannedDevice.removeAll()
-        self.mwmDevice?.enableLogging(withOptions: 1)
         mwmDevice?.stopScanDevice()
         signalStatusSubject.send(1)
     }
