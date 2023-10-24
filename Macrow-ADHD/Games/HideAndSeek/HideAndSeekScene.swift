@@ -31,16 +31,16 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     public var focusCount = 80 // focus point
     public var isSpawning = false
     
-    private var cancellables: Set<AnyCancellable> = []
+    var cancellables: Set<AnyCancellable> = []
     
-    private var listFocusData: [Double] = [Double]()
-    
+    var listFocusData: [Double] = [Double]()
     var mwmObject = MWMInstance.shared
     
     public var isCompleted = false
     private var attentionPopup = AttentionPopup()
     private var headpieceStatus = HeadpieceIndicator()
-    private var signalStatus: Int = 4
+    
+    var signalStatus: Int = 4
     var dataController: DataController!
     var context: NSManagedObjectContext!
     
@@ -99,19 +99,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         }
         
         
-    }
-    
-    
-    
-    private func handleMWMData(_ mwmData: MWMData) {
-        // Update your UI or perform other actions with the received data
-        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
-        focusCount = Int(mwmData.attention)
-        
-        if signalStatus == 4 && !isCompleted{
-            dataController.addFocus(value: Int16(self.focusCount), time: Date(), report: self.reportEntity, context: self.context)
-            listFocusData.append(Double(focusCount))
-        }
     }
     
     func tutorialIsOpen(_ tutorialView: TutorialView, isTutorialOpened: Bool) {
@@ -361,20 +348,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         return sequence
     }
     
-    fileprivate func startMWMPublisher() {
-        mwmObject.mwmDataPublisher
-            .sink { [weak self] mwmData in
-                // Handle the emitted MWMData here
-                self?.handleMWMData(mwmData)
-                
-            }
-            .store(in: &cancellables)
-        mwmObject.signalStatusPublisher
-            .sink { signalStatus in
-                self.signalStatus = signalStatus
-                print("Signal: \(self.signalStatus)")
-            }
-            .store(in: &cancellables)
+    func startMWMPublisher() {
+        
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -383,7 +358,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         if !isTutorialOpened {
             if !isPublisherStarted {
-                startMWMPublisher()
+                self.startMWMPublisher()
                 isPublisherStarted = true
             }
             

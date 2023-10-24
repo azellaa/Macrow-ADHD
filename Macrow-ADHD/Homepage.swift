@@ -10,9 +10,9 @@ import SwiftUI
 struct Homepage: View {
     @State var isShowingSheet = false
     
+
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
-    @State private var scannedMwm: Set<MWMModel>?
     @State private var isConnected: Bool = false
     
     var body: some View {
@@ -20,15 +20,17 @@ struct Homepage: View {
             VStack {
                 Text("Hello from SwiftUI")
                 
+
                 Text("devName: \(mwmObject.devName)")
                 Text("mfgID: \(mwmObject.mfgID)")
                 Text("deviceID: \(mwmObject.deviceID)")
-                
                 Button("Connect Device") {
+
                     mwmObject.mwmDevice?.scanDevice()
                     isShowingSheet.toggle()
                 }
                 
+
                 if let mwmData = mwmData {
                     Text("Poor Signal: \(mwmData.poorSignal)")
                     Text("Attention: \(mwmData.attention)")
@@ -67,24 +69,26 @@ struct Homepage: View {
                 } else {
                     Text("No data available")
                 }
-//                if isConnected {
-                #if DEBUG
-                    NavigationLink(destination: ContentView()) {
-                        Text("Play")
-                    }
-                #else
-                NavigationLink(destination: ContentView()
-                    .navigationBarBackButtonHidden(true)) {
+                //                if isConnected {
+#if DEBUG
+                NavigationLink(destination: ContentView()) {
                     Text("Play")
                 }
-                #endif
-//                }
+#else
+                NavigationLink(destination: ContentView()
+                    .navigationBarBackButtonHidden(true)) {
+                        Text("Play")
+                    }
+#endif
+                //                }
                 
             }
+            
         }
+        
         .onReceive(mwmObject.mwmDataPublisher, perform: { mwmData in
             self.mwmData = mwmData
-//            print(mwmData.attention)
+            //            print(mwmData.attention)
         })
         .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
             if signalStatus == 0 {
@@ -95,26 +99,8 @@ struct Homepage: View {
                 self.isShowingSheet = false
             }
         })
-        .sheet(isPresented: $isShowingSheet) {
-            List() {
-                if let scannedMwm = scannedMwm {
-                    ForEach(Array(scannedMwm), id: \.self){ device in
-                        Text(device.devName)
-                        Text(device.deviceID)
-//                            .onTapGesture {
-//                                
-//                                mwmObject.mwmDevice?.connect(device.deviceID)
-//                                devName = device.devName
-//                                mfgID = device.mfgID
-//                                deviceID = device.deviceID
-//                            }
-                    }
-                }
-            }
-        }
-        
     }
-
+    
 }
 //
 //#Preview {
