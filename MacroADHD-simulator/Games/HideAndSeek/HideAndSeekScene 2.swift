@@ -25,8 +25,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var rabbitCount = 0
     private var isTouched = false
-    private var isTutorialOpened = false
-    private var timerValue: Int = 60 // timer 10 menit
+    private var isTutorialOpened = true
+    private var timerValue: Int = 600 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -35,7 +35,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var listFocusData: [Double] = [Double]()
     
-    var mwmObject = MWMInstance.shared
+//    var mwmObject = MWMInstance.shared
     
     public var isCompleted = false
     private var attentionPopup = AttentionPopup()
@@ -103,16 +103,16 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     
     
-    private func handleMWMData(_ mwmData: MWMData) {
-        // Update your UI or perform other actions with the received data
-        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
-        focusCount = Int(mwmData.attention)
-        
-        if signalStatus == 4 && !isCompleted{
-            dataController.addFocus(value: Int16(self.focusCount), time: Date(), report: self.reportEntity, context: self.context)
-            listFocusData.append(Double(focusCount))
-        }
-    }
+//    private func handleMWMData(_ mwmData: MWMData) {
+//        // Update your UI or perform other actions with the received data
+//        print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
+//        focusCount = Int(mwmData.attention)
+//        
+//        if signalStatus == 4 && !isCompleted{
+//            dataController.addFocus(value: Int16(self.focusCount), time: Date(), report: self.reportEntity, context: self.context)
+//            listFocusData.append(Double(focusCount))
+//        }
+//    }
     
     func tutorialIsOpen(_ tutorialView: TutorialView, isTutorialOpened: Bool) {
         self.isTutorialOpened = isTutorialOpened
@@ -202,19 +202,19 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func addRabbitPosition() {
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.1 , y: -size.height * 0.13),  scale: 1 * 0.826, zIndex: 6))
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.28 , y: size.height * 0.06), scale: 0.6 * 0.826, zIndex: 3))
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.42 , y: size.height * 0.08), scale: 0.7 * 0.826, zIndex: 3))
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.65 , y: size.height * 0.02), scale: 0.8 * 0.826, zIndex: 3))
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.93 , y: -size.height * 0.08), scale: 1 * 0.826, zIndex: 5))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.1 , y: -size.height * 0.1), scale: 1, zIndex: 6))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.28 , y: size.height * 0.06), scale: 0.6, zIndex: 3))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.42 , y: size.height * 0.11), scale: 0.7, zIndex: 3))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.65 , y: size.height * 0.04), scale: 0.8, zIndex: 3))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.92 , y: -size.height * 0.04), scale: 1, zIndex: 5))
     }
     
     func addFoxPosition() {
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.08 , y: -size.height * 0.16 ), scale: 1 * 0.7, zIndex: 6))
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.268 , y: size.height * 0.01 ), scale: 0.6 * 0.7, zIndex: 3))
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.42 , y: size.height * 0.03  ), scale: 0.7 * 0.7, zIndex: 3))
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.65 , y: size.height * 0.01), scale: 0.8 * 0.7, zIndex: 3))
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.92 , y: -size.height * 0.15 ), scale: 1 * 0.7, zIndex: 5))
+        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.1 , y: -size.height * 0.13), scale: 1, zIndex: 6))
+        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.28 , y: size.height * 0.06), scale: 0.6, zIndex: 3))
+        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.42 , y: size.height * 0.11), scale: 0.7, zIndex: 3))
+        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.65 , y: size.height * 0.03), scale: 0.8, zIndex: 3))
+        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.92 , y: -size.height * 0.06), scale: 1, zIndex: 5))
     }
     
     func addNodes() {
@@ -238,7 +238,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         rabbitCounter.zPosition = 10
         addChild(rabbitCounter)
         
-//        connection = .init(imageNamed: "noSignalIcon")
+        connection = .init(imageNamed: "nosignal")
         connection.position = CGPoint(x: frame.width * 0.930, y: frame.height * 0.89)
         connection.size = CGSize(width: 83, height: 79)
         connection.zPosition = 10
@@ -326,9 +326,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     // Change texture for the fox
                     fox.texture = SKTexture(imageNamed: "Fox_Tap")
                     fox.removeAllActions()
-                    if rabbitCount - 1 <= 0 {
-                        rabbitCount = 0
-                    }
+                    rabbitCount -= 1
                     
                     // Update rabbitCount in GameData
                     GameData.rabbitCount = rabbitCount
@@ -362,19 +360,19 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     fileprivate func startMWMPublisher() {
-        mwmObject.mwmDataPublisher
-            .sink { [weak self] mwmData in
-                // Handle the emitted MWMData here
-                self?.handleMWMData(mwmData)
-                
-            }
-            .store(in: &cancellables)
-        mwmObject.signalStatusPublisher
-            .sink { signalStatus in
-                self.signalStatus = signalStatus
-                print("Signal: \(self.signalStatus)")
-            }
-            .store(in: &cancellables)
+//        mwmObject.mwmDataPublisher
+//            .sink { [weak self] mwmData in
+//                // Handle the emitted MWMData here
+//                self?.handleMWMData(mwmData)
+//                
+//            }
+//            .store(in: &cancellables)
+//        mwmObject.signalStatusPublisher
+//            .sink { signalStatus in
+//                self.signalStatus = signalStatus
+//                print("Signal: \(self.signalStatus)")
+//            }
+//            .store(in: &cancellables)
     }
     
     override func update(_ currentTime: TimeInterval) {

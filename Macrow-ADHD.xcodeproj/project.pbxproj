@@ -800,11 +800,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
-				DEVELOPMENT_TEAM = 85KB4TP9CK;
+				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Nectar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need to access bluetooth in order connecting to Neurosky headpiece";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
@@ -843,10 +845,12 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
-				DEVELOPMENT_TEAM = 85KB4TP9CK;
+				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = Nectar;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "We need to access bluetooth in order connecting to Neurosky headpiece";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;

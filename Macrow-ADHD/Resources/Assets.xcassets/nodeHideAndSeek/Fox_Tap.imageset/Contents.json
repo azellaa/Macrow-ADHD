@@ -1,15 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Fox_Tap.png",
+      "filename" : "Asset 23.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "Asset 23@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "Asset 23@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
