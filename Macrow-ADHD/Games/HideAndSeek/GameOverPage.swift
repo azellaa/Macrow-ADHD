@@ -87,7 +87,7 @@ class GameOverPage: SKScene, SKPhysicsContactDelegate {
     
     func returnToApp() {
         if let window = view?.window {
-            let appView = HomeView()
+            let appView = ContentView()
             let controller = UIHostingController(rootView: appView)
             window.rootViewController = controller
         }

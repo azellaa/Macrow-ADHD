@@ -32,7 +32,7 @@ struct HomeView: View {
                         .padding(.leading)
                         .padding()
                     Spacer()
-                    Text("KING OLICHO")
+                    Text("NECTAR")
                         .font(.custom("Jua-Regular", size: 86))
                         .foregroundColor(Color.brownColor)
                     Spacer()
