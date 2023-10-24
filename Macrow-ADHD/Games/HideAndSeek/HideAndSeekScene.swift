@@ -35,7 +35,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var listFocusData: [Double] = [Double]()
     
-    var mwmObject = MWMInstance.shared
     
     public var isCompleted = false
     private var attentionPopup = AttentionPopup()

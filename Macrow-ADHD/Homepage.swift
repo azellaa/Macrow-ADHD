@@ -12,7 +12,6 @@ struct Homepage: View {
     
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
-    @State private var scannedMwm: Set<MWMModel>?
     @State private var isConnected: Bool = false
     
     var body: some View {
@@ -95,23 +94,6 @@ struct Homepage: View {
                 self.isShowingSheet = false
             }
         })
-        .sheet(isPresented: $isShowingSheet) {
-            List() {
-                if let scannedMwm = scannedMwm {
-                    ForEach(Array(scannedMwm), id: \.self){ device in
-                        Text(device.devName)
-                        Text(device.deviceID)
-//                            .onTapGesture {
-//                                
-//                                mwmObject.mwmDevice?.connect(device.deviceID)
-//                                devName = device.devName
-//                                mfgID = device.mfgID
-//                                deviceID = device.deviceID
-//                            }
-                    }
-                }
-            }
-        }
         
     }
 
