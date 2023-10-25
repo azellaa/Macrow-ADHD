@@ -56,16 +56,14 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
             meditation: meditation
         )
         switch updatedData.poorSignal {
-            case 133...199:
+            case 133...200:
             signalStatusSubject.send(1)
             case 67...132:
             signalStatusSubject.send(2)
             case 1...66:
             signalStatusSubject.send(3)
-            case 0:
-            signalStatusSubject.send(4)
             default:
-            signalStatusSubject.send(0)
+            signalStatusSubject.send(4)
             }
         mwmDataSubject.send(updatedData)
     }
