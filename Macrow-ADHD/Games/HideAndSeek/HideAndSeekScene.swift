@@ -96,6 +96,19 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             }
             if !self.isTutorialOpened && self.signalStatus == 4{
                 self.timerValue -= 1
+                
+//                if self.timerValue == 295 {
+//                    self.focusCount = 30
+//                }
+//                
+//                if self.timerValue == 290 {
+//                    self.focusCount = 80
+//                }
+//                
+//                if self.timerValue == 288 {
+//                    self.focusCount = 30
+//                }
+                
             }
         }
         
@@ -293,7 +306,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         for touch in touches {
             let location = touch.location(in: self)
             
-            if !isTouched {
+            if !isTouched && attentionPopup.isHidden {
                 if rabbit.contains(location) {
                     // Change texture for the rabbit
                     rabbit.texture = SKTexture(imageNamed: "Rabbit_Tap")

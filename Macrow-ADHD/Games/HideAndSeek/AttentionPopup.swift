@@ -22,7 +22,7 @@ class AttentionPopup: SKNode {
     private var sceneNode = SKSpriteNode()
     
     var isShowing = false
-    var currentScene: SKScene = SKScene()
+    lazy var currentScene: SKScene = self.scene!
     private var moveTransform = CGAffineTransform(translationX: 1.0, y: 1.0)
     private var hasCapturedScreen = false
     override init() {
@@ -156,7 +156,9 @@ class AttentionPopup: SKNode {
     
     func stopShowPause() {
         self.removeAllActions()
-        focusCat.position = circleOverlay.position
+        circleOverlay.position = CGPoint(x: self.sceneFrame.midX, y: self.sceneFrame.midY)
+        focusCat.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25)
+        
         focusCat.alpha = 0
         
         focusCatNoHand.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - focusCatNoHand.size.height)
@@ -168,6 +170,7 @@ class AttentionPopup: SKNode {
         popUpText.alpha = 0
         
         self.isShowing = false
+        self.hasCapturedScreen = false
     }
     
     
