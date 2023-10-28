@@ -26,7 +26,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = false
-    private var timerValue: Int = 60 // timer 10 menit
+    private var timerValue: Int = 300 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -63,6 +63,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     
     override func didMove(to view: SKView) {
         dataController = DataController()
@@ -368,6 +369,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             }
         }
         
+        
+        
         focusBar.updateProgressBar(CGFloat(self.focusCount))
         attentionPopup.update(currentTime)
         if tutorialView.isHidden {
@@ -376,7 +379,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 self.rabbit.isPaused = true
                 if !attentionPopup.isShowing {
                     attentionPopup.isHidden = false
-                    attentionPopup.startShowPause()
+                    attentionPopup.startShowPause(self)
                     if !isSavingPauseData {
                         pauseDataEntity = dataController.addPause(startTime: Date(), report: self.reportEntity, context: self.context)
                         isSavingPauseData = true
