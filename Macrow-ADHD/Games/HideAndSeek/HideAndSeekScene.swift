@@ -300,6 +300,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             }
         ]))
         
+        listFocusData = [Double]()
+        stopMWMPublisher()
         isCompleted = true
         
     }
