@@ -48,6 +48,7 @@ class TutorialView: SKNode {
         addChild(blackAlphaBackground)
         rabbitAlpha.position = CGPoint(x: sceneFrame.width * 0.58 , y: sceneFrame.height * 0.32)
         rabbitAlpha.zPosition = blackAlphaBackground.parent!.zPosition - 15
+        rabbitAlpha.setScale(0.826)
         addChild(rabbitAlpha)
         
         rabbitCounter = .init(imageNamed: "RabbitCounter")
@@ -78,6 +79,7 @@ class TutorialView: SKNode {
         rabbit.name = "rabbit"
         rabbit.position = CGPoint(x: sceneFrame.width * 0.58 , y: sceneFrame.height * 0.32)
         rabbit.zPosition = 4
+        rabbit.setScale(0.826)
         bg.addChild(rabbit)
         
         
@@ -202,6 +204,7 @@ class TutorialView: SKNode {
                             fox.name = "fox"
                             fox.position = CGPoint(x: sceneFrame.width * 0.419 , y: sceneFrame.height * 0.328)
                             fox.zPosition = 3
+                            fox.setScale(0.7)
                             bg.addChild(fox)
                             self.isUserInteractionEnabled = true
                             popUpIdx += 1
@@ -225,6 +228,7 @@ class TutorialView: SKNode {
                 
                 foxAlpha.position = CGPoint(x: sceneFrame.width * 0.419 , y: sceneFrame.height * 0.328)
                 foxAlpha.zPosition = blackAlphaBackground.parent!.zPosition - 36
+                foxAlpha.setScale(0.7)
                 addChild(foxAlpha)
                 
                 self.run(SKAction.sequence([
