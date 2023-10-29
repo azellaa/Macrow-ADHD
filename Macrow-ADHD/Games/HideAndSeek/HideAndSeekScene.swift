@@ -334,6 +334,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     fox.removeAllActions()
                     if rabbitCount - 1 <= 0 {
                         rabbitCount = 0
+                    } else {
+                        rabbitCount -= 1
                     }
                     
                     // Update rabbitCount in GameData
