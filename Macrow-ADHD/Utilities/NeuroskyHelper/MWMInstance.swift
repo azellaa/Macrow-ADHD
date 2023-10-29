@@ -23,6 +23,8 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     public var mfgID: String = ""
     public var deviceID: String = ""
     
+    public var isConnected: Bool = false
+    
     override init() {
         super.init()
         mwmDevice?.delegate = self
@@ -38,6 +40,7 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     
     func didConnect() {
         print("didConnect");
+        isConnected = true
 //        scannedDevice.removeAll()
         mwmDevice?.stopScanDevice()
         signalStatusSubject.send(1)
@@ -45,6 +48,7 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     
     func didDisconnect() {
         signalStatusSubject.send(0)
+        isConnected = false
         print("didDisconnect");
         mwmDevice?.scanDevice()
     }

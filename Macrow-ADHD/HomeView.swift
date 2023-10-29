@@ -115,7 +115,7 @@ struct HomeView: View {
         }
         .onChange(of: centralManager.isBluetoothOn) { isBluetoothOn in
             
-            if isBluetoothOn {
+            if isBluetoothOn && !mwmObject.isConnected{
                 print(isBluetoothOn)
                 mwmObject.mwmDevice?.scanDevice()
             }
