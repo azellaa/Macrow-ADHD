@@ -50,9 +50,12 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     var pauseDataEntity: Pause!
     
+    var disconnectDataEntity: DisconnectEntity!
+    
     var currentAnimalEntity: Animal!
     
     var isSavingPauseData = false
+    var isSavingDisconnectData = false
     var isPublisherStarted = false
     var firstAnimalSpawned = false
     

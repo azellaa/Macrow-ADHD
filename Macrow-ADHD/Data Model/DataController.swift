@@ -69,6 +69,7 @@ class DataController: ObservableObject {
         save(context: context)
         
         return animal
+        
     }
     
     func addFocus(value: Int16, time: Date, report: Report, context: NSManagedObjectContext) {
@@ -92,6 +93,17 @@ class DataController: ObservableObject {
         return pause
     }
     
+    func addDisconnect(startTime: Date, report: Report, context: NSManagedObjectContext) -> DisconnectEntity {
+        let disconnect = DisconnectEntity(context: context)
+        disconnect.disconnectId = UUID()
+        disconnect.startTime = startTime
+        disconnect.disconnectToReport = report
+        
+        save(context: context)
+        
+        return disconnect
+    }
+    
     func addreportToGame(report: Report, game: Game, context: NSManagedObjectContext){
         report.reportToGame = game
         
@@ -100,6 +112,12 @@ class DataController: ObservableObject {
     
     func editPauseEndTime(pause: Pause, endTime: Date, context: NSManagedObjectContext) {
         pause.endTime = endTime
+        
+        save(context: context)
+    }
+    
+    func editDisconnectEndTime(disconnect: DisconnectEntity, endTime: Date, context: NSManagedObjectContext) {
+        disconnect.endTime = endTime
         
         save(context: context)
     }
