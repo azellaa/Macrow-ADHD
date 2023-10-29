@@ -366,6 +366,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
     }
     
+    func stopMWMPublisher() {
+        
+    }
+    
     override func update(_ currentTime: TimeInterval) {
         updateRabbitCountLabel()
         openTutorial()

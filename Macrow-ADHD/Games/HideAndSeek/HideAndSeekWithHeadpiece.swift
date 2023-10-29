@@ -35,4 +35,9 @@ class HideAndSeekWithHeadpiece: HideAndSeekScene {
             }
             .store(in: &cancellables)
     }
+    
+    
+    override func stopMWMPublisher() {
+        cancellables.removeAll()
+    }
 }
