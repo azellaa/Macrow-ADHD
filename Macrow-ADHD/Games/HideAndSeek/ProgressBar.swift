@@ -17,6 +17,11 @@ class ProgressBar: SKNode {
 
     private let progressTexture = SKTexture(imageNamed: "4Bar")
     private let progressContainerTexture = SKTexture(imageNamed: "emptyBar")
+    private let scoreBoxTexture = SKTexture(imageNamed: "scoreBox")
+    private let headpieceStatus = HeadpieceIndicator()
+    
+    private let scoreLabel = SKLabelNode()
+    private let timerLabel = SKLabelNode()
 
     private var sceneFrame = CGRect()
 
@@ -26,33 +31,90 @@ class ProgressBar: SKNode {
 
     func getSceneFrame(sceneFrame: CGRect) {
         self.sceneFrame = sceneFrame
-        maxProgressBarWidth = sceneFrame.width * 0.575
+        maxProgressBarWidth = SKTexture(imageNamed: "4Bar").size().width
     }
 
     func buildProgressBar() {
-        progressBarContainer = SKSpriteNode(texture: progressContainerTexture, size: progressContainerTexture.size())
-        progressBarContainer.zPosition = 10
+        let scoreBox = SKSpriteNode(texture: scoreBoxTexture)
+        scoreBox.position = CGPoint(x: sceneFrame.width * -0.4, y: 0)
+        scoreBox.zPosition = 9
+        addChild(scoreBox)
 
         progressBar = SKSpriteNode(texture: progressTexture, size: progressTexture.size())
         progressBar.size.width = CGFloat(maxProgressBarWidth)
-        progressBar.size.height = CGFloat(progressBarContainer.size.height * 0.45)
-        progressBar.position.x = -maxProgressBarWidth / 2.36
+        progressBar.size.height = CGFloat(progressTexture.size().height + 2)
+        progressBar.position.x = -maxProgressBarWidth / 2
         progressBar.position.y = progressBarContainer.position.y + 1
         progressBar.anchorPoint = CGPoint(x: 0, y: 0.5)
+        
+        let bee = SKSpriteNode(imageNamed: "Bee")
+        bee.position = CGPoint(x: sceneFrame.width * -0.475, y: 14)
+        bee.setScale(0.7)
+        bee.zPosition = 15
+        addChild(bee)
 
         let cropNode = SKCropNode()
         let childNode = SKSpriteNode(texture: progressTexture, size: progressTexture.size())
         cropNode.maskNode = progressBar
         cropNode.zPosition = 15
-        cropNode.position.x = 34
+        cropNode.position.x = sceneFrame.width * -0.387
+        cropNode.position.y = 14.5
 
         cropNode.addChild(childNode)
         addChild(cropNode)
         addChild(progressBarContainer)
+        
+        let starIcon = SKSpriteNode(imageNamed: "starIcon")
+        starIcon.zPosition = 15
+        starIcon.position = CGPoint(x:sceneFrame.width * -0.44, y: -14)
+        addChild(starIcon)
+        
+        scoreLabel.fontName = "Jua-Regular"
+        scoreLabel.fontSize = 22
+        scoreLabel.zPosition = 15
+        scoreLabel.position = CGPoint(x:sceneFrame.width * -0.42, y: -24)
+        addChild(scoreLabel)
+        
+        let timerIcon = SKSpriteNode(imageNamed: "timerIcon")
+        timerIcon.zPosition = 15
+        timerIcon.position = CGPoint(x:sceneFrame.width * -0.38, y: -15)
+        addChild(timerIcon)
+        
+        timerLabel.fontName = "Jua-Regular"
+        timerLabel.fontSize = 22
+        timerLabel.zPosition = 15
+        timerLabel.position = CGPoint(x:sceneFrame.width * -0.345, y: -23)
+        addChild(timerLabel)
+    }
+    
+    func buildScoreBox() {
+        buildProgressBar()
+        
+        headpieceStatus.getSceneFrame(sceneFrame: sceneFrame)
+        headpieceStatus.buildIndicator()
+        headpieceStatus.setScale(0.35)
+        headpieceStatus.position = CGPoint(x: sceneFrame.width * -0.475, y: -14.5)
+        addChild(headpieceStatus)
+    }
+    
+    func tutorialScoreBox() {
+       buildProgressBar()
+        
+        let headpiece = SKSpriteNode(imageNamed: "connectedIcon")
+        headpiece.setScale(0.35)
+        headpiece.zPosition = 15
+        headpiece.position = CGPoint(x: sceneFrame.width * -0.475, y: -14.5)
+        addChild(headpiece)
+        
+        progressBar.run(SKAction.resize(toWidth: CGFloat(70 / maxProgress) * maxProgressBarWidth, duration: 0.2))
+        scoreLabel.text = "0"
+        timerLabel.text = "10:00"
     }
 
-    func updateProgressBar(_ progress: CGFloat) {
+    func updateProgressBar(_ progress: CGFloat, timeLeft: String, score: Int) {
         progressBar.run(SKAction.resize(toWidth: CGFloat(progress / maxProgress) * maxProgressBarWidth, duration: 0.2))
+        scoreLabel.text = String(score)
+        timerLabel.text = timeLeft
     }
 
     required init?(coder aDecoder: NSCoder) {

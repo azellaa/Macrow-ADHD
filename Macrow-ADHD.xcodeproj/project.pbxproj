@@ -19,7 +19,10 @@
 		26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */; };
 		26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C66F2ACBCC9700117948 /* NodeElement.swift */; };
 		26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6712ACBCCC600117948 /* GameOverPage.swift */; };
-		26E4B6922AEF769D00434426 /* GameElementTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B6912AEF769D00434426 /* GameElementTutorial.swift */; };
+		26E4B69E2AEFB11600434426 /* GameElementTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B69D2AEFB11600434426 /* GameElementTutorialView.swift */; };
+		26E4B69F2AEFB11600434426 /* GameElementTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B69D2AEFB11600434426 /* GameElementTutorialView.swift */; };
+		26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */; };
+		26E4B6A22AEFB16600434426 /* GameElementTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */; };
 		26ECF09D2AE0CC71005F06E1 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
 		3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49892ACBD31100DA8827 /* DataController.swift */; };
@@ -103,7 +106,8 @@
 		26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassThroughBackground.swift; sourceTree = "<group>"; };
 		26A9C66F2ACBCC9700117948 /* NodeElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeElement.swift; sourceTree = "<group>"; };
 		26A9C6712ACBCCC600117948 /* GameOverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverPage.swift; sourceTree = "<group>"; };
-		26E4B6912AEF769D00434426 /* GameElementTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameElementTutorial.swift; path = "../../../../../../../Library/Mobile Documents/.Trash/Macrow-ADHD/Macrow-ADHD/Games/HideAndSeek/GameElementTutorial.swift"; sourceTree = "<group>"; };
+		26E4B69D2AEFB11600434426 /* GameElementTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElementTutorialView.swift; sourceTree = "<group>"; };
+		26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElementTutorial.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideView.swift; path = Games/HideAndSeek/GuideView.swift; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
@@ -221,7 +225,7 @@
 				B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */,
 				B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */,
 				B67D3E0D2AD347D900DDA7D4 /* GameData.swift */,
-				26E4B6912AEF769D00434426 /* GameElementTutorial.swift */,
+				26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */,
 			);
 			path = HideAndSeek;
 			sourceTree = "<group>";
@@ -275,6 +279,7 @@
 				26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */,
 				B69C52F52ACBD9CC009B3493 /* Homepage.swift */,
 				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
+				26E4B69D2AEFB11600434426 /* GameElementTutorialView.swift */,
 			);
 			path = "Macrow-ADHD";
 			sourceTree = "<group>";
@@ -643,11 +648,11 @@
 				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
 				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
 				B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */,
-				26E4B6922AEF769D00434426 /* GameElementTutorial.swift in Sources */,
 				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
 				26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */,
 				54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */,
 				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
+				26E4B69E2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
 				26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */,
 				26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */,
@@ -656,6 +661,7 @@
 				26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */,
 				542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
+				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
 				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,
 				B66E747E2ADF7C4300CCA69A /* Color+extension.swift in Sources */,
@@ -670,11 +676,13 @@
 				B6D1C9AF2AE83DB7003B4331 /* PassThroughBackground.swift in Sources */,
 				B6D1C9412AE837A9003B4331 /* ContentView.swift in Sources */,
 				B6D1C9BB2AE83DB7003B4331 /* CentralManager.swift in Sources */,
+				26E4B6A22AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				B6D1C9C22AE83DB7003B4331 /* Game+GetAnimal.swift in Sources */,
 				B6D1C95C2AE837A9003B4331 /* Homepage.swift in Sources */,
 				B6D1C95A2AE837A9003B4331 /* GameInfo.swift in Sources */,
 				B6D1C9CE2AE83E59003B4331 /* MWMDevice.swift in Sources */,
 				B6D1C9B02AE83DB7003B4331 /* ProgressBar.swift in Sources */,
+				26E4B69F2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
 				B6D1C9682AE83BCF003B4331 /* GuideView.swift in Sources */,
 				B6D1C9C52AE83DB7003B4331 /* AnimalTypeEnum.swift in Sources */,
 				B6D1C9B82AE83DB7003B4331 /* Color+extension.swift in Sources */,
