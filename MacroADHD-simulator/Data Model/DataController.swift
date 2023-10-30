@@ -119,9 +119,6 @@ class DataController: ObservableObject {
         
     }
     
-
-    
-    
     
 //    func addFocus(value: Int16, context: NSManagedObjectContext) {
 //        let focus = Focus(context: context)
@@ -142,8 +139,11 @@ class DataController: ObservableObject {
             for report in reportData {
                 
                 print("Report ID: \(report.reportId ?? UUID())")
+//                print("Report time: \(report.timestamp?.description)")
                 print("FocusData: \(report.focuses)")
                 print("PauseData: \(report.pauses)")
+                
+//                print("Game Data : \(report.reportToGame.)")
                 
                 print("Average Focus Value: \(report.avgAttention)")
 //                print("Focus Date: \(focus.date ?? Date())")
@@ -156,5 +156,17 @@ class DataController: ObservableObject {
     }
 
     
+    func fetchReports() -> [Report] {
+        let context = container.viewContext
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
+
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+            print("Failed to fetch reports: \(error.localizedDescription)")
+            return []
+        }
+    }
+
 }
 
