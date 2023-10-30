@@ -22,6 +22,8 @@ class MWMInstance: NSObject, ObservableObject {
     public var mfgID: String = ""
     public var deviceID: String = ""
     
+    var isConnected = false
+    
     func deviceFound(_ devName: String!, mfgID: String!, deviceID: String!) {
 //        scannedDeviceDataSubject.send(scannedDevice)
         mwmDevice?.connect(deviceID)
