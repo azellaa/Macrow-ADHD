@@ -26,7 +26,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = false
-    private var timerValue: Int = 300 // timer 10 menit
+    private var timerValue: Int = 600 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -50,9 +50,12 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     var pauseDataEntity: Pause!
     
+    var disconnectDataEntity: DisconnectEntity!
+    
     var currentAnimalEntity: Animal!
     
     var isSavingPauseData = false
+    var isSavingDisconnectData = false
     var isPublisherStarted = false
     var firstAnimalSpawned = false
     
@@ -297,6 +300,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             }
         ]))
         
+        listFocusData = [Double]()
+        stopMWMPublisher()
         isCompleted = true
         
     }
@@ -329,6 +334,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     fox.removeAllActions()
                     if rabbitCount - 1 <= 0 {
                         rabbitCount = 0
+                    } else {
+                        rabbitCount -= 1
                     }
                     
                     // Update rabbitCount in GameData
@@ -363,6 +370,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func startMWMPublisher() {
+        
+    }
+    
+    func stopMWMPublisher() {
         
     }
     

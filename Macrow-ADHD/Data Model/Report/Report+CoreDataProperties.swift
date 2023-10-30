@@ -22,8 +22,11 @@ extension Report {
     @NSManaged public var reportToFocus: Set<Focus>?
     @NSManaged public var reportToGame: Game?
     @NSManaged public var reportToPause: Set<Pause>?
+    @NSManaged public var reportToDisconnect: Set<DisconnectEntity>?
+    
 
 }
+
 
 // MARK: Generated accessors for reportToFocus
 extension Report {
@@ -58,6 +61,24 @@ extension Report {
     @NSManaged public func removeFromReportToPause(_ values: NSSet)
 
 }
+
+// MARK: Generated accessors for reportToDisconnect
+extension Report {
+
+    @objc(addReportToDisconnectObject:)
+    @NSManaged public func addToReportToDisconnect(_ value: DisconnectEntity)
+
+    @objc(removeReportToDisconnectObject:)
+    @NSManaged public func removeFromReportToDisconnect(_ value: DisconnectEntity)
+
+    @objc(addReportToDisconnect:)
+    @NSManaged public func addToReportToDisconnect(_ values: NSSet)
+
+    @objc(removeReportToDisconnect:)
+    @NSManaged public func removeFromReportToDisconnect(_ values: NSSet)
+
+}
+
 
 extension Report : Identifiable {
 

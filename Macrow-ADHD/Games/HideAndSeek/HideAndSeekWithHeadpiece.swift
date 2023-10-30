@@ -32,7 +32,20 @@ class HideAndSeekWithHeadpiece: HideAndSeekScene {
             .sink { signalStatus in
                 self.signalStatus = signalStatus
                 print("Signal: \(self.signalStatus)")
+                
+                if !self.isSavingDisconnectData && self.signalStatus != 4 {
+                    self.disconnectDataEntity = self.dataController.addDisconnect(startTime: Date(), report: self.reportEntity, context: self.context)
+                    self.isSavingDisconnectData = true
+                } else if self.isSavingDisconnectData && self.signalStatus == 4 {
+                    self.dataController.editDisconnectEndTime(disconnect: self.disconnectDataEntity, endTime: Date(), context: self.context)
+                    self.isSavingDisconnectData = false
+                }
             }
             .store(in: &cancellables)
+    }
+    
+    
+    override func stopMWMPublisher() {
+        cancellables.removeAll()
     }
 }
