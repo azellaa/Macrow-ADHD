@@ -10,7 +10,7 @@ import CoreData
 
 class DataController: ObservableObject {
     
-    let container = NSPersistentContainer(name: "ReportModel")
+    let container = NSPersistentCloudKitContainer(name: "ReportModel")
     
     init() {
         container.loadPersistentStores { desc, error in
@@ -98,6 +98,7 @@ class DataController: ObservableObject {
         disconnect.disconnectId = UUID()
         disconnect.startTime = startTime
         disconnect.disconnectToReport = report
+        print("Disconnect Saved")
         
         save(context: context)
         
