@@ -21,6 +21,8 @@
 		26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6712ACBCCC600117948 /* GameOverPage.swift */; };
 		26ECF09D2AE0CC71005F06E1 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
+		2ABD3E242AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
+		2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
 		3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49892ACBD31100DA8827 /* DataController.swift */; };
 		3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */; };
 		3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613772AC5C66F00F0A792 /* ContentView.swift */; };
@@ -111,6 +113,7 @@
 		26A9C6712ACBCCC600117948 /* GameOverPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameOverPage.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideView.swift; path = Games/HideAndSeek/GuideView.swift; sourceTree = "<group>"; };
+		2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTutorial.swift; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macrow_ADHDApp.swift; sourceTree = "<group>"; };
@@ -284,6 +287,7 @@
 				3DB613772AC5C66F00F0A792 /* ContentView.swift */,
 				3DB6137B2AC5C67100F0A792 /* Preview Content */,
 				268DE2432ADF756C0097E3F2 /* HomeView.swift */,
+				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
 				268DE2452ADF786B0097E3F2 /* ButtonView.swift */,
 				268DE2492ADF85500097E3F2 /* HomeItemView.swift */,
 				268DE24B2ADF85FC0097E3F2 /* GameView.swift */,
@@ -643,6 +647,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2ABD3E242AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */,
 				B6B2D91F2AF0FF2100C64CAA /* SplashScreen.swift in Sources */,
 				268DE2442ADF756C0097E3F2 /* HomeView.swift in Sources */,
 				268DE24C2ADF85FC0097E3F2 /* GameView.swift in Sources */,
@@ -692,6 +697,7 @@
 				B6D1C9B22AE83DB7003B4331 /* HeadpieceIndicator.swift in Sources */,
 				B6D1C9AF2AE83DB7003B4331 /* PassThroughBackground.swift in Sources */,
 				B6D1C9412AE837A9003B4331 /* ContentView.swift in Sources */,
+				2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */,
 				B6D1C9BB2AE83DB7003B4331 /* CentralManager.swift in Sources */,
 				B6D1C9C22AE83DB7003B4331 /* Game+GetAnimal.swift in Sources */,
 				B6D1C95C2AE837A9003B4331 /* Homepage.swift in Sources */,

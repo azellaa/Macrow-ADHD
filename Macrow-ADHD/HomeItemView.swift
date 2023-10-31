@@ -29,6 +29,29 @@ struct HomeItemView: View {
                     Text(gameName)
                         .font(.custom("Jua-Regular", size: 64))
                         .foregroundColor(Color.brownColor)
+                    HStack{
+                        Ellipse()
+                            .fill(Color("circleColor"))
+                            .frame(width: 10, height: 10)
+                            .padding(.trailing)
+                        Text("Patience")
+                            .font(.custom("Jua-Regular", size: 24))
+                            .foregroundColor(Color.brownColor)
+                            .padding(.trailing)
+                        Ellipse()
+                            .fill(Color("circleColor"))
+                            .frame(width: 10, height: 10)
+                            .padding(.trailing)
+                        Text("Selective Focus")
+                            .font(.custom("Jua-Regular", size: 24))
+                            .foregroundColor(Color.brownColor)
+                        Ellipse()
+                            .fill(Color("circleColor"))
+                            .frame(width: 10, height: 10)
+                            .padding(.leading)
+                            
+                    }
+                
                 }
             }
         }

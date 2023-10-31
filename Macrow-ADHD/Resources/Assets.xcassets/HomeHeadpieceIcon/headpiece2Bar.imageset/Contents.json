@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Group 98.png",
+      "filename" : "headpiece2Bar.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Group 98@2x.png",
+      "filename" : "headpiece2Bar@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Group 98@3x.png",
+      "filename" : "headpiece2Bar@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
