@@ -38,7 +38,8 @@ struct HomeView: View {
         GeometryReader { geo in
             VStack{
                 HStack {
-                    ButtonView(imageName: "chart.bar.fill", destination: StatisticViewSwift(), buttonColor: .brownColor, iconColor: .white, width: geo.size.width * 0.08, height: geo.size.height * 0.11)
+                    ButtonView(imageName: "chart.bar.fill", destination: StatisticViewSwift()
+                        .navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: geo.size.width * 0.08, height: geo.size.height * 0.11)
                         .padding(.leading)
                         .padding()
                     Spacer()

@@ -72,7 +72,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         dataController = DataController.shared
         self.context = dataController.container.viewContext
         
-        self.gameEntity = dataController.addGame(gameName: "Hide And Seek", level: 1, context: self.context)
+        self.gameEntity = dataController.addGame(gameName: "Hide & Seek", level: 1, context: self.context)
         
         
         self.reportEntity = dataController.addInitialReport(game: self.gameEntity, context: self.context)

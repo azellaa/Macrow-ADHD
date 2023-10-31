@@ -11,7 +11,7 @@ extension Double {
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         numberFormatter.minimumFractionDigits = 0
-        numberFormatter.maximumFractionDigits = 2
+        numberFormatter.maximumFractionDigits = 0
         return numberFormatter
     }
 
