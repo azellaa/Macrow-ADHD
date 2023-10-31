@@ -15,14 +15,24 @@ struct HomeView: View {
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
     @ObservedObject var centralManager = CentralManager()
-    @State private var imageName = "headpiece1Bar"
+    @State private var imageName = "headpieceDisconnect"
     
+    
+    #if targetEnvironment(simulator)
     
     private let games: [GameInfo] = [
         GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+//        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+//        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
     ]
+    #else
+    private let games: [GameInfo] = [
+        GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", destination: HideAndSeekWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+//        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+//        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+    ]
+    #endif
+    
     
     var body: some View {
         GeometryReader { geo in
@@ -84,27 +94,33 @@ struct HomeView: View {
             .background(Image("homeBg").resizable()
                 .aspectRatio( contentMode: .fill))
         }
-        .onChange(of: centralManager.isBluetoothOn) { isBluetoothOn in
-            
-            if isBluetoothOn {
-                print(isBluetoothOn)
-                mwmObject.mwmDevice?.scanDevice()
-            }
-        }
         .onReceive(mwmObject.signalStatusPublisher) { signalStatus in
             switch signalStatus {
             case 1:
                 self.imageName = "headpiece1Bar"
+                break
             case 2:
                 self.imageName = "headpiece2Bar"
+                break
             case 3:
                 self.imageName = "headpiece3Bar"
+                break
             case 4:
                 self.imageName = "headpieceLogo"
+                break
             default:
                 self.imageName = "headpieceDisconnect"
+                break
             }
         }
+        .onChange(of: centralManager.isBluetoothOn) { isBluetoothOn in
+            
+            if isBluetoothOn && !mwmObject.isConnected{
+                print(isBluetoothOn)
+                mwmObject.mwmDevice?.scanDevice()
+            }
+        }
+
         
         
     }

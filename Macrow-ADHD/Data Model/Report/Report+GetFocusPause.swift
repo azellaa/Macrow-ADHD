@@ -32,4 +32,16 @@ extension Report {
             return []
         }
     }
+    
+    public var disconnects: [DisconnectEntity] {
+        let setOfDisconnects = reportToDisconnect
+        
+        if let setOfDisconnects = setOfDisconnects {
+            return setOfDisconnects.sorted{
+                $0.id > $1.id
+            }
+        } else {
+            return []
+        }
+    }
 }

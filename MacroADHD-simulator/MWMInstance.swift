@@ -1,20 +1,19 @@
 //
 //  MWMInstance.swift
-//  Macrow-ADHD
+//  MacroADHD-simulator
 //
-//  Created by Gregorius Yuristama Nugraha on 10/3/23.
+//  Created by Gregorius Yuristama Nugraha on 10/25/23.
 //
 
 import Foundation
 import Combine
 
-class MWMInstance: NSObject, MWMDelegate, ObservableObject {
+class MWMInstance: NSObject, ObservableObject {
     
     
-    public var mwmDevice = MWMDevice.sharedInstance()
+    public var mwmDevice: MWMDevice? = MWMDevice.shared
     
     private var mwmDataSubject = PassthroughSubject<MWMData, Never>()
-//    private var scannedDeviceDataSubject = PassthroughSubject<Set<MWMModel>, Never>()
     private var signalStatusSubject = PassthroughSubject<Int, Never>()
     
     public static let shared = MWMInstance()
@@ -23,12 +22,8 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     public var mfgID: String = ""
     public var deviceID: String = ""
     
-    public var isConnected: Bool = false
+    var isConnected = false
     
-    override init() {
-        super.init()
-        mwmDevice?.delegate = self
-    }
     func deviceFound(_ devName: String!, mfgID: String!, deviceID: String!) {
 //        scannedDeviceDataSubject.send(scannedDevice)
         mwmDevice?.connect(deviceID)
@@ -40,17 +35,16 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     
     func didConnect() {
         print("didConnect");
-        isConnected = true
 //        scannedDevice.removeAll()
+//        self.mwmDevice?.enableLogging(withOptions: 1)
         mwmDevice?.stopScanDevice()
         signalStatusSubject.send(1)
     }
     
     func didDisconnect() {
         signalStatusSubject.send(0)
-        isConnected = false
         print("didDisconnect");
-        mwmDevice?.scanDevice()
+//        mwmDevice?.scanDevice()
     }
     
     func eSense(_ poorSignal: Int32, attention: Int32, meditation: Int32) {
@@ -60,14 +54,16 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
             meditation: meditation
         )
         switch updatedData.poorSignal {
-            case 133...200:
+            case 133...199:
             signalStatusSubject.send(1)
             case 67...132:
             signalStatusSubject.send(2)
             case 1...66:
             signalStatusSubject.send(3)
-            default:
+            case 0:
             signalStatusSubject.send(4)
+            default:
+            signalStatusSubject.send(0)
             }
         mwmDataSubject.send(updatedData)
     }
@@ -85,9 +81,9 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     
     
     
-    func exceptionMessage(_ eventType: TGBleExceptionEvent) {
-        print("Error: \(eventType.rawValue) ")
-    }
+//    func exceptionMessage(_ eventType: TGBleExceptionEvent) {
+//        print("Error: \(eventType.rawValue) ")
+//    }
     
     
 }
