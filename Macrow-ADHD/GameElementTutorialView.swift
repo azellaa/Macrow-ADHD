@@ -28,37 +28,42 @@ struct GameElementTutorialView: View {
     
     var body: some View {
         ZStack {
-            SpriteView(scene: gameScene)
-                .ignoresSafeArea()
-                .navigationBarBackButtonHidden()
-                .onTapGesture {
-                    switch(idx) {
-                    case 2:
-                        idx += 1
-                        gameScene.nextTutorial(text: texts[idx])
-                    case 3:
-                        if !isPaused {
-                            gameScene.hideAll()
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                                gameScene.pauseTutorial()
-                                isPaused = true
-                            }
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
-                                gameScene.removePause()
-                                idx = 4
-                                gameScene.nextTutorial(text: texts[idx])
-                            }
+//            SpriteView(scene: gameScene)
+//                .ignoresSafeArea()
+//                .navigationBarBackButtonHidden()
+            
+            TouchButton(normalImageName: "PlayButtonNotPressed",
+                        pressedImageName: "PlayButtonPressed",
+                        action: {
+                switch(idx) {
+                case 2:
+                    idx += 1
+                    gameScene.nextTutorial(text: texts[idx])
+                case 3:
+                    if !isPaused {
+                        gameScene.hideAll()
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                            gameScene.pauseTutorial()
+                            isPaused = true
                         }
-                    case 4:
-                        isActive = true
-                    default:
-                        idx += 1
-                        gameScene.nextTutorial(text: texts[idx])
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+                            gameScene.removePause()
+                            idx = 4
+                            gameScene.nextTutorial(text: texts[idx])
+                        }
                     }
+                case 4:
+                    isActive = true
+                default:
+                    idx += 1
+                    gameScene.nextTutorial(text: texts[idx])
                 }
-                .background (NavigationLink(
-                    destination: GameView(scene: currentGame.destination),
-                    isActive: $isActive) {
+            })
+            .position(CGPoint(x: width * 0.6, y: height * 0.2))
+            .zIndex(30)
+            .background (NavigationLink(
+                destination: GameView(scene: currentGame.destination),
+                isActive: $isActive) {
                     EmptyView()
                 })
         }
