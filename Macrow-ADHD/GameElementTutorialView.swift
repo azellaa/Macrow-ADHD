@@ -10,6 +10,8 @@ import _SpriteKit_SwiftUI
 
 struct GameElementTutorialView: View {
     @State var idx: Int = 0
+    @State var isActive: Bool = false
+    @State var isPaused: Bool = false
     
     var currentGame: GameInfo
     var width: CGFloat
@@ -30,16 +32,35 @@ struct GameElementTutorialView: View {
                 .ignoresSafeArea()
                 .navigationBarBackButtonHidden()
                 .onTapGesture {
-                    if idx < texts.count - 1 {
-                        if idx == 3 {
-                            // masukin tutorial pause selama beberapa detik
-                        }
+                    switch(idx) {
+                    case 2:
                         idx += 1
                         gameScene.nextTutorial(text: texts[idx])
-                    } else {
-                        // move to Game View
+                    case 3:
+                        if !isPaused {
+                            gameScene.hideAll()
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                gameScene.pauseTutorial()
+                                isPaused = true
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+                                gameScene.removePause()
+                                idx = 4
+                                gameScene.nextTutorial(text: texts[idx])
+                            }
+                        }
+                    case 4:
+                        isActive = true
+                    default:
+                        idx += 1
+                        gameScene.nextTutorial(text: texts[idx])
                     }
                 }
+                .background (NavigationLink(
+                    destination: GameView(scene: currentGame.destination),
+                    isActive: $isActive) {
+                    EmptyView()
+                })
         }
     }
 }

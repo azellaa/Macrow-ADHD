@@ -17,6 +17,8 @@ class GameElementTutorial: SKScene, SKPhysicsContactDelegate {
     private var bubbleBox = SKSpriteNode()
     private var bubbleText = SKLabelNode()
     
+    private var attentionPopup = AttentionPopup()
+    
     private let cropNode = SKCropNode()
     private var rectangleOverlay = SKShapeNode()
     
@@ -94,5 +96,40 @@ class GameElementTutorial: SKScene, SKPhysicsContactDelegate {
     
     func nextTutorial(text: String) {
         bubbleText.text = text
+    }
+    
+    func hideAll() {
+        bubbleBox.isHidden = true
+        bubbleText.isHidden = true
+        will.isHidden = true
+        cropNode.isHidden = true
+        rectangleOverlay.isHidden = true
+        blackAlphaBackground.isHidden = true
+        scoreBox.zPosition = 1
+    }
+    
+    func removePause() {
+        bubbleBox.isHidden = false
+        bubbleText.isHidden = false
+        will.isHidden = false
+        cropNode.isHidden = false
+        rectangleOverlay.isHidden = false
+        blackAlphaBackground.isHidden = false
+        scoreBox.zPosition = 22
+        
+        attentionPopup.removeAllActions()
+        attentionPopup.removeFromParent()
+    }
+    
+    func pauseTutorial() {
+        attentionPopup = AttentionPopup(sceneFrame: frame)
+        attentionPopup.zPosition = 25
+        addChild(attentionPopup)
+        
+        attentionPopup.startShowPause(self)
+    }
+    
+    override func update(_ currentTime: TimeInterval) {
+        attentionPopup.update(currentTime)
     }
 }
