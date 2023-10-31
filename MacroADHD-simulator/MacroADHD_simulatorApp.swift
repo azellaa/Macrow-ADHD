@@ -12,6 +12,7 @@ struct MacroADHD_simulatorApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+//            SplashScreen()
         }
     }
 }
