@@ -38,6 +38,9 @@
 		54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */; };
 		54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F22AE5B1F6003D874D /* MWMModel.swift */; };
 		B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */; };
+		B616ADDF2AF1661B00FC5DBE /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */; };
+		B616ADE32AF16CD600FC5DBE /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE22AF16CD600FC5DBE /* Double+extension.swift */; };
+		B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */; };
 		B6179DFD2AF031A600CAD6AA /* StatisticViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */; };
 		B6179DFE2AF031A800CAD6AA /* DataDummy.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65057942AF02E5E00BD6D08 /* DataDummy.swift */; };
 		B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */; };
@@ -49,6 +52,9 @@
 		B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */; };
 		B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
 		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
+		B6B2D92F2AF10CE600C64CAA /* ReportListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92C2AF10CE500C64CAA /* ReportListView.swift */; };
+		B6B2D9302AF10CE600C64CAA /* ReportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */; };
+		B6B2D9312AF10CE600C64CAA /* ReportDateUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92E2AF10CE600C64CAA /* ReportDateUtils.swift */; };
 		B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
 		B6D1C9352AE837A9003B4331 /* HomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C8FB2AE837A8003B4331 /* HomeItemView.swift */; };
 		B6D1C9412AE837A9003B4331 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9112AE837A8003B4331 /* ContentView.swift */; };
@@ -127,6 +133,9 @@
 		54F6B0F22AE5B1F6003D874D /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 		B60864952AE62AE600424FCA /* MacroADHD-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacroADHD-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroADHD_simulatorApp.swift; sourceTree = "<group>"; };
+		B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
+		B616ADE22AF16CD600FC5DBE /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
+		B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jua-Regular.ttf"; sourceTree = "<group>"; };
 		B64EFB612AE22B5A002190EA /* ReportModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReportModel.xcdatamodel; sourceTree = "<group>"; };
 		B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewSwift.swift; sourceTree = "<group>"; };
@@ -136,6 +145,9 @@
 		B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPopup.swift; sourceTree = "<group>"; };
 		B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadpieceIndicator.swift; sourceTree = "<group>"; };
 		B69C52F52ACBD9CC009B3493 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		B6B2D92C2AF10CE500C64CAA /* ReportListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportListView.swift; sourceTree = "<group>"; };
+		B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUtils.swift; sourceTree = "<group>"; };
+		B6B2D92E2AF10CE600C64CAA /* ReportDateUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportDateUtils.swift; sourceTree = "<group>"; };
 		B6BFD4652AE139D300D3AAB1 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
 		B6BFD4662AE139D300D3AAB1 /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDelegate.h; sourceTree = "<group>"; };
 		B6BFD4672AE139D300D3AAB1 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
@@ -381,6 +393,10 @@
 			children = (
 				B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */,
 				B65057942AF02E5E00BD6D08 /* DataDummy.swift */,
+				B6B2D92E2AF10CE600C64CAA /* ReportDateUtils.swift */,
+				B6B2D92C2AF10CE500C64CAA /* ReportListView.swift */,
+				B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */,
+				B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */,
 			);
 			path = Statistic;
 			sourceTree = "<group>";
@@ -392,6 +408,8 @@
 				542DD88A2AE58F310024387C /* Extension */,
 				B6BFD4642AE139D300D3AAB1 /* lib */,
 				5491B13A2AE5C351004986A0 /* CentralManager.swift */,
+				B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */,
+				B616ADE22AF16CD600FC5DBE /* Double+extension.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -642,6 +660,7 @@
 				268DE24A2ADF85500097E3F2 /* HomeItemView.swift in Sources */,
 				268DE2462ADF786B0097E3F2 /* ButtonView.swift in Sources */,
 				26ECF09D2AE0CC71005F06E1 /* GameInfo.swift in Sources */,
+				B616ADE32AF16CD600FC5DBE /* Double+extension.swift in Sources */,
 				54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */,
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
 				542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */,
@@ -653,12 +672,15 @@
 				542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */,
 				542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */,
 				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
+				B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */,
+				B6B2D9302AF10CE600C64CAA /* ReportUtils.swift in Sources */,
 				542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */,
 				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
 				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
 				B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */,
 				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
 				26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */,
+				B616ADDF2AF1661B00FC5DBE /* Date+extension.swift in Sources */,
 				54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */,
 				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
@@ -666,9 +688,11 @@
 				26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */,
 				B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */,
 				54A4217A2AE25E4200C51A6C /* AnimalTypeEnum.swift in Sources */,
+				B6B2D92F2AF10CE600C64CAA /* ReportListView.swift in Sources */,
 				26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */,
 				542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */,
 				B65057932AF02B7800BD6D08 /* StatisticViewSwift.swift in Sources */,
+				B6B2D9312AF10CE600C64CAA /* ReportDateUtils.swift in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
 				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,

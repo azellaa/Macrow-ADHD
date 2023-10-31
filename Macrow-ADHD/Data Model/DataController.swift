@@ -10,7 +10,9 @@ import CoreData
 
 class DataController: ObservableObject {
     
-    let container = NSPersistentCloudKitContainer(name: "ReportModel")
+    public static let shared = DataController()
+    
+    public let container = NSPersistentCloudKitContainer(name: "ReportModel")
     
     init() {
         container.loadPersistentStores { desc, error in
@@ -45,6 +47,7 @@ class DataController: ObservableObject {
         let game = Game(context: context)
         game.gameId = UUID()
         game.level = level
+        game.gameName = gameName
         
         save(context: context)
         
@@ -195,11 +198,17 @@ class DataController: ObservableObject {
         
         let dateFormat = DateFormatter()
         dateFormat.dateFormat = "yyyy-MM-dd"
-        let dateFromString = dateFormat.date(from: "2023-10-22")!
-        let formattedDate = dateFormat.string(from: dateFromString)
+        let dateFromString = dateFormat.date(from: "2023-10-24")!
+        print(dateFromString)
+        let startDate = Calendar.current.startOfDay(for: dateFromString)
+        
+        var components = DateComponents()
+        components.day = 1
+        components.second = -1
+        let endDate = Calendar.current.date(byAdding: components, to: dateFromString)!
         
         
-        fetchRequest.predicate = NSPredicate(format: "timestamp = %@", formattedDate)
+        fetchRequest.predicate = NSPredicate(format: "timestamp >= %@ AND timestamp <= %@", startDate as NSDate, endDate as NSDate)
 
         do {
             return try context.fetch(fetchRequest)
@@ -208,6 +217,79 @@ class DataController: ObservableObject {
             return []
         }
     }
+    
+    func fetchReportByDay(_ date: Date) -> [Report] {
+        let context = container.viewContext
+        
+        let calendar = Calendar.current
+        let startOfDay = calendar.startOfDay(for: date) // Midnight of the current day
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay) // Midnight of the next day
+
+        // Create a predicate to fetch data for the current day
+        let predicate = NSPredicate(format: "timestamp >= %@ AND timestamp < %@", startOfDay as CVarArg, endOfDay! as any CVarArg as CVarArg)
+
+        // Fetch data using the predicate
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
+        fetchRequest.predicate = predicate
+
+        do {
+            return try context.fetch(fetchRequest)
+            // Process the results
+        } catch {
+            // Handle the error
+            print("Failed to fetch reports: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    func fetchReportByWeek(_ date: Date) -> [Report] {
+        let context = container.viewContext
+        let calendar = Calendar.current
+        let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)) // Start of the current week
+        let endOfWeek = calendar.date(byAdding: .weekOfYear, value: 1, to: startOfWeek!) // Start of the next week
+
+        // Create a predicate to fetch data for the current week
+        let predicate = NSPredicate(format: "timestamp >= %@ AND timestamp < %@", startOfWeek! as any CVarArg as CVarArg, endOfWeek! as any CVarArg as CVarArg)
+
+        // Fetch data using the predicate
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
+        fetchRequest.predicate = predicate
+
+        do {
+            return try context.fetch(fetchRequest)
+            // Process the results
+        } catch {
+            // Handle the error
+            print("Failed to fetch reports: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    func fetchReportByMonth(_ date: Date) -> [Report] {
+        let context = container.viewContext
+        let calendar = Calendar.current
+        let startOfMonth = calendar.date(from: calendar.dateComponents([.year, .month], from: date)) // Start of the current month
+        let endOfMonth = calendar.date(byAdding: .month, value: 1, to: startOfMonth!) // Start of the next month
+
+        // Create a predicate to fetch data for the current month
+        let predicate = NSPredicate(format: "timestamp >= %@ AND timestamp < %@", startOfMonth! as any CVarArg as CVarArg, endOfMonth! as any CVarArg as CVarArg)
+
+        // Fetch data using the predicate
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
+        fetchRequest.predicate = predicate
+
+        do {
+            return try context.fetch(fetchRequest)
+            // Process the results
+        } catch {
+            // Handle the error
+            print("Failed to fetch reports: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    
+    
     
 }
 
