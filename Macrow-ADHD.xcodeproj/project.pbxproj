@@ -24,6 +24,8 @@
 		26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */; };
 		26E4B6A22AEFB16600434426 /* GameElementTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */; };
 		26ECF09D2AE0CC71005F06E1 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */; };
+		26FF33D42AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
+		26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
 		3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49892ACBD31100DA8827 /* DataController.swift */; };
 		3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */; };
@@ -109,6 +111,7 @@
 		26E4B69D2AEFB11600434426 /* GameElementTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElementTutorialView.swift; sourceTree = "<group>"; };
 		26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElementTutorial.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
+		26FF33D32AF10E9C00944F48 /* TouchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchButton.swift; sourceTree = "<group>"; };
 		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideView.swift; path = Games/HideAndSeek/GuideView.swift; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -280,6 +283,7 @@
 				B69C52F52ACBD9CC009B3493 /* Homepage.swift */,
 				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
 				26E4B69D2AEFB11600434426 /* GameElementTutorialView.swift */,
+				26FF33D32AF10E9C00944F48 /* TouchButton.swift */,
 			);
 			path = "Macrow-ADHD";
 			sourceTree = "<group>";
@@ -663,6 +667,7 @@
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
+				26FF33D42AF10E9C00944F48 /* TouchButton.swift in Sources */,
 				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,
 				B66E747E2ADF7C4300CCA69A /* Color+extension.swift in Sources */,
 			);
@@ -673,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D1C9B22AE83DB7003B4331 /* HeadpieceIndicator.swift in Sources */,
+				26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */,
 				B6D1C9AF2AE83DB7003B4331 /* PassThroughBackground.swift in Sources */,
 				B6D1C9412AE837A9003B4331 /* ContentView.swift in Sources */,
 				B6D1C9BB2AE83DB7003B4331 /* CentralManager.swift in Sources */,
