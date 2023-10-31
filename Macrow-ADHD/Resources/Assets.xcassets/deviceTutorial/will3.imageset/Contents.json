@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "headpieceConnected.png",
+      "filename" : "Frame 48.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "headpieceConnected@2x.png",
+      "filename" : "Frame 48@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "headpieceConnected@3x.png",
+      "filename" : "Frame 48@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
