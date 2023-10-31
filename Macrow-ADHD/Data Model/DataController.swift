@@ -173,7 +173,41 @@ class DataController: ObservableObject {
             print("Failed to fetch focus data: \(error.localizedDescription)")
         }
     }
+    
+    func fetchReports() -> [Report] {
+        let context = container.viewContext
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
 
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+            print("Failed to fetch reports: \(error.localizedDescription)")
+            return []
+        }
+    }
+    
+    func fetchReportsWithDate() -> [Report] {
+        let context = container.viewContext
+        // Optional(2023-10-22 17:45:15 +0000)
+        
+        let fetchRequest: NSFetchRequest<Report> = Report.fetchRequest()
+        
+        
+        let dateFormat = DateFormatter()
+        dateFormat.dateFormat = "yyyy-MM-dd"
+        let dateFromString = dateFormat.date(from: "2023-10-22")!
+        let formattedDate = dateFormat.string(from: dateFromString)
+        
+        
+        fetchRequest.predicate = NSPredicate(format: "timestamp = %@", formattedDate)
+
+        do {
+            return try context.fetch(fetchRequest)
+        } catch {
+            print("Failed to fetch reports: \(error.localizedDescription)")
+            return []
+        }
+    }
     
 }
 
