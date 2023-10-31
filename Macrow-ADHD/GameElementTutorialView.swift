@@ -28,12 +28,12 @@ struct GameElementTutorialView: View {
     
     var body: some View {
         ZStack {
-//            SpriteView(scene: gameScene)
-//                .ignoresSafeArea()
-//                .navigationBarBackButtonHidden()
+            SpriteView(scene: gameScene)
+                .ignoresSafeArea()
+                .navigationBarBackButtonHidden()
             
-            TouchButton(normalImageName: "PlayButtonNotPressed",
-                        pressedImageName: "PlayButtonPressed",
+            TouchButton(normalImageName: "buttonNextNotPressed",
+                        pressedImageName: "buttonNextPressed",
                         action: {
                 switch(idx) {
                 case 2:
@@ -50,6 +50,7 @@ struct GameElementTutorialView: View {
                             gameScene.removePause()
                             idx = 4
                             gameScene.nextTutorial(text: texts[idx])
+                            isPaused = false
                         }
                     }
                 case 4:
@@ -59,7 +60,8 @@ struct GameElementTutorialView: View {
                     gameScene.nextTutorial(text: texts[idx])
                 }
             })
-            .position(CGPoint(x: width * 0.6, y: height * 0.2))
+            .opacity(!isPaused ? 1 : 0)
+            .position(CGPoint(x: width * 0.82, y: height * 0.91))
             .zIndex(30)
             .background (NavigationLink(
                 destination: GameView(scene: currentGame.destination),
@@ -67,5 +69,6 @@ struct GameElementTutorialView: View {
                     EmptyView()
                 })
         }
+        .navigationBarBackButtonHidden()
     }
 }
