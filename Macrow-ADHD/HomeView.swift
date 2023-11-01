@@ -159,6 +159,7 @@ struct HomeView: View {
                 mwmObject.mwmDevice?.scanDevice()
             }
         }
+        .navigationBarBackButtonHidden(true)
 
         
         

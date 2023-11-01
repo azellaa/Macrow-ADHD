@@ -26,7 +26,7 @@ class NewPage: SKScene, SKPhysicsContactDelegate {
         var count = 100
         Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
             if count <= 0 { timer.invalidate() }
-            self.progressBar.updateProgressBar(CGFloat(count))
+            self.progressBar.updateProgressBar(CGFloat(count), timeLeft: "100", score: 10)
             
             count -= 1
         }

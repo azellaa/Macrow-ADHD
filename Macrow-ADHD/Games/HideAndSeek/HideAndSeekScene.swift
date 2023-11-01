@@ -14,14 +14,12 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var rabbit = SKSpriteNode()
     private var fox = SKSpriteNode()
-    private var rabbitCounter = SKSpriteNode()
     private var connection = SKSpriteNode()
     private var focusBar = ProgressBar()
     private var bg = BackgroundHideAndSeek()
     private var rabbitPos = [NodeElement]()
     private var foxPos = [NodeElement]()
     private var tutorialView = TutorialView()
-    private let rabbitCountLabel = SKLabelNode(text: "x0")
     
     private var rabbitCount = 0
     private var isTouched = false
@@ -38,7 +36,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     public var isCompleted = false
     private var attentionPopup = AttentionPopup()
-    private var headpieceStatus = HeadpieceIndicator()
     
     var signalStatus: Int = 4
     var dataController: DataController!
@@ -222,25 +219,11 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func addNodes() {
-        rabbitCountLabel.fontName = "AvenirNext-Bold"
-        rabbitCountLabel.fontSize = 30
-        rabbitCountLabel.name = "rabbitCountLabel"
-        rabbitCountLabel.position = CGPoint(x: frame.width * 0.835, y: frame.height * 0.873)
-        rabbitCountLabel.zPosition = 15
-        addChild(rabbitCountLabel)
-        
         tutorialView = TutorialView(sceneFrame: frame)
         tutorialView.isUserInteractionEnabled = true
         tutorialView.delegate = self
         tutorialView.zPosition = 20
         addChild(tutorialView)
-        
-        rabbitCounter = .init(imageNamed: "RabbitCounter")
-        //        rabbitCounter.setScale(0.9)
-        //        rabbitCounter.size.width = rabbitCounter.size.width * 1.05
-        rabbitCounter.position = CGPoint(x: frame.width * 0.815, y: frame.height * 0.89)
-        rabbitCounter.zPosition = 10
-        addChild(rabbitCounter)
         
 //        connection = .init(imageNamed: "noSignalIcon")
         connection.position = CGPoint(x: frame.width * 0.930, y: frame.height * 0.89)
@@ -250,8 +233,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         focusBar.getSceneFrame(sceneFrame: frame)
         focusBar.setScale(0.9)
-        focusBar.buildProgressBar()
-        focusBar.position = CGPoint(x: frame.width * 0.47 , y: frame.height * 0.89)
+        focusBar.buildScoreBox()
+        focusBar.position = CGPoint(x: frame.width * 0.47 , y: frame.height * 0.93)
         addChild(focusBar)
         
         
@@ -260,17 +243,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         attentionPopup.isHidden = true
         attentionPopup.zPosition = 20
         addChild(attentionPopup)
-        
-        headpieceStatus.getSceneFrame(sceneFrame: frame)
-        headpieceStatus.buildIndicator()
-        addChild(headpieceStatus)
-        
     }
-    
-    func updateRabbitCountLabel() {
-        rabbitCountLabel.text = "x\(rabbitCount)"
-    }
-    
     
     func openTutorial() {
         if !isTutorialOpened {
@@ -321,7 +294,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     // Update rabbitCount in GameData
                     GameData.rabbitCount = rabbitCount
                     
-                    updateRabbitCountLabel()
                     isTouched = true
                     
                     rabbit.run(slideSequence(y: rabbit.size.height))
@@ -341,7 +313,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     // Update rabbitCount in GameData
                     GameData.rabbitCount = rabbitCount
                     
-                    updateRabbitCountLabel()
                     isTouched = true
                     
                     fox.run(slideSequence(y: fox.size.height))
@@ -378,7 +349,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
-        updateRabbitCountLabel()
         openTutorial()
         
         if !isTutorialOpened {
@@ -394,8 +364,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         }
         
         
+        let minutes = timerValue / 60
+        let seconds = timerValue % 60
         
-        focusBar.updateProgressBar(CGFloat(self.focusCount))
+        focusBar.updateProgressBar(CGFloat(self.focusCount), timeLeft: String(format:"%d:%02d", minutes, seconds), score: rabbitCount)
         attentionPopup.update(currentTime)
         if tutorialView.isHidden {
             if self.focusCount < 50  {
