@@ -1,0 +1,35 @@
+{
+  "images" : [
+    {
+<<<<<<<< HEAD:MacroADHD-simulator/Resources/Assets.xcassets/Button/PlayButtonNotPressed2.imageset/Contents.json
+      "filename" : "Text Button.png",
+========
+      "filename" : "Group 82.png",
+>>>>>>>> main:Macrow-ADHD/Resources/Assets.xcassets/ConnectingIcon/poorSignalIcon.imageset/Contents 2.json
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+<<<<<<<< HEAD:MacroADHD-simulator/Resources/Assets.xcassets/Button/PlayButtonNotPressed2.imageset/Contents.json
+      "filename" : "Text Button@2x.png",
+========
+      "filename" : "Group 82@2x.png",
+>>>>>>>> main:Macrow-ADHD/Resources/Assets.xcassets/ConnectingIcon/poorSignalIcon.imageset/Contents 2.json
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+<<<<<<<< HEAD:MacroADHD-simulator/Resources/Assets.xcassets/Button/PlayButtonNotPressed2.imageset/Contents.json
+      "filename" : "Text Button@3x.png",
+========
+      "filename" : "Group 82@3x.png",
+>>>>>>>> main:Macrow-ADHD/Resources/Assets.xcassets/ConnectingIcon/poorSignalIcon.imageset/Contents 2.json
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}
