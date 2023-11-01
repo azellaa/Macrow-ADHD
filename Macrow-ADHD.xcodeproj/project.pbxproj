@@ -24,6 +24,7 @@
 		26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */; };
 		26E4B6A22AEFB16600434426 /* GameElementTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */; };
 		26ECF09D2AE0CC71005F06E1 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */; };
+		26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
 		2ABD3E242AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
 		2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
@@ -63,8 +64,10 @@
 		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
 		B6B2D91D2AF0FF1900C64CAA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D91C2AF0FF1900C64CAA /* SplashScreen.swift */; };
 		B6B2D9212AF0FF4500C64CAA /* Hide&SeekIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9202AF0FF4500C64CAA /* Hide&SeekIntroduction.swift */; };
-		B6B2D9292AF0FF9B00C64CAA /* (null) in Sources */ = {isa = PBXBuildFile; };
 		B6B2D9302AF10CE600C64CAA /* ReportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */; };
+		B6B2D91F2AF0FF2100C64CAA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D91E2AF0FF2100C64CAA /* SplashScreen.swift */; };
+		B6B2D9252AF0FF7C00C64CAA /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9242AF0FF7C00C64CAA /* TouchButton.swift */; };
+		B6B2D9292AF0FF9B00C64CAA /* BubbleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9282AF0FF9B00C64CAA /* BubbleText.swift */; };
 		B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
 		B6D1C9352AE837A9003B4331 /* HomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C8FB2AE837A8003B4331 /* HomeItemView.swift */; };
 		B6D1C9412AE837A9003B4331 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9112AE837A8003B4331 /* ContentView.swift */; };
@@ -164,6 +167,7 @@
 		B6B2D9242AF0FF7C00C64CAA /* TouchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchButton.swift; path = "Macrow-ADHD/TouchButton.swift"; sourceTree = SOURCE_ROOT; };
 		B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleText.swift; sourceTree = "<group>"; };
 		B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUtils.swift; sourceTree = "<group>"; };
+		B6B2D91E2AF0FF2100C64CAA /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		B6BFD4652AE139D300D3AAB1 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
 		B6BFD4662AE139D300D3AAB1 /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDelegate.h; sourceTree = "<group>"; };
 		B6BFD4672AE139D300D3AAB1 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
@@ -699,6 +703,7 @@
 				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
 				B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */,
 				B6B2D9302AF10CE600C64CAA /* ReportUtils.swift in Sources */,
+				B6B2D9232AF0FF4900C64CAA /* Hide&SeekIntroduction.swift in Sources */,
 				542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */,
 				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
 				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
@@ -721,6 +726,7 @@
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
+				26FF33D42AF10E9C00944F48 /* TouchButton.swift in Sources */,
 				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,
 				B66E747E2ADF7C4300CCA69A /* Color+extension.swift in Sources */,
 				B649292E2AF2097900570802 /* TouchButton.swift in Sources */,
@@ -732,6 +738,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B6D1C9B22AE83DB7003B4331 /* HeadpieceIndicator.swift in Sources */,
+				26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */,
 				B6D1C9AF2AE83DB7003B4331 /* PassThroughBackground.swift in Sources */,
 				B6D1C9412AE837A9003B4331 /* ContentView.swift in Sources */,
 				2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */,
@@ -755,7 +762,6 @@
 				B6D1C9CB2AE83DF1003B4331 /* MWMModel.swift in Sources */,
 				B6D1C9B32AE83DB7003B4331 /* HideAndSeekScene.swift in Sources */,
 				B6D1C96D2AE83C6D003B4331 /* HomeView.swift in Sources */,
-				B6B2D9292AF0FF9B00C64CAA /* (null) in Sources */,
 				B6D1C95B2AE837A9003B4331 /* GameDescriptionView.swift in Sources */,
 				B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */,
 				B6D1C9B42AE83DB7003B4331 /* HideAndSeekBackground.swift in Sources */,
