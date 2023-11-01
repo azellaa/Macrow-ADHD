@@ -47,7 +47,7 @@ struct HomeView: View {
                             .padding(.leading, 17)
                         
                         
-                        ButtonView(imageName: "", destination: EmptyView(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
+                        ButtonView(imageName: "", destination: StatisticViewSwift().navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
                             .padding(.leading)
                             .padding()
                             .overlay(

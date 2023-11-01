@@ -24,7 +24,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = false
-    private var timerValue: Int = 600 // timer 10 menit
+    private var timerValue: Int = 60 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -38,7 +38,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var attentionPopup = AttentionPopup()
     
     var signalStatus: Int = 4
-    var dataController: DataController!
+     var dataController: DataController!
     var context: NSManagedObjectContext!
     
     var gameEntity: Game!
@@ -66,10 +66,11 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     
     override func didMove(to view: SKView) {
-        dataController = DataController()
+        dataController = DataController.shared
         self.context = dataController.container.viewContext
         
-        self.gameEntity = dataController.addGame(gameName: "Hide And Seek", level: 1, context: self.context)
+        self.gameEntity = dataController.addGame(gameName: "Hide & Seek", level: 1, context: self.context)
+        
         
         self.reportEntity = dataController.addInitialReport(game: self.gameEntity, context: self.context)
         
