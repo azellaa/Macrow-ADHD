@@ -12,6 +12,7 @@ struct HomeView: View {
     @GestureState private var dragOffset: CGFloat = 0
     
     
+    
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
     @ObservedObject var centralManager = CentralManager()
@@ -101,10 +102,18 @@ struct HomeView: View {
                     
                     ZStack {
                         ForEach(0..<games.count) { index in
-                            HomeItemView(dest: GameDescriptionView(currentGame: games[index], width: geo.size.width, height: geo.size.height), gameName: games[index].name, imageName: games[index].imageName)
-                                .offset(x: CGFloat(index - currentIdx) * geo.size.width * 0.9 + dragOffset, y: 0)
+                            if games[index].name == "Hide and Seek" {
+                                NavigationLink(destination: Hide_SeekIntroduction()) {
+                                    HomeItemView(dest: Hide_SeekIntroduction(), gameName: games[index].name, imageName: games[index].imageName)
+                                        .offset(x: CGFloat(index - currentIdx) * geo.size.width * 0.9 + dragOffset, y: 0)
+                                }
+                            } else {
+                                HomeItemView(dest: GameDescriptionView(currentGame: games[index], width: geo.size.width, height: geo.size.height), gameName: games[index].name, imageName: games[index].imageName)
+                                    .offset(x: CGFloat(index - currentIdx) * geo.size.width * 0.9 + dragOffset, y: 0)
+                            }
                         }
                     }
+
                     .gesture(
                         DragGesture()
                             .onEnded({ value in
@@ -159,8 +168,7 @@ struct HomeView: View {
                 mwmObject.mwmDevice?.scanDevice()
             }
         }
-
-        
+        .navigationBarBackButtonHidden(true)
         
     }
 }

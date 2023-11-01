@@ -11,21 +11,21 @@ import UIKit
 import SwiftUI
 
 
-class GameOverPage: SKScene, SKPhysicsContactDelegate {
-    
-    //    var progressBar = ProgressBar()
+class GameOverPage: SKNode {
+
     var timerEnded = false
     var endImage: SKSpriteNode!
-    // Access the shared rabbitCount
+    private var sceneFrame = CGRect()
     let sharedRabbitCount = GameData.rabbitCount
     
+    override init(){
+        super.init()
+    }
     
-    override func didMove(to view: SKView) {
-        physicsWorld.contactDelegate = self
-        
-        scene?.size = view.bounds.size
-        scene?.scaleMode = .aspectFill
-        
+    required init(sceneFrame: CGRect)
+     {
+        super.init()
+        self.sceneFrame = sceneFrame
         showEndImage()
         
         var count = 100
@@ -42,6 +42,10 @@ class GameOverPage: SKScene, SKPhysicsContactDelegate {
         }
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     func showEndImage() {
         if endImage == nil {
             print("Showing end image") // Debugging statement
@@ -53,32 +57,54 @@ class GameOverPage: SKScene, SKPhysicsContactDelegate {
             // Create the main label (text label)
             let congratsLabel = SKLabelNode(fontNamed: "Jua-Regular")
             congratsLabel.fontSize = 48
-            congratsLabel.text = "CONGRATULATIONS!"
-            congratsLabel.position = CGPoint(x: frame.width / 2, y: frame.height / 2 - 130)
+            congratsLabel.text = "Congratulations!"
+            congratsLabel.position = CGPoint(x: frame.width / 2, y: frame.height + 120 )
+            congratsLabel.fontColor = SKColor(named: "cream2Color")
             congratsLabel.zPosition = 2
             addChild(congratsLabel)
+            
+            let scoreLabel = SKLabelNode(fontNamed: "Jua-Regular")
+            scoreLabel.fontSize = 64
+            scoreLabel.text = "Your Score"
+            scoreLabel.fontColor = SKColor(named: "cream2Color")
+            scoreLabel.position = CGPoint(x: frame.width / 2, y: frame.height / 2 )
+            scoreLabel.zPosition = 2
+            addChild(scoreLabel)
+            
+            let starBg = SKSpriteNode(imageNamed: "starBg")
+            starBg.position = CGPoint(x: frame.width / 2, y: frame.height / 2 - 100)
+            starBg.size = CGSize(width: 451, height: 157)
+            starBg.zPosition = 2
+            addChild(starBg)
+            
+            let star = SKSpriteNode(imageNamed: "star")
+            star.position = CGPoint(x: frame.width / 2 - 50 , y: frame.height / 2 - 95)
+            star.zPosition = 3
+            addChild(star)
+            
 
             // Create the outline label
             let outlineLabel = SKLabelNode(fontNamed: "Jua-Regular")
             outlineLabel.fontSize = congratsLabel.fontSize
             outlineLabel.text = congratsLabel.text
+            outlineLabel.fontColor = SKColor(named: "cream2Color")
             outlineLabel.position = CGPoint(x: congratsLabel.position.x + 2, y: congratsLabel.position.y )
             outlineLabel.zPosition = 1
-            outlineLabel.fontColor = .white
             addChild(outlineLabel)
 
             
             // Create and add a label to display the rabbit count
-            let rabbitCountLabel = SKLabelNode(fontNamed: "Jua-Regular")
-            rabbitCountLabel.fontSize = 36
-            rabbitCountLabel.text = "You saved \(sharedRabbitCount) rabbits"
-            rabbitCountLabel.position = CGPoint(x: frame.width / 2 - 3, y: frame.height / 2 - 175)
-            rabbitCountLabel.zPosition = 2
-            addChild(rabbitCountLabel)
+            let starLabel = SKLabelNode(fontNamed: "Jua-Regular")
+            starLabel.fontSize = 96
+            starLabel.text = "\(sharedRabbitCount)"
+            starLabel.fontColor = SKColor(named: "cream2Color")
+            starLabel.position = CGPoint(x: frame.width / 2 + 50, y: frame.height / 2 - 140)
+            starLabel.zPosition = 2
+            addChild(starLabel)
             
             let homeButton = SKSpriteNode(imageNamed: "homeButton")
             homeButton.name = "homeButton"
-            homeButton.position = CGPoint(x: frame.width / 2, y: frame.height / 2 - 240)
+            homeButton.position = CGPoint(x: frame.width / 2, y: frame.height / 2 - 280)
             homeButton.zPosition = 2
             addChild(homeButton)
         }
@@ -86,12 +112,26 @@ class GameOverPage: SKScene, SKPhysicsContactDelegate {
     
     
     func returnToApp() {
-        if let window = view?.window {
-            let appView = ContentView()
-            let controller = UIHostingController(rootView: appView)
-            window.rootViewController = controller
+        if let scene = self.scene, let skView = scene.view as? SKView {
+            let transition = SKTransition.fade(withDuration: 0.5)
+            
+            // Create an empty SKScene
+            let homeScene = SKScene(size: skView.bounds.size)
+            
+            // Create a hosting controller for your SwiftUI view
+            let homeView = HomeView()
+            let hostingController = UIHostingController(rootView: homeView)
+            hostingController.view.backgroundColor = .clear
+            hostingController.view.isOpaque = false
+            
+            // Add the SwiftUI hosting controller's view to the SKScene
+            if let hostingView = hostingController.view {
+                homeScene.view?.addSubview(hostingView)
+                skView.presentScene(homeScene, transition: transition)
+            }
         }
     }
+
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
@@ -101,4 +141,7 @@ class GameOverPage: SKScene, SKPhysicsContactDelegate {
             }
         }
     }
+
 }
+
+

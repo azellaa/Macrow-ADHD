@@ -26,7 +26,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = false
-    private var timerValue: Int = 600 // timer 10 menit
+    private var timerValue: Int = 5 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -100,17 +100,17 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             if !self.isTutorialOpened && self.signalStatus == 4{
                 self.timerValue -= 1
                 
-//                if self.timerValue == 295 {
-//                    self.focusCount = 30
-//                }
-//                
-//                if self.timerValue == 290 {
-//                    self.focusCount = 80
-//                }
-//                
-//                if self.timerValue == 288 {
-//                    self.focusCount = 30
-//                }
+                //                if self.timerValue == 295 {
+                //                    self.focusCount = 30
+                //                }
+                //
+                //                if self.timerValue == 290 {
+                //                    self.focusCount = 80
+                //                }
+                //
+                //                if self.timerValue == 288 {
+                //                    self.focusCount = 30
+                //                }
                 
             }
         }
@@ -140,7 +140,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         isSpawning = true // Mark that an entity is spawning
         
         let spawnCompletionAction = SKAction.run { [weak self] in
-            self?.spawnNextEntity()
+            if !self!.isCompleted {
+                self?.spawnNextEntity()
+            }
         }
         
         if randomValue <= 5 {
@@ -242,7 +244,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         rabbitCounter.zPosition = 10
         addChild(rabbitCounter)
         
-//        connection = .init(imageNamed: "noSignalIcon")
+        //        connection = .init(imageNamed: "noSignalIcon")
         connection.position = CGPoint(x: frame.width * 0.930, y: frame.height * 0.89)
         connection.size = CGSize(width: 83, height: 79)
         connection.zPosition = 10
@@ -288,17 +290,22 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     func timesUpFunc() {
         dataController.editAvgAttentionReport(report: self.reportEntity, avgAttention: listFocusData.average(), context: self.context)
-        dataController.fetchAndPrintFocusData()
+        //        dataController.fetchAndPrintFocusData()
         
-        run(SKAction.sequence([
-            SKAction.run { [weak self] in
-                guard let `self` = self else { return }
-                let reveal = SKTransition.fade(withDuration: 0.5)
-                
-                let scene = GameOverPage()
-                view?.presentScene(scene, transition: reveal)
-            }
-        ]))
+        let scene = GameOverPage(sceneFrame: self.frame)
+        scene.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        
+        let blackAlphaBackground = SKSpriteNode()
+        blackAlphaBackground.size = CGSize(width: self.frame.width, height: self.frame.height)
+        blackAlphaBackground.color = .black
+        blackAlphaBackground.alpha = 0.5
+        blackAlphaBackground.position = CGPoint(x: self.frame.width / 2 , y: self.frame.height / 2)
+        
+        blackAlphaBackground.zPosition = 19
+        scene.zPosition = 20
+        addChild(blackAlphaBackground)
+        addChild(scene)
+        
         
         listFocusData = [Double]()
         stopMWMPublisher()
