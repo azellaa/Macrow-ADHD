@@ -125,7 +125,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         isSpawning = false
         isTouched = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.spawnEntity()
+            if !self!.isCompleted {
+                self?.spawnEntity()
+            }
         }
     }
     
@@ -262,17 +264,22 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     func timesUpFunc() {
         dataController.editAvgAttentionReport(report: self.reportEntity, avgAttention: listFocusData.average(), context: self.context)
-        dataController.fetchAndPrintFocusData()
+        //        dataController.fetchAndPrintFocusData()
         
-        run(SKAction.sequence([
-            SKAction.run { [weak self] in
-                guard let `self` = self else { return }
-                let reveal = SKTransition.fade(withDuration: 0.5)
-                
-                let scene = GameOverPage()
-                view?.presentScene(scene, transition: reveal)
-            }
-        ]))
+        let scene = GameOverPage(sceneFrame: self.frame)
+        scene.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+        
+        let blackAlphaBackground = SKSpriteNode()
+        blackAlphaBackground.size = CGSize(width: self.frame.width, height: self.frame.height)
+        blackAlphaBackground.color = .black
+        blackAlphaBackground.alpha = 0.5
+        blackAlphaBackground.position = CGPoint(x: self.frame.width / 2 , y: self.frame.height / 2)
+        
+        blackAlphaBackground.zPosition = 19
+        scene.zPosition = 20
+        addChild(blackAlphaBackground)
+        addChild(scene)
+        
         
         listFocusData = [Double]()
         stopMWMPublisher()
