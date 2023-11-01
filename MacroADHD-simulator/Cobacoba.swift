@@ -1,18 +1,18 @@
 //
-//  DeviceTutorial.swift
+//  Cobacoba.swift
 //  Macrow-ADHD
 //
-//  Created by Jessica Rachel on 30/10/23.
+//  Created by Jessica Rachel on 31/10/23.
 //
 
 import SwiftUI
 
-struct DeviceTutorial: View {
+struct Cobacoba: View {
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
 #Preview {
-    DeviceTutorial()
+    Cobacoba()
 }
