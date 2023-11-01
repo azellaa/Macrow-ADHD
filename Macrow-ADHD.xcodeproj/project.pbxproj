@@ -24,7 +24,6 @@
 		26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */; };
 		26E4B6A22AEFB16600434426 /* GameElementTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */; };
 		26ECF09D2AE0CC71005F06E1 /* GameInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */; };
-		26FF33D42AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
 		26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
 		2ABD3E242AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
@@ -58,7 +57,6 @@
 		B6B2D9212AF0FF4500C64CAA /* Hide&SeekIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9202AF0FF4500C64CAA /* Hide&SeekIntroduction.swift */; };
 		B6B2D9232AF0FF4900C64CAA /* Hide&SeekIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9222AF0FF4900C64CAA /* Hide&SeekIntroduction.swift */; };
 		B6B2D9252AF0FF7C00C64CAA /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9242AF0FF7C00C64CAA /* TouchButton.swift */; };
-		B6B2D9272AF0FF8100C64CAA /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9262AF0FF8100C64CAA /* TouchButton.swift */; };
 		B6B2D9292AF0FF9B00C64CAA /* BubbleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9282AF0FF9B00C64CAA /* BubbleText.swift */; };
 		B6B2D92B2AF0FFA000C64CAA /* BubbleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */; };
 		B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
@@ -154,7 +152,6 @@
 		B6B2D9202AF0FF4500C64CAA /* Hide&SeekIntroduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hide&SeekIntroduction.swift"; path = "Macrow-ADHD/Hide&SeekIntroduction.swift"; sourceTree = SOURCE_ROOT; };
 		B6B2D9222AF0FF4900C64CAA /* Hide&SeekIntroduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hide&SeekIntroduction.swift"; sourceTree = "<group>"; };
 		B6B2D9242AF0FF7C00C64CAA /* TouchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchButton.swift; path = "Macrow-ADHD/TouchButton.swift"; sourceTree = SOURCE_ROOT; };
-		B6B2D9262AF0FF8100C64CAA /* TouchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TouchButton.swift; sourceTree = "<group>"; };
 		B6B2D9282AF0FF9B00C64CAA /* BubbleText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleText.swift; path = "Macrow-ADHD/BubbleText.swift"; sourceTree = SOURCE_ROOT; };
 		B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleText.swift; sourceTree = "<group>"; };
 		B6BFD4652AE139D300D3AAB1 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
@@ -739,7 +736,6 @@
 				B6D1C9352AE837A9003B4331 /* HomeItemView.swift in Sources */,
 				B6D1C9C82AE83DB7003B4331 /* Report+CoreDataClass.swift in Sources */,
 				B6D1C9AD2AE83DB7003B4331 /* AttentionPopup.swift in Sources */,
-				B6B2D9252AF0FF7C00C64CAA /* TouchButton.swift in Sources */,
 				B6D1C94C2AE837A9003B4331 /* ButtonView.swift in Sources */,
 				B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */,
 				B6B2D91D2AF0FF1900C64CAA /* SplashScreen.swift in Sources */,
