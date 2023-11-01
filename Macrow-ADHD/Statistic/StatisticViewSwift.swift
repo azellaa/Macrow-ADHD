@@ -54,7 +54,7 @@ struct StatisticViewSwift: View {
                         .foregroundStyle(.brownGuide)
                         .font(.custom("Jua-Regular", size: 27))
                     VStack {
-                        if strideFilter == .hour {
+                        if selectedIndex == 0 {
                             HStack {
                                 Text("\(currentDate.dMMMMFormat())")
                                     .font(.custom("Jua-Regular", size: 40))
@@ -68,15 +68,19 @@ struct StatisticViewSwift: View {
                             .foregroundStyle(.brownGuide)
                         }
                         
-                        
-                        chart
-                            .padding(36)
+                        if reports.count == 0 {
+                            Text("There’s no data recorded, try to play some games")
+                                .font(.custom("Jua-Regular", size: 32))
+                        } else {
+                            chart
+                                .padding(36)
+                        }
                     }
                     .background(in: RoundedRectangle(cornerRadius: 25), fillStyle: FillStyle())
                     .frame(maxWidth: 906, maxHeight: 715)
                     .gesture(DragGesture()
                         .onEnded({ value in
-                            if strideFilter == .hour {
+                            if selectedIndex == 0 {
                                 let threshold: CGFloat = 50
                                 if value.translation.width > threshold {
                                     withAnimation {
@@ -111,7 +115,7 @@ struct StatisticViewSwift: View {
                 withAnimation {
                     self.reports = dataController.fetchReportByDay(currentDate)
                     self.strideFilter = .hour
-                    self.filterDateTime = .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits)
+                    self.filterDateTime = .dateTime.hour(.twoDigits(amPM: .omitted))
                 }
                 
             }
@@ -152,16 +156,6 @@ struct StatisticViewSwift: View {
     }
     private var chart: some View {
         return Chart(reports){ chartMarker in
-            //            LineMark(x: .value("Date", report.timestamp!), y: .value("Focus", report.avgAttention))
-            //                .lineStyle(StrokeStyle(lineWidth: lineWidth))
-            //                .foregroundStyle(chartColor)
-            //                .interpolationMethod(interpolationMethod)
-            //                .symbol(
-            //                    Circle()
-            //                        .strokeBorder(lineWidth: lineWidth)
-            //                )
-            //                .symbolSize(60)
-            
             let baselineMarker = getBaselineMarker(marker: chartMarker)
             if CompareSelectedMarkerToChartMarker(selectedMarker: selectedReport, chartMarker: chartMarker) && showLollipop {
                 baselineMarker.symbol() {
@@ -240,9 +234,11 @@ struct StatisticViewSwift: View {
         
         .chartXAxis{
             AxisMarks(values: .stride(by: self.strideFilter, roundLowerBound: true, roundUpperBound: true)) { _ in
-                AxisTick()
-                AxisGridLine()
-                AxisValueLabel(format: filterDateTime).font(.custom("Jua-Regular", size: 24)).foregroundStyle(.brownGuide)
+//                AxisTick()
+//                AxisGridLine()
+                AxisValueLabel(format: filterDateTime)
+                    .font(.custom("Jua-Regular", size: 12))
+                    .foregroundStyle(.brownGuide)
             }
         }
         .chartYAxis {
