@@ -107,40 +107,38 @@ class GameOverPage: SKNode {
             homeButton.position = CGPoint(x: frame.width / 2, y: frame.height / 2 - 280)
             homeButton.zPosition = 2
             addChild(homeButton)
+            
         }
     }
     
     
     func returnToApp() {
-        if let scene = self.scene, let skView = scene.view as? SKView {
-            let transition = SKTransition.fade(withDuration: 0.5)
-            
-            // Create an empty SKScene
-            let homeScene = SKScene(size: skView.bounds.size)
-            
-            // Create a hosting controller for your SwiftUI view
-            let homeView = HomeView()
+        if let skView = self.scene?.view as? SKView, let window = skView.window {
+            let homeView = NavigationStack {
+                HomeView()
+            } // Assuming HomeView is your SwiftUI view
             let hostingController = UIHostingController(rootView: homeView)
-            hostingController.view.backgroundColor = .clear
-            hostingController.view.isOpaque = false
-            
-            // Add the SwiftUI hosting controller's view to the SKScene
-            if let hostingView = hostingController.view {
-                homeScene.view?.addSubview(hostingView)
-                skView.presentScene(homeScene, transition: transition)
-            }
+            window.rootViewController = hostingController
         }
     }
+
 
 
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             let location = touch.location(in: self)
-            if let node = self.atPoint(location) as? SKSpriteNode, node.name == "homeButton" {
-                returnToApp()
+            let touchedNodes = nodes(at: location)
+
+            for node in touchedNodes {
+                if node.name == "homeButton" {
+                    print("Home button tapped")
+                    returnToApp()
+                }
             }
         }
     }
+
+
 
 }
 

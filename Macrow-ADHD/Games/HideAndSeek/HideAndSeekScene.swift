@@ -24,7 +24,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = false
-    private var timerValue: Int = 60 // timer 10 menit
+    private var timerValue: Int = 10 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -268,6 +268,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         let scene = GameOverPage(sceneFrame: self.frame)
         scene.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+     
+        scene.isUserInteractionEnabled = true
         
         let blackAlphaBackground = SKSpriteNode()
         blackAlphaBackground.size = CGSize(width: self.frame.width, height: self.frame.height)
