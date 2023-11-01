@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Button Animate.png",
+      "filename" : "levelPresent.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Button Animate@2x.png",
+      "filename" : "levelPresent@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Button Animate@3x.png",
+      "filename" : "levelPresent@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
