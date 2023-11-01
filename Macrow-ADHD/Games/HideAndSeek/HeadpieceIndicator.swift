@@ -35,15 +35,14 @@ class HeadpieceIndicator: SKNode {
         
         headpieceStatus = SKSpriteNode(imageNamed: "noSignalIcon")
         headpieceStatus.zPosition = 10
-        headpieceStatus.position = CGPoint(x: sceneFrame.width * 0.930, y: sceneFrame.height * 0.89)
         addChild(headpieceStatus)
         
         pausedPopup = SKSpriteNode(imageNamed: "noSignalBg")
+        pausedPopup.setScale(2)
         pausedPopup.zPosition = 25
-        pausedPopup.position.x = sceneFrame.width/2
-        pausedPopup.position.y = sceneFrame.height + pausedPopup.size.height / 2
+        pausedPopup.position.x = sceneFrame.width * 1.5
+        pausedPopup.position.y = pausedPopup.size.height - sceneFrame.height * 0.17
         
-        pausedPopup.anchorPoint = CGPoint(x: 0.5, y: 0.5)
         addChild(pausedPopup)
         
         pausedLabel = SKLabelNode(fontNamed: "Jua-Regular")
