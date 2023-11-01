@@ -93,7 +93,7 @@ struct GameDescriptionView: View {
                     .padding(.horizontal, 90)
                     
                     Spacer()
-                    ButtonView(imageName: "play.fill", destination: GameView(scene: currentGame.destination), buttonColor: .white, iconColor: .brownColor, width: width * 0.08, height: height * 0.11)
+                    ButtonView(imageName: "play.fill", destination: GameElementTutorialView(currentGame: currentGame, width: width, height: height), buttonColor: .white, iconColor: .brownColor, width: width * 0.08, height: height * 0.11)
                     Spacer()
                 }
             }
@@ -104,8 +104,4 @@ struct GameDescriptionView: View {
             .aspectRatio( contentMode: .fill))
         .navigationBarBackButtonHidden()
     }
-}
-
-#Preview {
-    GameDescriptionView(currentGame: GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"), width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
 }

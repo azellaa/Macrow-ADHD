@@ -16,6 +16,7 @@ struct HomeView: View {
     @State private var mwmData: MWMData?
     @ObservedObject var centralManager = CentralManager()
     @State private var imageName = "headpieceDisconnect"
+    @State private var symbol = "Symbol"
     
     
     #if targetEnvironment(simulator)
@@ -38,19 +39,56 @@ struct HomeView: View {
         GeometryReader { geo in
             VStack{
                 HStack {
-                    ButtonView(imageName: "chart.bar.fill", destination: StatisticViewSwift()
-                        .navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: geo.size.width * 0.08, height: geo.size.height * 0.11)
-                        .padding(.leading)
-                        .padding()
+                    ZStack{
+                        Image("shadowBtn")
+                            .resizable()
+                            .frame(width: 90, height: 90)
+                            .padding(.top, 13)
+                            .padding(.leading, 17)
+                        
+                        
+                        ButtonView(imageName: "", destination: StatisticViewSwift(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
+                            .padding(.leading)
+                            .padding()
+                            .overlay(
+                                Image(self.symbol)
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.white)
+                                    .padding(.leading, 13)
+                            )
+                    }
+
                     Spacer()
-                    Text("NECTAR")
-                        .font(.custom("Jua-Regular", size: 86))
-                        .foregroundColor(Color.brownColor)
+                    ZStack{
+                        Text("NECTAR")
+                            .font(.custom("Jua-Regular", size: 86))
+                            .foregroundColor(Color.brownColor)
+                        Text("NECTAR")
+                            .font(.custom("Jua-Regular", size: 86))
+                            .foregroundColor(Color.brownColor)
+                            .padding(.leading, 6)
+                    }
                     Spacer()
-                    ButtonView(imageName: self.imageName, destination: GuideView()
-                        .navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: geo.size.width * 0.08, height: geo.size.height * 0.11)
+                    ZStack{
+                        Image("shadowBtn")
+                            .resizable()
+                            .frame(width: 90, height: 90)
+                            .padding(.top, 13)
+                            .padding(.trailing, 16)
+                        
+                        ButtonView(imageName: "", destination: GuideView()
+                            .navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
                         .padding(.trailing)
                         .padding()
+                        .overlay(
+                            Image(self.imageName)
+                                .resizable()
+                                .frame(width: 43, height: 37)
+                                .foregroundColor(.white)
+                                .padding(.trailing, 14)
+                        )
+                    }
                 }
                 .padding(.bottom)
                 
@@ -121,6 +159,7 @@ struct HomeView: View {
                 mwmObject.mwmDevice?.scanDevice()
             }
         }
+        .navigationBarBackButtonHidden(true)
 
         
         
