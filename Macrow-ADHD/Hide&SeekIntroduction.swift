@@ -1,13 +1,28 @@
-//
-//  Hide&SeekIntroduction.swift
-//  MacroADHD-simulator
-//
-//  Created by Azella Mutyara on 30/10/23.
-//
-
 import SwiftUI
+import SpriteKit
 
 struct Hide_SeekIntroduction: View {
+    struct Level {
+        var number: Int
+        var isCompleted: Bool
+        var text: String
+    }
+    @State private var showGameView = false
+    @State private var showGuideView = false
+    @State private var showHomeView = false
+    @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
+    @State private var mwmData: MWMData?
+    @State private var isDisconnected = false
+
+    @State private var levels: [Level] = [
+        Level(number: 1, isCompleted: true, text: "Beginner"),
+        Level(number: 2, isCompleted: false, text: "Intermediate"),
+        Level(number: 3, isCompleted: false, text: "Advanced")
+        // Add more levels as needed
+    ]
+    
+    var gameInfo: GameInfo
+    
     var body: some View {
         ZStack{
             Image("HideNSeekIntroductionBackground") // Replace "yourImageName" with the actual name of your image asset
@@ -24,16 +39,17 @@ struct Hide_SeekIntroduction: View {
                         TouchButton(normalImageName: "BackButtonNotPressed",
                                     pressedImageName: "BackButtonNotPressed",
                                     action: {
-                            //action
-                        })
+                            showHomeView = true
+                        }) .background (NavigationLink("", destination:  HomeView(), isActive: $showHomeView))
                         
                         Spacer().frame(width: 450)
                         
                         TouchButton(normalImageName: "GuideButtonNotPressed",
                                     pressedImageName: "GuideButtonNotPressed",
                                     action: {
-                            //action
-                        })
+                            showGuideView = true
+                        })  .background (NavigationLink("", destination:  GuideView(), isActive: $showGuideView))
+                        
                         
                     }
                     .position(x: 300, y:70)
@@ -70,34 +86,102 @@ struct Hide_SeekIntroduction: View {
                     Image("LevelingBackground")
                         .frame(maxWidth: .infinity, alignment: .trailing)
                     
-                    VStack{
+                    VStack {
                         Text("Choose Level")
                             .font(.custom("Jua-Regular", size: 45))
                             .foregroundColor(Color.brownColor)
-                            .position(x:230, y: 80)
+                            .position(x: 230, y: 80)
                         
-                        
+            
+                        VStack {
+                            ForEach(levels.indices, id: \.self) { index in
+                                HStack {
+                                    ZStack {
+                                        Image(levels[index].isCompleted ? "levelPresent" : "levelUndone")
+                                            .resizable()
+                                            .frame(width: 50, height: 55)
+                                        
+                                        Text("\(levels[index].number)")
+                                            .foregroundColor(levels[index].isCompleted ? Color.white : Color("grey2Color"))
+                                            .font(.custom("Jua-Regular", size: 28))
+                                    }
+                                    .padding(.top, 150)
+                                    .padding(.trailing, 200)
+                                    .onTapGesture {
+                                        if levels[index].number == 1 {
+                                            // Set the isCompleted property to true for the number 1 level
+                                            levels[index].isCompleted
+                                        }
+                                    }
+                                }
+                                Text(levels[index].text)
+                                    .font(.custom("Jua-Regular", size: 36))
+                                    .foregroundColor(Color("darkBrown"))
+                                    .padding(.top, -60)
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    .padding(.leading, 250)
+                            }
+                        }
+                        .zIndex(1)
                         
                         Rectangle()
-                            .frame(width: 9
-                                   , height: 195)
+                            .frame(width: 9, height: 194)
                             .position(x: 170)
+                            .padding(.top, -160)
+                            .foregroundColor(Color("greyColor"))
+                            .zIndex(0)
                         
-                        TouchButton(normalImageName: "PlayButtonNotPressed2",
-                                    pressedImageName: "PlayButtonPressed2",
-                                    action: {
-                            //Action
+                        Rectangle()
+                            .frame(width: 9, height: 194)
+                            .position(x: 170)
+                            .padding(.top, -400)
+                            .foregroundColor(Color("greyColor"))
+                            .zIndex(0)
+                        
+                        TouchButton(normalImageName: "PlayButtonNotPressed2", pressedImageName: "PlayButtonPressed2", action: {
+                            showGameView = true
                         })
-                        .position(x: 300, y: 160)
-                        
+                        .padding(.bottom, 20)
                     }
                 }
             }
-        }
+        } .background (NavigationLink("", destination: GameElementTutorialView(currentGame: self.gameInfo, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), isActive: $showGameView))
+        .navigationBarBackButtonHidden(true)
+        .onReceive(mwmObject.signalStatusPublisher) { signalStatus in
+                    switch signalStatus {
+                    case 1:
+                        isDisconnected = false
+                        break
+                    case 2:
+                        isDisconnected = false
+                        break
+                    case 3:
+                        isDisconnected = false
+                        break
+                    case 4:
+                        isDisconnected = false
+                        break
+                    default:
+                        isDisconnected = true
+                        break
+                    }
+                }
+                .overlay(
+                    Group {
+                        if isDisconnected{
+                            Color.black.opacity(0.65)
+                                .ignoresSafeArea()
+                            
+                            Image("disconnectedPopUp")
+                        }
+                    }
+                )
+        
     }
 }
 
 
+
 #Preview {
-    Hide_SeekIntroduction()
+    Hide_SeekIntroduction(gameInfo:   GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"))
 }

@@ -91,7 +91,7 @@ struct HomeView: View {
                     
                     ZStack {
                         ForEach(0..<games.count) { index in
-                            HomeItemView(dest: GameDescriptionView(currentGame: games[index], width: geo.size.width, height: geo.size.height), gameName: games[index].name, imageName: games[index].imageName)
+                            HomeItemView(dest: Hide_SeekIntroduction(gameInfo: games[index]), gameName: games[index].name, imageName: games[index].imageName)
                                 .offset(x: CGFloat(index - currentIdx) * geo.size.width * 0.9 + dragOffset, y: 0)
                         }
                     }
