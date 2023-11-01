@@ -40,54 +40,44 @@ struct HomeView: View {
             VStack{
                 HStack {
                     ZStack{
-                        Image("shadowBtn")
-                            .resizable()
-                            .frame(width: 90, height: 90)
-                            .padding(.top, 13)
-                            .padding(.leading, 17)
                         
                         
-                        ButtonView(imageName: "", destination: StatisticViewSwift().navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
+                        ButtonView(imageName: self.symbol, destination: StatisticViewSwift().navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
                             .padding(.leading)
                             .padding()
-                            .overlay(
-                                Image(self.symbol)
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(.white)
-                                    .padding(.leading, 13)
-                            )
+//                            .overlay(
+//                                Image()
+//                                    .resizable()
+//                                    .frame(width: 50, height: 50)
+//                                    .foregroundColor(.white)
+//                                    .padding(.leading, 13)
+//                            )
                     }
 
                     Spacer()
                     ZStack{
-                        Text("NECTAR")
+                        Text("WillAndCat")
                             .font(.custom("Jua-Regular", size: 86))
                             .foregroundColor(Color.brownColor)
-                        Text("NECTAR")
+                        Text("WillAndCat")
                             .font(.custom("Jua-Regular", size: 86))
                             .foregroundColor(Color.brownColor)
                             .padding(.leading, 6)
                     }
                     Spacer()
                     ZStack{
-                        Image("shadowBtn")
-                            .resizable()
-                            .frame(width: 90, height: 90)
-                            .padding(.top, 13)
-                            .padding(.trailing, 16)
                         
-                        ButtonView(imageName: "", destination: GuideView()
+                        ButtonView(imageName: self.imageName, destination: GuideView()
                             .navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
                         .padding(.trailing)
                         .padding()
-                        .overlay(
-                            Image(self.imageName)
-                                .resizable()
-                                .frame(width: 43, height: 37)
-                                .foregroundColor(.white)
-                                .padding(.trailing, 14)
-                        )
+//                        .overlay(
+//                            Image(self.imageName)
+//                                .resizable()
+//                                .frame(width: 43, height: 37)
+//                                .foregroundColor(.white)
+//                                .padding(.trailing, 14)
+//                        )
                     }
                 }
                 .padding(.bottom)
