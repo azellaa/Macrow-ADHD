@@ -42,9 +42,9 @@ struct GameElementTutorialView: View {
                 case 3:
                     if !isPaused {
                         gameScene.hideAll()
+                        isPaused = true
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             gameScene.pauseTutorial()
-                            isPaused = true
                         }
                         DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
                             gameScene.removePause()

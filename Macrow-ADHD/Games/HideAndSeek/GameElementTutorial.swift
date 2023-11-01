@@ -112,10 +112,7 @@ class GameElementTutorial: SKScene, SKPhysicsContactDelegate {
         bubbleBox.isHidden = false
         bubbleText.isHidden = false
         will.isHidden = false
-        cropNode.isHidden = false
-        rectangleOverlay.isHidden = false
         blackAlphaBackground.isHidden = false
-        scoreBox.zPosition = 22
         
         attentionPopup.removeAllActions()
         attentionPopup.removeFromParent()
