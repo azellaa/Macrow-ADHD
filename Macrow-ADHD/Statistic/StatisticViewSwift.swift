@@ -60,7 +60,7 @@ struct StatisticViewSwift: View {
                                     .font(.custom("Jua-Regular", size: 40))
                                 
                                 Spacer()
-                                Text("Focus Avg. \(focusAverage.truncated)")
+                                Text("Focus Avg. \(focusAverage.isNaN ? "-" : focusAverage.truncated)")
                                     .font(.custom("Jua-Regular", size: 32))
                             }
                             .padding(.horizontal, 40)
@@ -69,8 +69,14 @@ struct StatisticViewSwift: View {
                         }
                         
                         if reports.count == 0 {
-                            Text("There’s no data recorded, try to play some games")
-                                .font(.custom("Jua-Regular", size: 32))
+                            VStack{
+                                
+                                Text("There’s no data recorded, try to play some games")
+                                    .font(.custom("Jua-Regular", size: 32))
+                                    .foregroundStyle(.brownGuide)
+                            }
+                            .frame(maxHeight: 472)
+                            
                         } else {
                             chart
                                 .padding(36)
