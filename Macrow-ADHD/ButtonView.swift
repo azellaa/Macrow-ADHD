@@ -14,25 +14,14 @@ struct ButtonSymbol: View {
     
     var body: some View {
         ZStack {
-            if imageName == "chart.bar.fill" {
-                Image(systemName: imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .zIndex(2)
-                    .frame(width: 40)
-                    .padding(.bottom, padding)
-                    .allowsHitTesting(false)
-                    .foregroundColor(.white)
-            }
-            else {
-                Image(imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .zIndex(2)
-                    .frame(width: 40)
-                    .padding(.bottom, padding)
-                    .allowsHitTesting(false)
-            }
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .zIndex(2)
+                .frame(width: 40)
+                .padding(.bottom, padding)
+                .allowsHitTesting(false)
+            
             TouchButton(padding: $padding, normalImageName: "brownIconButtonNotPressed", pressedImageName: "brownIconButtonPressed") {
                 dest = true
             }
@@ -46,17 +35,61 @@ struct ButtonBack: View {
     
     var body: some View {
         ZStack {
-            Image(systemName: "chevron.backward")
+            Image("IconBack")
                 .resizable()
                 .scaledToFit()
                 .zIndex(2)
-                .frame(width: 20)
+                .frame(width: 40)
                 .padding(.bottom, padding)
                 .allowsHitTesting(false)
-                .foregroundColor(.white)
             TouchButton(padding: $padding, normalImageName: "brownIconButtonNotPressed", pressedImageName: "brownIconButtonPressed") {
                 presentationMode.wrappedValue.dismiss()
             }
+        }
+    }
+}
+
+struct ButtonText: View {
+    @State private var padding: CGFloat = 5
+    
+    var imageName: String
+    var text: String
+    var textSize: CGFloat
+    var textColor: Color
+    var normalImageName: String
+    var pressedImageName: String
+    var action: () -> Void
+    
+    var body: some View {
+        ZStack {
+            HStack {
+                if text == "Next" {
+                    Text(text)
+                        .font(.custom("Jua-Regular", size: textSize))
+                        .foregroundColor(textColor)
+                    
+                        Image(imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                } else {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50)
+                    
+                    Text(text)
+                        .font(.custom("Jua-Regular", size: textSize))
+                        .foregroundColor(textColor)
+                }
+            }
+            .zIndex(2)
+            .padding(.bottom, padding)
+            .allowsHitTesting(false)
+            
+            TouchButton(padding: $padding, normalImageName: normalImageName, pressedImageName: pressedImageName, action: action)
+            
+            .frame(height: 300)
         }
     }
 }

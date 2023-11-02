@@ -30,12 +30,12 @@ struct Hide_SeekIntroduction: View {
     @State private var showHomeView = false
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
-    #if targetEnvironment(simulator)
+#if targetEnvironment(simulator)
     @State private var isDisconnected = false
     
-    #else
+#else
     @State private var isDisconnected = true
-    #endif
+#endif
     @State private var imageName = "headpieceDisconnect"
     
     @State private var levels: [Level] = [
@@ -60,7 +60,6 @@ struct Hide_SeekIntroduction: View {
                         
                         ButtonBack()
                             .frame(width: 100, height: 100)
-                        //                            .padding(.leading, -450)
                         
                         Spacer().frame(width: 450)
                         
@@ -73,8 +72,9 @@ struct Hide_SeekIntroduction: View {
                         
                         
                     }
-                    .position(x: 300, y:70)
+                    .padding(.top, height * 0.03)
                     
+                    Spacer()
                     
                     VStack {
                         Text("Hide & Seek")
@@ -89,15 +89,16 @@ struct Hide_SeekIntroduction: View {
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top, -20)
-                        .padding(.bottom, 15)
                         
-                        Text("The purpose of this game is to tap the rabbits and ignore the fox. This game will teach child to be patient and learn to ignore distraction")
-                            .font(.custom("Jua-Regular", size: 30))
+                        Text("On his way in the forest, Will finds a rabbit that needs to hide from the fox. To safe the rabbit, you need to keep the rabbit hidden from the sly fox.")
+                            .font(.custom("Jua-Regular", size: 24))
+                            .kerning(3)
+                            .lineSpacing(5)
                             .foregroundColor(Color.white)
-                            .frame(width: 588, height: 120, alignment: .leading)
+                            .frame(width: 588, height: 150, alignment: .leading)
                             .multilineTextAlignment(.leading)
                     }
-                    .position(x:300, y: 230)
+                    .padding(.bottom, height * 0.08)
                     
                 }
                 .frame(width: 600)
@@ -126,12 +127,12 @@ struct Hide_SeekIntroduction: View {
                                             .foregroundColor(levels[index].isCompleted ? Color.white : Color("grey2Color"))
                                             .font(.custom("Jua-Regular", size: 28))
                                     }
-                                    .padding(.top, 150)
+                                    .padding(.top, 120)
                                     .padding(.trailing, 200)
                                     .onTapGesture {
                                         if levels[index].number == 1 {
                                             // Set the isCompleted property to true for the number 1 level
-                                            levels[index].isCompleted
+                                            //                                            levels[index].isCompleted
                                         }
                                     }
                                 }
@@ -146,28 +147,32 @@ struct Hide_SeekIntroduction: View {
                         .zIndex(1)
                         
                         Rectangle()
-                            .frame(width: 9, height: 194)
+                            .frame(width: 9, height: 190)
                             .position(x: 170)
-                            .padding(.top, -160)
+                            .padding(.top, -174)
                             .foregroundColor(Color("greyColor"))
                             .zIndex(0)
                         
                         Rectangle()
-                            .frame(width: 9, height: 194)
+                            .frame(width: 9, height: 190)
                             .position(x: 170)
-                            .padding(.top, -400)
+                            .padding(.top, -414)
                             .foregroundColor(Color("greyColor"))
                             .zIndex(0)
                         
-                        TouchButton(padding: .constant(0), normalImageName: "PlayButtonNotPressed2", pressedImageName: "PlayButtonPressed2", action: {
+                        ButtonText(imageName: "IconPlay", text: "Play", textSize: 32, textColor: .white, normalImageName: "brownTextButtonNotPressed", pressedImageName: "brownTextButtonPressed") {
                             showGameView = true
+                        }
+                        .frame(height: height * 0.1)
+                        .padding(.bottom, height * 0.08)
+                        .navigationDestination(isPresented: $showGameView, destination: {
+                            GameElementTutorialView(currentGame: currentGame, width: width, height: height)
                         })
-                        .padding(.bottom, 20)
+                        
                     }
                 }
             }
-        } .background (
-            NavigationLink("", destination:  GameElementTutorialView(currentGame: currentGame, width: width, height: height), isActive: $showGameView))
+        }
         .navigationBarBackButtonHidden(true)
         .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
             switch signalStatus {

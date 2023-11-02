@@ -41,7 +41,7 @@ struct HomeView: View {
         GeometryReader { geo in
             VStack{
                 HStack {
-                    ButtonSymbol(dest: $isStatistic, imageName: "chart.bar.fill")
+                    ButtonSymbol(dest: $isStatistic, imageName: "IconStatistic")
                         .navigationDestination(isPresented: $isStatistic, destination: {
                             StatisticViewSwift()
                         })
