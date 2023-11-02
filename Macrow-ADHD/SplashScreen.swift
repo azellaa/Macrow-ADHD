@@ -40,7 +40,7 @@ struct SplashScreen: View {
                     Spacer().frame(height: 275)
                     
                     
-                    TouchButton(normalImageName: "PlayButtonNotPressed", pressedImageName: "PlayButtonPressed") {
+                    TouchButton(padding: .constant(0), normalImageName: "PlayButtonNotPressed", pressedImageName: "PlayButtonPressed") {
                         isSplashScreenShown = true
                     }
                 }

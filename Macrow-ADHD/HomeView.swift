@@ -41,60 +41,25 @@ struct HomeView: View {
         GeometryReader { geo in
             VStack{
                 HStack {
-                    ZStack{
-                        Image("shadowBtn")
-                            .resizable()
-                            .frame(width: 90, height: 90)
-                            .padding(.top, 13)
-                            .padding(.leading, 17)
-                        
-                        ZStack {
-                            Image(systemName: "chart.bar.fill")
-                                .resizable()
-                                .scaledToFit()
-                                .zIndex(2)
-                                .frame(width: 40)
-                                .foregroundColor(.white)
-                            TouchButton(normalImageName: "brownIconButtonNotPressed", pressedImageName: "brownIconButtonPressed") {
-                                isStatistic = true
-                            }
-                        }
-                        .padding(.leading)
-                    }
+                    ButtonSymbol(dest: $isStatistic, imageName: "chart.bar.fill")
+                        .navigationDestination(isPresented: $isStatistic, destination: {
+                            StatisticViewSwift()
+                        })
+                        .padding(.leading, geo.size.width * 0.03)
                     
                     Spacer()
-                    ZStack{
-                        Text("NECTAR")
-                            .font(.custom("Jua-Regular", size: 86))
-                            .foregroundColor(Color.brownColor)
-                        Text("NECTAR")
-                            .font(.custom("Jua-Regular", size: 86))
-                            .foregroundColor(Color.brownColor)
-                            .padding(.leading, 6)
-                    }
+                    Text("Will & The Cat")
+                        .font(.custom("Jua-Regular", size: 86))
+                        .foregroundColor(Color.brownColor)
                     Spacer()
-                    ZStack{
-                        Image("shadowBtn")
-                            .resizable()
-                            .frame(width: 90, height: 90)
-                            .padding(.top, 13)
-                            .padding(.trailing, 16)
-                        
-                        ZStack {
-//                            Image(systemName: "chart.bar.fill")
-//                                .resizable()
-//                                .scaledToFit()
-//                                .zIndex(2)
-//                                .frame(width: 40)
-//                                .foregroundColor(.white)
-                            TouchButton(normalImageName: "brownIconButtonNotPressed", pressedImageName: "brownIconButtonPressed") {
-                                isStatistic = true
-                            }
-                        }
-                        .padding(.trailing)
-                    }
+                    
+                    ButtonSymbol(dest: $isGuide, imageName: imageName)
+                        .navigationDestination(isPresented: $isGuide, destination: {
+                            GuideView()
+                        })
+                        .padding(.trailing, geo.size.width * 0.03)
                 }
-                .padding(.bottom)
+                .padding(.vertical, geo.size.height * 0.04)
                 
                 HStack {
                     BackCarouselButton(backName: "chevron.backward", isbackButton: true, totalGames: games.count, currentIdx: $currentIdx)

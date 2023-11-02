@@ -27,7 +27,7 @@ struct DeviceTutorial: View {
             } else {
                 VStack{
                     HStack{
-                        ButtonView(imageName: "backButton", destination: EmptyView(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
+                        ButtonSymbol(dest: .constant(false), imageName: "backButton")
                             .padding(.leading, -300)
                             .padding()
                             .opacity(0)

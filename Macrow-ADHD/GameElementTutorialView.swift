@@ -35,7 +35,7 @@ struct GameElementTutorialView: View {
                     .ignoresSafeArea()
                     .navigationBarBackButtonHidden()
                 
-                TouchButton(normalImageName: "buttonNextNotPressed",
+                TouchButton(padding: .constant(0), normalImageName: "buttonNextNotPressed",
                             pressedImageName: "buttonNextPressed",
                             action: {
                     switch(idx) {

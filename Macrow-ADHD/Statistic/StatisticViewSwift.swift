@@ -38,7 +38,7 @@ struct StatisticViewSwift: View {
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 VStack {
                     HStack {
-                        BackButton(width: geo.size.width * 0.08, height: geo.size.height * 0.1)
+                        ButtonBack()
                             .padding(.leading)
                             .padding()
                         Spacer()

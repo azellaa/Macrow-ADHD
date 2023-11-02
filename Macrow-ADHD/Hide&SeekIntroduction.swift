@@ -29,7 +29,7 @@ struct Hide_SeekIntroduction: View {
     @State private var showGuideView = false
     @State private var showHomeView = false
     @State private var imageName = "headpieceDisconnect"
-
+    
     @State private var levels: [Level] = [
         Level(number: 1, isCompleted: true, text: "Beginner"),
         Level(number: 2, isCompleted: false, text: "Intermediate"),
@@ -50,25 +50,18 @@ struct Hide_SeekIntroduction: View {
                     HStack{
                         Spacer().frame(width: 15)
                         
-                        BackButton(width: 89, height: 79)
-//                            .padding(.leading, -450)
-
+                        ButtonBack()
+                            .frame(width: 100, height: 100)
+                        //                            .padding(.leading, -450)
+                        
                         Spacer().frame(width: 450)
                         
-                        TouchButton(normalImageName: "brownIconButtonNotPressed",
-                                    pressedImageName: "brownIconButtonPressed",
-                                    action: {
-                            showGuideView = true
-                        })     .background (NavigationLink("", destination:  GuideView(), isActive: $showGuideView))
-                        .overlay (
-                            Image(self.imageName)
-                            .resizable()
-                            .frame(width: 43, height: 37)
-                            .foregroundColor(.white)
-                            .padding(.leading, 2)
-                            .padding(.bottom, 10)
-                    )
-                     
+                        ButtonSymbol(dest: $showGuideView, imageName: imageName)
+                            .navigationDestination(isPresented: $showGuideView, destination: {
+                                GuideView()
+                            })
+                            .padding(.trailing, width * 0.03)
+                        
                         
                         
                     }
@@ -112,7 +105,7 @@ struct Hide_SeekIntroduction: View {
                             .foregroundColor(Color.brownColor)
                             .position(x: 230, y: 80)
                         
-            
+                        
                         VStack {
                             ForEach(levels.indices, id: \.self) { index in
                                 HStack {
@@ -158,7 +151,7 @@ struct Hide_SeekIntroduction: View {
                             .foregroundColor(Color("greyColor"))
                             .zIndex(0)
                         
-                        TouchButton(normalImageName: "PlayButtonNotPressed2", pressedImageName: "PlayButtonPressed2", action: {
+                        TouchButton(padding: .constant(0), normalImageName: "PlayButtonNotPressed2", pressedImageName: "PlayButtonPressed2", action: {
                             showGameView = true
                         })
                         .padding(.bottom, 20)
