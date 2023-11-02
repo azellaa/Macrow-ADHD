@@ -30,7 +30,12 @@ struct Hide_SeekIntroduction: View {
     @State private var showHomeView = false
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
+    #if targetEnvironment(simulator)
+    @State private var isDisconnected = false
+    
+    #else
     @State private var isDisconnected = true
+    #endif
     @State private var imageName = "headpieceDisconnect"
 
     @State private var levels: [Level] = [

@@ -104,6 +104,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 self.timerValue -= 1
             }
         }
+        AudioManager.shared.playBackgroundMusic(fileName: "Jungle Song")
         
         
     }
@@ -332,6 +333,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         listFocusData = [Double]()
         stopMWMPublisher()
         isCompleted = true
+        
+        AudioManager.shared.stopBackgroundMusic()
         
     }
     
