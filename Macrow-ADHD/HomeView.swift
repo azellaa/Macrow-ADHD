@@ -11,7 +11,8 @@ struct HomeView: View {
     @State private var currentIdx: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
     
-    
+    @State var isStatistic: Bool = false
+    @State var isGuide: Bool = false
     
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
@@ -47,17 +48,18 @@ struct HomeView: View {
                             .padding(.top, 13)
                             .padding(.leading, 17)
                         
-                        
-                        ButtonView(imageName: "", destination: EmptyView(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
-                            .padding(.leading)
-                            .padding()
-                            .overlay(
-                                Image(self.symbol)
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(.white)
-                                    .padding(.leading, 13)
-                            )
+                        ZStack {
+                            Image(systemName: "chart.bar.fill")
+                                .resizable()
+                                .scaledToFit()
+                                .zIndex(2)
+                                .frame(width: 40)
+                                .foregroundColor(.white)
+                            TouchButton(normalImageName: "brownIconButtonNotPressed", pressedImageName: "brownIconButtonPressed") {
+                                isStatistic = true
+                            }
+                        }
+                        .padding(.leading)
                     }
 
                     Spacer()
@@ -78,17 +80,18 @@ struct HomeView: View {
                             .padding(.top, 13)
                             .padding(.trailing, 16)
                         
-                        ButtonView(imageName: "", destination: GuideView()
-                            .navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
+                        ZStack {
+//                            Image(systemName: "chart.bar.fill")
+//                                .resizable()
+//                                .scaledToFit()
+//                                .zIndex(2)
+//                                .frame(width: 40)
+//                                .foregroundColor(.white)
+                            TouchButton(normalImageName: "brownIconButtonNotPressed", pressedImageName: "brownIconButtonPressed") {
+                                isStatistic = true
+                            }
+                        }
                         .padding(.trailing)
-                        .padding()
-                        .overlay(
-                            Image(self.imageName)
-                                .resizable()
-                                .frame(width: 43, height: 37)
-                                .foregroundColor(.white)
-                                .padding(.trailing, 14)
-                        )
                     }
                 }
                 .padding(.bottom)
