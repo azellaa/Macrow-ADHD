@@ -116,7 +116,7 @@ class AttentionPopup: SKNode {
         if !isShowing {
             circleOverlay.run(sequence)
             self.run(SKAction.sequence([
-                SKAction.wait(forDuration: 3),
+                SKAction.wait(forDuration: 0.5),
                 SKAction.run { [self] in
                     self.focusCatNoHand.run(SKAction.fadeIn(withDuration: 1))
                     self.focusCatNoHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25), duration: 0.5))

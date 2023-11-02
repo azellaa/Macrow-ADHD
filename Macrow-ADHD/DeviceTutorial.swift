@@ -1,6 +1,7 @@
 import SwiftUI
 
 struct DeviceTutorial: View {
+    @AppStorage("firstLaunch") var firstLaunch: Bool = true
     @State private var currentView: Int = 0
     let maxView: Int = 10 // Set your maximum view count here
     
@@ -12,13 +13,17 @@ struct DeviceTutorial: View {
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             
             if currentView == 11{
-                ContentView()
+                HomeView()
+                    .onAppear{
+                    firstLaunch = false
+                }
             } else {
                 VStack{
                     HStack{
                         ButtonView(imageName: "backButton", destination: EmptyView(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
                             .padding(.leading, -300)
                             .padding()
+                            .opacity(0)
                         
                         Text("Device Tutorial")
                             .font(.custom("Jua-Regular", size: 72))
