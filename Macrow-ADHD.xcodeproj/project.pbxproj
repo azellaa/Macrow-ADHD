@@ -94,6 +94,8 @@
 		B64929652AF20FD200570802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64929642AF20FD200570802 /* Assets.xcassets */; };
 		B64929662AF20FD200570802 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B64929642AF20FD200570802 /* Assets.xcassets */; };
 		B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B64EFB602AE22B5A002190EA /* ReportModel.xcdatamodeld */; };
+		B64F1B382AF30D6600AB80D4 /* ScreenCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F1B372AF30D6600AB80D4 /* ScreenCapture.swift */; };
+		B64F1B392AF30D6600AB80D4 /* ScreenCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F1B372AF30D6600AB80D4 /* ScreenCapture.swift */; };
 		B65057932AF02B7800BD6D08 /* StatisticViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */; };
 		B66E747E2ADF7C4300CCA69A /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E747D2ADF7C4300CCA69A /* Color+extension.swift */; };
 		B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D3E0D2AD347D900DDA7D4 /* GameData.swift */; };
@@ -152,6 +154,7 @@
 		B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hide&SeekIntroduction.swift"; sourceTree = "<group>"; };
 		B64929642AF20FD200570802 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B64EFB612AE22B5A002190EA /* ReportModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = ReportModel.xcdatamodel; sourceTree = "<group>"; };
+		B64F1B372AF30D6600AB80D4 /* ScreenCapture.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenCapture.swift; sourceTree = "<group>"; };
 		B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewSwift.swift; sourceTree = "<group>"; };
 		B66E747D2ADF7C4300CCA69A /* Color+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+extension.swift"; sourceTree = "<group>"; };
 		B67D3E0D2AD347D900DDA7D4 /* GameData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameData.swift; sourceTree = "<group>"; };
@@ -375,6 +378,7 @@
 				5491B13A2AE5C351004986A0 /* CentralManager.swift */,
 				B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */,
 				B616ADE22AF16CD600FC5DBE /* Double+extension.swift */,
+				B64F1B372AF30D6600AB80D4 /* ScreenCapture.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -543,6 +547,7 @@
 				26E4B69E2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
 				B6B2D92B2AF0FFA000C64CAA /* BubbleText.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
+				B64F1B382AF30D6600AB80D4 /* ScreenCapture.swift in Sources */,
 				26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */,
 				26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */,
 				B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */,
@@ -586,6 +591,7 @@
 				B64929532AF20D4E00570802 /* PassThroughBackground.swift in Sources */,
 				B6D1C9CE2AE83E59003B4331 /* MWMDevice.swift in Sources */,
 				26E4B69F2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
+				B64F1B392AF30D6600AB80D4 /* ScreenCapture.swift in Sources */,
 				B6179DFD2AF031A600CAD6AA /* StatisticViewSwift.swift in Sources */,
 				B64929402AF20D0B00570802 /* Hide&SeekIntroduction.swift in Sources */,
 				26F4FBE52AF3761C00F31E68 /* HideAndSeekBackground.swift in Sources */,

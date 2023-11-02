@@ -23,7 +23,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var rabbitCount = 0
     private var isTouched = false
-    private var isTutorialOpened = false
+    private var isTutorialOpened = true
     private var timerValue: Int = 10 // timer 10 menit
     
     public var focusCount = 80 // focus point
@@ -38,7 +38,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var attentionPopup = AttentionPopup()
     
     var signalStatus: Int = 4
-     var dataController: DataController!
+    var dataController: DataController!
     var context: NSManagedObjectContext!
     
     var gameEntity: Game!
@@ -98,17 +98,17 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             if !self.isTutorialOpened && self.signalStatus == 4{
                 self.timerValue -= 1
                 
-//                if self.timerValue == 295 {
-//                    self.focusCount = 30
-//                }
-//                
-//                if self.timerValue == 290 {
-//                    self.focusCount = 80
-//                }
-//                
-//                if self.timerValue == 288 {
-//                    self.focusCount = 30
-//                }
+                //                if self.timerValue == 295 {
+                //                    self.focusCount = 30
+                //                }
+                //                
+                //                if self.timerValue == 290 {
+                //                    self.focusCount = 80
+                //                }
+                //                
+                //                if self.timerValue == 288 {
+                //                    self.focusCount = 30
+                //                }
                 
             }
         }
@@ -222,13 +222,13 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func addNodes() {
-        tutorialView = TutorialView(sceneFrame: frame)
+        tutorialView = TutorialView(sceneFrame: self.frame)
         tutorialView.isUserInteractionEnabled = true
         tutorialView.delegate = self
         tutorialView.zPosition = 20
         addChild(tutorialView)
         
-//        connection = .init(imageNamed: "noSignalIcon")
+        //        connection = .init(imageNamed: "noSignalIcon")
         connection.position = CGPoint(x: frame.width * 0.930, y: frame.height * 0.89)
         connection.size = CGSize(width: 83, height: 79)
         connection.zPosition = 10
@@ -268,7 +268,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         let scene = GameOverPage(sceneFrame: self.frame)
         scene.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
-     
+        
         scene.isUserInteractionEnabled = true
         
         let blackAlphaBackground = SKSpriteNode()
