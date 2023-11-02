@@ -1,7 +1,25 @@
+
+//
+//  Hide&SeekIntroduction.swift
+//  MacroADHD-simulator
+//
+//  Created by Azella Mutyara on 30/10/23.
+//
+
 import SwiftUI
 import SpriteKit
 
 struct Hide_SeekIntroduction: View {
+    var currentGame: GameInfo
+    var width: CGFloat
+    var height: CGFloat
+    
+    init(currentGame: GameInfo, width: CGFloat, height: CGFloat) {
+        self.currentGame = currentGame
+        self.width = width
+        self.height = height
+    }
+    
     struct Level {
         var number: Int
         var isCompleted: Bool
@@ -13,6 +31,7 @@ struct Hide_SeekIntroduction: View {
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
     @State private var isDisconnected = true
+    @State private var imageName = "headpieceDisconnect"
 
     @State private var levels: [Level] = [
         Level(number: 1, isCompleted: true, text: "Beginner"),
@@ -20,8 +39,6 @@ struct Hide_SeekIntroduction: View {
         Level(number: 3, isCompleted: false, text: "Advanced")
         // Add more levels as needed
     ]
-    
-    var gameInfo: GameInfo
     
     var body: some View {
         ZStack{
@@ -36,19 +53,25 @@ struct Hide_SeekIntroduction: View {
                     HStack{
                         Spacer().frame(width: 15)
                         
-                        TouchButton(normalImageName: "BackButtonNotPressed",
-                                    pressedImageName: "BackButtonNotPressed",
-                                    action: {
-                            showHomeView = true
-                        }) .background (NavigationLink("", destination:  HomeView(), isActive: $showHomeView))
-                        
+                        BackButton(width: 89, height: 79)
+//                            .padding(.leading, -450)
+
                         Spacer().frame(width: 450)
                         
-                        TouchButton(normalImageName: "GuideButtonNotPressed",
-                                    pressedImageName: "GuideButtonNotPressed",
+                        TouchButton(normalImageName: "brownIconButtonNotPressed",
+                                    pressedImageName: "brownIconButtonPressed",
                                     action: {
                             showGuideView = true
-                        })  .background (NavigationLink("", destination:  GuideView(), isActive: $showGuideView))
+                        })     .background (NavigationLink("", destination:  GuideView(), isActive: $showGuideView))
+                        .overlay (
+                            Image(self.imageName)
+                            .resizable()
+                            .frame(width: 43, height: 37)
+                            .foregroundColor(.white)
+                            .padding(.leading, 2)
+                            .padding(.bottom, 10)
+                    )
+                     
                         
                         
                     }
@@ -145,43 +168,17 @@ struct Hide_SeekIntroduction: View {
                     }
                 }
             }
-        } .background (NavigationLink("", destination: GameElementTutorialView(currentGame: self.gameInfo, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), isActive: $showGameView))
+        } .background (
+            NavigationLink("", destination:  GameElementTutorialView(currentGame: currentGame, width: width, height: height), isActive: $showGameView))
         .navigationBarBackButtonHidden(true)
-        .onReceive(mwmObject.signalStatusPublisher) { signalStatus in
-                    switch signalStatus {
-                    case 1:
-                        isDisconnected = false
-                        break
-                    case 2:
-                        isDisconnected = false
-                        break
-                    case 3:
-                        isDisconnected = false
-                        break
-                    case 4:
-                        isDisconnected = false
-                        break
-                    default:
-                        isDisconnected = true
-                        break
-                    }
-                }
-                .overlay(
-                    Group {
-                        if isDisconnected{
-                            Color.black.opacity(0.65)
-                                .ignoresSafeArea()
-                            
-                            Image("disconnectedPopUp")
-                        }
-                    }
-                )
         
     }
 }
 
 
 
-#Preview {
-    Hide_SeekIntroduction(gameInfo:   GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"))
-}
+//#Preview {
+//    Hide_SeekIntroduction()
+//}
+
+

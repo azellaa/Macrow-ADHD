@@ -87,7 +87,7 @@ class AttentionPopup: SKNode {
     
     func startShowPause(_ currentScene: SKScene) {
         
-        if !hasCapturedScreen, let capturedNode = captureScreenAsSpriteNode(scene: currentScene) {
+        if !hasCapturedScreen, let capturedNode = ScreenCapture.captureScreenAsSpriteNode(scene: currentScene) {
             hasCapturedScreen = true
             sceneNode = capturedNode
             sceneNode.position = CGPoint(x: sceneFrame.midX, y: sceneFrame.midY)
@@ -116,7 +116,7 @@ class AttentionPopup: SKNode {
         if !isShowing {
             circleOverlay.run(sequence)
             self.run(SKAction.sequence([
-                SKAction.wait(forDuration: 3),
+                SKAction.wait(forDuration: 0.5),
                 SKAction.run { [self] in
                     self.focusCatNoHand.run(SKAction.fadeIn(withDuration: 1))
                     self.focusCatNoHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25), duration: 0.5))
@@ -181,31 +181,31 @@ class AttentionPopup: SKNode {
         }
     }
     
-    func captureScreenAsSpriteNode(scene: SKScene) -> SKSpriteNode? {
-        // 1. Capture the current screen as a UIImage
-        guard let view = scene.view else {
-            return nil
-        }
-        
-        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
-        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
-        guard let capturedImage = UIGraphicsGetImageFromCurrentImageContext() else {
-            UIGraphicsEndImageContext()
-            return nil
-        }
-        UIGraphicsEndImageContext()
-        
-        // 2. Create an SKTexture from the UIImage
-        let texture = SKTexture(image: capturedImage)
-        
-        // 3. Create an SKSpriteNode with the SKTexture
-        let spriteNode = SKSpriteNode(texture: texture)
-        
-        // Optionally, you can set the position, scale, and other properties of the spriteNode here
-        spriteNode.position = CGPoint(x: scene.size.width / 2, y: scene.size.height / 2)
-        
-        return spriteNode
-    }
+//    func captureScreenAsSpriteNode(scene: SKScene) -> SKSpriteNode? {
+//        // 1. Capture the current screen as a UIImage
+//        guard let view = scene.view else {
+//            return nil
+//        }
+//        
+//        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
+//        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
+//        guard let capturedImage = UIGraphicsGetImageFromCurrentImageContext() else {
+//            UIGraphicsEndImageContext()
+//            return nil
+//        }
+//        UIGraphicsEndImageContext()
+//        
+//        // 2. Create an SKTexture from the UIImage
+//        let texture = SKTexture(image: capturedImage)
+//        
+//        // 3. Create an SKSpriteNode with the SKTexture
+//        let spriteNode = SKSpriteNode(texture: texture)
+//        
+//        // Optionally, you can set the position, scale, and other properties of the spriteNode here
+//        spriteNode.position = CGPoint(x: scene.size.width / 2, y: scene.size.height / 2)
+//        
+//        return spriteNode
+//    }
     func startBounce() {
         let currentFrame = circleOverlay.calculateAccumulatedFrame()
         

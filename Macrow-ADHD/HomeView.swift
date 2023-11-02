@@ -12,6 +12,7 @@ struct HomeView: View {
     @GestureState private var dragOffset: CGFloat = 0
     
     
+    
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
     @ObservedObject var centralManager = CentralManager()
@@ -19,20 +20,20 @@ struct HomeView: View {
     @State private var symbol = "Symbol"
     
     
-    #if targetEnvironment(simulator)
+#if targetEnvironment(simulator)
     
     private let games: [GameInfo] = [
         GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-//        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-//        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+        //        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+        //        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
     ]
-    #else
+#else
     private let games: [GameInfo] = [
         GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", destination: HideAndSeekWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-//        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-//        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+        //        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+        //        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
     ]
-    #endif
+#endif
     
     
     var body: some View {
@@ -40,44 +41,54 @@ struct HomeView: View {
             VStack{
                 HStack {
                     ZStack{
+                        Image("shadowBtn")
+                            .resizable()
+                            .frame(width: 90, height: 90)
+                            .padding(.top, 13)
+                            .padding(.leading, 17)
                         
                         
-                        ButtonView(imageName: self.symbol, destination: StatisticViewSwift().navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
+                        ButtonView(imageName: "", destination: EmptyView(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
                             .padding(.leading)
                             .padding()
-//                            .overlay(
-//                                Image()
-//                                    .resizable()
-//                                    .frame(width: 50, height: 50)
-//                                    .foregroundColor(.white)
-//                                    .padding(.leading, 13)
-//                            )
+                            .overlay(
+                                Image(self.symbol)
+                                    .resizable()
+                                    .frame(width: 50, height: 50)
+                                    .foregroundColor(.white)
+                                    .padding(.leading, 13)
+                            )
                     }
-
+                    
                     Spacer()
                     ZStack{
-                        Text("WillAndCat")
+                        Text("NECTAR")
                             .font(.custom("Jua-Regular", size: 86))
                             .foregroundColor(Color.brownColor)
-                        Text("WillAndCat")
+                        Text("NECTAR")
                             .font(.custom("Jua-Regular", size: 86))
                             .foregroundColor(Color.brownColor)
                             .padding(.leading, 6)
                     }
                     Spacer()
                     ZStack{
+                        Image("shadowBtn")
+                            .resizable()
+                            .frame(width: 90, height: 90)
+                            .padding(.top, 13)
+                            .padding(.trailing, 16)
                         
-                        ButtonView(imageName: self.imageName, destination: GuideView()
+                        ButtonView(imageName: "", destination: GuideView()
                             .navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
                         .padding(.trailing)
                         .padding()
-//                        .overlay(
-//                            Image(self.imageName)
-//                                .resizable()
-//                                .frame(width: 43, height: 37)
-//                                .foregroundColor(.white)
-//                                .padding(.trailing, 14)
-//                        )
+                        .overlay(
+                            Image(self.imageName)
+                                .resizable()
+                                .frame(width: 43, height: 37)
+                                .foregroundColor(.white)
+                                .padding(.trailing, 14)
+                        )
                     }
                 }
                 .padding(.bottom)
@@ -91,10 +102,11 @@ struct HomeView: View {
                     
                     ZStack {
                         ForEach(0..<games.count) { index in
-                            HomeItemView(dest: Hide_SeekIntroduction(gameInfo: games[index]), gameName: games[index].name, imageName: games[index].imageName)
+                            HomeItemView(dest: Hide_SeekIntroduction(currentGame: games[index], width: geo.size.width, height: geo.size.height), gameName: games[index].name, imageName: games[index].imageName)
                                 .offset(x: CGFloat(index - currentIdx) * geo.size.width * 0.9 + dragOffset, y: 0)
                         }
                     }
+                    
                     .gesture(
                         DragGesture()
                             .onEnded({ value in
@@ -153,8 +165,6 @@ struct HomeView: View {
             mwmObject.mwmDevice?.scanDevice()
         }
         .navigationBarBackButtonHidden(true)
-
-        
         
     }
 }
