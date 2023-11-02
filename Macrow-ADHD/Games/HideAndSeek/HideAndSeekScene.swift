@@ -9,6 +9,7 @@ import SpriteKit
 import GameplayKit
 import Combine
 import CoreData
+import SwiftUI
 
 class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
@@ -27,8 +28,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
 
-    private var isTutorialOpened = true
-    private var timerValue: Int = 60*5 // timer 10 menit
+    @AppStorage("tutorialOpened") public var isTutorialOpened = true
+    private var timerValue: Int = 60*10 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -238,11 +239,11 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         attentionPopup.zPosition = 20
         addChild(attentionPopup)
         
-        pausedPopup = SKSpriteNode(imageNamed: "disconnectedPopUp")
-        pausedPopup.setScale(0.5)
-        pausedPopup.zPosition = 25
-        pausedPopup.position = CGPoint(x: frame.midX, y: frame.midY)
-        addChild(pausedPopup)
+//        pausedPopup = SKSpriteNode(imageNamed: "disconnectedPopUp")
+//        pausedPopup.setScale(0.5)
+//        pausedPopup.zPosition = 25
+//        pausedPopup.position = CGPoint(x: frame.midX, y: frame.midY)
+//        addChild(pausedPopup)
         
 //        pausedLabel = SKLabelNode(fontNamed: "Jua-Regular")
 //        pausedLabel.text = ""
@@ -262,6 +263,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         disconnectPopup.zPosition = 26
         disconnectPopup.position = CGPoint(x: frame.midX, y: frame.midY)
         addChild(disconnectPopup)
+        disconnectPopup.alpha = 0
     }
     
     func updateIcon(_ imageName: String) -> SKTexture{

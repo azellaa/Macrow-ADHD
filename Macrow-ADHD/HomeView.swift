@@ -62,10 +62,10 @@ struct HomeView: View {
                     
                     Spacer()
                     ZStack{
-                        Text("NECTAR")
+                        Text("Will's Storyland")
                             .font(.custom("Jua-Regular", size: 86))
                             .foregroundColor(Color.brownColor)
-                        Text("NECTAR")
+                        Text("Will's Storyland")
                             .font(.custom("Jua-Regular", size: 86))
                             .foregroundColor(Color.brownColor)
                             .padding(.leading, 6)

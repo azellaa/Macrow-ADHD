@@ -10,8 +10,8 @@ import _SpriteKit_SwiftUI
 
 struct GameElementTutorialView: View {
     @State var idx: Int = 0
-    @State var isActive: Bool = false
     @State var isPaused: Bool = false
+    @AppStorage("gameElementTutorialOpeneed") private var isActive: Bool = false
     
     var currentGame: GameInfo
     var width: CGFloat
@@ -28,7 +28,7 @@ struct GameElementTutorialView: View {
     
     var body: some View {
 
-        if isActive {
+        if !isActive {
             GameView(scene: currentGame.destination)
         } else {
             ZStack {
