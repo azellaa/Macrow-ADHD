@@ -27,6 +27,7 @@ struct GameElementTutorialView: View {
     ]
     
     var body: some View {
+
         if isActive {
             GameView(scene: currentGame.destination)
         } else {

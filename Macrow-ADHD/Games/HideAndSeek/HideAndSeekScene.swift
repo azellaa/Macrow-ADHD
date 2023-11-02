@@ -20,11 +20,15 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitPos = [NodeElement]()
     private var foxPos = [NodeElement]()
     private var tutorialView = TutorialView()
+    private var pausedPopup = SKSpriteNode()
+    private var pausedLabel = SKLabelNode()
+    private var disconnectPopup = SKSpriteNode()
     
     private var rabbitCount = 0
     private var isTouched = false
+
     private var isTutorialOpened = true
-    private var timerValue: Int = 10 // timer 10 menit
+    private var timerValue: Int = 60*5 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -95,21 +99,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 timer.invalidate()
                 self.timesUpFunc()
             }
-            if !self.isTutorialOpened && self.signalStatus == 4{
+            if !self.isTutorialOpened && self.signalStatus == 4 && self.mwmObject.isConnected{
                 self.timerValue -= 1
-                
-                //                if self.timerValue == 295 {
-                //                    self.focusCount = 30
-                //                }
-                //                
-                //                if self.timerValue == 290 {
-                //                    self.focusCount = 80
-                //                }
-                //                
-                //                if self.timerValue == 288 {
-                //                    self.focusCount = 30
-                //                }
-                
             }
         }
         
@@ -246,6 +237,59 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         attentionPopup.isHidden = true
         attentionPopup.zPosition = 20
         addChild(attentionPopup)
+        
+        pausedPopup = SKSpriteNode(imageNamed: "disconnectedPopUp")
+        pausedPopup.setScale(0.5)
+        pausedPopup.zPosition = 25
+        pausedPopup.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(pausedPopup)
+        
+//        pausedLabel = SKLabelNode(fontNamed: "Jua-Regular")
+//        pausedLabel.text = ""
+//        pausedLabel.horizontalAlignmentMode = .center
+//        pausedLabel.verticalAlignmentMode = .center
+//        pausedLabel.numberOfLines = 2
+//        pausedLabel.fontColor = .black
+//        pausedLabel.fontSize = 21
+//        pausedLabel.zPosition = 25
+//        pausedLabel.preferredMaxLayoutWidth = pausedPopup.frame.width
+//        
+        
+        pausedPopup.addChild(pausedLabel)
+        
+        disconnectPopup = SKSpriteNode(imageNamed: "disconnectedPopUp")
+        disconnectPopup.setScale(1)
+        disconnectPopup.zPosition = 26
+        disconnectPopup.position = CGPoint(x: frame.midX, y: frame.midY)
+        addChild(disconnectPopup)
+    }
+    
+    func updateIcon(_ imageName: String) -> SKTexture{
+        return SKTexture(imageNamed: imageName)
+    }
+    
+    func showPopupConnecting() {
+//        pausedPopup.texture = updateIcon("defaultBg")
+//        let moveAction = SKAction.moveTo(y: frame.midY , duration: 0.5)
+//        pausedPopup.run(moveAction)
+//        pausedPopup.alpha = 1
+    }
+    
+    func showPopupDisconnect() {
+        disconnectPopup.texture = updateIcon("disconnectedPopUp")
+        let moveAction = SKAction.moveTo(y: frame.midY , duration: 0.5)
+        disconnectPopup.run(moveAction)
+        disconnectPopup.alpha = 1
+    }
+    
+    func showPopupAnimation() {
+        let moveAction = SKAction.moveTo(y: frame.height * 0.91, duration: 0.5)
+        pausedPopup.run(moveAction)
+    }
+    
+    func hidePopupAnimation() {
+        disconnectPopup.alpha = 0
+        pausedPopup.alpha = 0
     }
     
     func openTutorial() {
@@ -393,7 +437,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     
                     
                 }
-            } else if self.signalStatus != 4 {
+            } else if self.signalStatus != 4 || !mwmObject.isConnected{
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
                 attentionPopup.isHidden = true

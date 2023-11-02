@@ -40,6 +40,24 @@ class HideAndSeekWithHeadpiece: HideAndSeekScene {
                     self.dataController.editDisconnectEndTime(disconnect: self.disconnectDataEntity, endTime: Date(), context: self.context)
                     self.isSavingDisconnectData = false
                 }
+                
+                switch signalStatus {
+                case 1:
+//                    self?.headpieceStatus.texture = self?.updateIcon("poorSignalIcon")
+                    self.showPopupConnecting()
+                case 2:
+//                    self?.headpieceStatus.texture = self?.updateIcon("weakSignalIcon")
+                    self.showPopupConnecting()
+                case 3:
+//                    self?.headpieceStatus.texture = self?.updateIcon("connectingIcon")
+                    self.showPopupConnecting()
+                case 4:
+//                    self?.headpieceStatus.texture = self?.updateIcon("connectedIcon")
+                    self.hidePopupAnimation()
+                default:
+//                    self?.headpieceStatus.texture = self?.updateIcon("noSignalIcon")
+                    self.showPopupDisconnect()
+                }
             }
             .store(in: &cancellables)
     }
