@@ -11,8 +11,6 @@ import Combine
 
 class HeadpieceIndicator: SKNode {
     private var headpieceStatus = SKSpriteNode()
-    private var pausedPopup = SKSpriteNode()
-    private var pausedLabel = SKLabelNode()
     
     private var sceneFrame = CGRect()
     
@@ -37,26 +35,6 @@ class HeadpieceIndicator: SKNode {
         headpieceStatus.zPosition = 10
         addChild(headpieceStatus)
         
-        pausedPopup = SKSpriteNode(imageNamed: "noSignalBg")
-        pausedPopup.setScale(2)
-        pausedPopup.zPosition = 25
-        pausedPopup.position.x = sceneFrame.width * 1.5
-        pausedPopup.position.y = pausedPopup.size.height - sceneFrame.height * 0.17
-        
-        addChild(pausedPopup)
-        
-        pausedLabel = SKLabelNode(fontNamed: "Jua-Regular")
-        pausedLabel.text = "Oops! Head piece disconected...\nTell the adults to help you"
-        pausedLabel.horizontalAlignmentMode = .center
-        pausedLabel.verticalAlignmentMode = .center
-        pausedLabel.numberOfLines = 2
-        pausedLabel.fontColor = .black
-        pausedLabel.fontSize = 21
-        pausedLabel.zPosition = 25
-        pausedLabel.preferredMaxLayoutWidth = pausedPopup.frame.width
-        
-        
-        pausedPopup.addChild(pausedLabel)
         
         
 //        // TESTING
@@ -72,19 +50,19 @@ class HeadpieceIndicator: SKNode {
                 switch signalStatus {
                 case 1:
                     self?.headpieceStatus.texture = self?.updateIcon("poorSignalIcon")
-                    self?.showPopupConnecting()
+//                    self?.showPopupConnecting()
                 case 2:
                     self?.headpieceStatus.texture = self?.updateIcon("weakSignalIcon")
-                    self?.showPopupConnecting()
+//                    self?.showPopupConnecting()
                 case 3:
                     self?.headpieceStatus.texture = self?.updateIcon("connectingIcon")
-                    self?.showPopupConnecting()
+//                    self?.showPopupConnecting()
                 case 4:
                     self?.headpieceStatus.texture = self?.updateIcon("connectedIcon")
-                    self?.hidePopupAnimation()
+//                    self?.hidePopupAnimation()
                 default:
                     self?.headpieceStatus.texture = self?.updateIcon("noSignalIcon")
-                    self?.showPopupDisconnect()
+//                    self?.showPopupDisconnect()
                 }
             }
             .store(in: &cancellables)
@@ -92,27 +70,5 @@ class HeadpieceIndicator: SKNode {
     
     func updateIcon(_ imageName: String) -> SKTexture{
         return SKTexture(imageNamed: imageName)
-    }
-    
-    func showPopupConnecting() {
-        pausedPopup.texture = updateIcon("defaultBg")
-        pausedLabel.text = "Make sure you wear the headpiece correctly"
-        showPopupAnimation()
-    }
-    
-    func showPopupDisconnect() {
-        pausedPopup.texture = updateIcon("noSignalBg")
-        pausedLabel.text = "Oops! Head piece disconected...\nTell the adults to help you"
-        showPopupAnimation()
-    }
-    
-    func showPopupAnimation() {
-        let moveAction = SKAction.moveTo(y: sceneFrame.height * 0.91, duration: 0.5)
-        pausedPopup.run(moveAction)
-    }
-    
-    func hidePopupAnimation() {
-        let moveAction = SKAction.moveTo(y: sceneFrame.height + pausedPopup.size.height / 2, duration: 0.5)
-        pausedPopup.run(moveAction)
     }
 }

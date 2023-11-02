@@ -12,7 +12,7 @@ struct ContentView: View {
 //    @Environment (\.managedObjectContext) var managedObjContext
     var body: some View {
         NavigationStack {
-            SplashScreen()
+            HomeView()
         }
     }
 }

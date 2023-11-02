@@ -11,8 +11,6 @@ struct HomeView: View {
     @State private var currentIdx: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
     
-    
-    
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
     @ObservedObject var centralManager = CentralManager()
@@ -48,7 +46,7 @@ struct HomeView: View {
                             .padding(.leading, 17)
                         
                         
-                        ButtonView(imageName: "", destination: EmptyView(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
+                        ButtonView(imageName: "", destination: StatisticViewSwift().navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
                             .padding(.leading)
                             .padding()
                             .overlay(
@@ -62,10 +60,10 @@ struct HomeView: View {
                     
                     Spacer()
                     ZStack{
-                        Text("NECTAR")
+                        Text("WILL & THE CAT")
                             .font(.custom("Jua-Regular", size: 86))
                             .foregroundColor(Color.brownColor)
-                        Text("NECTAR")
+                        Text("WILL & THE CAT")
                             .font(.custom("Jua-Regular", size: 86))
                             .foregroundColor(Color.brownColor)
                             .padding(.leading, 6)
@@ -161,6 +159,12 @@ struct HomeView: View {
                 mwmObject.mwmDevice?.scanDevice()
             }
         }
+        .onAppear(perform: {
+            if !mwmObject.isConnected {
+                mwmObject.mwmDevice?.scanDevice()
+                
+            }
+        })
         .navigationBarBackButtonHidden(true)
         
     }

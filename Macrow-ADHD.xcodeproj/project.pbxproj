@@ -39,7 +39,6 @@
 		3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */; };
 		3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613772AC5C66F00F0A792 /* ContentView.swift */; };
 		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
-		542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88B2AE58F4A0024387C /* Array+average.swift */; };
 		542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */; };
 		542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8972AE596D80024387C /* Report+CoreDataClass.swift */; };
 		542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */; };
@@ -96,6 +95,8 @@
 		B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B64EFB602AE22B5A002190EA /* ReportModel.xcdatamodeld */; };
 		B64F1B382AF30D6600AB80D4 /* ScreenCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F1B372AF30D6600AB80D4 /* ScreenCapture.swift */; };
 		B64F1B392AF30D6600AB80D4 /* ScreenCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F1B372AF30D6600AB80D4 /* ScreenCapture.swift */; };
+		B64F1B3A2AF382E900AB80D4 /* Array+average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88B2AE58F4A0024387C /* Array+average.swift */; };
+		B64F1B3B2AF382FB00AB80D4 /* ReportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */; };
 		B65057932AF02B7800BD6D08 /* StatisticViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */; };
 		B66E747E2ADF7C4300CCA69A /* Color+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B66E747D2ADF7C4300CCA69A /* Color+extension.swift */; };
 		B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B67D3E0D2AD347D900DDA7D4 /* GameData.swift */; };
@@ -531,7 +532,6 @@
 				2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */,
 				B6D1C9622AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift in Sources */,
 				542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */,
-				542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */,
 				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
 				B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */,
 				542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */,
@@ -556,6 +556,8 @@
 				542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */,
 				B65057932AF02B7800BD6D08 /* StatisticViewSwift.swift in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
+				B64F1B3B2AF382FB00AB80D4 /* ReportUtils.swift in Sources */,
+				B64F1B3A2AF382E900AB80D4 /* Array+average.swift in Sources */,
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
 				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,
@@ -761,6 +763,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -805,6 +808,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = NO;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
