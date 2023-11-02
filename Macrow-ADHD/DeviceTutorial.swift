@@ -1,3 +1,10 @@
+//
+//  DeviceTutorial.swift
+//  Macrow-ADHD
+//
+//  Created by Jessica Rachel on 30/10/23.
+//
+
 import SwiftUI
 
 struct DeviceTutorial: View {
@@ -100,7 +107,9 @@ struct DeviceTutorial: View {
                 }
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
+    
     
     
     
@@ -584,4 +593,5 @@ struct Subview11: View {
             DeviceTutorial()
         }
     }
+
 

@@ -16,8 +16,8 @@ struct SplashScreen: View {
             if firstLaunch {
                 DeviceTutorial()
             } else {
-                        HomeView()
-                    }
+                HomeView()
+            }
         } else {
             ZStack {
                 Image("SplashScreenBackground")

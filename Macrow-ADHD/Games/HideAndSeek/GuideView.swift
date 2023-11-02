@@ -206,7 +206,7 @@ struct GuideView: View {
                     }
                 } .padding(.top)
             }
-        }
+        } .navigationBarBackButtonHidden(true)
     }
     
     func titleForImage(imageName: String) -> String {

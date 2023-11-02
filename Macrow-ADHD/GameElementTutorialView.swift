@@ -71,5 +71,6 @@ struct GameElementTutorialView: View {
             }
             .navigationBarBackButtonHidden()
         }
+
     }
 }

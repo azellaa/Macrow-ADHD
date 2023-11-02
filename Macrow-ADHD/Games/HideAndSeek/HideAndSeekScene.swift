@@ -24,7 +24,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var rabbitCount = 0
     private var isTouched = false
     private var isTutorialOpened = false
-    private var timerValue: Int = 600 // timer 10 menit
+    private var timerValue: Int = 10 // timer 10 menit
     
     public var focusCount = 80 // focus point
     public var isSpawning = false
@@ -38,7 +38,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     private var attentionPopup = AttentionPopup()
     
     var signalStatus: Int = 4
-    var dataController: DataController!
+     var dataController: DataController!
     var context: NSManagedObjectContext!
     
     var gameEntity: Game!
@@ -66,10 +66,11 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     
     override func didMove(to view: SKView) {
-        dataController = DataController()
+        dataController = DataController.shared
         self.context = dataController.container.viewContext
         
-        self.gameEntity = dataController.addGame(gameName: "Hide And Seek", level: 1, context: self.context)
+        self.gameEntity = dataController.addGame(gameName: "Hide & Seek", level: 1, context: self.context)
+        
         
         self.reportEntity = dataController.addInitialReport(game: self.gameEntity, context: self.context)
         
@@ -124,7 +125,9 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         isSpawning = false
         isTouched = false
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) { [weak self] in
-            self?.spawnEntity()
+            if !self!.isCompleted {
+                self?.spawnEntity()
+            }
         }
     }
     
@@ -261,17 +264,24 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     func timesUpFunc() {
         dataController.editAvgAttentionReport(report: self.reportEntity, avgAttention: listFocusData.average(), context: self.context)
-        dataController.fetchAndPrintFocusData()
+        //        dataController.fetchAndPrintFocusData()
         
-        run(SKAction.sequence([
-            SKAction.run { [weak self] in
-                guard let `self` = self else { return }
-                let reveal = SKTransition.fade(withDuration: 0.5)
-                
-                let scene = GameOverPage()
-                view?.presentScene(scene, transition: reveal)
-            }
-        ]))
+        let scene = GameOverPage(sceneFrame: self.frame)
+        scene.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
+     
+        scene.isUserInteractionEnabled = true
+        
+        let blackAlphaBackground = SKSpriteNode()
+        blackAlphaBackground.size = CGSize(width: self.frame.width, height: self.frame.height)
+        blackAlphaBackground.color = .black
+        blackAlphaBackground.alpha = 0.5
+        blackAlphaBackground.position = CGPoint(x: self.frame.width / 2 , y: self.frame.height / 2)
+        
+        blackAlphaBackground.zPosition = 19
+        scene.zPosition = 20
+        addChild(blackAlphaBackground)
+        addChild(scene)
+        
         
         listFocusData = [Double]()
         stopMWMPublisher()
