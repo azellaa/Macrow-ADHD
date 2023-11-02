@@ -46,7 +46,7 @@ struct GameElementTutorialView: View {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
                             gameScene.pauseTutorial()
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 9) {
                             gameScene.removePause()
                             idx = 4
                             gameScene.nextTutorial(text: texts[idx])

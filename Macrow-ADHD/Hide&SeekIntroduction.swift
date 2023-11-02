@@ -12,7 +12,7 @@ struct Hide_SeekIntroduction: View {
     @State private var showHomeView = false
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
-    @State private var isDisconnected = false
+    @State private var isDisconnected = true
 
     @State private var levels: [Level] = [
         Level(number: 1, isCompleted: true, text: "Beginner"),
