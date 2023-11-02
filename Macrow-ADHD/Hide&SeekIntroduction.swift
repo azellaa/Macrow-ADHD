@@ -10,6 +10,16 @@ import SwiftUI
 import SpriteKit
 
 struct Hide_SeekIntroduction: View {
+    var currentGame: GameInfo
+    var width: CGFloat
+    var height: CGFloat
+    
+    init(currentGame: GameInfo, width: CGFloat, height: CGFloat) {
+        self.currentGame = currentGame
+        self.width = width
+        self.height = height
+    }
+    
     struct Level {
         var number: Int
         var isCompleted: Bool
@@ -155,7 +165,8 @@ struct Hide_SeekIntroduction: View {
                     }
                 }
             }
-        } .background (NavigationLink("", destination:  GameView(scene: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))), isActive: $showGameView))
+        } .background (
+            NavigationLink("", destination:  GameElementTutorialView(currentGame: currentGame, width: width, height: height), isActive: $showGameView))
         .navigationBarBackButtonHidden(true)
         
     }
@@ -163,8 +174,8 @@ struct Hide_SeekIntroduction: View {
 
 
 
-#Preview {
-    Hide_SeekIntroduction()
-}
+//#Preview {
+//    Hide_SeekIntroduction()
+//}
 
 
