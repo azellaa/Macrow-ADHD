@@ -12,40 +12,43 @@ struct SplashScreen: View {
     @State var isSplashScreenShown = false
     
     var body: some View {
-        if isSplashScreenShown {
-            if firstLaunch {
-                DeviceTutorial()
+        ZStack {
+            if isSplashScreenShown {
+                if firstLaunch {
+                    DeviceTutorial()
+                } else {
+                    HomeView()
+                }
             } else {
-                HomeView()
-            }
-        } else {
-            ZStack {
-                Image("SplashScreenBackground")
-                    .resizable()
-                    .aspectRatio(contentMode: .fill)
-                    .edgesIgnoringSafeArea(.all)
-                    .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
-                
-                VStack {
-                    Text("Will &")
-                        .font(.custom("Jua-Regular", size: 125))
-                        .foregroundColor(Color.brownColor)
-                        .multilineTextAlignment(.center)
+                ZStack {
+                    Image("SplashScreenBackground")
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .edgesIgnoringSafeArea(.all)
+                        .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     
-                    Text("The Cat")
-                        .font(.custom("Jua-Regular", size: 100))
-                        .foregroundColor(Color.brownColor)
-                        .multilineTextAlignment(.center)
-                    
-                    Spacer().frame(height: 275)
-                    
-                    
-                    TouchButton(padding: .constant(0), normalImageName: "PlayButtonNotPressed", pressedImageName: "PlayButtonPressed") {
-                        isSplashScreenShown = true
+                    VStack {
+                        Text("Will's")
+                            .font(.custom("Jua-Regular", size: 125))
+                            .foregroundColor(Color.brownColor)
+                            .multilineTextAlignment(.center)
+                        
+                        Text("Storyland")
+                            .font(.custom("Jua-Regular", size: 100))
+                            .foregroundColor(Color.brownColor)
+                            .multilineTextAlignment(.center)
+                        
+                        Spacer().frame(height: 275)
+                        
+                        
+                        TouchButton(normalImageName: "PlayButtonNotPressed", pressedImageName: "PlayButtonPressed") {
+                            isSplashScreenShown = true
+                        }
                     }
                 }
             }
         }
+
         
     }
 }

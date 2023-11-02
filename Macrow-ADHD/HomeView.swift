@@ -48,9 +48,10 @@ struct HomeView: View {
                         .padding(.leading, geo.size.width * 0.03)
                     
                     Spacer()
-                    Text("Will & The Cat")
+                    Text("Will's Storyland")
                         .font(.custom("Jua-Regular", size: 86))
                         .foregroundColor(Color.brownColor)
+                        .padding(.leading, 6)
                     Spacer()
                     
                     ButtonSymbol(dest: $isGuide, imageName: imageName)
@@ -128,6 +129,9 @@ struct HomeView: View {
                 print(isBluetoothOn)
                 mwmObject.mwmDevice?.scanDevice()
             }
+        }
+        .onAppear{
+            mwmObject.mwmDevice?.scanDevice()
         }
         .navigationBarBackButtonHidden(true)
         

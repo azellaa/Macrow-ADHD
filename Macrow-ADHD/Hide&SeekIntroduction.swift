@@ -28,6 +28,14 @@ struct Hide_SeekIntroduction: View {
     @State private var showGameView = false
     @State private var showGuideView = false
     @State private var showHomeView = false
+    @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
+    @State private var mwmData: MWMData?
+    #if targetEnvironment(simulator)
+    @State private var isDisconnected = false
+    
+    #else
+    @State private var isDisconnected = true
+    #endif
     @State private var imageName = "headpieceDisconnect"
     
     @State private var levels: [Level] = [
@@ -161,7 +169,34 @@ struct Hide_SeekIntroduction: View {
         } .background (
             NavigationLink("", destination:  GameElementTutorialView(currentGame: currentGame, width: width, height: height), isActive: $showGameView))
         .navigationBarBackButtonHidden(true)
-        
+        .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
+            switch signalStatus {
+            case 1:
+                self.imageName = "headpiece1Bar"
+                isDisconnected = false
+            case 2:
+                self.imageName = "headpiece2Bar"
+                isDisconnected = false
+            case 3:
+                self.imageName = "headpiece3Bar"
+                isDisconnected = false
+            case 4:
+                self.imageName = "headpieceLogo"
+                isDisconnected = false
+            default:
+                self.imageName = "headpieceDisconnect"
+                isDisconnected = true
+                break
+            }
+        })
+        .overlay(
+            Group {
+                if isDisconnected{
+                    
+                    Image("disconnectedPopUp")
+                }
+            }
+        )
     }
 }
 
