@@ -102,7 +102,13 @@
 		B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */; };
 		B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
 		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
-		B6B2D9302AF10CE600C64CAA /* ReportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */; };
+		B6B2D91D2AF0FF1900C64CAA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D91C2AF0FF1900C64CAA /* SplashScreen.swift */; };
+		B6B2D91F2AF0FF2100C64CAA /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D91E2AF0FF2100C64CAA /* SplashScreen.swift */; };
+		B6B2D9212AF0FF4500C64CAA /* Hide&SeekIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9202AF0FF4500C64CAA /* Hide&SeekIntroduction.swift */; };
+		B6B2D9232AF0FF4900C64CAA /* Hide&SeekIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9222AF0FF4900C64CAA /* Hide&SeekIntroduction.swift */; };
+		B6B2D9252AF0FF7C00C64CAA /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9242AF0FF7C00C64CAA /* TouchButton.swift */; };
+		B6B2D9292AF0FF9B00C64CAA /* BubbleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D9282AF0FF9B00C64CAA /* BubbleText.swift */; };
+		B6B2D92B2AF0FFA000C64CAA /* BubbleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */; };
 		B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
 		B6D1C9622AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */; };
 		B6D1C9CB2AE83DF1003B4331 /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9C92AE83DF1003B4331 /* MWMModel.swift */; };
@@ -161,6 +167,12 @@
 		B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPopup.swift; sourceTree = "<group>"; };
 		B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadpieceIndicator.swift; sourceTree = "<group>"; };
 		B69C52F52ACBD9CC009B3493 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
+		B6B2D91C2AF0FF1900C64CAA /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashScreen.swift; path = "Macrow-ADHD/SplashScreen.swift"; sourceTree = SOURCE_ROOT; };
+		B6B2D91E2AF0FF2100C64CAA /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
+		B6B2D9202AF0FF4500C64CAA /* Hide&SeekIntroduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Hide&SeekIntroduction.swift"; path = "Macrow-ADHD/Hide&SeekIntroduction.swift"; sourceTree = SOURCE_ROOT; };
+		B6B2D9222AF0FF4900C64CAA /* Hide&SeekIntroduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hide&SeekIntroduction.swift"; sourceTree = "<group>"; };
+		B6B2D9242AF0FF7C00C64CAA /* TouchButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TouchButton.swift; path = "Macrow-ADHD/TouchButton.swift"; sourceTree = SOURCE_ROOT; };
+		B6B2D9282AF0FF9B00C64CAA /* BubbleText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BubbleText.swift; path = "Macrow-ADHD/BubbleText.swift"; sourceTree = SOURCE_ROOT; };
 		B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleText.swift; sourceTree = "<group>"; };
 		B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUtils.swift; sourceTree = "<group>"; };
 		B6BFD4652AE139D300D3AAB1 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
@@ -547,6 +559,7 @@
 				54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */,
 				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
 				26E4B69E2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
+				B6B2D92B2AF0FFA000C64CAA /* BubbleText.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
 				26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */,
 				26A9C66E2ACBCC8A00117948 /* PassThroughBackground.swift in Sources */,
@@ -568,6 +581,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6D1C95A2AE837A9003B4331 /* GameInfo.swift in Sources */,
+				B6D1C9682AE83BCF003B4331 /* GuideView.swift in Sources */,
+				B6D1C9C52AE83DB7003B4331 /* AnimalTypeEnum.swift in Sources */,
+				B6D1C9B82AE83DB7003B4331 /* Color+extension.swift in Sources */,
+				B6D1C9A92AE83DB7003B4331 /* GameData.swift in Sources */,
+				B6D1C9B12AE83DB7003B4331 /* NodeElement.swift in Sources */,
 				B64929552AF20D4E00570802 /* HeadpieceIndicator.swift in Sources */,
 				B64929502AF20D4300570802 /* Double+extension.swift in Sources */,
 				26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */,
@@ -594,14 +613,7 @@
 				B64929352AF20D0B00570802 /* HomeItemView.swift in Sources */,
 				B64929412AF20D1200570802 /* ReportUtils.swift in Sources */,
 				B649294B2AF20D3300570802 /* Report+CoreDataProperties.swift in Sources */,
-				B64929432AF20D1A00570802 /* Color+extension.swift in Sources */,
-				B649295D2AF20D4E00570802 /* HideAndSeekBackground.swift in Sources */,
-				B64929562AF20D4E00570802 /* NodeElement.swift in Sources */,
-				B64929392AF20D0B00570802 /* GameInfo.swift in Sources */,
-				B64929382AF20D0B00570802 /* GuideView.swift in Sources */,
-				B649294E2AF20D3700570802 /* AnimalTypeEnum.swift in Sources */,
 				B64929482AF20D2F00570802 /* Game+CoreDataProperties.swift in Sources */,
-				B649293D2AF20D0B00570802 /* SplashScreen.swift in Sources */,
 				B64929572AF20D4E00570802 /* HideAndSeekScene.swift in Sources */,
 				B649295C2AF20D4E00570802 /* HideAndSeekTutorialView.swift in Sources */,
 				B649294F2AF20D4000570802 /* Array+average.swift in Sources */,
@@ -609,7 +621,6 @@
 				B649293A2AF20D0B00570802 /* HomeView.swift in Sources */,
 				B649294D2AF20D3300570802 /* Report+CoreDataClass.swift in Sources */,
 				B649294C2AF20D3300570802 /* Report+GetFocusPause.swift in Sources */,
-				B64929592AF20D4E00570802 /* GameData.swift in Sources */,
 				B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */,
 				B64929492AF20D2F00570802 /* Game+GetAnimal.swift in Sources */,
 				B64929342AF20A0A00570802 /* BubbleText.swift in Sources */,

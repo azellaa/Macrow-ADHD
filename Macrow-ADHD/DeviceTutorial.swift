@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct DeviceTutorial: View {
+    @AppStorage("firstLaunch") var firstLaunch: Bool = true
     @State private var currentView: Int = 0
     let maxView: Int = 10 // Set your maximum view count here
     
@@ -20,6 +21,9 @@ struct DeviceTutorial: View {
             
             if currentView == 11{
                 HomeView()
+                    .onAppear{
+                    firstLaunch = false
+                }
             } else {
                 VStack{
                     HStack{

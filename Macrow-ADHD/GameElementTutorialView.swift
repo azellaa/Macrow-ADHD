@@ -27,48 +27,50 @@ struct GameElementTutorialView: View {
     ]
     
     var body: some View {
-        ZStack {
-            SpriteView(scene: gameScene)
-                .ignoresSafeArea()
-                .navigationBarBackButtonHidden()
+        if isActive {
             
-            TouchButton(normalImageName: "buttonNextNotPressed",
-                        pressedImageName: "buttonNextPressed",
-                        action: {
-                switch(idx) {
-                case 2:
-                    idx += 1
-                    gameScene.nextTutorial(text: texts[idx])
-                case 3:
-                    if !isPaused {
-                        gameScene.hideAll()
-                        isPaused = true
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                            gameScene.pauseTutorial()
+            GameView(scene: currentGame.destination)
+            
+        } else {
+            ZStack {
+                SpriteView(scene: gameScene)
+                    .ignoresSafeArea()
+                    .navigationBarBackButtonHidden()
+                
+                TouchButton(normalImageName: "buttonNextNotPressed",
+                            pressedImageName: "buttonNextPressed",
+                            action: {
+                    switch(idx) {
+                    case 2:
+                        idx += 1
+                        gameScene.nextTutorial(text: texts[idx])
+                    case 3:
+                        if !isPaused {
+                            gameScene.hideAll()
+                            isPaused = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                                gameScene.pauseTutorial()
+                            }
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 13) {
+                                gameScene.removePause()
+                                idx = 4
+                                gameScene.nextTutorial(text: texts[idx])
+                                isPaused = false
+                            }
                         }
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 20) {
-                            gameScene.removePause()
-                            idx = 4
-                            gameScene.nextTutorial(text: texts[idx])
-                            isPaused = false
-                        }
+                    case 4:
+                        isActive = true
+                    default:
+                        idx += 1
+                        gameScene.nextTutorial(text: texts[idx])
                     }
-                case 4:
-                    isActive = true
-                default:
-                    idx += 1
-                    gameScene.nextTutorial(text: texts[idx])
-                }
-            })
-            .opacity(!isPaused ? 1 : 0)
-            .position(CGPoint(x: width * 0.82, y: height * 0.91))
-            .zIndex(30)
-            .background (NavigationLink(
-                destination: GameView(scene: currentGame.destination),
-                isActive: $isActive) {
-                    EmptyView()
                 })
+                .opacity(!isPaused ? 1 : 0)
+                .position(CGPoint(x: width * 0.82, y: height * 0.91))
+                .zIndex(30)
+            }
+            .navigationBarBackButtonHidden()
         }
-        .navigationBarBackButtonHidden()
+
     }
 }
