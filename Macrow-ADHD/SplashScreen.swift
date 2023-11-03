@@ -48,6 +48,9 @@ struct SplashScreen: View {
                 }
             }
         }
+        .onAppear(perform: {
+            AudioManager.shared.playBackgroundMusic(fileName: "Jungle Song")
+        })
 
         
     }
