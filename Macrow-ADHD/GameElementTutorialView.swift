@@ -11,7 +11,7 @@ import _SpriteKit_SwiftUI
 struct GameElementTutorialView: View {
     @State var idx: Int = 0
     @State var isPaused: Bool = false
-    @AppStorage("gameElementTutorialOpeneed") private var isActive: Bool = false
+    @AppStorage("gameElementTutorialOpeneed") private var isActive: Bool = true
     
     var currentGame: GameInfo
     var width: CGFloat
@@ -27,7 +27,7 @@ struct GameElementTutorialView: View {
     ]
     
     var body: some View {
-
+        
         if !isActive {
             GameView(scene: currentGame.destination)
         } else {
@@ -36,9 +36,7 @@ struct GameElementTutorialView: View {
                     .ignoresSafeArea()
                     .navigationBarBackButtonHidden()
                 
-                TouchButton(normalImageName: "buttonNextNotPressed",
-                            pressedImageName: "buttonNextPressed",
-                            action: {
+                ButtonText(imageName: "IconNextBrown", text: "Next", textSize: 32, textColor: .brownColor, normalImageName: "lightBrownTextButtonNotPressed", pressedImageName: "lightBrownTextButtonPressed") {
                     switch(idx) {
                     case 2:
                         idx += 1
@@ -58,18 +56,18 @@ struct GameElementTutorialView: View {
                             }
                         }
                     case 4:
-                        isActive = true
+                        isActive = false
                     default:
                         idx += 1
                         gameScene.nextTutorial(text: texts[idx])
                     }
-                })
+                }
                 .opacity(!isPaused ? 1 : 0)
                 .position(CGPoint(x: width * 0.82, y: height * 0.91))
                 .zIndex(30)
             }
             .navigationBarBackButtonHidden()
         }
-
+        
     }
 }

@@ -55,6 +55,8 @@
 		B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */; };
 		B6179DFD2AF031A600CAD6AA /* StatisticViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */; };
 		B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */; };
+		B624CC622AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B624CC612AF4945900FC5636 /* Tropical Jungle.mp3 */; };
+		B624CC632AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B624CC612AF4945900FC5636 /* Tropical Jungle.mp3 */; };
 		B649292E2AF2097900570802 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
 		B64929302AF209C100570802 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649292F2AF209C100570802 /* SplashScreen.swift */; };
 		B64929322AF209EA00570802 /* Hide&SeekIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */; };
@@ -155,6 +157,7 @@
 		B616ADE22AF16CD600FC5DBE /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
 		B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jua-Regular.ttf"; sourceTree = "<group>"; };
+		B624CC612AF4945900FC5636 /* Tropical Jungle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tropical Jungle.mp3"; sourceTree = "<group>"; };
 		B649292F2AF209C100570802 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hide&SeekIntroduction.swift"; sourceTree = "<group>"; };
 		B64929642AF20FD200570802 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -371,6 +374,7 @@
 		B64F1B442AF3BE2F00AB80D4 /* BGM */ = {
 			isa = PBXGroup;
 			children = (
+				B624CC612AF4945900FC5636 /* Tropical Jungle.mp3 */,
 				B64F1B452AF3BE4200AB80D4 /* Jungle Song.mp3 */,
 			);
 			path = BGM;
@@ -510,6 +514,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */,
+				B624CC622AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
 				B64F1B462AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */,
 				B64929652AF20FD200570802 /* Assets.xcassets in Resources */,
 				3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */,
@@ -520,6 +525,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B624CC632AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
 				B64F1B472AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */,
 				B64929662AF20FD200570802 /* Assets.xcassets in Resources */,
 				B64929452AF20D1D00570802 /* Jua-Regular.ttf in Resources */,

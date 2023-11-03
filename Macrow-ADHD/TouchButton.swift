@@ -9,17 +9,20 @@ import SwiftUI
 
 struct TouchButton: View {
     @State private var isTouched = false
+    @Binding var padding: CGFloat
+    
     var normalImageName: String
     var pressedImageName: String
     var action: () -> Void
 
     var body: some View {
-        UIKitButton(isTouched: $isTouched, normalImageName: normalImageName, pressedImageName: pressedImageName, action: action)
+        UIKitButton(isTouched: $isTouched, padding: $padding, normalImageName: normalImageName, pressedImageName: pressedImageName, action: action)
     }
 }
 
 struct UIKitButton: UIViewRepresentable {
     @Binding var isTouched: Bool
+    @Binding var padding: CGFloat
     var normalImageName: String
     var pressedImageName: String
     var action: () -> Void
@@ -61,11 +64,13 @@ struct UIKitButton: UIViewRepresentable {
 
         @objc func buttonTouched() {
             parent.isTouched = true
+            parent.padding = 0
 //            parent.action()
         }
 
         @objc func buttonReleased() {
             parent.isTouched = false
+            parent.padding = 5
             parent.action()
         }
     }
@@ -73,7 +78,7 @@ struct UIKitButton: UIViewRepresentable {
 
 struct TouchButton_Previews: PreviewProvider {
     static var previews: some View {
-        TouchButton(normalImageName: "PlayButtonNotPressed", pressedImageName: "PlayButtonPressed", action: {
+        TouchButton(padding: .constant(0), normalImageName: "PlayButtonNotPressed", pressedImageName: "PlayButtonPressed", action: {
             print("Button Pressed")
         })
     }

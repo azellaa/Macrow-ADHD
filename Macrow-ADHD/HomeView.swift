@@ -11,7 +11,8 @@ struct HomeView: View {
     @State private var currentIdx: Int = 0
     @GestureState private var dragOffset: CGFloat = 0
     
-    
+    @State var isStatistic: Bool = false
+    @State var isGuide: Bool = false
     
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
@@ -40,58 +41,27 @@ struct HomeView: View {
         GeometryReader { geo in
             VStack{
                 HStack {
-                    ZStack{
-                        Image("shadowBtn")
-                            .resizable()
-                            .frame(width: 90, height: 90)
-                            .padding(.top, 13)
-                            .padding(.leading, 17)
-                        
-                        
-                        ButtonView(imageName: "", destination: StatisticViewSwift().navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
-                            .padding(.leading)
-                            .padding()
-                            .overlay(
-                                Image(self.symbol)
-                                    .resizable()
-                                    .frame(width: 50, height: 50)
-                                    .foregroundColor(.white)
-                                    .padding(.leading, 13)
-                            )
-                    }
+                    ButtonSymbol(dest: $isStatistic, imageName: "IconStatistic")
+                        .navigationDestination(isPresented: $isStatistic, destination: {
+                            StatisticViewSwift()
+                                .navigationBarBackButtonHidden()
+                        })
+                        .padding(.leading, geo.size.width * 0.03)
                     
                     Spacer()
-                    ZStack{
-                        Text("Will's Storyland")
-                            .font(.custom("Jua-Regular", size: 86))
-                            .foregroundColor(Color.brownColor)
-                        Text("Will's Storyland")
-                            .font(.custom("Jua-Regular", size: 86))
-                            .foregroundColor(Color.brownColor)
-                            .padding(.leading, 6)
-                    }
+                    Text("Will's Storyland")
+                        .font(.custom("Jua-Regular", size: 86))
+                        .foregroundColor(Color.brownColor)
+                        .padding(.leading, 6)
                     Spacer()
-                    ZStack{
-                        Image("shadowBtn")
-                            .resizable()
-                            .frame(width: 90, height: 90)
-                            .padding(.top, 13)
-                            .padding(.trailing, 16)
-                        
-                        ButtonView(imageName: "", destination: GuideView()
-                            .navigationBarBackButtonHidden(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
-                        .padding(.trailing)
-                        .padding()
-                        .overlay(
-                            Image(self.imageName)
-                                .resizable()
-                                .frame(width: 43, height: 37)
-                                .foregroundColor(.white)
-                                .padding(.trailing, 14)
-                        )
-                    }
+                    
+                    ButtonSymbol(dest: $isGuide, imageName: imageName)
+                        .navigationDestination(isPresented: $isGuide, destination: {
+                            GuideView()
+                        })
+                        .padding(.trailing, geo.size.width * 0.03)
                 }
-                .padding(.bottom)
+                .padding(.vertical, geo.size.height * 0.04)
                 
                 HStack {
                     BackCarouselButton(backName: "chevron.backward", isbackButton: true, totalGames: games.count, currentIdx: $currentIdx)

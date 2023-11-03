@@ -7,61 +7,90 @@
 
 import SwiftUI
 
-struct ButtonView: View {
+struct ButtonSymbol: View {
+    @State private var padding: CGFloat = 5
+    @Binding var dest: Bool
     var imageName: String
-    var destination: any View
-    var buttonColor: Color
-    var iconColor: Color
-    var width: CGFloat
-    var height: CGFloat
     
     var body: some View {
-        
-        NavigationLink() {
-            AnyView(destination)
-        } label: {
-            ZStack {
-                imageName == "chart.bar.fill" || imageName == "play.fill" ?
-                Image(systemName: imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .padding(22)
-                :
-                Image(imageName)
-                    .resizable()
-                    .scaledToFit()
-                    .padding(20)
+        ZStack {
+            Image(imageName)
+                .resizable()
+                .scaledToFit()
+                .zIndex(2)
+                .frame(width: 40)
+                .padding(.bottom, padding)
+                .allowsHitTesting(false)
+            
+            TouchButton(padding: $padding, normalImageName: "brownIconButtonNotPressed", pressedImageName: "brownIconButtonPressed") {
+                dest = true
             }
-            .foregroundColor(iconColor)
-            .frame(width: width, height: height)
-            .background(
-                RoundedRectangle(cornerRadius: 30).fill(buttonColor)
-            )
         }
     }
 }
 
-struct BackButton: View {
+struct ButtonBack: View {
     @Environment(\.presentationMode) var presentationMode
-    var width: CGFloat
-    var height: CGFloat
+    @State private var padding: CGFloat = 5
     
     var body: some View {
         ZStack {
-            Button {
+            Image("IconBack")
+                .resizable()
+                .scaledToFit()
+                .zIndex(2)
+                .frame(width: 40)
+                .padding(.bottom, padding)
+                .allowsHitTesting(false)
+            TouchButton(padding: $padding, normalImageName: "brownIconButtonNotPressed", pressedImageName: "brownIconButtonPressed") {
                 presentationMode.wrappedValue.dismiss()
-            } label: {
-                Image(systemName: "chevron.backward")
-                    .resizable()
-                    .scaledToFit()
-                    .padding(20)
             }
         }
-        .foregroundColor(.white)
-        .frame(width: width, height: height)
-        .background(
-            RoundedRectangle(cornerRadius: 20).fill(Color.brownColor)
-        )
+    }
+}
+
+struct ButtonText: View {
+    @State private var padding: CGFloat = 5
+    
+    var imageName: String
+    var text: String
+    var textSize: CGFloat
+    var textColor: Color
+    var normalImageName: String
+    var pressedImageName: String
+    var action: () -> Void
+    
+    var body: some View {
+        ZStack {
+            HStack {
+                if text == "Next" {
+                    Text(text)
+                        .font(.custom("Jua-Regular", size: textSize))
+                        .foregroundColor(textColor)
+                    
+                        Image(imageName)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 50)
+                } else {
+                    Image(imageName)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 50)
+                    
+                    Text(text)
+                        .font(.custom("Jua-Regular", size: textSize))
+                        .foregroundColor(textColor)
+                }
+            }
+            .zIndex(2)
+            .padding(.bottom, padding)
+            .allowsHitTesting(false)
+            
+            TouchButton(padding: $padding, normalImageName: normalImageName, pressedImageName: pressedImageName, action: action)
+            
+            .frame(height: 300)
+        }
     }
 }
 
@@ -80,7 +109,7 @@ struct BackCarouselButton: View {
             Image(systemName: backName)
                 .resizable()
                 .scaledToFit()
-//                .frame(width: geo.size.width * 0.04)
+            //                .frame(width: geo.size.width * 0.04)
                 .padding()
                 .padding(.leading)
                 .foregroundColor(.white)
@@ -88,9 +117,9 @@ struct BackCarouselButton: View {
     }
 }
 
-#Preview {
-//    ButtonView(imageName: "chart.bar.fill", destination: EmptyView(), width: 80, height: 80)
-//    ButtonView(imageName: "headpieceLogo", destination: EmptyView(), width: 80, height: 80)
-    BackButton(width: 80, height: 80)
-//    BackCarouselButton()
-}
+//#Preview {
+//    //    ButtonView(imageName: "chart.bar.fill", destination: EmptyView(), width: 80, height: 80)
+//    //    ButtonView(imageName: "headpieceLogo", destination: EmptyView(), width: 80, height: 80)
+//    BackButton(width: 80, height: 80)
+//    //    BackCarouselButton()
+//}

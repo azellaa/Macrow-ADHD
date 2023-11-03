@@ -22,12 +22,12 @@ struct DeviceTutorial: View {
             if currentView == 11{
                 HomeView()
                     .onAppear{
-                    firstLaunch = false
-                }
+                        firstLaunch = false
+                    }
             } else {
                 VStack{
                     HStack{
-                        ButtonView(imageName: "backButton", destination: EmptyView(), buttonColor: .brownColor, iconColor: .white, width: 90, height: 80)
+                        ButtonSymbol(dest: .constant(false), imageName: "IconClose")
                             .padding(.leading, -300)
                             .padding()
                             .opacity(0)
@@ -67,41 +67,23 @@ struct DeviceTutorial: View {
                         }
                         HStack{
                             if currentView > 0 {
-                                Button(action: {
-                                    currentView = (currentView - 1)
-                                }) {
-                                    ZStack{
-                                        Image("previousBg")
-                                            .resizable()
-                                            .frame(width: 288, height: 88)
-                                        Text("← Previous")
-                                            .font(.custom("Jua-Regular", size: 32))
-                                            .foregroundColor(Color.brownColor)
-                                            .padding(.leading, 30)
-                                    }
-                                } .zIndex(1)
-                                
-                                
+                                ButtonText(imageName: "IconPrevBrown", text: "Previous", textSize: 32, textColor: .brownColor, normalImageName: "whiteTextButtonNotPressed", pressedImageName: "whiteTextButtonPressed") {
+                                    currentView -= 1
+                                }
+                                .zIndex(1)
                             }
                             Spacer()
-                            Button(action: {
-                                currentView = (currentView + 1) // Toggle between 0 and 1
-                            }) {
-                                ZStack{
-                                    Image("nextBg")
-                                        .resizable()
-                                        .frame(width: 288, height: 88)
-                                    Text("Next →")
-                                        .font(.custom("Jua-Regular", size: 32))
-                                        .foregroundColor(Color.white)
-                                        .padding(.leading, 6)
-                                }
-                            } .padding(.leading)
+                            
+                            ButtonText(imageName: "IconNextWhite", text: "Next", textSize: 32, textColor: .white, normalImageName: "brownTextButtonNotPressed", pressedImageName: "brownTextButtonPressed") {
+                                currentView += 1
+                            }
+                            .padding(.leading)
                             
                             
-                        } .padding(.leading, 30)
-                            .padding(.trailing, 30)
-                            .padding(.top, 450)
+                        }
+                        .padding(.leading, 30)
+                        .padding(.trailing, 30)
+                        .padding(.top, 450)
                         
                     }
                 }
@@ -144,7 +126,7 @@ struct DeviceTutorial: View {
         }
     }
 }
-    
+
 struct Subview2: View {
     var body: some View {
         VStack{
@@ -162,7 +144,7 @@ struct Subview2: View {
                     .multilineTextAlignment(.center)
                     .padding(.bottom, -40)
                     .padding(.trailing, 620)
-                  
+                
             }
             ZStack {
                 Image("will2")
@@ -176,9 +158,9 @@ struct Subview2: View {
                     .padding(.top, -350)
                 
             }
-    
-        } .padding(.leading)
             
+        } .padding(.leading)
+        
     }
 }
 
@@ -213,9 +195,9 @@ struct Subview3: View {
                     .padding(.top, -400)
                 
             }
-    
-        }
             
+        }
+        
     }
 }
 
@@ -250,9 +232,9 @@ struct Subview4: View {
                     .padding(.top, -400)
                 
             }
-    
-        }
             
+        }
+        
     }
 }
 
@@ -287,7 +269,7 @@ struct Subview5: View {
                     .padding(.leading, 300)
                     .padding(.bottom, 150)
                     .zIndex(3)
-                    
+                
                 
                 Image("line")
                     .resizable()
@@ -297,8 +279,8 @@ struct Subview5: View {
                     .padding(.leading, 630)
                     .padding(.bottom, 370)
                     .zIndex(2)
-
-                    
+                
+                
                 Image("headpiece1")
                     .resizable()
                     .frame(width: 337, height: 424)
@@ -307,9 +289,9 @@ struct Subview5: View {
                     .zIndex(1)
                 
             }
-    
-        }
             
+        }
+        
     }
 }
 
@@ -344,7 +326,7 @@ struct Subview6: View {
                     .padding(.leading, 300)
                     .padding(.bottom, 150)
                     .zIndex(3)
-                    
+                
                 
                 Image("line")
                     .resizable()
@@ -354,14 +336,14 @@ struct Subview6: View {
                     .padding(.leading, 630)
                     .padding(.bottom, 370)
                     .zIndex(2)
-
+                
                 Image("blueLight")
                     .resizable()
                     .frame(width: 41, height: 41)
                     .padding(.bottom, 150)
                     .padding(.leading, 140)
                     .zIndex(4)
-                    
+                
                 Image("headpiece1")
                     .resizable()
                     .frame(width: 337, height: 424)
@@ -370,9 +352,9 @@ struct Subview6: View {
                     .zIndex(1)
                 
             }
-    
-        }
             
+        }
+        
     }
 }
 
@@ -392,11 +374,11 @@ struct Subview7: View {
                     .padding(.bottom, 230)
                     .padding(.leading, 30)
             } .padding(.top, 56)
-                
-                
-    
-        } .padding(.leading)
             
+            
+            
+        } .padding(.leading)
+        
     }
 }
 
@@ -412,8 +394,8 @@ struct Subview8: View {
                     .padding(.top, -420)
                     .zIndex(3)
                     .scaleEffect(x: -1, y: 1)
-
-        
+                
+                
                 Text("This is Sensor Tip, where brainwave would be detected. So, make sure it attached to the forehead skin")
                     .font(.custom("Jua-Regular", size: 24))
                     .frame(width: 355, height: 120)
@@ -436,11 +418,11 @@ struct Subview8: View {
                     .padding(.leading, 30)
                     .zIndex(2)
             }.padding(.top, 56)
-                
-                
-    
-        } .padding(.leading)
             
+            
+            
+        } .padding(.leading)
+        
     }
 }
 
@@ -484,11 +466,11 @@ struct Subview9: View {
                     .padding(.leading, 30)
                     .zIndex(2)
             }.padding(.top, 40)
-                
-                
-    
-        } .padding(.leading)
             
+            
+            
+        } .padding(.leading)
+        
     }
 }
 
@@ -531,11 +513,11 @@ struct Subview10: View {
                     .padding(.leading, 30)
                     .zIndex(2)
             }.padding(.top, 40)
-                
-                
-    
-        } .padding(.leading)
             
+            
+            
+        } .padding(.leading)
+        
     }
 }
 
@@ -558,11 +540,12 @@ struct Subview11: View {
                         .multilineTextAlignment(.center)
                         .padding(.bottom, -40)
                         .padding(.trailing, 620)
-                      
-                } .padding(.bottom, 600)
-                    .padding(.trailing, 30)
-                    .padding(.top, -120)
                     
+                }
+                .padding(.bottom, 600)
+                .padding(.trailing, 30)
+                .padding(.top, -120)
+                
                 ZStack{
                     Image("will1")
                         .resizable()
@@ -577,21 +560,17 @@ struct Subview11: View {
                         .padding(.leading, 30)
                         .zIndex(2)
                 }
-                    
-            }.padding(.top, 56)
-                
-                
-    
-        } .padding(.leading)
-           
-            
+            }
+            .padding(.top, 56)
+        }
+        .padding(.leading)
     }
 }
-    
-    struct DeviceTutorial_Previews: PreviewProvider {
-        static var previews: some View {
-            DeviceTutorial()
-        }
+
+struct DeviceTutorial_Previews: PreviewProvider {
+    static var previews: some View {
+        DeviceTutorial()
     }
+}
 
 

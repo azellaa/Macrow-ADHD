@@ -17,7 +17,7 @@ struct GuideView: View {
            
             VStack {
                 HStack {
-                    BackButton(width: 89, height: 79)
+                    ButtonBack()
                         .padding(.leading, -450)
                     
                     Text("Guide")
