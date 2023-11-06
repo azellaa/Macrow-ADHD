@@ -359,9 +359,9 @@
 		B6257E6C2AF8956C004C2F0D /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				B6257E792AF8FAEF004C2F0D /* Abstractions */,
 				B6257E882AF8FDF8004C2F0D /* Themes */,
 				B6257E7D2AF8FB0A004C2F0D /* Constants */,
-				B6257E792AF8FAEF004C2F0D /* Abstractions */,
 				B69C52E72ACBD392009B3493 /* Utilities */,
 				3D2B49852ACBD2C000DA8827 /* Data */,
 				B6257E782AF8F9B6004C2F0D /* Extensions */,
@@ -373,6 +373,7 @@
 		B6257E6D2AF8957C004C2F0D /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				B6ED95BA2AF9674B00BEB9B0 /* Onboarding */,
 				B6257E702AF8975C004C2F0D /* Games */,
 				B6257E6F2AF8971A004C2F0D /* Statistic */,
 			);
@@ -478,7 +479,6 @@
 		B6257E772AF8F947004C2F0D /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
 				26FF33D32AF10E9C00944F48 /* TouchButton.swift */,
 				B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */,
 				268DE2492ADF85500097E3F2 /* HomeItemView.swift */,
@@ -603,6 +603,22 @@
 				B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		B6ED95BA2AF9674B00BEB9B0 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				B6ED95BB2AF9675300BEB9B0 /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		B6ED95BB2AF9675300BEB9B0 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
