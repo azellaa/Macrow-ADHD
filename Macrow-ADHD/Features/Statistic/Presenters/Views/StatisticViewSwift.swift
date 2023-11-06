@@ -23,7 +23,6 @@ struct StatisticViewSwift: View {
     @State private var currentDate = Date()
     @State private var focusAverage: Double = 0
     
-    private let statisticOptions = ["Day", "Week", "Month"]
     @State private var selectedIndex = 0
     @State private var selectedReport: Report?
     
@@ -45,23 +44,23 @@ struct StatisticViewSwift: View {
                     }
                     Spacer()
                 }
+                .padding(.top, Decimal.double41)
                 VStack(content: {
-                    Text(AppLabel.statistic)
-                        .font(.Heading.heading2)
+                    CustomBoldHeading2(text: AppLabel.statistic)
                         .foregroundStyle(.brownGuide)
-                    CustomSegmentedControl(preselectedIndex: $selectedIndex, options: statisticOptions)
+                        .padding(.top, Decimal.double41)
+                    CustomSegmentedControl(preselectedIndex: $selectedIndex, options: AppLabel.statisticOptions)
                         .frame(maxWidth: 540)
                         .foregroundStyle(.brownGuide)
-                        .font(.custom("Jua-Regular", size: 27))
+                        .font(.body2)
                     VStack {
                         if selectedIndex == 0 {
                             HStack {
                                 Text("\(currentDate.dMMMMFormat())")
-                                    .font(.custom("Jua-Regular", size: 40))
-                                
+                                    .font(.subHeading2)
                                 Spacer()
                                 Text("\(AppLabel.focusAvg) \(focusAverage.isNaN ? "\(AppLabel.noFocusValue)" : focusAverage.truncated)")
-                                    .font(.custom("Jua-Regular", size: 32))
+                                    .font(.subHeading2)
                             }
                             .padding(.horizontal, 40)
                             .padding()
@@ -70,7 +69,7 @@ struct StatisticViewSwift: View {
                         
                         if reports.count == 0 {
                             VStack{
-                                Text("There’s no data recorded, try to play some games")
+                                Text(AppLabel.noStatisticText)
                                     .font(.custom("Jua-Regular", size: 32))
                                     .foregroundStyle(.brownGuide)
                             }
@@ -151,8 +150,8 @@ struct StatisticViewSwift: View {
             x: .value("Date", marker.timestamp!),
             y: .value("Focus", marker.avgAttention)
         )
-        .accessibilityLabel(marker.timestamp!.formatted(date: .complete, time: .omitted))
-        .accessibilityValue("\(marker.avgAttention) sold")
+//        .accessibilityLabel(marker.timestamp!.formatted(date: .complete, time: .omitted))
+//        .accessibilityValue("\(marker.avgAttention) sold")
         .lineStyle(StrokeStyle(lineWidth: lineWidth))
         .foregroundStyle(chartColor)
         .opacity(0.5)
@@ -215,12 +214,14 @@ struct StatisticViewSwift: View {
                             Spacer()
                             VStack(alignment: .center) {
                                 Text("\(selectedReport.avgAttention.truncated)")
+                                    .font(.subHeading2)
                                 Text("\(selectedReport.reportToGame?.gameName ?? "No Name")")
+                                    .font(.body2)
                             }
                             Spacer()
                         }
                         
-                        .font(.custom("Jua-Regular", size: 32))
+//                        .font(.custom("Jua-Regular", size: 32))
                         .foregroundStyle(.white)
                         
                         .accessibilityElement(children: .combine)
@@ -239,17 +240,17 @@ struct StatisticViewSwift: View {
         
         .chartXAxis{
             AxisMarks(values: .stride(by: self.strideFilter, roundLowerBound: true, roundUpperBound: true)) { _ in
-//                AxisTick()
-//                AxisGridLine()
+                //                AxisTick()
+                //                AxisGridLine()
                 AxisValueLabel(format: filterDateTime)
-                    .font(.custom("Jua-Regular", size: 12))
+                    .font(.caption1)
                     .foregroundStyle(.brownGuide)
             }
         }
         .chartYAxis {
             AxisMarks(position: .leading, values: [0, 20, 40, 60, 80, 100]) {
                 AxisGridLine()
-                AxisValueLabel().font(.Body.body1).foregroundStyle(.brownGuide)
+                AxisValueLabel().font(.caption1).foregroundStyle(.brownGuide)
             }
         }
         .frame(maxHeight: 472)

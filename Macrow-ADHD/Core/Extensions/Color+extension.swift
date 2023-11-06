@@ -10,8 +10,6 @@ import UIKit
 import SwiftUI
 
 extension Color {
-    
-//    static let redTutorial = Color("redTutorial")
-    
     static let brownColor = Color("brownGuideColor")
+    
 }
