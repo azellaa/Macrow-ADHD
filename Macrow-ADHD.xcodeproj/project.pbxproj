@@ -57,6 +57,18 @@
 		B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */; };
 		B624CC622AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B624CC612AF4945900FC5636 /* Tropical Jungle.mp3 */; };
 		B624CC632AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B624CC612AF4945900FC5636 /* Tropical Jungle.mp3 */; };
+		B6257E7B2AF8FAFD004C2F0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E7A2AF8FAFD004C2F0D /* Constants.swift */; };
+		B6257E7C2AF8FAFD004C2F0D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E7A2AF8FAFD004C2F0D /* Constants.swift */; };
+		B6257E7F2AF8FB16004C2F0D /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E7E2AF8FB16004C2F0D /* AppFont.swift */; };
+		B6257E802AF8FB16004C2F0D /* AppFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E7E2AF8FB16004C2F0D /* AppFont.swift */; };
+		B6257E822AF8FB2C004C2F0D /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E812AF8FB2C004C2F0D /* AppLabel.swift */; };
+		B6257E832AF8FB2C004C2F0D /* AppLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E812AF8FB2C004C2F0D /* AppLabel.swift */; };
+		B6257E862AF8FB45004C2F0D /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E852AF8FB45004C2F0D /* Decimal.swift */; };
+		B6257E872AF8FB45004C2F0D /* Decimal.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E852AF8FB45004C2F0D /* Decimal.swift */; };
+		B6257E8C2AF8FE64004C2F0D /* TextTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E8B2AF8FE64004C2F0D /* TextTheme.swift */; };
+		B6257E8D2AF8FE64004C2F0D /* TextTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E8B2AF8FE64004C2F0D /* TextTheme.swift */; };
+		B6257E8F2AF907C3004C2F0D /* ResourcePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E8E2AF907C3004C2F0D /* ResourcePath.swift */; };
+		B6257E902AF907C3004C2F0D /* ResourcePath.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6257E8E2AF907C3004C2F0D /* ResourcePath.swift */; };
 		B649292E2AF2097900570802 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
 		B64929302AF209C100570802 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649292F2AF209C100570802 /* SplashScreen.swift */; };
 		B64929322AF209EA00570802 /* Hide&SeekIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */; };
@@ -133,7 +145,7 @@
 		26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElementTutorial.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		26FF33D32AF10E9C00944F48 /* TouchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchButton.swift; sourceTree = "<group>"; };
-		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GuideView.swift; path = Games/HideAndSeek/GuideView.swift; sourceTree = "<group>"; };
+		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTutorial.swift; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -158,6 +170,12 @@
 		B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
 		B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Jua-Regular.ttf"; sourceTree = "<group>"; };
 		B624CC612AF4945900FC5636 /* Tropical Jungle.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Tropical Jungle.mp3"; sourceTree = "<group>"; };
+		B6257E7A2AF8FAFD004C2F0D /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B6257E7E2AF8FB16004C2F0D /* AppFont.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppFont.swift; sourceTree = "<group>"; };
+		B6257E812AF8FB2C004C2F0D /* AppLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLabel.swift; sourceTree = "<group>"; };
+		B6257E852AF8FB45004C2F0D /* Decimal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decimal.swift; sourceTree = "<group>"; };
+		B6257E8B2AF8FE64004C2F0D /* TextTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextTheme.swift; sourceTree = "<group>"; };
+		B6257E8E2AF907C3004C2F0D /* ResourcePath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResourcePath.swift; sourceTree = "<group>"; };
 		B649292F2AF209C100570802 /* SplashScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SplashScreen.swift; sourceTree = "<group>"; };
 		B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Hide&SeekIntroduction.swift"; sourceTree = "<group>"; };
 		B64929642AF20FD200570802 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -203,34 +221,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3D2B49832ACBD1B400DA8827 /* Games */ = {
-			isa = PBXGroup;
-			children = (
-				3D2B49842ACBD1BF00DA8827 /* HideAndSeek */,
-			);
-			path = Games;
-			sourceTree = "<group>";
-		};
-		3D2B49842ACBD1BF00DA8827 /* HideAndSeek */ = {
-			isa = PBXGroup;
-			children = (
-				B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */,
-				26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */,
-				26A9C6712ACBCCC600117948 /* GameOverPage.swift */,
-				26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */,
-				26A9C6692ACBCC5F00117948 /* ProgressBar.swift */,
-				26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */,
-				26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */,
-				26A9C66F2ACBCC9700117948 /* NodeElement.swift */,
-				B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */,
-				B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */,
-				B67D3E0D2AD347D900DDA7D4 /* GameData.swift */,
-				26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */,
-			);
-			path = HideAndSeek;
-			sourceTree = "<group>";
-		};
-		3D2B49852ACBD2C000DA8827 /* Data Model */ = {
+		3D2B49852ACBD2C000DA8827 /* Data */ = {
 			isa = PBXGroup;
 			children = (
 				542DD8A72AE59F280024387C /* Animal */,
@@ -239,7 +230,7 @@
 				3D2B49892ACBD31100DA8827 /* DataController.swift */,
 				B64EFB602AE22B5A002190EA /* ReportModel.xcdatamodeld */,
 			);
-			path = "Data Model";
+			path = Data;
 			sourceTree = "<group>";
 		};
 		3DB613692AC5C66F00F0A792 = {
@@ -263,28 +254,10 @@
 		3DB613742AC5C66F00F0A792 /* Macrow-ADHD */ = {
 			isa = PBXGroup;
 			children = (
-				B649292F2AF209C100570802 /* SplashScreen.swift */,
-				B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */,
-				26FF33D32AF10E9C00944F48 /* TouchButton.swift */,
-				B65057912AF02B5200BD6D08 /* Statistic */,
-				B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */,
-				B61C40432ACF0AA8007CCC72 /* Resources */,
-				B6BFD4732AE139E400D3AAB1 /* Bridging-Header.h */,
-				3D2B49852ACBD2C000DA8827 /* Data Model */,
-				B69C52E72ACBD392009B3493 /* Utilities */,
-				3D2B49832ACBD1B400DA8827 /* Games */,
-				3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */,
-				3DB613772AC5C66F00F0A792 /* ContentView.swift */,
+				B6257E6A2AF89442004C2F0D /* Application */,
+				B6257E6C2AF8956C004C2F0D /* Core */,
+				B6257E6D2AF8957C004C2F0D /* Features */,
 				3DB6137B2AC5C67100F0A792 /* Preview Content */,
-				268DE2432ADF756C0097E3F2 /* HomeView.swift */,
-				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
-				268DE2452ADF786B0097E3F2 /* ButtonView.swift */,
-				268DE2492ADF85500097E3F2 /* HomeItemView.swift */,
-				268DE24B2ADF85FC0097E3F2 /* GameView.swift */,
-				26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */,
-				B69C52F52ACBD9CC009B3493 /* Homepage.swift */,
-				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
-				26E4B69D2AEFB11600434426 /* GameElementTutorialView.swift */,
 			);
 			path = "Macrow-ADHD";
 			sourceTree = "<group>";
@@ -295,14 +268,6 @@
 				3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
-			sourceTree = "<group>";
-		};
-		542DD88A2AE58F310024387C /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-				542DD88B2AE58F4A0024387C /* Array+average.swift */,
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		542DD8A52AE59E9A0024387C /* Game */ = {
@@ -345,22 +310,10 @@
 		B60864962AE62AE600424FCA /* MacroADHD-simulator */ = {
 			isa = PBXGroup;
 			children = (
+				B6257E6B2AF89547004C2F0D /* Application */,
 				B6D1C98E2AE83DB7003B4331 /* Utilities */,
-				B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */,
 			);
 			path = "MacroADHD-simulator";
-			sourceTree = "<group>";
-		};
-		B61C40432ACF0AA8007CCC72 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				B64F1B442AF3BE2F00AB80D4 /* BGM */,
-				B64929642AF20FD200570802 /* Assets.xcassets */,
-				B61C40442ACF0AB3007CCC72 /* Fonts */,
-				B66E747D2ADF7C4300CCA69A /* Color+extension.swift */,
-				B64F1B482AF3BE9100AB80D4 /* AudioManager.swift */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		B61C40442ACF0AB3007CCC72 /* Fonts */ = {
@@ -369,6 +322,216 @@
 				B61C40452ACF0AC9007CCC72 /* Jua-Regular.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B6257E6A2AF89442004C2F0D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B6BFD4732AE139E400D3AAB1 /* Bridging-Header.h */,
+				3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B6257E6B2AF89547004C2F0D /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		B6257E6C2AF8956C004C2F0D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E882AF8FDF8004C2F0D /* Themes */,
+				B6257E7D2AF8FB0A004C2F0D /* Constants */,
+				B6257E792AF8FAEF004C2F0D /* Abstractions */,
+				B69C52E72ACBD392009B3493 /* Utilities */,
+				3D2B49852ACBD2C000DA8827 /* Data */,
+				B6257E782AF8F9B6004C2F0D /* Extensions */,
+				B6257E6E2AF8966E004C2F0D /* Resources */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		B6257E6D2AF8957C004C2F0D /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E702AF8975C004C2F0D /* Games */,
+				B6257E6F2AF8971A004C2F0D /* Statistic */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		B6257E6E2AF8966E004C2F0D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				B64929642AF20FD200570802 /* Assets.xcassets */,
+				B64F1B442AF3BE2F00AB80D4 /* BGM */,
+				B61C40442ACF0AB3007CCC72 /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		B6257E6F2AF8971A004C2F0D /* Statistic */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E912AF9206C004C2F0D /* ViewModel */,
+				B6257E722AF8F7AE004C2F0D /* Presenters */,
+				B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */,
+			);
+			path = Statistic;
+			sourceTree = "<group>";
+		};
+		B6257E702AF8975C004C2F0D /* Games */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E762AF8F890004C2F0D /* Presenters */,
+				B6257E712AF89762004C2F0D /* HideAndSeek */,
+			);
+			path = Games;
+			sourceTree = "<group>";
+		};
+		B6257E712AF89762004C2F0D /* HideAndSeek */ = {
+			isa = PBXGroup;
+			children = (
+				B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */,
+				26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */,
+				26A9C6712ACBCCC600117948 /* GameOverPage.swift */,
+				26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */,
+				26A9C6692ACBCC5F00117948 /* ProgressBar.swift */,
+				26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */,
+				26A9C66D2ACBCC8A00117948 /* PassThroughBackground.swift */,
+				26A9C66F2ACBCC9700117948 /* NodeElement.swift */,
+				B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */,
+				B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */,
+				B67D3E0D2AD347D900DDA7D4 /* GameData.swift */,
+				26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */,
+			);
+			path = HideAndSeek;
+			sourceTree = "<group>";
+		};
+		B6257E722AF8F7AE004C2F0D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E742AF8F7FB004C2F0D /* Component */,
+				B6257E732AF8F7C2004C2F0D /* Views */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		B6257E732AF8F7C2004C2F0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6257E742AF8F7FB004C2F0D /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		B6257E752AF8F884004C2F0D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				268DE24B2ADF85FC0097E3F2 /* GameView.swift */,
+				B69C52F52ACBD9CC009B3493 /* Homepage.swift */,
+				268DE2432ADF756C0097E3F2 /* HomeView.swift */,
+				B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */,
+				B649292F2AF209C100570802 /* SplashScreen.swift */,
+				26E4B69D2AEFB11600434426 /* GameElementTutorialView.swift */,
+				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
+				3DB613772AC5C66F00F0A792 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6257E762AF8F890004C2F0D /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E772AF8F947004C2F0D /* Components */,
+				B6257E752AF8F884004C2F0D /* Views */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		B6257E772AF8F947004C2F0D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
+				26FF33D32AF10E9C00944F48 /* TouchButton.swift */,
+				B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */,
+				268DE2492ADF85500097E3F2 /* HomeItemView.swift */,
+				268DE2452ADF786B0097E3F2 /* ButtonView.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B6257E782AF8F9B6004C2F0D /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				B616ADE22AF16CD600FC5DBE /* Double+extension.swift */,
+				B66E747D2ADF7C4300CCA69A /* Color+extension.swift */,
+				542DD88B2AE58F4A0024387C /* Array+average.swift */,
+				B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		B6257E792AF8FAEF004C2F0D /* Abstractions */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E7A2AF8FAFD004C2F0D /* Constants.swift */,
+			);
+			path = Abstractions;
+			sourceTree = "<group>";
+		};
+		B6257E7D2AF8FB0A004C2F0D /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E7E2AF8FB16004C2F0D /* AppFont.swift */,
+				B6257E812AF8FB2C004C2F0D /* AppLabel.swift */,
+				B6257E852AF8FB45004C2F0D /* Decimal.swift */,
+				B6257E8E2AF907C3004C2F0D /* ResourcePath.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		B6257E882AF8FDF8004C2F0D /* Themes */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E8A2AF8FE44004C2F0D /* Styles */,
+				B6257E892AF8FE3E004C2F0D /* Components */,
+			);
+			path = Themes;
+			sourceTree = "<group>";
+		};
+		B6257E892AF8FE3E004C2F0D /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		B6257E8A2AF8FE44004C2F0D /* Styles */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E8B2AF8FE64004C2F0D /* TextTheme.swift */,
+			);
+			path = Styles;
+			sourceTree = "<group>";
+		};
+		B6257E912AF9206C004C2F0D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 		B64F1B442AF3BE2F00AB80D4 /* BGM */ = {
@@ -380,26 +543,15 @@
 			path = BGM;
 			sourceTree = "<group>";
 		};
-		B65057912AF02B5200BD6D08 /* Statistic */ = {
-			isa = PBXGroup;
-			children = (
-				B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */,
-				B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */,
-				B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */,
-			);
-			path = Statistic;
-			sourceTree = "<group>";
-		};
 		B69C52E72ACBD392009B3493 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
 				54F6B0F02AE5B1F6003D874D /* NeuroskyHelper */,
-				542DD88A2AE58F310024387C /* Extension */,
 				B6BFD4642AE139D300D3AAB1 /* lib */,
 				5491B13A2AE5C351004986A0 /* CentralManager.swift */,
-				B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */,
-				B616ADE22AF16CD600FC5DBE /* Double+extension.swift */,
 				B64F1B372AF30D6600AB80D4 /* ScreenCapture.swift */,
+				26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */,
+				B64F1B482AF3BE9100AB80D4 /* AudioManager.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -549,14 +701,17 @@
 				B616ADE32AF16CD600FC5DBE /* Double+extension.swift in Sources */,
 				54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */,
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
+				B6257E862AF8FB45004C2F0D /* Decimal.swift in Sources */,
 				542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */,
 				B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */,
 				B64929332AF20A0900570802 /* BubbleText.swift in Sources */,
+				B6257E8C2AF8FE64004C2F0D /* TextTheme.swift in Sources */,
 				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
 				2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */,
 				B6D1C9622AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift in Sources */,
 				542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */,
 				542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */,
+				B6257E822AF8FB2C004C2F0D /* AppLabel.swift in Sources */,
 				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
 				B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */,
 				542DD8A42AE59E5A0024387C /* Game+CoreDataProperties.swift in Sources */,
@@ -564,6 +719,7 @@
 				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
 				B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */,
 				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
+				B6257E7B2AF8FAFD004C2F0D /* Constants.swift in Sources */,
 				B64929322AF209EA00570802 /* Hide&SeekIntroduction.swift in Sources */,
 				26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */,
 				B616ADDF2AF1661B00FC5DBE /* Date+extension.swift in Sources */,
@@ -585,8 +741,10 @@
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
+				B6257E7F2AF8FB16004C2F0D /* AppFont.swift in Sources */,
 				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,
 				B66E747E2ADF7C4300CCA69A /* Color+extension.swift in Sources */,
+				B6257E8F2AF907C3004C2F0D /* ResourcePath.swift in Sources */,
 				B649292E2AF2097900570802 /* TouchButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -605,14 +763,17 @@
 				B649295B2AF20D4E00570802 /* ProgressBar.swift in Sources */,
 				26F4FBEC2AF3766000F31E68 /* SplashScreen.swift in Sources */,
 				26F4FBE82AF3763200F31E68 /* GuideView.swift in Sources */,
+				B6257E872AF8FB45004C2F0D /* Decimal.swift in Sources */,
 				26F4FBE92AF3763700F31E68 /* NodeElement.swift in Sources */,
 				26F4FBE62AF3762400F31E68 /* Color+extension.swift in Sources */,
 				B64929472AF20D2A00570802 /* DataController.swift in Sources */,
+				B6257E8D2AF8FE64004C2F0D /* TextTheme.swift in Sources */,
 				B64929372AF20D0B00570802 /* Homepage.swift in Sources */,
 				B649293C2AF20D0B00570802 /* GameView.swift in Sources */,
 				B64929362AF20D0B00570802 /* ContentView.swift in Sources */,
 				26F4FBE42AF375FC00F31E68 /* GameInfo.swift in Sources */,
 				26F4FBEA2AF3763700F31E68 /* GameData.swift in Sources */,
+				B6257E832AF8FB2C004C2F0D /* AppLabel.swift in Sources */,
 				B64929542AF20D4E00570802 /* AttentionPopup.swift in Sources */,
 				26E4B6A22AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				B64929532AF20D4E00570802 /* PassThroughBackground.swift in Sources */,
@@ -620,6 +781,7 @@
 				26E4B69F2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
 				B64F1B392AF30D6600AB80D4 /* ScreenCapture.swift in Sources */,
 				B6179DFD2AF031A600CAD6AA /* StatisticViewSwift.swift in Sources */,
+				B6257E7C2AF8FAFD004C2F0D /* Constants.swift in Sources */,
 				B64929402AF20D0B00570802 /* Hide&SeekIntroduction.swift in Sources */,
 				26F4FBE52AF3761C00F31E68 /* HideAndSeekBackground.swift in Sources */,
 				B64929522AF20D4300570802 /* CentralManager.swift in Sources */,
@@ -641,8 +803,10 @@
 				B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */,
 				B64929492AF20D2F00570802 /* Game+GetAnimal.swift in Sources */,
 				B64929342AF20A0A00570802 /* BubbleText.swift in Sources */,
+				B6257E802AF8FB16004C2F0D /* AppFont.swift in Sources */,
 				B64929422AF20D1200570802 /* CustomSegmentedControl.swift in Sources */,
 				B64929512AF20D4300570802 /* Date+extension.swift in Sources */,
+				B6257E902AF907C3004C2F0D /* ResourcePath.swift in Sources */,
 				B64929462AF20D2800570802 /* ReportModel.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -775,7 +939,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
 				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
@@ -801,7 +965,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-WillStoryland";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -822,7 +986,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
 				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
@@ -847,7 +1011,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
 				);
-				MARKETING_VERSION = 1.0.2;
+				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-WillStoryland";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -879,6 +1043,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
@@ -911,7 +1076,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = ZVGYNW47J9;
+				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
@@ -920,6 +1085,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = YES;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				IPHONEOS_DEPLOYMENT_TARGET = 16.4;

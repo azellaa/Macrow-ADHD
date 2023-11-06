@@ -27,20 +27,20 @@ struct DeviceTutorial: View {
             } else {
                 VStack{
                     HStack{
-                        ButtonSymbol(dest: .constant(false), imageName: "IconClose")
-                            .padding(.leading, -300)
-                            .padding()
-                            .opacity(0)
+//                        ButtonSymbol(dest: .constant(false), imageName: "IconClose")
+//                            .padding(.leading, -300)
+//                            .padding()
+//                            .opacity(0)
                         
                         Text("Device Tutorial")
                             .font(.custom("Jua-Regular", size: 72))
                             .foregroundColor(Color.brownColor)
                             .font(.largeTitle)
                             .fontWeight(.heavy)
-                            .padding(.leading, 10)
+//                            .padding(.leading, 10)
                     } .padding(.top, 80)
                     
-                    
+                    Spacer()
                     ZStack {
                         if currentView == 0 {
                             Subview1()
@@ -81,8 +81,7 @@ struct DeviceTutorial: View {
                             
                             
                         }
-                        .padding(.leading, 30)
-                        .padding(.trailing, 30)
+                        .padding(.horizontal, 30)
                         .padding(.top, 450)
                         
                     }
@@ -121,7 +120,7 @@ struct DeviceTutorial: View {
                 
                 
                 
-            } .padding(.leading)
+            }
             
         }
     }

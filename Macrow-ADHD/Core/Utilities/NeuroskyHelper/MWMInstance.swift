@@ -79,12 +79,6 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
         return signalStatusSubject.eraseToAnyPublisher()
     }
     
-//    var scannedMwmPublisher: AnyPublisher<Set<MWMModel>, Never> {
-//        return scannedDeviceDataSubject.eraseToAnyPublisher()
-//    }
-    
-    
-    
     func exceptionMessage(_ eventType: TGBleExceptionEvent) {
         print("Error: \(eventType.rawValue) ")
     }

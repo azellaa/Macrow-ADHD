@@ -46,8 +46,8 @@ struct StatisticViewSwift: View {
                     Spacer()
                 }
                 VStack(content: {
-                    Text("Statistic")
-                        .font(.custom("Jua-Regular", size: 72))
+                    Text(AppLabel.statistic)
+                        .font(.Heading.heading2)
                         .foregroundStyle(.brownGuide)
                     CustomSegmentedControl(preselectedIndex: $selectedIndex, options: statisticOptions)
                         .frame(maxWidth: 540)
@@ -60,7 +60,7 @@ struct StatisticViewSwift: View {
                                     .font(.custom("Jua-Regular", size: 40))
                                 
                                 Spacer()
-                                Text("Focus Avg. \(focusAverage.isNaN ? "-" : focusAverage.truncated)")
+                                Text("\(AppLabel.focusAvg) \(focusAverage.isNaN ? "\(AppLabel.noFocusValue)" : focusAverage.truncated)")
                                     .font(.custom("Jua-Regular", size: 32))
                             }
                             .padding(.horizontal, 40)
@@ -70,7 +70,6 @@ struct StatisticViewSwift: View {
                         
                         if reports.count == 0 {
                             VStack{
-                                
                                 Text("There’s no data recorded, try to play some games")
                                     .font(.custom("Jua-Regular", size: 32))
                                     .foregroundStyle(.brownGuide)
@@ -250,7 +249,7 @@ struct StatisticViewSwift: View {
         .chartYAxis {
             AxisMarks(position: .leading, values: [0, 20, 40, 60, 80, 100]) {
                 AxisGridLine()
-                AxisValueLabel().font(.custom("Jua-Regular", size: 24)).foregroundStyle(.brownGuide)
+                AxisValueLabel().font(.Body.body1).foregroundStyle(.brownGuide)
             }
         }
         .frame(maxHeight: 472)
