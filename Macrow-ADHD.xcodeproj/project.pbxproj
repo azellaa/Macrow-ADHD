@@ -137,6 +137,7 @@
 		B6ED95B62AF9589A00BEB9B0 /* SymbolButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95B42AF9589A00BEB9B0 /* SymbolButtonStyle.swift */; };
 		B6ED95B82AF958DF00BEB9B0 /* SymbolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */; };
 		B6ED95B92AF958DF00BEB9B0 /* SymbolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */; };
+		B6ED95BD2AF9E9E800BEB9B0 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -222,6 +223,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6ED95BD2AF9E9E800BEB9B0 /* libMWMSDK.a in Frameworks */,
 				B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,6 +256,7 @@
 				3DB613742AC5C66F00F0A792 /* Macrow-ADHD */,
 				B60864962AE62AE600424FCA /* MacroADHD-simulator */,
 				3DB613732AC5C66F00F0A792 /* Products */,
+				B6ED95BC2AF9E9E800BEB9B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -619,6 +622,13 @@
 				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B6ED95BC2AF9E9E800BEB9B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1009,6 +1019,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+					"$(PROJECT_DIR)/Macrow-ADHD/Core/Utilities/lib",
 				);
 				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-WillStoryland";
@@ -1017,7 +1028,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Application/Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1055,6 +1066,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+					"$(PROJECT_DIR)/Macrow-ADHD/Core/Utilities/lib",
 				);
 				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-WillStoryland";
@@ -1064,7 +1076,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Application/Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
