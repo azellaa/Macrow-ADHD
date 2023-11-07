@@ -11,28 +11,40 @@ import SwiftUI
 struct SymbolButtonStyle: ButtonStyle {
     
     var style: SymbolButtonStyleEnum = .brown
-    private var upperColor: Color = .brownGuide
-    private var belowColor: Color = .darkBrown
-    private var foregroundColor: Color = .white
-    init(style: SymbolButtonStyleEnum) {
-        self.style = style
+    private var upperColor: Color {
         switch style {
         case .brown:
-            self.upperColor = .brownGuide
-            self.belowColor = .darkBrown
-            self.foregroundColor = .white
+            return .brown1
         case .lightBrown:
-            self.upperColor = .lightBrown
-            self.belowColor = .brownColor
-            self.foregroundColor = .darkBrown
+            return .cream1
         case .white:
-            self.upperColor = .white
-            self.belowColor = .brownColor
-            self.foregroundColor = .darkBrown
+            return .white1
         case .nonInteractable:
-            self.upperColor = .brownGuide
-            self.belowColor = .brownColor
-            self.foregroundColor = .white
+            return .brown2
+        }
+    }
+    private var belowColor: Color {
+        switch style {
+        case .brown:
+            return .brown2
+        case .lightBrown:
+            return .cream2
+        case .white:
+            return .cream1
+        case .nonInteractable:
+            return .brown1
+        }
+    }
+    private var foregroundColor: Color {
+        switch style {
+        case .brown:
+            return .white1
+        case .lightBrown:
+            return .brown1
+        case .white:
+            return .brown1
+        case .nonInteractable:
+            return .white1
         }
     }
     
@@ -41,14 +53,14 @@ struct SymbolButtonStyle: ButtonStyle {
         if self.style == .nonInteractable {
             configuration.label
                 .frame(width: 72, height: 72)
-                .background(self.upperColor)
+                .background(self.belowColor)
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .overlay {
                     RoundedRectangle(cornerRadius: 25)
                         .fill(.shadow(.inner(color: .black.opacity(0.25), radius: 4, x: 0, y: 4)))
                         .frame(width: 61, height: 61)
-                        .foregroundStyle(.brownGuide)
-//                    configuration.label
+                        .foregroundStyle(self.upperColor)
+                    configuration.label
                 }
                 .disabled(true)
                 .foregroundStyle(self.foregroundColor)
@@ -58,8 +70,7 @@ struct SymbolButtonStyle: ButtonStyle {
                 .background(self.upperColor)
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .mask {
-                    RoundedRectangle(cornerRadius: 20)
-//                        .offset(y: configuration.isPressed ? 0 : -4)
+                    RoundedRectangle(cornerRadius: 30)
                 }
                 .offset(y: configuration.isPressed ? 0 : -8)
                 .background {
@@ -87,6 +98,6 @@ extension SymbolButtonStyle {
     } label: {
         Text("Play")
     }
-    .buttonStyle(SymbolButtonStyle(style: .nonInteractable))
+    .buttonStyle(SymbolButtonStyle(style: .brown))
 
 }

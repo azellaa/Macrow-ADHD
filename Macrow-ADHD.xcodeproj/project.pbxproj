@@ -52,6 +52,10 @@
 		B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */; };
 		B615D0CA2AFA0C290085EFD9 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0C92AFA0C290085EFD9 /* Timestamp.swift */; };
 		B615D0CB2AFA0C290085EFD9 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0C92AFA0C290085EFD9 /* Timestamp.swift */; };
+		B615D0D22AFA18080085EFD9 /* StatisticElementButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0D12AFA18080085EFD9 /* StatisticElementButtonStyle.swift */; };
+		B615D0D32AFA18080085EFD9 /* StatisticElementButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0D12AFA18080085EFD9 /* StatisticElementButtonStyle.swift */; };
+		B615D0D52AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */; };
+		B615D0D62AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */; };
 		B616ADDF2AF1661B00FC5DBE /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */; };
 		B616ADE32AF16CD600FC5DBE /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE22AF16CD600FC5DBE /* Double+extension.swift */; };
 		B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */; };
@@ -179,6 +183,8 @@
 		B60864952AE62AE600424FCA /* MacroADHD-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacroADHD-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroADHD_simulatorApp.swift; sourceTree = "<group>"; };
 		B615D0C92AFA0C290085EFD9 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
+		B615D0D12AFA18080085EFD9 /* StatisticElementButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticElementButtonStyle.swift; sourceTree = "<group>"; };
+		B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticElementButton.swift; sourceTree = "<group>"; };
 		B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
 		B616ADE22AF16CD600FC5DBE /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
 		B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
@@ -335,6 +341,16 @@
 				B6257E6B2AF89547004C2F0D /* Application */,
 			);
 			path = "MacroADHD-simulator";
+			sourceTree = "<group>";
+		};
+		B615D0CD2AFA136F0085EFD9 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				B6ED95AB2AF94C2000BEB9B0 /* TextButtonStyle.swift */,
+				B6ED95B42AF9589A00BEB9B0 /* SymbolButtonStyle.swift */,
+				B615D0D12AFA18080085EFD9 /* StatisticElementButtonStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		B61C40442ACF0AB3007CCC72 /* Fonts */ = {
@@ -604,10 +620,10 @@
 		B6ED95AA2AF946EB00BEB9B0 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				B6ED95AB2AF94C2000BEB9B0 /* TextButtonStyle.swift */,
+				B615D0CD2AFA136F0085EFD9 /* Style */,
 				B6ED95B12AF9510F00BEB9B0 /* TextButton.swift */,
-				B6ED95B42AF9589A00BEB9B0 /* SymbolButtonStyle.swift */,
 				B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */,
+				B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -789,6 +805,7 @@
 				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
 				26E4B69E2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
 				B6B2D92B2AF0FFA000C64CAA /* BubbleText.swift in Sources */,
+				B615D0D22AFA18080085EFD9 /* StatisticElementButtonStyle.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
 				B64F1B382AF30D6600AB80D4 /* ScreenCapture.swift in Sources */,
 				26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */,
@@ -799,6 +816,7 @@
 				26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */,
 				542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */,
 				B65057932AF02B7800BD6D08 /* StatisticViewSwift.swift in Sources */,
+				B615D0D52AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */,
 				B64F1B3C2AF38A0500AB80D4 /* ReportUtils.swift in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
@@ -857,6 +875,7 @@
 				B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */,
 				B64929352AF20D0B00570802 /* HomeItemView.swift in Sources */,
 				B64929412AF20D1200570802 /* ReportUtils.swift in Sources */,
+				B615D0D32AFA18080085EFD9 /* StatisticElementButtonStyle.swift in Sources */,
 				B649294B2AF20D3300570802 /* Report+CoreDataProperties.swift in Sources */,
 				B64929482AF20D2F00570802 /* Game+CoreDataProperties.swift in Sources */,
 				B64929572AF20D4E00570802 /* HideAndSeekScene.swift in Sources */,
@@ -867,6 +886,7 @@
 				B649293A2AF20D0B00570802 /* HomeView.swift in Sources */,
 				B649294D2AF20D3300570802 /* Report+CoreDataClass.swift in Sources */,
 				26F4FBEB2AF3765600F31E68 /* AnimalTypeEnum.swift in Sources */,
+				B615D0D62AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */,
 				B649294C2AF20D3300570802 /* Report+GetFocusPause.swift in Sources */,
 				B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */,
 				B64929492AF20D2F00570802 /* Game+GetAnimal.swift in Sources */,

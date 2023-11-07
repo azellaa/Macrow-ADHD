@@ -12,26 +12,39 @@ struct TextButtonStyle: ButtonStyle {
     
     var style: TextButtonStyleEnum = .brown
     var size: TextButtonSizeEnum = .big
-    private var upperColor: Color = .brownGuide
-    private var belowColor: Color = .darkBrown
-    private var foregroundColor: Color = .white
+    private var upperColor: Color {
+        switch style {
+        case .brown:
+            return .brown1
+        case .lightBrown:
+            return .cream1
+        case .white:
+            return .white1
+        }
+    }
+    private var belowColor: Color {
+        switch style {
+        case .brown:
+            return .brown2
+        case .lightBrown:
+            return .cream2
+        case .white:
+            return .cream1
+        }
+    }
+    private var foregroundColor: Color {
+        switch style {
+        case .brown:
+            return .white1
+        case .lightBrown:
+            return .brown1
+        case .white:
+            return .brown1
+        }
+    }
     init(style: TextButtonStyleEnum, size: TextButtonSizeEnum = .big) {
         self.style = style
         self.size = size
-        switch style {
-        case .brown:
-            self.upperColor = .brownGuide
-            self.belowColor = .darkBrown
-            self.foregroundColor = .white
-        case .lightBrown:
-            self.upperColor = .lightBrown
-            self.belowColor = .brownColor
-            self.foregroundColor = .darkBrown
-        case .white:
-            self.upperColor = .white
-            self.belowColor = .brownColor
-            self.foregroundColor = .darkBrown
-        }
         
     }
     
@@ -75,6 +88,6 @@ extension TextButtonStyle {
     } label: {
         Text("Play")
     }
-    .buttonStyle(TextButtonStyle(style: .brown))
+    .buttonStyle(TextButtonStyle(style: .lightBrown))
     
 }
