@@ -50,6 +50,8 @@
 		54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */; };
 		54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F22AE5B1F6003D874D /* MWMModel.swift */; };
 		B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */; };
+		B615D0CA2AFA0C290085EFD9 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0C92AFA0C290085EFD9 /* Timestamp.swift */; };
+		B615D0CB2AFA0C290085EFD9 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0C92AFA0C290085EFD9 /* Timestamp.swift */; };
 		B616ADDF2AF1661B00FC5DBE /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */; };
 		B616ADE32AF16CD600FC5DBE /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE22AF16CD600FC5DBE /* Double+extension.swift */; };
 		B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */; };
@@ -176,6 +178,7 @@
 		54F6B0F22AE5B1F6003D874D /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 		B60864952AE62AE600424FCA /* MacroADHD-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacroADHD-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroADHD_simulatorApp.swift; sourceTree = "<group>"; };
+		B615D0C92AFA0C290085EFD9 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
 		B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
 		B616ADE22AF16CD600FC5DBE /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
 		B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
@@ -635,6 +638,7 @@
 		B6ED95BE2AFA063B00BEB9B0 /* Label */ = {
 			isa = PBXGroup;
 			children = (
+				B615D0C92AFA0C290085EFD9 /* Timestamp.swift */,
 			);
 			path = Label;
 			sourceTree = "<group>";
@@ -775,6 +779,7 @@
 				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
 				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
 				B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */,
+				B615D0CA2AFA0C290085EFD9 /* Timestamp.swift in Sources */,
 				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
 				B6257E7B2AF8FAFD004C2F0D /* Constants.swift in Sources */,
 				B64929322AF209EA00570802 /* Hide&SeekIntroduction.swift in Sources */,
@@ -842,6 +847,7 @@
 				B6D1C9CE2AE83E59003B4331 /* MWMDevice.swift in Sources */,
 				26E4B69F2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
 				B64F1B392AF30D6600AB80D4 /* ScreenCapture.swift in Sources */,
+				B615D0CB2AFA0C290085EFD9 /* Timestamp.swift in Sources */,
 				B6179DFD2AF031A600CAD6AA /* StatisticViewSwift.swift in Sources */,
 				B6257E7C2AF8FAFD004C2F0D /* Constants.swift in Sources */,
 				B64929402AF20D0B00570802 /* Hide&SeekIntroduction.swift in Sources */,
