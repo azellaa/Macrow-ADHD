@@ -11,11 +11,22 @@ struct TextButton: View {
     let action: () -> Void
     let contentType: TextButtonContentEnum
     var buttonStyle: TextButtonStyle.TextButtonStyleEnum = .brown
+    var buttonSize: TextButtonStyle.TextButtonSizeEnum = .big
     
-    init(contentType: TextButtonContentEnum, buttonStyle: TextButtonStyle.TextButtonStyleEnum = .brown, action: @escaping () -> Void) {
+    private var buttonWidthSize: CGFloat {
+        switch buttonSize {
+        case .big:
+            return 80
+        case .small:
+            return 28
+        }
+    }
+    
+    init(contentType: TextButtonContentEnum, buttonStyle: TextButtonStyle.TextButtonStyleEnum = .brown, buttonSize: TextButtonStyle.TextButtonSizeEnum = .big , action: @escaping () -> Void) {
         self.action = action
         self.contentType = contentType
         self.buttonStyle = buttonStyle
+        self.buttonSize = buttonSize
     }
     
     var body: some View {
@@ -27,38 +38,38 @@ struct TextButton: View {
                 HStack(content: {
                     Image(self.buttonStyle == .brown ? ResourcePath.homeWhite : ResourcePath.homeBrown)
                         .resizable()
-                        .frame(width: 80, height: 80)
+                        .frame(width: buttonWidthSize, height: buttonWidthSize)
                     Text(AppLabel.home)
-                        .font(.heading2)
+                        .font(self.buttonSize == .big ? .heading2 : .subHeading2)
                 })
             case .play:
                 HStack(content: {
                     Image(self.buttonStyle == .brown ? ResourcePath.playWhite : ResourcePath.playBrown)
                         .resizable()
-                        .frame(width: 80, height: 80)
+                        .frame(width: buttonWidthSize, height: buttonWidthSize)
                     Text(AppLabel.play)
-                        .font(.heading2)
+                        .font(self.buttonSize == .big ? .heading2 : .subHeading2)
                 })
             case .next:
                 HStack(content: {
                     Text(AppLabel.next)
-                        .font(.heading2)
+                        .font(self.buttonSize == .big ? .heading2 : .subHeading2)
                     Image(self.buttonStyle == .brown ? ResourcePath.nextWhite : ResourcePath.nextBrown)
                         .resizable()
-                        .frame(width: 80, height: 80)
+                        .frame(width: buttonWidthSize, height: buttonWidthSize)
                 })
             case .previous:
                 HStack(content: {
                     Image(self.buttonStyle == .brown ? ResourcePath.prevWhite : ResourcePath.prevBrown)
                         .resizable()
-                        .frame(width: 80, height: 80)
+                        .frame(width: buttonWidthSize, height: buttonWidthSize)
                     Text(AppLabel.previous)
-                        .font(.heading2)
+                        .font(self.buttonSize == .big ? .heading2 : .subHeading2)
                 })
             }
             
         })
-        .buttonStyle(TextButtonStyle(style: self.buttonStyle))
+        .buttonStyle(TextButtonStyle(style: self.buttonStyle, size: self.buttonSize))
     }
 }
 
@@ -72,5 +83,5 @@ extension TextButton {
 }
 
 #Preview {
-    TextButton(contentType: .play, buttonStyle: .brown, action: {})
+    TextButton(contentType: .play, buttonStyle: .brown, buttonSize: .small, action: {})
 }
