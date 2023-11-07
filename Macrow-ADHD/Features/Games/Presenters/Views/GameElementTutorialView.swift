@@ -36,7 +36,7 @@ struct GameElementTutorialView: View {
                     .ignoresSafeArea()
                     .navigationBarBackButtonHidden()
                 
-                ButtonText(imageName: "IconNextBrown", text: "Next", textSize: 32, textColor: .brownColor, normalImageName: "lightBrownTextButtonNotPressed", pressedImageName: "lightBrownTextButtonPressed") {
+                TextButton(contentType: .next, buttonStyle: .brown) {
                     switch(idx) {
                     case 2:
                         idx += 1
