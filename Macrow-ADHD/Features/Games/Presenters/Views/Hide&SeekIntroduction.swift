@@ -166,7 +166,7 @@ struct Hide_SeekIntroduction: View {
                         .frame(height: height * 0.1)
                         .padding(.bottom, height * 0.08)
                         .navigationDestination(isPresented: $showGameView, destination: {
-                            GameElementTutorialView(currentGame: currentGame, width: width, height: height)
+                            GameElementTutorialView(currentGame: currentGame)
                         })
                         
                     }
