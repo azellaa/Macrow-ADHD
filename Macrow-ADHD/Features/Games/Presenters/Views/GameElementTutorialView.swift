@@ -27,7 +27,7 @@ struct GameElementTutorialView: View {
     var body: some View {
         
         if !isActive {
-            GameView(scene: currentGame.destination)
+            GameView(currentGame: currentGame)
         } else {
             ZStack {
                 SpriteView(scene: gameScene)
