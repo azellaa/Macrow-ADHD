@@ -64,5 +64,5 @@ extension TextButton {
 }
 
 #Preview {
-    TextButton(action: {}, contentType: .home, buttonStyle: .white)
+    TextButton(action: {}, contentType: .home, buttonStyle: .lightBrown)
 }

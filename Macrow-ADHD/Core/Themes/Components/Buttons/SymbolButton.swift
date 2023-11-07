@@ -46,5 +46,5 @@ extension SymbolButton {
 }
 
 #Preview {
-    SymbolButton(action: {}, type: .share)
+    SymbolButton(action: {}, type: .guide, buttonStyle: .nonInteractable)
 }

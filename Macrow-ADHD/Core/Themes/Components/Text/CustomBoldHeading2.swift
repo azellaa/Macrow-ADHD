@@ -24,6 +24,11 @@ struct CustomBoldHeading2: View {
     }
 }
 
+#Preview {
+    CustomBoldHeading2(text: "Test")
+        .foregroundStyle(.darkBrown)
+}
+
 //#Preview {
 //    StrokeText(text: "Sample Text", width: 0.5, color: .red)
 //        .foregroundColor(.black)
