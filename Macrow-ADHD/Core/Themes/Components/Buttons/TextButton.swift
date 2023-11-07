@@ -12,7 +12,7 @@ struct TextButton: View {
     let contentType: TextButtonContentEnum
     var buttonStyle: TextButtonStyle.TextButtonStyleEnum = .brown
     
-    init(action: @escaping () -> Void, contentType: TextButtonContentEnum, buttonStyle: TextButtonStyle.TextButtonStyleEnum = .brown) {
+    init(contentType: TextButtonContentEnum, buttonStyle: TextButtonStyle.TextButtonStyleEnum = .brown, action: @escaping () -> Void) {
         self.action = action
         self.contentType = contentType
         self.buttonStyle = buttonStyle
@@ -26,26 +26,34 @@ struct TextButton: View {
             case .home:
                 HStack(content: {
                     Image(self.buttonStyle == .brown ? ResourcePath.homeWhite : ResourcePath.homeBrown)
+                        .resizable()
+                        .frame(width: 80, height: 80)
                     Text(AppLabel.home)
-                        .font(.subHeading1)
+                        .font(.heading2)
                 })
             case .play:
                 HStack(content: {
                     Image(self.buttonStyle == .brown ? ResourcePath.playWhite : ResourcePath.playBrown)
+                        .resizable()
+                        .frame(width: 80, height: 80)
                     Text(AppLabel.play)
-                        .font(.subHeading1)
+                        .font(.heading2)
                 })
             case .next:
                 HStack(content: {
                     Text(AppLabel.next)
-                        .font(.subHeading1)
+                        .font(.heading2)
                     Image(self.buttonStyle == .brown ? ResourcePath.nextWhite : ResourcePath.nextBrown)
+                        .resizable()
+                        .frame(width: 80, height: 80)
                 })
             case .previous:
                 HStack(content: {
                     Image(self.buttonStyle == .brown ? ResourcePath.prevWhite : ResourcePath.prevBrown)
+                        .resizable()
+                        .frame(width: 80, height: 80)
                     Text(AppLabel.previous)
-                        .font(.subHeading1)
+                        .font(.heading2)
                 })
             }
             
@@ -64,5 +72,5 @@ extension TextButton {
 }
 
 #Preview {
-    TextButton(action: {}, contentType: .home, buttonStyle: .lightBrown)
+    TextButton(contentType: .play, buttonStyle: .brown, action: {})
 }

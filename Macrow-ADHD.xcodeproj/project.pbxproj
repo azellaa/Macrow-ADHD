@@ -532,6 +532,7 @@
 		B6257E892AF8FE3E004C2F0D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B6ED95BE2AFA063B00BEB9B0 /* Label */,
 				B6ED95AA2AF946EB00BEB9B0 /* Buttons */,
 				B6ED95A62AF9412100BEB9B0 /* Text */,
 			);
@@ -629,6 +630,13 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6ED95BE2AFA063B00BEB9B0 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

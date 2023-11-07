@@ -35,16 +35,16 @@ struct TextButtonStyle: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         
         configuration.label
-            .frame(width: 393, height: 80)
+            .frame(width: 445, height: 130)
             .background(
                 self.upperColor
             )
             .clipShape(RoundedRectangle(cornerRadius: 30))
             .mask {
                 RoundedRectangle(cornerRadius: 20)
-                    .offset(y: configuration.isPressed ? 0 : -4)
+//                    .offset(y: configuration.isPressed ? 0 : -4)
             }
-            .offset(y: configuration.isPressed ? 0 : -12)
+            .offset(y: configuration.isPressed ? 0 : -14)
             .background {
                 RoundedRectangle(cornerRadius: 30)
                     .fill(self.belowColor)

@@ -40,27 +40,28 @@ struct SymbolButtonStyle: ButtonStyle {
         
         if self.style == .nonInteractable {
             configuration.label
-                .frame(width: 90, height: 90)
+                .frame(width: 72, height: 72)
                 .background(self.upperColor)
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .overlay {
                     RoundedRectangle(cornerRadius: 25)
                         .fill(.shadow(.inner(color: .black.opacity(0.25), radius: 4, x: 0, y: 4)))
-                        .frame(width: 75, height: 75)
+                        .frame(width: 61, height: 61)
                         .foregroundStyle(.brownGuide)
-                    configuration.label
+//                    configuration.label
                 }
                 .disabled(true)
                 .foregroundStyle(self.foregroundColor)
         } else {
             configuration.label
-                .frame(width: 90, height: 90)
+                .frame(width: 72, height: 72)
                 .background(self.upperColor)
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .mask {
                     RoundedRectangle(cornerRadius: 20)
-                        .offset(y: configuration.isPressed ? 0 : -12)
+//                        .offset(y: configuration.isPressed ? 0 : -4)
                 }
+                .offset(y: configuration.isPressed ? 0 : -8)
                 .background {
                     RoundedRectangle(cornerRadius: 30)
                         .fill(self.belowColor)
