@@ -36,7 +36,7 @@ struct Hide_SeekIntroduction: View {
 #else
     @State private var isDisconnected = true
 #endif
-    @State private var imageName = "headpieceDisconnect"
+    @State private var imageName = ResourcePath.notConnected
     
     @State private var levels: [Level] = [
         Level(number: 1, isCompleted: true, text: "Beginner"),
@@ -177,19 +177,19 @@ struct Hide_SeekIntroduction: View {
         .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
             switch signalStatus {
             case 1:
-                self.imageName = "headpiece1Bar"
+                self.imageName = ResourcePath.connecting1
                 isDisconnected = false
             case 2:
-                self.imageName = "headpiece2Bar"
+                self.imageName = ResourcePath.connecting2
                 isDisconnected = false
             case 3:
-                self.imageName = "headpiece3Bar"
+                self.imageName = ResourcePath.connecting3
                 isDisconnected = false
             case 4:
-                self.imageName = "headpieceLogo"
+                self.imageName = ResourcePath.connected
                 isDisconnected = false
             default:
-                self.imageName = "headpieceDisconnect"
+                self.imageName = ResourcePath.notConnected
                 isDisconnected = true
                 break
             }

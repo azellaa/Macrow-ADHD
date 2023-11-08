@@ -18,3 +18,9 @@ struct AppLabel: Constants {
     static let next = "Next"
     static let previous = "Previous"
 }
+
+extension AppLabel {
+    struct StatisticView {
+        static let aboutText = "About:\nThis visualization shows data captured by the Neurosky device during gameplay, tracking the child's focus level over time. Monitoring focus and providing session details, also give a deeper understanding of what influences the child's concentration." 
+    }
+}
