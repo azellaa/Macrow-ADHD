@@ -11,10 +11,20 @@ extension Report {
     
     public var focuses: [Focus] {
         let setOfFocuses = reportToFocus
-        
         if let setOfFocuses = setOfFocuses {
             return setOfFocuses.sorted{
                 $0.id > $1.id
+            }
+        } else {
+            return []
+        }
+    }
+    
+    public var focusesSortedByTime: [Focus] {
+        let setOfFocuses = reportToFocus
+        if let setOfFocuses = setOfFocuses {
+            return setOfFocuses.sorted{
+                $0.time!.timeIntervalSince1970 < $1.time!.timeIntervalSince1970
             }
         } else {
             return []

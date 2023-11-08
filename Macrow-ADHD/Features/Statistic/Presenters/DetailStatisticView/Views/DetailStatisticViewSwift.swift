@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct DetailStatisticViewSwift: View {
-    @State var report: Report
+    var report: Report
     @Environment(\.dismiss) private var dismiss
     var body: some View {
         ZStack {
@@ -31,32 +31,32 @@ struct DetailStatisticViewSwift: View {
             
             VStack {
                 CustomBoldHeading2(text: "Session")
-                    .foregroundStyle(.brown2)
+                    .foregroundStyle(.brown1)
                 
                 GeometryReader(content: { geometry in
                     HStack(spacing: 0) {
                         UnevenRoundedRectangle(cornerRadii: RectangleCornerRadii(topLeading: 50))
                             .fill(.white1)
                             .overlay {
-                                LeftContent(report: $report)
+                                LeftContent(report: report)
                             }
                         UnevenRoundedRectangle(cornerRadii: RectangleCornerRadii(topTrailing: 50))
-                            .fill(.darkBrown)
+                            .fill(.brown1)
                             .frame(maxWidth: geometry.size.width * 0.3)
                             .overlay {
                                 VStack(spacing: 10) {
-                                    StatisticElementButton(leftText: "Rabbit Count", rightText: "20")
-                                    StatisticElementButton(leftText: "Fox Count", rightText: "20")
+                                    StatisticElementButton(leftText: "Rabbit Count", rightText: "\(report.reportToGame!.getAllRabit.count)")
+                                    StatisticElementButton(leftText: "Fox Count", rightText: "\(report.reportToGame!.getAllFox.count)")
                                         .padding(.bottom, Decimal.double60)
                                     
-                                    StatisticElementButton(leftText: "Rabbit Count", rightText: "20")
-                                    StatisticElementButton(leftText: "Fox Count", rightText: "20")
+                                    StatisticElementButton(leftText: "Pause Count", rightText: "\(report.reportToPause?.count.description ?? "N/A")")
+                                    StatisticElementButton(leftText: "Accumulation", rightText: "20")
                                         .padding(.bottom, Decimal.double60)
                                     
                                     
-                                    StatisticElementButton(leftText: "Rabbit Count", rightText: "20")
-                                    StatisticElementButton(leftText: "Fox Count", rightText: "20")
-                                    StatisticElementButton(leftText: "Fox Count", rightText: "20")
+                                    StatisticElementButton(leftText: "Highest Focus", rightText: "\(report.reportToFocus?.sorted(by: {$0.value > $1.value}).first?.value.description ?? "N/A")")
+                                    StatisticElementButton(leftText: "Lowest Focus", rightText: "\(report.reportToFocus?.sorted(by: {$0.value < $1.value}).first?.value.description ?? "N/A")")
+                                    StatisticElementButton(leftText: "Average Focus", rightText: "OTW")
                                     
                                 }
                                 .padding(.top, 66)
@@ -77,7 +77,7 @@ struct DetailStatisticViewSwift: View {
 }
 
 struct LeftContent: View {
-    @Binding var report: Report
+    let report: Report
     var body: some View {
         VStack {
             HStack(content: {
@@ -92,6 +92,8 @@ struct LeftContent: View {
             .padding(.horizontal, 40)
             .padding(.top, 66)
             SessionChart(report: report)
+                .padding(.horizontal, 40)
+                .padding(.vertical, 35)
         }
     }
 }

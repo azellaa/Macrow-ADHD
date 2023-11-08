@@ -464,8 +464,8 @@
 		B6257E722AF8F7AE004C2F0D /* Presenters */ = {
 			isa = PBXGroup;
 			children = (
-				B6257E742AF8F7FB004C2F0D /* Component */,
-				B6257E732AF8F7C2004C2F0D /* Views */,
+				B6D2D5D32AFBF7CA0080215B /* DetailStatisticView */,
+				B6D2D5D02AFBF7920080215B /* StatisticView */,
 			);
 			path = Presenters;
 			sourceTree = "<group>";
@@ -473,7 +473,6 @@
 		B6257E732AF8F7C2004C2F0D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */,
 				B615D0E42AFA894C0085EFD9 /* DetailStatisticViewSwift.swift */,
 			);
 			path = Views;
@@ -482,9 +481,6 @@
 		B6257E742AF8F7FB004C2F0D /* Component */ = {
 			isa = PBXGroup;
 			children = (
-				B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */,
-				B615D0DE2AFA75620085EFD9 /* AboutCard.swift */,
-				B615D0E12AFA78CE0085EFD9 /* FocusChart.swift */,
 				B615D0E72AFA9A2B0085EFD9 /* SessionChart.swift */,
 			);
 			path = Component;
@@ -613,6 +609,42 @@
 				B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */,
 			);
 			path = lib;
+			sourceTree = "<group>";
+		};
+		B6D2D5D02AFBF7920080215B /* StatisticView */ = {
+			isa = PBXGroup;
+			children = (
+				B6D2D5D22AFBF7B10080215B /* Views */,
+				B6D2D5D12AFBF7AC0080215B /* Component */,
+			);
+			path = StatisticView;
+			sourceTree = "<group>";
+		};
+		B6D2D5D12AFBF7AC0080215B /* Component */ = {
+			isa = PBXGroup;
+			children = (
+				B615D0E12AFA78CE0085EFD9 /* FocusChart.swift */,
+				B615D0DE2AFA75620085EFD9 /* AboutCard.swift */,
+				B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */,
+			);
+			path = Component;
+			sourceTree = "<group>";
+		};
+		B6D2D5D22AFBF7B10080215B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		B6D2D5D32AFBF7CA0080215B /* DetailStatisticView */ = {
+			isa = PBXGroup;
+			children = (
+				B6257E732AF8F7C2004C2F0D /* Views */,
+				B6257E742AF8F7FB004C2F0D /* Component */,
+			);
+			path = DetailStatisticView;
 			sourceTree = "<group>";
 		};
 		B6ED95832AF92FD900BEB9B0 /* Utilities */ = {

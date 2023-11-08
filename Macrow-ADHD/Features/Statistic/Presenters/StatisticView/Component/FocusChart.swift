@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 
 struct FocusChart: View {
-    @State var reports: [Report]
+    var reports: [Report]
     @State private var selectedReport: Report?
     @State private var lineWidth = 2.0
     @State private var lollipopColor: Color = .yellow1

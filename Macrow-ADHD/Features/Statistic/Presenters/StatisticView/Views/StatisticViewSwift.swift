@@ -10,10 +10,9 @@ import Charts
 
 struct StatisticViewSwift: View {
     
-    var dataController = DataController()
     let calendar = Calendar.current
     
-    @State var reports: [Report] = [Report]()
+    @State var reports: [Report] = []
     
     @State private var strideFilter: Calendar.Component = .hour
     @State private var filterDateTime: Date.FormatStyle = .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits)
@@ -21,7 +20,6 @@ struct StatisticViewSwift: View {
     @State private var focusAverage: Double = 0
     
     @State private var selectedIndex = 0
-    @State private var selectedReport: Report?
     
     @Environment(\.dismiss) private var dismiss
     var body: some View {
@@ -44,11 +42,11 @@ struct StatisticViewSwift: View {
                 .padding(.top, Decimal.double41)
                 VStack(spacing:0, content: {
                     CustomBoldHeading2(text: AppLabel.statistic)
-                        .foregroundStyle(.brownGuide)
+                        .foregroundStyle(.brown1)
                         .padding(.top, Decimal.double41)
                     CustomSegmentedControl(preselectedIndex: $selectedIndex, options: AppLabel.statisticOptions)
                         .frame(maxWidth: 540)
-                        .foregroundStyle(.brownGuide)
+                        .foregroundStyle(.brown1)
                         .font(.body2)
                         .padding(.top, 5)
                         .padding(.bottom, 19)
@@ -84,7 +82,7 @@ struct StatisticViewSwift: View {
                         .padding(.horizontal, 40)
                         .padding(.top, 20)
                         .padding(.bottom, 94)
-                        .foregroundStyle(.brownGuide)
+                        .foregroundStyle(.brown1)
                         
                         
                         if reports.count == 0 {
@@ -111,13 +109,13 @@ struct StatisticViewSwift: View {
                                 if value.translation.width > threshold {
                                     withAnimation {
                                         currentDate = calendar.date(byAdding: .day, value: -1, to: currentDate)!
-                                        self.reports = dataController.fetchReportByDay(currentDate)
+                                        self.reports = DataController.shared.fetchReportByDay(currentDate)
                                         self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
                                     }
                                 } else if value.translation.width < -threshold {
                                     withAnimation {
                                         currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
-                                        self.reports = dataController.fetchReportByDay(currentDate)
+                                        self.reports = DataController.shared.fetchReportByDay(currentDate)
                                         self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
                                     }
                                 }
@@ -134,13 +132,13 @@ struct StatisticViewSwift: View {
             
         }
         .onAppear{
-            self.reports = dataController.fetchReportByDay(currentDate)
+            self.reports = DataController.shared.fetchReportByDay(currentDate)
             self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
         }
         .onChange(of: self.selectedIndex, perform: { index in
             if index == 0 {
                 withAnimation {
-                    self.reports = dataController.fetchReportByDay(currentDate)
+                    self.reports = DataController.shared.fetchReportByDay(currentDate)
                     self.strideFilter = .hour
                     self.filterDateTime = .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits)
                 }
@@ -148,14 +146,14 @@ struct StatisticViewSwift: View {
             }
             else if index == 1 {
                 withAnimation {
-                    self.reports = dataController.fetchReportByWeek(currentDate)
+                    self.reports = DataController.shared.fetchReportByWeek(currentDate)
                     self.strideFilter = .day
                     self.filterDateTime = .dateTime.weekday()
                 }
             }
             else if index == 2 {
                 withAnimation {
-                    self.reports = dataController.fetchReportByMonth(currentDate)
+                    self.reports = DataController.shared.fetchReportByMonth(currentDate)
                     self.strideFilter = .day
                     self.filterDateTime = .dateTime.day()
                 }
