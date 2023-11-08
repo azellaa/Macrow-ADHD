@@ -11,7 +11,7 @@ struct SymbolButton: View {
     let action: () -> Void
     let type: SymbolContentEnum
     var buttonStyle: SymbolButtonStyle.SymbolButtonStyleEnum = .brown
-    init(action: @escaping () -> Void, type: SymbolContentEnum, buttonStyle: SymbolButtonStyle.SymbolButtonStyleEnum = .brown) {
+    init(type: SymbolContentEnum, buttonStyle: SymbolButtonStyle.SymbolButtonStyleEnum = .brown, action: @escaping () -> Void) {
         self.action = action
         self.type = type
         self.buttonStyle = buttonStyle
@@ -21,14 +21,24 @@ struct SymbolButton: View {
             switch self.type {
             case .back:
                 Image(ResourcePath.backWhite)
+                    .resizable()
+                    .frame(width: Decimal.double40, height: Decimal.double40)
             case .share:
                 Image(ResourcePath.shareWhite)
+                    .resizable()
+                    .frame(width: Decimal.double40, height: Decimal.double40)
             case .statistic:
                 Image(ResourcePath.statisticWhite)
+                    .resizable()
+                    .frame(width: Decimal.double40, height: Decimal.double40)
             case .guide:
                 Image(ResourcePath.guideWhite)
+                    .resizable()
+                    .frame(width: Decimal.double40, height: Decimal.double40)
             case .close:
                 Image(ResourcePath.closeWhite)
+                    .resizable()
+                    .frame(width: Decimal.double40, height: Decimal.double40)
             }
         })
         .buttonStyle(SymbolButtonStyle(style: self.buttonStyle))
@@ -46,5 +56,5 @@ extension SymbolButton {
 }
 
 #Preview {
-    SymbolButton(action: {}, type: .guide, buttonStyle: .nonInteractable)
+    SymbolButton(type: .back, buttonStyle: .brown, action: {})
 }

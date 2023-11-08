@@ -52,6 +52,20 @@
 		54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */; };
 		54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F22AE5B1F6003D874D /* MWMModel.swift */; };
 		B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */; };
+		B615D0CA2AFA0C290085EFD9 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0C92AFA0C290085EFD9 /* Timestamp.swift */; };
+		B615D0CB2AFA0C290085EFD9 /* Timestamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0C92AFA0C290085EFD9 /* Timestamp.swift */; };
+		B615D0D22AFA18080085EFD9 /* StatisticElementButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0D12AFA18080085EFD9 /* StatisticElementButtonStyle.swift */; };
+		B615D0D32AFA18080085EFD9 /* StatisticElementButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0D12AFA18080085EFD9 /* StatisticElementButtonStyle.swift */; };
+		B615D0D52AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */; };
+		B615D0D62AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */; };
+		B615D0DF2AFA75620085EFD9 /* AboutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0DE2AFA75620085EFD9 /* AboutCard.swift */; };
+		B615D0E02AFA75620085EFD9 /* AboutCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0DE2AFA75620085EFD9 /* AboutCard.swift */; };
+		B615D0E22AFA78CE0085EFD9 /* FocusChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0E12AFA78CE0085EFD9 /* FocusChart.swift */; };
+		B615D0E32AFA78CE0085EFD9 /* FocusChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0E12AFA78CE0085EFD9 /* FocusChart.swift */; };
+		B615D0E52AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0E42AFA894C0085EFD9 /* DetailStatisticViewSwift.swift */; };
+		B615D0E62AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0E42AFA894C0085EFD9 /* DetailStatisticViewSwift.swift */; };
+		B615D0E82AFA9A2B0085EFD9 /* SessionChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0E72AFA9A2B0085EFD9 /* SessionChart.swift */; };
+		B615D0E92AFA9A2B0085EFD9 /* SessionChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B615D0E72AFA9A2B0085EFD9 /* SessionChart.swift */; };
 		B616ADDF2AF1661B00FC5DBE /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */; };
 		B616ADE32AF16CD600FC5DBE /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE22AF16CD600FC5DBE /* Double+extension.swift */; };
 		B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */; };
@@ -139,6 +153,7 @@
 		B6ED95B62AF9589A00BEB9B0 /* SymbolButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95B42AF9589A00BEB9B0 /* SymbolButtonStyle.swift */; };
 		B6ED95B82AF958DF00BEB9B0 /* SymbolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */; };
 		B6ED95B92AF958DF00BEB9B0 /* SymbolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */; };
+		B6ED95BD2AF9E9E800BEB9B0 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -178,6 +193,13 @@
 		54F6B0F22AE5B1F6003D874D /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 		B60864952AE62AE600424FCA /* MacroADHD-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacroADHD-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroADHD_simulatorApp.swift; sourceTree = "<group>"; };
+		B615D0C92AFA0C290085EFD9 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
+		B615D0D12AFA18080085EFD9 /* StatisticElementButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticElementButtonStyle.swift; sourceTree = "<group>"; };
+		B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticElementButton.swift; sourceTree = "<group>"; };
+		B615D0DE2AFA75620085EFD9 /* AboutCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutCard.swift; sourceTree = "<group>"; };
+		B615D0E12AFA78CE0085EFD9 /* FocusChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FocusChart.swift; sourceTree = "<group>"; };
+		B615D0E42AFA894C0085EFD9 /* DetailStatisticViewSwift.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailStatisticViewSwift.swift; sourceTree = "<group>"; };
+		B615D0E72AFA9A2B0085EFD9 /* SessionChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionChart.swift; sourceTree = "<group>"; };
 		B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Date+extension.swift"; sourceTree = "<group>"; };
 		B616ADE22AF16CD600FC5DBE /* Double+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Double+extension.swift"; sourceTree = "<group>"; };
 		B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSegmentedControl.swift; sourceTree = "<group>"; };
@@ -225,6 +247,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6ED95BD2AF9E9E800BEB9B0 /* libMWMSDK.a in Frameworks */,
 				B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,6 +280,7 @@
 				3DB613742AC5C66F00F0A792 /* Macrow-ADHD */,
 				B60864962AE62AE600424FCA /* MacroADHD-simulator */,
 				3DB613732AC5C66F00F0A792 /* Products */,
+				B6ED95BC2AF9E9E800BEB9B0 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -332,6 +356,16 @@
 				B6257E6B2AF89547004C2F0D /* Application */,
 			);
 			path = "MacroADHD-simulator";
+			sourceTree = "<group>";
+		};
+		B615D0CD2AFA136F0085EFD9 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				B6ED95AB2AF94C2000BEB9B0 /* TextButtonStyle.swift */,
+				B6ED95B42AF9589A00BEB9B0 /* SymbolButtonStyle.swift */,
+				B615D0D12AFA18080085EFD9 /* StatisticElementButtonStyle.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 		B61C40442ACF0AB3007CCC72 /* Fonts */ = {
@@ -444,6 +478,7 @@
 			isa = PBXGroup;
 			children = (
 				B65057922AF02B7800BD6D08 /* StatisticViewSwift.swift */,
+				B615D0E42AFA894C0085EFD9 /* DetailStatisticViewSwift.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -452,6 +487,9 @@
 			isa = PBXGroup;
 			children = (
 				B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */,
+				B615D0DE2AFA75620085EFD9 /* AboutCard.swift */,
+				B615D0E12AFA78CE0085EFD9 /* FocusChart.swift */,
+				B615D0E72AFA9A2B0085EFD9 /* SessionChart.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -533,6 +571,7 @@
 		B6257E892AF8FE3E004C2F0D /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				B6ED95BE2AFA063B00BEB9B0 /* Label */,
 				B6ED95AA2AF946EB00BEB9B0 /* Buttons */,
 				B6ED95A62AF9412100BEB9B0 /* Text */,
 			);
@@ -601,10 +640,10 @@
 		B6ED95AA2AF946EB00BEB9B0 /* Buttons */ = {
 			isa = PBXGroup;
 			children = (
-				B6ED95AB2AF94C2000BEB9B0 /* TextButtonStyle.swift */,
+				B615D0CD2AFA136F0085EFD9 /* Style */,
 				B6ED95B12AF9510F00BEB9B0 /* TextButton.swift */,
-				B6ED95B42AF9589A00BEB9B0 /* SymbolButtonStyle.swift */,
 				B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */,
+				B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -623,6 +662,21 @@
 				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		B6ED95BC2AF9E9E800BEB9B0 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B6ED95BE2AFA063B00BEB9B0 /* Label */ = {
+			isa = PBXGroup;
+			children = (
+				B615D0C92AFA0C290085EFD9 /* Timestamp.swift */,
+			);
+			path = Label;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -749,6 +803,7 @@
 				B6ED95B52AF9589A00BEB9B0 /* SymbolButtonStyle.swift in Sources */,
 				B6257E8C2AF8FE64004C2F0D /* TextTheme.swift in Sources */,
 				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
+				B615D0E22AFA78CE0085EFD9 /* FocusChart.swift in Sources */,
 				2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */,
 				B6D1C9622AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift in Sources */,
 				542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */,
@@ -761,6 +816,8 @@
 				3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */,
 				26A9C6702ACBCC9700117948 /* NodeElement.swift in Sources */,
 				B67D3E0E2AD347D900DDA7D4 /* GameData.swift in Sources */,
+				B615D0DF2AFA75620085EFD9 /* AboutCard.swift in Sources */,
+				B615D0CA2AFA0C290085EFD9 /* Timestamp.swift in Sources */,
 				B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */,
 				B6257E7B2AF8FAFD004C2F0D /* Constants.swift in Sources */,
 				B64929322AF209EA00570802 /* Hide&SeekIntroduction.swift in Sources */,
@@ -770,6 +827,8 @@
 				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
 				26E4B69E2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
 				B6B2D92B2AF0FFA000C64CAA /* SubheadingIntroductionText.swift in Sources */,
+				B6B2D92B2AF0FFA000C64CAA /* BubbleText.swift in Sources */,
+				B615D0D22AFA18080085EFD9 /* StatisticElementButtonStyle.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
 				B64F1B382AF30D6600AB80D4 /* ScreenCapture.swift in Sources */,
 				26A9C6722ACBCCC600117948 /* GameOverPage.swift in Sources */,
@@ -780,10 +839,13 @@
 				26A9C66A2ACBCC5F00117948 /* ProgressBar.swift in Sources */,
 				542DD8A02AE59E230024387C /* Game+GetAnimal.swift in Sources */,
 				B65057932AF02B7800BD6D08 /* StatisticViewSwift.swift in Sources */,
+				B615D0D52AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */,
 				B64F1B3C2AF38A0500AB80D4 /* ReportUtils.swift in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
 				3D53304F2AFA233000300AF0 /* DisconnectedOverlay.swift in Sources */,
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
+				B615D0E52AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
+				B615D0E82AFA9A2B0085EFD9 /* SessionChart.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
 				B6257E7F2AF8FB16004C2F0D /* AppFont.swift in Sources */,
 				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,
@@ -817,6 +879,7 @@
 				B6ED95B62AF9589A00BEB9B0 /* SymbolButtonStyle.swift in Sources */,
 				B6257E8D2AF8FE64004C2F0D /* TextTheme.swift in Sources */,
 				B64929372AF20D0B00570802 /* Homepage.swift in Sources */,
+				B615D0E32AFA78CE0085EFD9 /* FocusChart.swift in Sources */,
 				B649293C2AF20D0B00570802 /* GameView.swift in Sources */,
 				B64929362AF20D0B00570802 /* ContentView.swift in Sources */,
 				26F4FBE42AF375FC00F31E68 /* GameInfo.swift in Sources */,
@@ -829,6 +892,8 @@
 				B6D1C9CE2AE83E59003B4331 /* MWMDevice.swift in Sources */,
 				26E4B69F2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
 				B64F1B392AF30D6600AB80D4 /* ScreenCapture.swift in Sources */,
+				B615D0E02AFA75620085EFD9 /* AboutCard.swift in Sources */,
+				B615D0CB2AFA0C290085EFD9 /* Timestamp.swift in Sources */,
 				B6179DFD2AF031A600CAD6AA /* StatisticViewSwift.swift in Sources */,
 				B6257E7C2AF8FAFD004C2F0D /* Constants.swift in Sources */,
 				B64929402AF20D0B00570802 /* Hide&SeekIntroduction.swift in Sources */,
@@ -838,6 +903,7 @@
 				B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */,
 				B64929352AF20D0B00570802 /* HomeItemView.swift in Sources */,
 				B64929412AF20D1200570802 /* ReportUtils.swift in Sources */,
+				B615D0D32AFA18080085EFD9 /* StatisticElementButtonStyle.swift in Sources */,
 				B649294B2AF20D3300570802 /* Report+CoreDataProperties.swift in Sources */,
 				B64929482AF20D2F00570802 /* Game+CoreDataProperties.swift in Sources */,
 				B64929572AF20D4E00570802 /* HideAndSeekScene.swift in Sources */,
@@ -848,11 +914,15 @@
 				B649293A2AF20D0B00570802 /* HomeView.swift in Sources */,
 				B649294D2AF20D3300570802 /* Report+CoreDataClass.swift in Sources */,
 				26F4FBEB2AF3765600F31E68 /* AnimalTypeEnum.swift in Sources */,
+				B615D0D62AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */,
 				B649294C2AF20D3300570802 /* Report+GetFocusPause.swift in Sources */,
 				B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */,
 				3D5330502AFA241B00300AF0 /* DisconnectedOverlay.swift in Sources */,
 				B64929492AF20D2F00570802 /* Game+GetAnimal.swift in Sources */,
 				B64929342AF20A0A00570802 /* SubheadingIntroductionText.swift in Sources */,
+				B615D0E62AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
+				B615D0E92AFA9A2B0085EFD9 /* SessionChart.swift in Sources */,
+				B64929342AF20A0A00570802 /* BubbleText.swift in Sources */,
 				B6257E802AF8FB16004C2F0D /* AppFont.swift in Sources */,
 				B64929422AF20D1200570802 /* CustomSegmentedControl.swift in Sources */,
 				B64929512AF20D4300570802 /* Date+extension.swift in Sources */,
@@ -1015,6 +1085,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+					"$(PROJECT_DIR)/Macrow-ADHD/Core/Utilities/lib",
 				);
 				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-WillStoryland";
@@ -1023,7 +1094,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Application/Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1061,6 +1132,7 @@
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
+					"$(PROJECT_DIR)/Macrow-ADHD/Core/Utilities/lib",
 				);
 				MARKETING_VERSION = 1.0.3;
 				PRODUCT_BUNDLE_IDENTIFIER = "ADAGOP.Macrow-WillStoryland";
@@ -1070,7 +1142,7 @@
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Macrow-ADHD/Application/Bridging-Header.h";
 				SWIFT_PRECOMPILE_BRIDGING_HEADER = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 2;
@@ -1085,7 +1157,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = ZVGYNW47J9;
+				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
@@ -1149,7 +1221,7 @@
 					"$(PROJECT_DIR)/Macrow-ADHD/Utilities/lib",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "adagop.MacroADHD-simulator";
+				PRODUCT_BUNDLE_IDENTIFIER = "adagop.MacroADHD-simulator-ich";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
