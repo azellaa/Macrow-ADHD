@@ -20,6 +20,8 @@ class TutorialView: SKNode {
     var delegate: TutorialDelegate?
     
     private var circleOverlay = SKShapeNode()
+    private var circleOverlayMedium = SKShapeNode()
+    private var circleOverlaySmall = SKShapeNode()
     private var tapLabel = SKLabelNode()
     private var tapHandLabel = SKSpriteNode()
     private let cropNode = SKCropNode()
@@ -75,6 +77,20 @@ class TutorialView: SKNode {
         //        circleOverlay.blendMode = .alpha
         circleOverlay.strokeColor = .clear
         
+        circleOverlayMedium = SKShapeNode(ellipseIn: CGRect(origin: CGPoint(x: 0 , y: 0), size: CGSize(width: 181, height: 181)))
+        circleOverlayMedium.position = CGPoint(x: sceneFrame.width * 0.5 , y: sceneFrame.height * 0.225)
+        circleOverlayMedium.fillColor = .white
+        circleOverlayMedium.strokeColor = .clear
+        circleOverlayMedium.zPosition = 5
+        circleOverlayMedium.alpha = 0.15
+        
+        circleOverlaySmall = SKShapeNode(ellipseIn: CGRect(origin: CGPoint(x: 0 , y: 0), size: CGSize(width: 133, height: 133)))
+        circleOverlaySmall.position = CGPoint(x: sceneFrame.width * 0.5195 , y: sceneFrame.height * 0.253)
+        circleOverlaySmall.fillColor = .white
+        circleOverlaySmall.strokeColor = .clear
+        circleOverlaySmall.zPosition = 6
+        circleOverlaySmall.alpha = 0.15
+        
         bg.getSceneFrame(sceneFrame: sceneFrame)
         bg.addBackground()
         bg.position = CGPoint(x: 0, y: 0)
@@ -86,13 +102,12 @@ class TutorialView: SKNode {
         rabbit.setScale(0.6)
         bg.addChild(rabbit)
         
-        
-        
         cropNode.maskNode = circleOverlay
         cropNode.addChild(bg)
         
-        
         addChild(cropNode)
+        addChild(circleOverlayMedium)
+        addChild(circleOverlaySmall)
         
         tapLabel = SKLabelNode(fontNamed: "Jua-Regular")
         tapLabel.text = "Tap !"
@@ -131,6 +146,8 @@ class TutorialView: SKNode {
                             self.plusOneStar.run(SKAction.wait(forDuration: 1)){
                                 self.plusOneStar.run(SKAction.fadeOut(withDuration: 1)) {
                                     self.tapLabel.text = "Yeay!"
+                                    self.circleOverlayMedium.alpha = 0
+                                    self.circleOverlaySmall.alpha = 0
                                     self.rabbitAlpha.texture = SKTexture(imageNamed: "Rabbit_Tap")
                                     if let rabbit = self.bg.childNode(withName: "rabbit") as? SKSpriteNode {
                                         rabbit.texture = SKTexture(imageNamed: "Rabbit_Tap")
@@ -145,6 +162,13 @@ class TutorialView: SKNode {
                                         circleOverlay.strokeColor = .clear
                                         cropNode.maskNode = circleOverlay
                     //                            circleOverlay.position =
+                                        
+                                        circleOverlayMedium.alpha = 0.15
+                                        circleOverlayMedium.position = CGPoint(x: sceneFrame.width * 0.34, y: sceneFrame.height * 0.265)
+                                        
+                                        circleOverlaySmall.alpha = 0.15
+                                        circleOverlaySmall.position = CGPoint(x: sceneFrame.width * 0.3595 , y: sceneFrame.height * 0.293)
+                                        
                                         circleOverlay.run(SKAction.fadeIn(withDuration: 1))
                                         tapLabel.text = "Tap!"
                                         tapLabel.position = CGPoint(x: sceneFrame.width * 0.418, y: sceneFrame.height * 0.595)
@@ -184,6 +208,8 @@ class TutorialView: SKNode {
                     if let fox = self.bg.childNode(withName: "fox") as? SKSpriteNode {
                         fox.texture = SKTexture(imageNamed: "Fox_Tap")
                     }
+                    circleOverlaySmall.removeFromParent()
+                    circleOverlayMedium.removeFromParent()
                     let redAlphaBackground = SKSpriteNode()
                     redAlphaBackground.size = CGSize(width: sceneFrame.width, height: sceneFrame.height)
                     redAlphaBackground.color = .redTutorial
