@@ -14,8 +14,6 @@ struct GameElementTutorialView: View {
     @AppStorage("gameElementTutorialOpeneed") private var isActive: Bool = true
     
     var currentGame: GameInfo
-    var width: CGFloat
-    var height: CGFloat
     let gameScene = GameElementTutorial(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), text: "This bar shows your focus level")
     
     var texts: [String] = [
@@ -36,7 +34,7 @@ struct GameElementTutorialView: View {
                     .ignoresSafeArea()
                     .navigationBarBackButtonHidden()
                 
-                ButtonText(imageName: "IconNextBrown", text: "Next", textSize: 32, textColor: .brownColor, normalImageName: "lightBrownTextButtonNotPressed", pressedImageName: "lightBrownTextButtonPressed") {
+                TextButton(contentType: .next, buttonStyle: .brown, buttonSize: .small) {
                     switch(idx) {
                     case 2:
                         idx += 1
@@ -63,7 +61,7 @@ struct GameElementTutorialView: View {
                     }
                 }
                 .opacity(!isPaused ? 1 : 0)
-                .position(CGPoint(x: width * 0.82, y: height * 0.91))
+                .position(CGPoint(x: UIScreen.main.bounds.width * 0.821, y: UIScreen.main.bounds.height * 0.887))
                 .zIndex(30)
             }
             .navigationBarBackButtonHidden()
