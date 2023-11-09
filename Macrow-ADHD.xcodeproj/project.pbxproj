@@ -35,6 +35,8 @@
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
 		2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
 		3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49892ACBD31100DA8827 /* DataController.swift */; };
+		3D53304F2AFA233000300AF0 /* DisconnectedOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */; };
+		3D5330502AFA241B00300AF0 /* DisconnectedOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */; };
 		3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */; };
 		3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613772AC5C66F00F0A792 /* ContentView.swift */; };
 		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
@@ -86,8 +88,8 @@
 		B649292E2AF2097900570802 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
 		B64929302AF209C100570802 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649292F2AF209C100570802 /* SplashScreen.swift */; };
 		B64929322AF209EA00570802 /* Hide&SeekIntroduction.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */; };
-		B64929332AF20A0900570802 /* BubbleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */; };
-		B64929342AF20A0A00570802 /* BubbleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */; };
+		B64929332AF20A0900570802 /* SubheadingIntroductionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92A2AF0FFA000C64CAA /* SubheadingIntroductionText.swift */; };
+		B64929342AF20A0A00570802 /* SubheadingIntroductionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92A2AF0FFA000C64CAA /* SubheadingIntroductionText.swift */; };
 		B64929352AF20D0B00570802 /* HomeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268DE2492ADF85500097E3F2 /* HomeItemView.swift */; };
 		B64929362AF20D0B00570802 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613772AC5C66F00F0A792 /* ContentView.swift */; };
 		B64929372AF20D0B00570802 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
@@ -135,7 +137,7 @@
 		B685ED112ACD3A610062D0C8 /* AttentionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */; };
 		B685ED132ACD447D0062D0C8 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
 		B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69C52F52ACBD9CC009B3493 /* Homepage.swift */; };
-		B6B2D92B2AF0FFA000C64CAA /* BubbleText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */; };
+		B6B2D92B2AF0FFA000C64CAA /* SubheadingIntroductionText.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92A2AF0FFA000C64CAA /* SubheadingIntroductionText.swift */; };
 		B6BFD46E2AE139D400D3AAB1 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
 		B6D1C9622AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */; };
 		B6D1C9CB2AE83DF1003B4331 /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9C92AE83DF1003B4331 /* MWMModel.swift */; };
@@ -173,6 +175,7 @@
 		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTutorial.swift; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectedOverlay.swift; sourceTree = "<group>"; };
 		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macrow_ADHDApp.swift; sourceTree = "<group>"; };
 		3DB613772AC5C66F00F0A792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -221,7 +224,7 @@
 		B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPopup.swift; sourceTree = "<group>"; };
 		B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadpieceIndicator.swift; sourceTree = "<group>"; };
 		B69C52F52ACBD9CC009B3493 /* Homepage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Homepage.swift; sourceTree = "<group>"; };
-		B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleText.swift; sourceTree = "<group>"; };
+		B6B2D92A2AF0FFA000C64CAA /* SubheadingIntroductionText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubheadingIntroductionText.swift; sourceTree = "<group>"; };
 		B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUtils.swift; sourceTree = "<group>"; };
 		B6BFD4652AE139D300D3AAB1 /* MWMEnum.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMEnum.h; sourceTree = "<group>"; };
 		B6BFD4662AE139D300D3AAB1 /* MWMDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDelegate.h; sourceTree = "<group>"; };
@@ -445,6 +448,7 @@
 		B6257E712AF89762004C2F0D /* HideAndSeek */ = {
 			isa = PBXGroup;
 			children = (
+				B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */,
 				B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */,
 				26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */,
 				26A9C6712ACBCCC600117948 /* GameOverPage.swift */,
@@ -493,11 +497,10 @@
 		B6257E752AF8F884004C2F0D /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B649292F2AF209C100570802 /* SplashScreen.swift */,
 				268DE24B2ADF85FC0097E3F2 /* GameView.swift */,
 				B69C52F52ACBD9CC009B3493 /* Homepage.swift */,
 				268DE2432ADF756C0097E3F2 /* HomeView.swift */,
-				B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */,
-				B649292F2AF209C100570802 /* SplashScreen.swift */,
 				26E4B69D2AEFB11600434426 /* GameElementTutorialView.swift */,
 				2A563CFC2ADF86D800AFEF4C /* GuideView.swift */,
 				3DB613772AC5C66F00F0A792 /* ContentView.swift */,
@@ -518,9 +521,10 @@
 			isa = PBXGroup;
 			children = (
 				26FF33D32AF10E9C00944F48 /* TouchButton.swift */,
-				B6B2D92A2AF0FFA000C64CAA /* BubbleText.swift */,
+				B6B2D92A2AF0FFA000C64CAA /* SubheadingIntroductionText.swift */,
 				268DE2492ADF85500097E3F2 /* HomeItemView.swift */,
 				268DE2452ADF786B0097E3F2 /* ButtonView.swift */,
+				3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -795,7 +799,7 @@
 				B6257E862AF8FB45004C2F0D /* Decimal.swift in Sources */,
 				542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */,
 				B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */,
-				B64929332AF20A0900570802 /* BubbleText.swift in Sources */,
+				B64929332AF20A0900570802 /* SubheadingIntroductionText.swift in Sources */,
 				B6ED95B52AF9589A00BEB9B0 /* SymbolButtonStyle.swift in Sources */,
 				B6257E8C2AF8FE64004C2F0D /* TextTheme.swift in Sources */,
 				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
@@ -822,6 +826,7 @@
 				54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */,
 				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
 				26E4B69E2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
+				B6B2D92B2AF0FFA000C64CAA /* SubheadingIntroductionText.swift in Sources */,
 				B6B2D92B2AF0FFA000C64CAA /* BubbleText.swift in Sources */,
 				B615D0D22AFA18080085EFD9 /* StatisticElementButtonStyle.swift in Sources */,
 				3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */,
@@ -837,6 +842,7 @@
 				B615D0D52AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */,
 				B64F1B3C2AF38A0500AB80D4 /* ReportUtils.swift in Sources */,
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
+				3D53304F2AFA233000300AF0 /* DisconnectedOverlay.swift in Sources */,
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				B615D0E52AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
 				B615D0E82AFA9A2B0085EFD9 /* SessionChart.swift in Sources */,
@@ -911,7 +917,9 @@
 				B615D0D62AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */,
 				B649294C2AF20D3300570802 /* Report+GetFocusPause.swift in Sources */,
 				B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */,
+				3D5330502AFA241B00300AF0 /* DisconnectedOverlay.swift in Sources */,
 				B64929492AF20D2F00570802 /* Game+GetAnimal.swift in Sources */,
+				B64929342AF20A0A00570802 /* SubheadingIntroductionText.swift in Sources */,
 				B615D0E62AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
 				B615D0E92AFA9A2B0085EFD9 /* SessionChart.swift in Sources */,
 				B64929342AF20A0A00570802 /* BubbleText.swift in Sources */,

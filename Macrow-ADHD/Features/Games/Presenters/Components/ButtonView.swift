@@ -35,16 +35,7 @@ struct ButtonBack: View {
     
     var body: some View {
         ZStack {
-            Image("IconBack")
-                .resizable()
-                .scaledToFit()
-                .zIndex(2)
-                .frame(width: 40)
-                .padding(.bottom, padding)
-                .allowsHitTesting(false)
-            TouchButton(padding: $padding, normalImageName: "brownIconButtonNotPressed", pressedImageName: "brownIconButtonPressed") {
-                presentationMode.wrappedValue.dismiss()
-            }
+            SymbolButton(type: .back, buttonStyle: .brown, action: {presentationMode.wrappedValue.dismiss()})
         }
     }
 }
