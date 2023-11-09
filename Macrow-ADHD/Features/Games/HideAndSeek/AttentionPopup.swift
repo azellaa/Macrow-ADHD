@@ -111,7 +111,6 @@ class AttentionPopup: SKNode {
                     self.focusCatHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x - 3, y: circleOverlay.position.y - focusCatNoHand.frame.height * 0.52), duration: 0.5))
                 },
                 SKAction.wait(forDuration: 1.2),
-                SKAction.wait(forDuration: 2),
                 SKAction.run { [ self] in
                     self.popUpText.run(SKAction.fadeIn(withDuration: 0.3))
                 },
