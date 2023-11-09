@@ -83,5 +83,5 @@ extension TextButton {
 }
 
 #Preview {
-    TextButton(contentType: .play, buttonStyle: .brown, buttonSize: .small, action: {})
+    TextButton(contentType: .play, buttonStyle: .lightBrown, buttonSize: .small, action: {})
 }
