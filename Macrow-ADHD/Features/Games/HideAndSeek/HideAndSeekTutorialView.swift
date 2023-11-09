@@ -51,7 +51,7 @@ class TutorialView: SKNode {
         addChild(blackAlphaBackground)
         rabbitAlpha.position = CGPoint(x: sceneFrame.width * 0.58 , y: sceneFrame.height * 0.32)
         rabbitAlpha.zPosition = blackAlphaBackground.parent!.zPosition - 15
-        rabbitAlpha.setScale(0.826)
+        rabbitAlpha.setScale(0.6)
         addChild(rabbitAlpha)
         
         
@@ -83,7 +83,7 @@ class TutorialView: SKNode {
         rabbit.name = "rabbit"
         rabbit.position = CGPoint(x: sceneFrame.width * 0.58 , y: sceneFrame.height * 0.32)
         rabbit.zPosition = 4
-        rabbit.setScale(0.826)
+        rabbit.setScale(0.6)
         bg.addChild(rabbit)
         
         
@@ -154,12 +154,12 @@ class TutorialView: SKNode {
                                         fox.name = "fox"
                                         fox.position = CGPoint(x: sceneFrame.width * 0.419 , y: sceneFrame.height * 0.328)
                                         fox.zPosition = 3
-                                        fox.setScale(0.7)
+                                        fox.setScale(0.5)
                                         bg.addChild(fox)
                                         
                                         foxAlpha.position = CGPoint(x: sceneFrame.width * 0.419 , y: sceneFrame.height * 0.328)
                                         foxAlpha.zPosition = blackAlphaBackground.parent!.zPosition - 36
-                                        foxAlpha.setScale(0.7)
+                                        foxAlpha.setScale(0.5)
                                         addChild(foxAlpha)
                                         
                                         tapHandLabel.position = CGPoint(x: sceneFrame.width * 0.5, y: sceneFrame.height * 0.287)
