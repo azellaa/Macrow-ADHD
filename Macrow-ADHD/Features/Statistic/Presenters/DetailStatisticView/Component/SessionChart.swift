@@ -26,9 +26,19 @@ struct SessionChart: View {
         .chartXAxis {
             AxisMarks(values: .stride(by: .minute, roundLowerBound: true, roundUpperBound: true)) { data in
                 
-                AxisValueLabel(format: .dateTime.minute())
-                    .font(.caption1)
-                    .foregroundStyle(.brown2)
+                if let doubleDuration = data.as(Date.self).map({$0 - focuses.first!.time!.startOfMinute()!}) {
+                    AxisValueLabel {
+                        VStack {
+                            Text((doubleDuration/60).truncated)
+                                .font(.caption1)
+                                .foregroundStyle(.brown2)
+                        }
+                    }
+                }
+                
+//                AxisValueLabel(format: .dateTime.minute())
+//                    .font(.caption1)
+//                    .foregroundStyle(.brown2)
                     
             }
         }
