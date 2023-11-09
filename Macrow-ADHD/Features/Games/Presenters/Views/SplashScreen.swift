@@ -39,10 +39,11 @@ struct SplashScreen: View {
                             .foregroundColor(Color.brownColor)
                             .multilineTextAlignment(.center)
                         
+                        TextButton(contentType: .play, buttonStyle: .brown, buttonSize: .big) {
+                            isSplashScreenShown = true
+                        }
+                        .padding(.top, UIScreen.main.bounds.height * 0.2)
                         
-                        
-                        TextButton( action: {
-                            isSplashScreenShown = true}, contentType: .play, buttonStyle: .brown).padding(.top, UIScreen.main.bounds.height * 0.2)
                     }
                 }
             }

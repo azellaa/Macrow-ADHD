@@ -35,7 +35,7 @@ struct ButtonBack: View {
     
     var body: some View {
         ZStack {
-            SymbolButton(action: {presentationMode.wrappedValue.dismiss()}, type: .back, buttonStyle: .brown)
+            SymbolButton(type: .back, buttonStyle: .brown, action: {presentationMode.wrappedValue.dismiss()})
         }
     }
 }

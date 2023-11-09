@@ -60,7 +60,7 @@ struct Hide_SeekIntroduction: View {
                     HStack{
                         Spacer().frame(width: 15)
                         
-                        SymbolButton(action: {presentationMode.wrappedValue.dismiss()}, type: .back, buttonStyle: .brown)
+                        SymbolButton(type: .back, buttonStyle: .brown, action: {presentationMode.wrappedValue.dismiss()})
                         
                         Spacer().frame(width: 450)
                         
@@ -171,13 +171,15 @@ struct Hide_SeekIntroduction: View {
                             .padding(.top, -414)
                             .foregroundColor(Color("greyColor"))
                             .zIndex(0)
-                                                
-                        TextButton(action: { showGameView = true }, contentType: .play)
-                            .padding(.leading, 65)
-                            .padding(.bottom, height * 0.6)
-                            .navigationDestination(isPresented: $showGameView, destination: {
-                                GameElementTutorialView(currentGame: currentGame, width: width, height: height)
-                            })
+                        
+                        TextButton(contentType: .play, buttonStyle: .brown, buttonSize: .small) {
+                            showGameView = true
+                        }
+                        .padding(.leading, 65)
+                        .padding(.bottom, height * 0.6)
+                        .navigationDestination(isPresented: $showGameView, destination: {
+                            GameElementTutorialView(currentGame: currentGame, width: width, height: height)
+                        })
                         
                     }
                 }
