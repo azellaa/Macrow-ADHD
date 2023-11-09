@@ -61,7 +61,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     var isPublisherStarted = false
     var firstAnimalSpawned = false
     
-    override init(size: CGSize) {
+    @Binding var isEndGame: Bool
+    
+    init(size: CGSize, isEndGame: Binding<Bool>) {
+        _isEndGame = isEndGame
         super.init(size: size)
     }
     
@@ -310,6 +313,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func timesUpFunc() {
+        isEndGame = true
         dataController.editAvgAttentionReport(report: self.reportEntity, avgAttention: listFocusData.average(), context: self.context)
         //        dataController.fetchAndPrintFocusData()
         
@@ -460,4 +464,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             }
         }
     }
+}
+
+protocol EndGameProtocol {
+    func isEndGameOpen(_ hideAndSeekScene: HideAndSeekScene, isEndGame: Bool)
 }

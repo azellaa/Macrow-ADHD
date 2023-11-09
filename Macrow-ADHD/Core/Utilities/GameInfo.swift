@@ -13,6 +13,5 @@ struct GameInfo: Identifiable {
     var name: String
     var description: String
     var imageName: String
-    var destination: SKScene
     var mainFocus: String
 }
