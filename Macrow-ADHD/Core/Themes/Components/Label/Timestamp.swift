@@ -13,21 +13,21 @@ struct Timestamp: View {
     var upperColor: Color {
         switch self.type {
         case .primary:
-            return .brownGuide
+            return .brown1
         case .secondary:
             return .cream2
         case .tertiary:
-            return .gray
+            return .gray1
         }
     }
     var belowColor: Color {
         switch self.type {
         case .primary:
-            return .darkBrown
+            return .brown2
         case .secondary:
             return .cream2
         case .tertiary:
-            return .gray
+            return .gray2
         }
     }
     

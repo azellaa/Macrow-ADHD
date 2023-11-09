@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Clip path group.png",
+      "filename" : "Game Overview Background.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Clip path group@2x.png",
+      "filename" : "Game Overview Background@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Clip path group@3x.png",
+      "filename" : "Game Overview Background@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }

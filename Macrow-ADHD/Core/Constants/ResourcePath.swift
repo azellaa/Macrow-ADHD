@@ -20,6 +20,7 @@ struct ResourcePath: Constants {
     static let connecting2 = "Connecting-2"
     static let connecting3 = "Connecting-3"
     static let notConnected = "Not Connected"
+    static let disconnectedPopUp = "disconnectedPopUp"
     static let backBrown = "Back, Brown"
     static let backWhite = "Back, White"
     static let closeBrown = "Close, Brown"
@@ -38,5 +39,31 @@ struct ResourcePath: Constants {
     static let shareWhite = "Share, White"
     static let statisticBrown = "Statistic, Brown"
     static let statisticWhite = "Statistic, White"
+    static let headpieceConnected = "headpieceLogo"
+    static let headpieceDisconnected = "headpieceDisconnect"
+    static let headpiece1Bar = "headpiece1Bar"
+    static let headpiece2Bar = "headpiece2Bar"
+    static let headpiece3Bar = "headpiece3Bar"
     
+}
+//MARK: HomeView
+extension ResourcePath {
+    struct HomeView {
+        static let hideAndSeekHomeBackground = "homeBg"
+        static let homeHideAndSeek = "homeHideAndSeek"
+    }
+}
+
+//MARK: IntroductionView
+extension ResourcePath {
+    struct IntroductionView {
+        struct HideAndSeek {
+            static let background = "HideNSeekIntroductionBackground"
+            static let subheadingBackgroundColor = "SubheadingIntroductionBackgroundColor"
+        }
+        
+        struct Game2 {
+            
+        }
+    }
 }
