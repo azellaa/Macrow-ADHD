@@ -219,7 +219,7 @@ struct Hide_SeekIntroduction: View {
 
 
 #Preview {
-    Hide_SeekIntroduction(currentGame: GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, destination: HideAndSeekWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: AppLabel.HomeView.game1MainFocus), width: 100, height: 100)
+    Hide_SeekIntroduction(currentGame: GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, mainFocus: AppLabel.HomeView.game1MainFocus), width: 100, height: 100)
 }
 
 
