@@ -91,13 +91,13 @@ struct Hide_SeekIntroduction: View {
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top, -20)
+                        .padding(.bottom, UIScreen.main.bounds.height * 0.035)
                         
                         Text(AppLabel.IntroductionView.HideAndSeek.description)
                             .font(.custom(AppFont.juaRegular, size: 24))
-                            .kerning(3)
                             .lineSpacing(5)
                             .foregroundColor(Color.white)
-                            .frame(width: 588, height: 150, alignment: .leading)
+                            .padding(.bottom, UIScreen.main.bounds.height * 0.125)
                             .multilineTextAlignment(.leading)
                     }
                     .padding(.bottom, height * 0.3)
