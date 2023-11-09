@@ -13,9 +13,7 @@ class AttentionPopup: SKNode {
     private var blackAlphaBackground = SKSpriteNode()
     private let cropNode = SKCropNode()
     
-    //    private var bgOverlay = BackgroundHideAndSeek()
     private var circleOverlay = SKShapeNode()
-    private var focusCat = SKSpriteNode(imageNamed: "focusCat")
     private var focusCatNoHand = SKSpriteNode(imageNamed: "focusCatNoHand")
     private var focusCatHand = SKSpriteNode(imageNamed: "focusCatHand")
     
@@ -43,33 +41,18 @@ class AttentionPopup: SKNode {
         circleOverlay = SKShapeNode(ellipseOf: CGSize(width: 140, height: 140))
         circleOverlay.position = CGPoint(x: self.sceneFrame.midX, y: self.sceneFrame.midY)
         circleOverlay.fillColor = .white
-        //        circleOverlay.blendMode = .alpha
         circleOverlay.strokeColor = .clear
         
-        
-        //        bgOverlay.getSceneFrame(sceneFrame: sceneFrame)
-        //        bgOverlay.addBackground()
-        //        bgOverlay.position = CGPoint(x: 0, y: 0)
-        //
-        //        cropNode.addChild(bgOverlay)
-        //
         addChild(cropNode)
         
-        //        let focusCat = SKSpriteNode(imageNamed: "focusCat")
-        //        focusCat.anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        focusCat.position = circleOverlay.position
-        focusCat.zPosition = 5
-        focusCat.alpha = 0
-        addChild(focusCat)
-        
         focusCatNoHand.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - focusCatNoHand.size.height)
-        //        focusCatNoHand.zPosition = 1
+        focusCatNoHand.setScale(0.41)
         focusCatNoHand.alpha = 0
-        cropNode.addChild(focusCatNoHand)
         
-        focusCatHand.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - focusCatNoHand.frame.height/2)
-        focusCatHand.zPosition = 5
+        focusCatHand.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y)
+        focusCatHand.setScale(0.95)
         focusCatHand.alpha = 0
+        focusCatHand.zPosition = 2
         addChild(focusCatHand)
         
         popUpText.text = "Follow Me!"
@@ -91,18 +74,11 @@ class AttentionPopup: SKNode {
             hasCapturedScreen = true
             sceneNode = capturedNode
             sceneNode.position = CGPoint(x: sceneFrame.midX, y: sceneFrame.midY)
-            // Add the sceneNode to the cropNode
             cropNode.maskNode = circleOverlay
             cropNode.addChild(sceneNode)
-            
-            // Reset the focusCat and other nodes' positions and alpha
-            // Then run the animation
-            // ...
-            // Reset the circleOverlay size to a larger initial size
                         
         }
         circleOverlay.position = CGPoint(x: self.sceneFrame.midX, y: self.sceneFrame.midY)
-        focusCat.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25)
         let initialScale: CGFloat = 10 // You can adjust the scale as needed
         circleOverlay.setScale(initialScale)
         let scaleAction = SKAction.scale(to: 1.0, duration: 1) // Adjust duration as needed
@@ -116,28 +92,27 @@ class AttentionPopup: SKNode {
         if !isShowing {
             circleOverlay.run(sequence)
             self.run(SKAction.sequence([
-                SKAction.wait(forDuration: 0.5),
+                SKAction.wait(forDuration: 1),
                 SKAction.run { [self] in
+                    cropNode.addChild(focusCatNoHand)
                     self.focusCatNoHand.run(SKAction.fadeIn(withDuration: 1))
-                    self.focusCatNoHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25), duration: 0.5))
-                    
-                },
-                SKAction.wait(forDuration: 1.5),
-                SKAction.run { [self] in
-                    self.focusCatHand.run(SKAction.fadeIn(withDuration: 1))
+                    self.focusCatNoHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 14), duration: 1))
                 },
                 SKAction.wait(forDuration: 1.2),
                 SKAction.run { [self] in
-                    //                self.focusCatNoHand.run(SKAction.fadeOut(withDuration: 0.5))
-                    focusCatNoHand.alpha = 0
-                    focusCatHand.removeAllActions()
-                    focusCatHand.alpha = 0
-                    self.focusCat.run(SKAction.fadeIn(withDuration: 0.5))
-                    //                self.focusCatHand.run(SKAction.fadeOut(withDuration: 0.5))
+                    focusCatNoHand.removeFromParent()
+                    focusCatNoHand.zPosition = 5
+                    self.addChild(focusCatNoHand)
+                    self.focusCatNoHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 15), duration: 0.2))
                 },
+                SKAction.wait(forDuration: 0.5),
+                SKAction.run { [self] in
+                    self.focusCatHand.run(SKAction.fadeIn(withDuration: 1))
+                    self.focusCatHand.run(SKAction.move(to: CGPoint(x: circleOverlay.position.x - 3, y: circleOverlay.position.y - focusCatNoHand.frame.height * 0.52), duration: 0.5))
+                },
+                SKAction.wait(forDuration: 1.2),
                 SKAction.wait(forDuration: 2),
                 SKAction.run { [ self] in
-                    //            self?.startBounce()
                     self.popUpText.run(SKAction.fadeIn(withDuration: 0.3))
                 },
                 SKAction.wait(forDuration: 1),
@@ -157,9 +132,6 @@ class AttentionPopup: SKNode {
     func stopShowPause() {
         self.removeAllActions()
         circleOverlay.position = CGPoint(x: self.sceneFrame.midX, y: self.sceneFrame.midY)
-        focusCat.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - 25)
-        
-        focusCat.alpha = 0
         
         focusCatNoHand.position = CGPoint(x: circleOverlay.position.x, y: circleOverlay.position.y - focusCatNoHand.size.height)
         focusCatNoHand.alpha = 0
@@ -186,7 +158,7 @@ class AttentionPopup: SKNode {
 //        guard let view = scene.view else {
 //            return nil
 //        }
-//        
+//
 //        UIGraphicsBeginImageContextWithOptions(view.bounds.size, false, 0)
 //        view.drawHierarchy(in: view.bounds, afterScreenUpdates: true)
 //        guard let capturedImage = UIGraphicsGetImageFromCurrentImageContext() else {
@@ -194,16 +166,16 @@ class AttentionPopup: SKNode {
 //            return nil
 //        }
 //        UIGraphicsEndImageContext()
-//        
+//
 //        // 2. Create an SKTexture from the UIImage
 //        let texture = SKTexture(image: capturedImage)
-//        
+//
 //        // 3. Create an SKSpriteNode with the SKTexture
 //        let spriteNode = SKSpriteNode(texture: texture)
-//        
+//
 //        // Optionally, you can set the position, scale, and other properties of the spriteNode here
 //        spriteNode.position = CGPoint(x: scene.size.width / 2, y: scene.size.height / 2)
-//        
+//
 //        return spriteNode
 //    }
     func startBounce() {
@@ -231,7 +203,8 @@ class AttentionPopup: SKNode {
         
         // Update the node's position by applying the transform
         circleOverlay.position = circleOverlay.position.applying(moveTransform)
-        focusCat.position = focusCat.position.applying(moveTransform)
+        focusCatHand.position = focusCatHand.position.applying(moveTransform)
+        focusCatNoHand.position = focusCatNoHand.position.applying(moveTransform)
     }
     
 }
