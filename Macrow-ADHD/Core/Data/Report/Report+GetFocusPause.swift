@@ -55,3 +55,53 @@ extension Report {
         }
     }
 }
+
+extension Report {
+    public var getHighestFocus: Int16? {
+        let setOfFocuses = reportToFocus
+        if let setOfFocuses = setOfFocuses {
+            return setOfFocuses.sorted(by: {$0.value > $1.value}).first?.value ?? 0
+        }
+        else {
+            return nil
+        }
+    }
+    
+    public var getLowestFocus: Int16? {
+        let setOfFocuses = reportToFocus
+        if let setOfFocuses = setOfFocuses {
+            return setOfFocuses.sorted(by: {$0.value < $1.value}).first?.value ?? 0
+        }
+        else {
+            return nil
+        }
+    }
+    public var getAverageFocus: Double? {
+        let setOfFocuses = reportToFocus
+        if let setOfFocuses = setOfFocuses {
+            let totalFocus = setOfFocuses.reduce(0) { partialResult, nextResult in
+                partialResult + Double(nextResult.value)
+            }
+            return totalFocus / Double(setOfFocuses.count)
+        }
+        else {
+            return nil
+        }
+    }
+    
+    public var getPauseAccumulation: Double? {
+        let setOfPauses = reportToPause
+        if let setOfPauses = setOfPauses {
+            var accumulation = 0.0
+            for pause in setOfPauses {
+                if let startTime = pause.startTime, let endTime = pause.endTime {
+                    accumulation += endTime - startTime
+                }
+            }
+            return accumulation
+        }
+        else {
+            return nil
+        }
+    }
+}

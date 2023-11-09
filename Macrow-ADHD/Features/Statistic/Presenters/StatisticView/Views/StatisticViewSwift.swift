@@ -95,7 +95,7 @@ struct StatisticViewSwift: View {
                             .frame(maxHeight: 472)
                             
                         } else {
-                            FocusChart(reports: self.reports, filterDateTime: $filterDateTime)
+                            FocusChart(reports: self.reports, filterDateTime: $filterDateTime, strideFilter: self.strideFilter)
                                 .padding(.horizontal, 40)
                                 .padding(.bottom, 20)
                         }
@@ -132,6 +132,8 @@ struct StatisticViewSwift: View {
             
         }
         .onAppear{
+            selectedIndex = 0
+            currentDate = Date()
             self.reports = DataController.shared.fetchReportByDay(currentDate)
             self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
         }

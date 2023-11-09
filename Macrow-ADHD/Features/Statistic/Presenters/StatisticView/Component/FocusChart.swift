@@ -17,7 +17,7 @@ struct FocusChart: View {
     var chartColor: Color = .brownColor
     @State var interpolationMethod: InterpolationMethod = .linear
     @Binding var filterDateTime: Date.FormatStyle
-    @State var strideFilter: Calendar.Component = .hour
+    var strideFilter: Calendar.Component
     
     var body: some View {
         Chart(reports){ chartMarker in
@@ -164,5 +164,5 @@ struct FocusChart: View {
 }
 
 #Preview {
-    FocusChart(reports: [Report](), filterDateTime: .constant(.dateTime.day()))
+    FocusChart(reports: [Report](), filterDateTime: .constant(.dateTime.day()), strideFilter: .hour)
 }

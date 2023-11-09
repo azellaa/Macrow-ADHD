@@ -24,10 +24,12 @@ struct SessionChart: View {
             getBaselineMarker(marker: chartMarker)
         }
         .chartXAxis {
-            AxisMarks(values: .stride(by: .minute, roundLowerBound: true, roundUpperBound: true)) { _ in
+            AxisMarks(values: .stride(by: .minute, roundLowerBound: true, roundUpperBound: true)) { data in
+                
                 AxisValueLabel(format: .dateTime.minute())
                     .font(.caption1)
                     .foregroundStyle(.brown2)
+                    
             }
         }
         .chartYAxis {
@@ -62,7 +64,7 @@ struct SessionChart: View {
             .lineStyle(StrokeStyle(lineWidth: 2))
             .foregroundStyle(.brown2)
             .opacity(0.5)
-//            .interpolationMethod(.linear)
+            .interpolationMethod(.catmullRom)
 //            .symbolSize(60)
     }
 }

@@ -30,7 +30,7 @@ struct DetailStatisticViewSwift: View {
             .padding(.top, Decimal.double41)
             
             VStack {
-                CustomBoldHeading2(text: "Session")
+                CustomBoldHeading2(text: "Session ")
                     .foregroundStyle(.brown1)
                 
                 GeometryReader(content: { geometry in
@@ -45,18 +45,18 @@ struct DetailStatisticViewSwift: View {
                             .frame(maxWidth: geometry.size.width * 0.3)
                             .overlay {
                                 VStack(spacing: 10) {
-                                    StatisticElementButton(leftText: "Rabbit Count", rightText: "\(report.reportToGame!.getAllRabit.count)")
-                                    StatisticElementButton(leftText: "Fox Count", rightText: "\(report.reportToGame!.getAllFox.count)")
+                                    StatisticElementButton(leftText: AppLabel.StatisticView.rabbitCount, rightText: "\(report.reportToGame!.getAllRabit.count)")
+                                    StatisticElementButton(leftText: AppLabel.StatisticView.foxCount, rightText: "\(report.reportToGame!.getAllFox.count)")
                                         .padding(.bottom, Decimal.double60)
                                     
-                                    StatisticElementButton(leftText: "Pause Count", rightText: "\(report.reportToPause?.count.description ?? "N/A")")
-                                    StatisticElementButton(leftText: "Accumulation", rightText: "20")
+                                    StatisticElementButton(leftText: AppLabel.StatisticView.pauseCount, rightText: "\(report.reportToPause?.count.description ?? "N/A")")
+                                    StatisticElementButton(leftText: AppLabel.StatisticView.accumulation, rightText: "\(((report.getPauseAccumulation ?? 0) / 60).truncated)m \((report.getPauseAccumulation ?? 0).truncatingRemainder(dividingBy: 60).truncated)s")
                                         .padding(.bottom, Decimal.double60)
                                     
                                     
-                                    StatisticElementButton(leftText: "Highest Focus", rightText: "\(report.reportToFocus?.sorted(by: {$0.value > $1.value}).first?.value.description ?? "N/A")")
-                                    StatisticElementButton(leftText: "Lowest Focus", rightText: "\(report.reportToFocus?.sorted(by: {$0.value < $1.value}).first?.value.description ?? "N/A")")
-                                    StatisticElementButton(leftText: "Average Focus", rightText: "OTW")
+                                    StatisticElementButton(leftText: AppLabel.StatisticView.highestFocus, rightText: "\(report.getHighestFocus?.description ?? "N/A")")
+                                    StatisticElementButton(leftText: AppLabel.StatisticView.lowestFocus, rightText: "\(report.getLowestFocus?.description ?? "N/A")")
+                                    StatisticElementButton(leftText: AppLabel.StatisticView.averageFocus, rightText: "\(report.getAverageFocus?.truncated ?? "N/A")")
                                     
                                 }
                                 .padding(.top, 66)
@@ -88,7 +88,7 @@ struct LeftContent: View {
                 Text("\(report.reportToGame!.gameName!) -  Level \(report.reportToGame!.level)")
             })
             .font(.subHeading2)
-            .foregroundStyle(.brown2)
+            .foregroundStyle(.brown1)
             .padding(.horizontal, 40)
             .padding(.top, 66)
             SessionChart(report: report)
