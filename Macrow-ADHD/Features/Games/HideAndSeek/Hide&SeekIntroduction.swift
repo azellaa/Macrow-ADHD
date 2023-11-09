@@ -75,7 +75,7 @@ struct Hide_SeekIntroduction: View {
                     }
                     .padding(.top, 25)
                     
-                    Spacer()
+                    Spacer().frame(height: 450)
                     
                     VStack {
                         Text(AppLabel.IntroductionView.HideAndSeek.name)
@@ -100,7 +100,7 @@ struct Hide_SeekIntroduction: View {
                             .frame(width: 588, height: 150, alignment: .leading)
                             .multilineTextAlignment(.leading)
                     }
-                    .padding(.bottom, height * 0.3)
+//                    .padding(.bottom, height * 0.3)
                     
                 }
                 .frame(width: 600)
@@ -176,7 +176,7 @@ struct Hide_SeekIntroduction: View {
                             showGameView = true
                         }
                         .padding(.leading, 65)
-                        .padding(.bottom, height * 0.6)
+                        .padding(.bottom, height * 0.05)
                         .navigationDestination(isPresented: $showGameView, destination: {
                             GameElementTutorialView(currentGame: currentGame, width: width, height: height)
                         })
