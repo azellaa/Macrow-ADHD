@@ -17,20 +17,20 @@ struct HomeView: View {
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
     @ObservedObject var centralManager = CentralManager()
-    @State private var imageName = "headpieceDisconnect"
-    @State private var symbol = "Symbol"
+    @State private var headpieceIndicator = ResourcePath.headpieceDisconnected
+//    @State private var symbol = "Symbol"
     
     
 #if targetEnvironment(simulator)
     
     private let games: [GameInfo] = [
-        GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+        GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, destination: HideAndSeekWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: AppLabel.HomeView.game1MainFocus),
         //        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
         //        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
     ]
 #else
     private let games: [GameInfo] = [
-        GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", destination: HideAndSeekWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
+        GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, destination: HideAndSeekWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: AppLabel.HomeView.game1MainFocus),
         //        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
         //        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
     ]
@@ -41,25 +41,32 @@ struct HomeView: View {
         GeometryReader { geo in
             VStack{
                 HStack {
-                    ButtonSymbol(dest: $isStatistic, imageName: "IconStatistic")
-                        .navigationDestination(isPresented: $isStatistic, destination: {
-                            StatisticViewSwift()
-                                .navigationBarBackButtonHidden()
-                        })
-                        .padding(.leading, geo.size.width * 0.03)
+                    
+                    NavigationLink {
+                        StatisticViewSwift()
+                            .navigationBarBackButtonHidden()
+                    } label: {
+                        Image(ResourcePath.statisticWhite)
+                    }
+                    .buttonStyle(SymbolButtonStyle(style: .brown))
+                    .padding(.leading, geo.size.width * 0.03)
                     
                     Spacer()
-                    Text("Will's Storyland")
-                        .font(.custom("Jua-Regular", size: 86))
+                    Text(AppLabel.appName)
+                        .font(.custom(AppFont.juaRegular, size: 86))
                         .foregroundColor(Color.brownColor)
                         .padding(.leading, 6)
                     Spacer()
-                    
-                    ButtonSymbol(dest: $isGuide, imageName: imageName)
-                        .navigationDestination(isPresented: $isGuide, destination: {
-                            GuideView()
-                        })
-                        .padding(.trailing, geo.size.width * 0.03)
+
+                    NavigationLink {
+                        GuideView()
+                    } label: {
+                        Image(headpieceIndicator)
+                    }
+                    .buttonStyle(SymbolButtonStyle(style: .brown))
+                    .padding(.trailing, geo.size.width * 0.03)
+
+                
                 }
                 .padding(.vertical, geo.size.height * 0.04)
                 
@@ -102,25 +109,25 @@ struct HomeView: View {
                 Spacer()
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Image("homeBg").resizable()
+            .background(Image(ResourcePath.HomeView.hideAndSeekHomeBackground).resizable()
                 .aspectRatio( contentMode: .fill))
         }
         .onReceive(mwmObject.signalStatusPublisher) { signalStatus in
             switch signalStatus {
             case 1:
-                self.imageName = "headpiece1Bar"
+                self.headpieceIndicator = ResourcePath.headpiece1Bar
                 break
             case 2:
-                self.imageName = "headpiece2Bar"
+                self.headpieceIndicator = ResourcePath.headpiece2Bar
                 break
             case 3:
-                self.imageName = "headpiece3Bar"
+                self.headpieceIndicator = ResourcePath.headpiece3Bar
                 break
             case 4:
-                self.imageName = "headpieceLogo"
+                self.headpieceIndicator = ResourcePath.headpieceConnected
                 break
             default:
-                self.imageName = "headpieceDisconnect"
+                self.headpieceIndicator = ResourcePath.headpieceDisconnected
                 break
             }
         }
