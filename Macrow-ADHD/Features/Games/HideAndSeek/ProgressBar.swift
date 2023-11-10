@@ -47,11 +47,11 @@ class ProgressBar: SKNode {
         progressBar.position.y = progressBarContainer.position.y + 1
         progressBar.anchorPoint = CGPoint(x: 0, y: 0.5)
         
-        let bee = SKSpriteNode(imageNamed: "Bee")
-        bee.position = CGPoint(x: sceneFrame.width * -0.475, y: 14)
-        bee.setScale(0.7)
-        bee.zPosition = 15
-        addChild(bee)
+        let will = SKSpriteNode(imageNamed: "willHeadOnly")
+        will.position = CGPoint(x: sceneFrame.width * -0.475, y: 16)
+        will.setScale(0.12)
+        will.zPosition = 15
+        addChild(will)
         
         let cropNode = SKCropNode()
         let childNode = SKSpriteNode(texture: progressTexture, size: progressTexture.size())
