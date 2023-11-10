@@ -33,8 +33,8 @@ struct StatisticViewSwift: View {
                         SymbolButton(type: .back, action: {
                             dismiss()
                         })
-                            .padding(.leading)
-                            .padding()
+                        .padding(.leading)
+                        .padding()
                         Spacer()
                     }
                     Spacer()
@@ -70,13 +70,13 @@ struct StatisticViewSwift: View {
                                         .font(.subHeading2)
                                 }
                             } else if selectedIndex == 2 {
-                                    HStack {
-                                        Text("\(Date.getMonth(date: currentDate)!.0.dMMMMFormat()) - \(Date.getMonth(date: currentDate)!.1.dMMMMFormat())")
-                                            .font(.subHeading2)
-                                        Spacer()
-                                        Text("\(AppLabel.focusAvg) \(focusAverage.isNaN ? "\(AppLabel.noFocusValue)" : focusAverage.truncated)")
-                                            .font(.subHeading2)
-                                    }
+                                HStack {
+                                    Text("\(Date.getMonth(date: currentDate)!.0.formatToString("MMMM"))")
+                                        .font(.subHeading2)
+                                    Spacer()
+                                    Text("\(AppLabel.focusAvg) \(focusAverage.isNaN ? "\(AppLabel.noFocusValue)" : focusAverage.truncated)")
+                                        .font(.subHeading2)
+                                }
                             }
                         }
                         .padding(.horizontal, 40)
@@ -86,6 +86,7 @@ struct StatisticViewSwift: View {
                         
                         
                         if reports.count == 0 {
+                            // MARK: nanti diganti chart kosong
                             VStack{
                                 Text(AppLabel.noStatisticText)
                                     .font(.custom("Jua-Regular", size: 32))
@@ -143,6 +144,7 @@ struct StatisticViewSwift: View {
                     self.reports = DataController.shared.fetchReportByDay(currentDate)
                     self.strideFilter = .hour
                     self.filterDateTime = .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits)
+                    self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
                 }
                 
             }
@@ -151,6 +153,7 @@ struct StatisticViewSwift: View {
                     self.reports = DataController.shared.fetchReportByWeek(currentDate)
                     self.strideFilter = .day
                     self.filterDateTime = .dateTime.weekday()
+                    self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
                 }
             }
             else if index == 2 {
@@ -158,6 +161,7 @@ struct StatisticViewSwift: View {
                     self.reports = DataController.shared.fetchReportByMonth(currentDate)
                     self.strideFilter = .day
                     self.filterDateTime = .dateTime.day()
+                    self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
                 }
             }
         })

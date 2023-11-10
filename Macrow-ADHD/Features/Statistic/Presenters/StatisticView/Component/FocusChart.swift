@@ -75,30 +75,30 @@ struct FocusChart: View {
                             DetailStatisticViewSwift(report: selectedReport)
                                 .navigationBarBackButtonHidden()
                         } label: {
-//                            HStack {
-//                                Spacer()
-                                VStack(alignment: .center) {
-                                    Text("\(selectedReport.avgAttention.truncated)")
-                                        .font(.subHeading2)
-                                    Text("\(selectedReport.reportToGame?.gameName ?? "No Name")")
-                                        .font(.body2)
-                                }
-//                                Spacer()
-//                            }
+                            //                            HStack {
+                            //                                Spacer()
+                            VStack(alignment: .center) {
+                                Text("\(selectedReport.avgAttention.truncated)")
+                                    .font(.subHeading2)
+                                Text("\(selectedReport.reportToGame?.gameName ?? "No Name")")
+                                    .font(.body2)
+                            }
+                            //                                Spacer()
+                            //                            }
                         }
                         .buttonStyle(TextButtonStyle(style: .brown, size: .small))
-
-//                        .font(.custom("Jua-Regular", size: 32))
-//                        .foregroundStyle(.white)
+                        
+                        //                        .font(.custom("Jua-Regular", size: 32))
+                        //                        .foregroundStyle(.white)
                         
                         .accessibilityElement(children: .combine)
                         .frame(width: boxWidth, alignment: .leading)
-//                        .background {
-//                            RoundedRectangle(cornerRadius: 8)
-//                                .fill(.brownGuide)
-//                                .padding(.horizontal, -8)
-//                                .padding(.vertical, -4)
-//                        }
+                        //                        .background {
+                        //                            RoundedRectangle(cornerRadius: 8)
+                        //                                .fill(.brownGuide)
+                        //                                .padding(.horizontal, -8)
+                        //                                .padding(.vertical, -4)
+                        //                        }
                         .offset(x: boxOffset, y: -80)
                     }
                 }
@@ -106,13 +106,38 @@ struct FocusChart: View {
         }
         
         .chartXAxis{
-            AxisMarks(values: .stride(by: self.strideFilter, roundLowerBound: true, roundUpperBound: true)) { _ in
-                //                AxisTick()
-                //                AxisGridLine()
-                AxisValueLabel(format: filterDateTime)
-                    .font(.caption1)
-                    .foregroundStyle(.brownGuide)
+            
+            if filterDateTime == .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits) {
+                
+                AxisMarks(values: reports.first!.timestamp!.hoursOfDay(using: .gregorian)) { data in
+                    if let hour = data.as(Date.self).map({$0.dateComponents([.hour]).hour}) {
+                        if hour! == 0 || hour!%6 == 0 {
+                            AxisValueLabel(format: filterDateTime)
+                                .font(.caption1)
+                                .foregroundStyle(.brownGuide)
+                        }
+                    }
+                }
+            } else if filterDateTime == .dateTime.weekday() {
+                AxisMarks(values: reports.first!.timestamp!.daysOfWeek(using: .gregorian) ) { _ in
+                    AxisValueLabel(format: filterDateTime)
+                        .font(.caption1)
+                        .foregroundStyle(.brownGuide)
+                }
+            } else if filterDateTime == .dateTime.day(){
+                AxisMarks(values: reports.first!.timestamp!.daysOfMonth(using: .gregorian)) { data in
+                    if let day = data.as(Date.self).map({$0.dateComponents([.day]).day}) {
+//                        print(day)
+                        if day! == 1 || day!%7 == 1 {
+                            
+                            AxisValueLabel(format: filterDateTime)
+                                .font(.caption1)
+                                .foregroundStyle(.brownGuide)
+                        }
+                    }
+                }
             }
+            
         }
         .chartYAxis {
             AxisMarks(position: .leading, values: [0, 20, 40, 60, 80, 100]) {
@@ -130,8 +155,8 @@ struct FocusChart: View {
             x: .value("Date", marker.timestamp!),
             y: .value("Focus", marker.avgAttention)
         )
-//        .accessibilityLabel(marker.timestamp!.formatted(date: .complete, time: .omitted))
-//        .accessibilityValue("\(marker.avgAttention) sold")
+        //        .accessibilityLabel(marker.timestamp!.formatted(date: .complete, time: .omitted))
+        //        .accessibilityValue("\(marker.avgAttention) sold")
         .lineStyle(StrokeStyle(lineWidth: lineWidth))
         .foregroundStyle(chartColor)
         .opacity(0.5)

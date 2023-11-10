@@ -30,7 +30,7 @@ struct DetailStatisticViewSwift: View {
             .padding(.top, Decimal.double41)
             
             VStack {
-                CustomBoldHeading2(text: "Session ")
+                CustomBoldHeading2(text: report.timestamp!.formatted(.dateTime.day(.twoDigits).month(.wide).year(.extended())))
                     .foregroundStyle(.brown1)
                 
                 GeometryReader(content: { geometry in
@@ -81,8 +81,6 @@ struct LeftContent: View {
     var body: some View {
         VStack {
             HStack(content: {
-                Text(report.timestamp!.formatted(.dateTime.day(.twoDigits).month(.twoDigits).year(.defaultDigits)))
-                    .padding(.trailing, Decimal.double41)
                 Text(report.timestamp!.formatted(.dateTime.hour(.twoDigits(amPM: .omitted)).minute()))
                 Spacer()
                 Text("\(report.reportToGame!.gameName!) -  Level \(report.reportToGame!.level)")

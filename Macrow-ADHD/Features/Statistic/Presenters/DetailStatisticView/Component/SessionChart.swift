@@ -14,12 +14,6 @@ struct SessionChart: View {
         report.focusesSortedByTime
     }
     var body: some View {
-//        Chart(report){ chartMarker in
-////            getBaselineMarker(marker: chartMarker)
-//            
-//            
-////            return baselineMarker
-//        }
         Chart (focuses){ chartMarker in
             getBaselineMarker(marker: chartMarker)
         }
@@ -50,21 +44,6 @@ struct SessionChart: View {
                     .foregroundStyle(.brown2)
             }
         }
-        
-        .onAppear(perform: {
-//            var times: [String] = []
-//            var allFocus: [Int16] = []
-//            for focus in focuses {
-////                print("Time: \(focus.time!.formatted(.dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits).second(.twoDigits)))")
-//                times.append(focus.time!.formatted(.dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits).second(.twoDigits)))
-////                print("Focus: \(focus.value)")
-//                allFocus.append(focus.value)
-//            }
-//            print("timestamp: \(times)")
-//            print("focus: \(allFocus)")
-//            
-//            print(report.reportId!)
-        })
     }
     
     
