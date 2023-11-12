@@ -102,41 +102,41 @@ class GameOverPage: SKNode {
             starLabel.zPosition = 2
             addChild(starLabel)
             
-            let homeButton = SKSpriteNode(imageNamed: "homeButton")
-            homeButton.name = "homeButton"
-            homeButton.position = CGPoint(x: frame.width / 2, y: frame.height / 2 - 280)
-            homeButton.zPosition = 2
-            addChild(homeButton)
+//            let homeButton = SKSpriteNode(imageNamed: "homeButton")
+//            homeButton.name = "homeButton"
+//            homeButton.position = CGPoint(x: frame.width / 2, y: frame.height / 2 - 280)
+//            homeButton.zPosition = 2
+//            addChild(homeButton)
             
         }
     }
     
     
-    func returnToApp() {
-        if let skView = self.scene?.view as? SKView, let window = skView.window {
-            let homeView = NavigationStack {
-                HomeView()
-            } // Assuming HomeView is your SwiftUI view
-            let hostingController = UIHostingController(rootView: homeView)
-            window.rootViewController = hostingController
-        }
-    }
-
-
-
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            let location = touch.location(in: self)
-            let touchedNodes = nodes(at: location)
-
-            for node in touchedNodes {
-                if node.name == "homeButton" {
-                    print("Home button tapped")
-                    returnToApp()
-                }
-            }
-        }
-    }
+//    func returnToApp() {
+//        if let skView = self.scene?.view as? SKView, let window = skView.window {
+//            let homeView = NavigationStack {
+//                HomeView()
+//            } // Assuming HomeView is your SwiftUI view
+//            let hostingController = UIHostingController(rootView: homeView)
+//            window.rootViewController = hostingController
+//        }
+//    }
+//
+//
+//
+//    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+//        for touch in touches {
+//            let location = touch.location(in: self)
+//            let touchedNodes = nodes(at: location)
+//
+//            for node in touchedNodes {
+//                if node.name == "homeButton" {
+//                    print("Home button tapped")
+//                    returnToApp()
+//                }
+//            }
+//        }
+//    }
 
 
 

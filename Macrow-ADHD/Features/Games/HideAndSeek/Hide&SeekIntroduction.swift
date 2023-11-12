@@ -91,13 +91,13 @@ struct Hide_SeekIntroduction: View {
                         }
                         .frame(maxWidth: .infinity, alignment: .leading)
                         .padding(.top, -20)
+                        .padding(.bottom, UIScreen.main.bounds.height * 0.035)
                         
                         Text(AppLabel.IntroductionView.HideAndSeek.description)
                             .font(.custom(AppFont.juaRegular, size: 24))
-                            .kerning(3)
                             .lineSpacing(5)
                             .foregroundColor(Color.white)
-                            .frame(width: 588, height: 150, alignment: .leading)
+                            .padding(.bottom, UIScreen.main.bounds.height * 0.125)
                             .multilineTextAlignment(.leading)
                     }
 //                    .padding(.bottom, height * 0.3)
@@ -178,7 +178,7 @@ struct Hide_SeekIntroduction: View {
                         .padding(.leading, 65)
                         .padding(.bottom, height * 0.05)
                         .navigationDestination(isPresented: $showGameView, destination: {
-                            GameElementTutorialView(currentGame: currentGame, width: width, height: height)
+                            GameElementTutorialView(currentGame: currentGame)
                         })
                         
                     }
@@ -219,7 +219,7 @@ struct Hide_SeekIntroduction: View {
 
 
 #Preview {
-    Hide_SeekIntroduction(currentGame: GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, destination: HideAndSeekWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: AppLabel.HomeView.game1MainFocus), width: 100, height: 100)
+    Hide_SeekIntroduction(currentGame: GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, mainFocus: AppLabel.HomeView.game1MainFocus), width: 100, height: 100)
 }
 
 
