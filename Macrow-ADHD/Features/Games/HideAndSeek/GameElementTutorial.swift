@@ -14,20 +14,17 @@ class GameElementTutorial: SKScene, SKPhysicsContactDelegate {
     private var bg = BackgroundHideAndSeek()
     private var background = BackgroundHideAndSeek()
     private var will = SKSpriteNode()
-    private var bubbleBox = SKSpriteNode()
-    private var bubbleText = SKLabelNode()
+    
+//    private var bubbleBox = SKSpriteNode()
+//    private var bubbleText = SKLabelNode()
     
     private var attentionPopup = AttentionPopup()
+    private var scoreBox = ProgressBar()
     
     private let cropNode = SKCropNode()
     private var rectangleOverlay = SKShapeNode()
     
-    private var text: String
-    
-    private var scoreBox = ProgressBar()
-    
-    init(size: CGSize, text: String) {
-        self.text = text
+    override init(size: CGSize) {
         super.init(size: size)
     }
     
@@ -75,32 +72,32 @@ class GameElementTutorial: SKScene, SKPhysicsContactDelegate {
         will.zPosition = 22
         addChild(will)
         
-        bubbleBox = .init(imageNamed: "bubbleBox")
-        bubbleBox.size.width = frame.width * 0.28
-        bubbleBox.size.height = frame.height * 0.15
-        bubbleBox.position = CGPoint(x: frame.width * 0.49, y: frame.height * 0.64)
-        bubbleBox.zPosition = 22
-        addChild(bubbleBox)
-        
-        bubbleText.fontName = "Jua-Regular"
-        bubbleText.fontSize = 24
-        bubbleText.fontColor = .black
-        bubbleText.text = "This bar shows your focus level"
-        bubbleText.numberOfLines = 2
-        bubbleText.lineBreakMode = NSLineBreakMode.byWordWrapping
-        bubbleText.preferredMaxLayoutWidth = frame.width * 0.25
-        bubbleText.position = CGPoint(x: frame.width * 0.491, y: frame.height * 0.613)
-        bubbleText.zPosition = 23
-        addChild(bubbleText)
+//        bubbleBox = .init(imageNamed: "bubbleBox")
+//        bubbleBox.size.width = frame.width * 0.28
+//        bubbleBox.size.height = frame.height * 0.15
+//        bubbleBox.position = CGPoint(x: frame.width * 0.49, y: frame.height * 0.64)
+//        bubbleBox.zPosition = 22
+//        addChild(bubbleBox)
+//        
+//        bubbleText.fontName = "Jua-Regular"
+//        bubbleText.fontSize = 24
+//        bubbleText.fontColor = .black
+//        bubbleText.text = "This bar shows your focus level"
+//        bubbleText.numberOfLines = 2
+//        bubbleText.lineBreakMode = NSLineBreakMode.byWordWrapping
+//        bubbleText.preferredMaxLayoutWidth = frame.width * 0.25
+//        bubbleText.position = CGPoint(x: frame.width * 0.491, y: frame.height * 0.613)
+//        bubbleText.zPosition = 23
+//        addChild(bubbleText)
     }
     
-    func nextTutorial(text: String) {
-        bubbleText.text = text
-    }
+//    func nextTutorial(text: String) {
+//        bubbleText.text = text
+//    }
     
     func hideAll() {
-        bubbleBox.isHidden = true
-        bubbleText.isHidden = true
+//        bubbleBox.isHidden = true
+//        bubbleText.isHidden = true
         will.isHidden = true
         cropNode.isHidden = true
         rectangleOverlay.isHidden = true
@@ -109,8 +106,8 @@ class GameElementTutorial: SKScene, SKPhysicsContactDelegate {
     }
     
     func removePause() {
-        bubbleBox.isHidden = false
-        bubbleText.isHidden = false
+//        bubbleBox.isHidden = false
+//        bubbleText.isHidden = false
         will.isHidden = false
         blackAlphaBackground.isHidden = false
         

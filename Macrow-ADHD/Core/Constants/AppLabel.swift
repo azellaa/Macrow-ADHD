@@ -83,3 +83,16 @@ extension AppLabel {
         }
     }
 }
+
+//MARK: - Game Element Tutorial
+extension AppLabel {
+    struct GameElementTutorialView {
+        static let bubbleTexts = [
+            "This bar shows your focus level",
+            "If it’s in the red, the rabbit doesn’t want to appear",
+            "If that happens, my cat will help you to regain focus",
+            "You should follow and watch my cat",
+            "Great, now let’s gather the rabbit!"
+        ]
+    }
+}
