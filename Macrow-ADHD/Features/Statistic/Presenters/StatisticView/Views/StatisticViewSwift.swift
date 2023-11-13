@@ -29,8 +29,9 @@ struct StatisticViewSwift: View {
         GeometryReader { geo  in
             ZStack {
                 Rectangle()
-                    .fill(.bg)
+                    .fill(.yellow1)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
+                    .ignoresSafeArea()
                 VStack {
                     HStack {
                         SymbolButton(type: .back, action: {
@@ -135,6 +136,7 @@ struct StatisticViewSwift: View {
                         .padding(.top, 20)
                     
                 })
+                
                 .padding()
             }
             .ignoresSafeArea()

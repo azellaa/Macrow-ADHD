@@ -23,6 +23,8 @@ class StatisticViewModel: ObservableObject {
     @Published var chartColor: Color = .brownColor
     @Published var interpolationMethod: InterpolationMethod = .linear
     
+    @Published var selectedElement: DetailStatisticViewSwift.SelectedElementEnum? = nil
+    
     func averageFocusForDay(_ day: String, reports: [Report]) -> Double? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "yyyy-MM-dd"
@@ -61,6 +63,14 @@ class StatisticViewModel: ObservableObject {
             let totalFocus = reports.reduce(0.0) { $0 + ($1.avgAttention)}
             return totalFocus / Double(reports.count)
         
+    }
+    
+    func changeStatisticElement(statisticElementType: DetailStatisticViewSwift.SelectedElementEnum) {
+        if statisticElementType == selectedElement {
+            selectedElement = nil
+        } else {
+            selectedElement = statisticElementType
+        }
     }
 }
 

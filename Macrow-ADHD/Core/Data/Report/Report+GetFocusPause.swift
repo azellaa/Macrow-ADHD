@@ -105,3 +105,35 @@ extension Report {
         }
     }
 }
+struct AveragedReport {
+    var time: Date?
+    var averagedValue: Double
+}
+extension Report {
+    
+    var averagedReports: [AveragedReport] {
+        let setOfReports = reportToFocus
+        if let setOfReports = setOfReports {
+            let sortedReports = setOfReports.sorted {
+                $0.time!.timeIntervalSince1970 < $1.time!.timeIntervalSince1970
+            }
+            
+            let chunks = sortedReports.chunks(of: 10)
+            
+            let averages = chunks.map { chunk in
+                let sum = chunk.reduce(0) { $0 + ($1.value ) } // Assuming 'value' is the property you want to average
+                let averageValue = Double(sum) / Double(chunk.count)
+                
+                return AveragedReport(time: chunk[0].time, averagedValue: averageValue)
+            }
+            
+            return averages
+        } else {
+            return []
+        }
+    }
+}
+
+
+
+

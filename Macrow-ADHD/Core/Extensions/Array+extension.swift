@@ -17,3 +17,12 @@ extension Array where Element == Double {
         return sum / Double(count)
     }
 }
+
+// Extension to split an array into chunks of a given size
+extension Array {
+    func chunks(of size: Int) -> [[Element]] {
+        return stride(from: 0, to: count, by: size).map {
+            Array(self[$0 ..< Swift.min($0 + size, count)])
+        }
+    }
+}

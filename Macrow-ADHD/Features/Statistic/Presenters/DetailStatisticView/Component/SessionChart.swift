@@ -9,38 +9,116 @@ import SwiftUI
 import Charts
 
 struct SessionChart: View {
-    let report: Report
-    var focuses: [Focus] {
-        report.focusesSortedByTime
+    @ObservedObject var statisticViewModel = StatisticViewModel()
+    var focuses: [Focus]? {
+        if let report = statisticViewModel.selectedReport {
+            return report.focusesSortedByTime
+        } else {
+            return nil
+        }
+    }
+    
+    var averagedReport: [AveragedReport]? {
+        if let report = statisticViewModel.selectedReport {
+            return report.averagedReports
+        } else {
+            return nil
+        }
     }
     var body: some View {
-        Chart (focuses){ chartMarker in
-            getBaselineMarker(marker: chartMarker)
+        Chart {
+            if statisticViewModel.selectedElement == .pauseCount || statisticViewModel.selectedElement == .pauseAccumulation {
+                ForEach(statisticViewModel.selectedReport!.pauses) { chartMarker in
+                    if let startPause = chartMarker.startTime, let endPause = chartMarker.endTime {
+                        BarMark(xStart: .value("Pause Start", startPause), xEnd: .value("Pause End", endPause))
+                            .foregroundStyle(.yellow2)
+                            .annotation(position: .automatic, alignment: .center) {
+                                if statisticViewModel.selectedElement == .pauseAccumulation {
+                                    if (endPause - startPause) >= 10 {
+                                        Text("\((endPause - startPause).truncated)s")
+                                            .font(.label)
+                                            .foregroundStyle(.yellow2)
+                                    }
+                                }
+                            }
+                    }
+                }
+            }
+            
+            ForEach(averagedReport!, id: \.time) { chartMarker in
+                baselineAveragedReport(marker: chartMarker)
+            }
+            
+            if statisticViewModel.selectedElement == .rabbitCount {
+                //MARK: RABBIT COUNT
+                ForEach((statisticViewModel.selectedReport?.reportToGame!.getAllRabit)!) { chartMarker in
+                    baseLineRabbitCount(marker: chartMarker)
+                }
+            }
+            
+            if statisticViewModel.selectedElement == .foxCount {
+                //MARK: FOX COUNT
+                ForEach((statisticViewModel.selectedReport?.reportToGame!.getAllFox)!) { chartMarker in
+                    baseLineFoxCount(marker: chartMarker)
+                }
+            }
+            
+            
+            if let report = statisticViewModel.selectedReport {
+                
+                if statisticViewModel.selectedElement == .lowestFocus {
+                    //MARK: LOWEST FOCUS
+                    RuleMark(y: .value("Lowest Focus", report.getLowestFocus!))
+                        .annotation(position: .trailing) {
+                            Text("\(report.getLowestFocus!)")
+                                .font(.label)
+                                .foregroundStyle(.yellow2)
+                        }
+                        .foregroundStyle(.yellow2)
+                }
+                
+                if statisticViewModel.selectedElement == .highestFocus{
+                    //MARK: HIGHEST FOCUS
+                    RuleMark(y: .value("Highest Focus", report.getHighestFocus!))
+                        .annotation(position: .trailing) {
+                            Text("\(report.getHighestFocus!)")
+                                .font(.label)
+                                .foregroundStyle(.yellow2)
+                        }
+                        .foregroundStyle(.yellow2)
+                }
+                
+                if statisticViewModel.selectedElement == .averageFocus {
+                    //MARK: AVERAGE FOCUS
+                    RuleMark(y: .value("Average Focus", report.getAverageFocus!))
+                        .annotation(position: .trailing) {
+                            Text("\(report.getAverageFocus!.truncated)")
+                                .font(.label)
+                                .foregroundStyle(.yellow2)
+                        }
+                        .foregroundStyle(.yellow2)
+                }
+            }
         }
         .chartXAxis {
             AxisMarks(values: .stride(by: .minute, roundLowerBound: true, roundUpperBound: true)) { data in
-                
-                if let doubleDuration = data.as(Date.self).map({$0 - focuses.first!.time!.startOfMinute()!}) {
+                if let doubleDuration = data.as(Date.self).map({$0 - focuses!.first!.time!.startOfMinute()!}) {
                     AxisValueLabel {
                         VStack {
                             Text((doubleDuration/60).truncated)
-                                .font(.caption1)
+                                .font(.label)
                                 .foregroundStyle(.brown2)
                         }
                     }
                 }
                 
-//                AxisValueLabel(format: .dateTime.minute())
-//                    .font(.caption1)
-//                    .foregroundStyle(.brown2)
-                    
             }
         }
         .chartYAxis {
             AxisMarks (position: .leading, values: [0, 20, 40, 60, 80, 100]) {
                 AxisGridLine()
                 AxisValueLabel()
-                    .font(.caption1)
+                    .font(.label)
                     .foregroundStyle(.brown2)
             }
         }
@@ -54,38 +132,50 @@ struct SessionChart: View {
             .foregroundStyle(.brown2)
             .opacity(0.5)
             .interpolationMethod(.catmullRom)
-//            .symbolSize(60)
     }
-}
-
-extension SessionChart {
-    struct dummyFocus {
-        var time: Date
-        var focus: Int16
-        
-        static let dummyData = [
-            dummyFocus(time: Date().addingTimeInterval(-20), focus: 10),
-            dummyFocus(time: Date().addingTimeInterval(-19), focus: 12),
-            dummyFocus(time: Date().addingTimeInterval(-18), focus: 21),
-            dummyFocus(time: Date().addingTimeInterval(-17), focus: 77),
-            dummyFocus(time: Date().addingTimeInterval(-16), focus: 67),
-            dummyFocus(time: Date().addingTimeInterval(-15), focus: 27),
-            dummyFocus(time: Date().addingTimeInterval(-14), focus: 45),
-            dummyFocus(time: Date().addingTimeInterval(-13), focus: 88),
-            dummyFocus(time: Date().addingTimeInterval(-12), focus: 65),
-            dummyFocus(time: Date().addingTimeInterval(-11), focus: 22),
-            dummyFocus(time: Date().addingTimeInterval(-10), focus: 76),
-            dummyFocus(time: Date().addingTimeInterval(-9), focus: 76),
-            dummyFocus(time: Date().addingTimeInterval(-8), focus: 22),
-            dummyFocus(time: Date().addingTimeInterval(-7), focus: 43),
-            dummyFocus(time: Date().addingTimeInterval(-6), focus: 35),
-            dummyFocus(time: Date().addingTimeInterval(-5), focus: 55),
-            dummyFocus(time: Date().addingTimeInterval(-4), focus: 66),
-            dummyFocus(time: Date().addingTimeInterval(-3), focus: 88),
-            dummyFocus(time: Date().addingTimeInterval(-2), focus: 22),
-        ]
+    
+    private func baselineAveragedReport (marker: AveragedReport) -> some ChartContent {
+        return LineMark(x: .value("Time", marker.time!), y: .value("Focus", marker.averagedValue))
+            .lineStyle(StrokeStyle(lineWidth: 2))
+            .foregroundStyle(.brown2)
+            .opacity(0.5)
+            .interpolationMethod(.catmullRom)
     }
-//    static let dummyData
+    
+    private func baseLineRabbitCount (marker: Animal) -> some ChartContent {
+        if let tapTime = marker.tapTime {
+            
+            return PointMark(x: .value("Time", tapTime))
+                .lineStyle(StrokeStyle(lineWidth: 2))
+                .foregroundStyle(.yellow)
+                .interpolationMethod(.catmullRom)
+        } else {
+            
+            return PointMark(x: .value("Time", marker.appearTime!))
+                .lineStyle(StrokeStyle(lineWidth: 2))
+                .foregroundStyle(.red)
+                .interpolationMethod(.catmullRom)
+        }
+    }
+    
+    private func baseLineFoxCount (marker: Animal) -> some ChartContent {
+        if let tapTime = marker.tapTime {
+            
+            return PointMark(x: .value("Time", tapTime))
+                .lineStyle(StrokeStyle(lineWidth: 2))
+                .foregroundStyle(.red)
+            //                .opacity(0.5)
+                .interpolationMethod(.catmullRom)
+        } else {
+            
+            return PointMark(x: .value("Time", marker.appearTime!))
+                .lineStyle(StrokeStyle(lineWidth: 2))
+                .foregroundStyle(.yellow)
+            //                .opacity(0.5)
+                .interpolationMethod(.catmullRom)
+        }
+        //            .symbolSize(60)
+    }
 }
 
 //#Preview {

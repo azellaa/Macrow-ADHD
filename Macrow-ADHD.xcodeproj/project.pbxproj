@@ -50,7 +50,7 @@
 		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
 		3DFAD8C52B00C13100E0B079 /* ThoughtBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFAD8C42B00C13100E0B079 /* ThoughtBubble.swift */; };
 		3DFAD8C62B00C14D00E0B079 /* ThoughtBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFAD8C42B00C13100E0B079 /* ThoughtBubble.swift */; };
-		542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88B2AE58F4A0024387C /* Array+average.swift */; };
+		542DD88C2AE58F4A0024387C /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88B2AE58F4A0024387C /* Array+extension.swift */; };
 		542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */; };
 		542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8972AE596D80024387C /* Report+CoreDataClass.swift */; };
 		542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */; };
@@ -120,7 +120,7 @@
 		B649294B2AF20D3300570802 /* Report+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */; };
 		B649294C2AF20D3300570802 /* Report+GetFocusPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */; };
 		B649294D2AF20D3300570802 /* Report+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8972AE596D80024387C /* Report+CoreDataClass.swift */; };
-		B649294F2AF20D4000570802 /* Array+average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88B2AE58F4A0024387C /* Array+average.swift */; };
+		B649294F2AF20D4000570802 /* Array+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88B2AE58F4A0024387C /* Array+extension.swift */; };
 		B64929502AF20D4300570802 /* Double+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADE22AF16CD600FC5DBE /* Double+extension.swift */; };
 		B64929512AF20D4300570802 /* Date+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */; };
 		B64929522AF20D4300570802 /* CentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491B13A2AE5C351004986A0 /* CentralManager.swift */; };
@@ -170,6 +170,8 @@
 		B6ED95B82AF958DF00BEB9B0 /* SymbolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */; };
 		B6ED95B92AF958DF00BEB9B0 /* SymbolButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */; };
 		B6ED95BD2AF9E9E800BEB9B0 /* libMWMSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */; };
+		B6F2EB532B0275F9003950D2 /* EmptySessionChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F2EB522B0275F9003950D2 /* EmptySessionChart.swift */; };
+		B6F2EB542B0275F9003950D2 /* EmptySessionChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6F2EB522B0275F9003950D2 /* EmptySessionChart.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -201,7 +203,7 @@
 		3DB613772AC5C66F00F0A792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3DFAD8C42B00C13100E0B079 /* ThoughtBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtBubble.swift; sourceTree = "<group>"; };
-		542DD88B2AE58F4A0024387C /* Array+average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+average.swift"; sourceTree = "<group>"; };
+		542DD88B2AE58F4A0024387C /* Array+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+extension.swift"; sourceTree = "<group>"; };
 		542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+GetFocusPause.swift"; sourceTree = "<group>"; };
 		542DD8972AE596D80024387C /* Report+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataClass.swift"; sourceTree = "<group>"; };
 		542DD8982AE596D80024387C /* Report+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 		B6ED95B12AF9510F00BEB9B0 /* TextButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextButton.swift; sourceTree = "<group>"; };
 		B6ED95B42AF9589A00BEB9B0 /* SymbolButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolButtonStyle.swift; sourceTree = "<group>"; };
 		B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolButton.swift; sourceTree = "<group>"; };
+		B6F2EB522B0275F9003950D2 /* EmptySessionChart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySessionChart.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -511,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				B615D0E72AFA9A2B0085EFD9 /* SessionChart.swift */,
+				B6F2EB522B0275F9003950D2 /* EmptySessionChart.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -557,7 +561,7 @@
 			children = (
 				B616ADE22AF16CD600FC5DBE /* Double+extension.swift */,
 				B66E747D2ADF7C4300CCA69A /* Color+extension.swift */,
-				542DD88B2AE58F4A0024387C /* Array+average.swift */,
+				542DD88B2AE58F4A0024387C /* Array+extension.swift */,
 				B616ADDE2AF1661B00FC5DBE /* Date+extension.swift */,
 				B60B5B0E2AFDE6EE00C96689 /* Calendar+extension.swift */,
 			);
@@ -664,10 +668,10 @@
 		B6D2D5D12AFBF7AC0080215B /* Component */ = {
 			isa = PBXGroup;
 			children = (
+				B6B4D6A32B01804D006BE6C2 /* EmptyChart.swift */,
 				B615D0E12AFA78CE0085EFD9 /* FocusChart.swift */,
 				B615D0DE2AFA75620085EFD9 /* AboutCard.swift */,
 				B616ADE42AF1896F00FC5DBE /* CustomSegmentedControl.swift */,
-				B6B4D6A32B01804D006BE6C2 /* EmptyChart.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -883,7 +887,7 @@
 				2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */,
 				B6D1C9622AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift in Sources */,
 				542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */,
-				542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */,
+				542DD88C2AE58F4A0024387C /* Array+extension.swift in Sources */,
 				B6B4D6A42B01804D006BE6C2 /* EmptyChart.swift in Sources */,
 				2AEC6E862AFBEF9400DB3194 /* GuideButton.swift in Sources */,
 				B6257E822AF8FB2C004C2F0D /* AppLabel.swift in Sources */,
@@ -903,6 +907,7 @@
 				26A9C66C2ACBCC7B00117948 /* HideAndSeekBackground.swift in Sources */,
 				B616ADDF2AF1661B00FC5DBE /* Date+extension.swift in Sources */,
 				54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */,
+				B6F2EB532B0275F9003950D2 /* EmptySessionChart.swift in Sources */,
 				542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */,
 				26E4B69E2AEFB11600434426 /* GameElementTutorialView.swift in Sources */,
 				B6B2D92B2AF0FFA000C64CAA /* SubheadingIntroductionText.swift in Sources */,
@@ -987,6 +992,7 @@
 				26F4FBE52AF3761C00F31E68 /* HideAndSeekBackground.swift in Sources */,
 				B64929522AF20D4300570802 /* CentralManager.swift in Sources */,
 				B6D1C9CB2AE83DF1003B4331 /* MWMModel.swift in Sources */,
+				B6F2EB542B0275F9003950D2 /* EmptySessionChart.swift in Sources */,
 				B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */,
 				B64929352AF20D0B00570802 /* HomeItemView.swift in Sources */,
 				B64929412AF20D1200570802 /* ReportUtils.swift in Sources */,
@@ -996,7 +1002,7 @@
 				B64929572AF20D4E00570802 /* HideAndSeekScene.swift in Sources */,
 				B649295C2AF20D4E00570802 /* HideAndSeekTutorialView.swift in Sources */,
 				B64F1B4A2AF3BE9100AB80D4 /* AudioManager.swift in Sources */,
-				B649294F2AF20D4000570802 /* Array+average.swift in Sources */,
+				B649294F2AF20D4000570802 /* Array+extension.swift in Sources */,
 				B649294A2AF20D2F00570802 /* Game+CoreDataClass.swift in Sources */,
 				B649293A2AF20D0B00570802 /* HomeView.swift in Sources */,
 				B649294D2AF20D3300570802 /* Report+CoreDataClass.swift in Sources */,
