@@ -60,3 +60,33 @@ extension AppLabel {
         static let averageFocus = "Average Focus"
     }
 }
+// MARK: Guide view
+extension AppLabel {
+    struct GuideView {
+        static let guide = "Guide"
+        
+        struct HeadpieceLabel {
+            static let notConnectedLabel = "Not Connected"
+            static let connecting1Label = "Poor Signal"
+            static let connecting2Label = "Weak Signal"
+            static let connecting3Label = "Connecting"
+            static let connectedLabel = "Connected"
+        }
+        
+        struct HeadpieceInfo {
+            static let notConnectedInfo = "Device is not connected yet"
+            static let connecting1Info = "Attempting to establish a connection"
+            static let connecting2Info = "Signal is relatively weak. Device attempting for stronger connection"
+            static let connecting3Info = "Device may have unstable connection. Make sure device is securely attached for more stable connection"
+            static let connectedInfo = "Device is successfully established a connection"
+        }
+        
+        struct IconLabel {
+            static let onLabel = "Make sure the device is turned on"
+            static let bluetoothLabel = "Try to reset Bluetooth"
+            static let placeLabel = "Try to move to other place"
+            static let sensorLabel = "Ensure the sensor is well attached"
+            static let headLabel = "Avoid too much head movements"
+        }
+    }
+}

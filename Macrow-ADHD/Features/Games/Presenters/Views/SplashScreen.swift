@@ -15,7 +15,7 @@ struct SplashScreen: View {
         ZStack {
             if isSplashScreenShown {
                 if firstLaunch {
-                    DeviceTutorial()
+                    DeviceTutorial(opacity: 0)
                 } else {
                     HomeView()
                 }

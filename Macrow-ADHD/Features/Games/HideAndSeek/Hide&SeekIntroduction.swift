@@ -62,7 +62,7 @@ struct Hide_SeekIntroduction: View {
                         
                         SymbolButton(type: .back, buttonStyle: .brown, action: {presentationMode.wrappedValue.dismiss()})
                         
-                        Spacer().frame(width: 450)
+                        Spacer().frame(width: 500)
                         
                         NavigationLink {
                             GuideView()
@@ -71,7 +71,6 @@ struct Hide_SeekIntroduction: View {
                         }
                         .buttonStyle(SymbolButtonStyle(style: .brown))
 
-                        
                     }
                     .padding(.top, 25)
                     
@@ -176,7 +175,7 @@ struct Hide_SeekIntroduction: View {
                             showGameView = true
                         }
                         .padding(.leading, 65)
-                        .padding(.bottom, height * 0.05)
+                        .padding(.bottom, 50)
                         .navigationDestination(isPresented: $showGameView, destination: {
                             GameElementTutorialView(currentGame: currentGame)
                         })

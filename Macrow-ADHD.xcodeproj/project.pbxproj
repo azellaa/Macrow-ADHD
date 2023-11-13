@@ -36,12 +36,20 @@
 		26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
 		2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
+		2AEC6E832AFBD23100DB3194 /* GuideItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */; };
+		2AEC6E842AFBD23100DB3194 /* GuideItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */; };
+		2AEC6E862AFBEF9400DB3194 /* GuideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E852AFBEF9300DB3194 /* GuideButton.swift */; };
+		2AEC6E872AFBEF9400DB3194 /* GuideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E852AFBEF9300DB3194 /* GuideButton.swift */; };
+		2AEC6E892AFBEFC800DB3194 /* GuideButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E882AFBEFC800DB3194 /* GuideButtonStyle.swift */; };
+		2AEC6E8A2AFBEFC800DB3194 /* GuideButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E882AFBEFC800DB3194 /* GuideButtonStyle.swift */; };
 		3D2B498A2ACBD31100DA8827 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D2B49892ACBD31100DA8827 /* DataController.swift */; };
 		3D53304F2AFA233000300AF0 /* DisconnectedOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */; };
 		3D5330502AFA241B00300AF0 /* DisconnectedOverlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */; };
 		3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */; };
 		3DB613782AC5C66F00F0A792 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DB613772AC5C66F00F0A792 /* ContentView.swift */; };
 		3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */; };
+		3DFAD8C52B00C13100E0B079 /* ThoughtBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFAD8C42B00C13100E0B079 /* ThoughtBubble.swift */; };
+		3DFAD8C62B00C14D00E0B079 /* ThoughtBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFAD8C42B00C13100E0B079 /* ThoughtBubble.swift */; };
 		542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88B2AE58F4A0024387C /* Array+average.swift */; };
 		542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */; };
 		542DD8992AE596D80024387C /* Report+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 542DD8972AE596D80024387C /* Report+CoreDataClass.swift */; };
@@ -183,12 +191,16 @@
 		26FF33D32AF10E9C00944F48 /* TouchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchButton.swift; sourceTree = "<group>"; };
 		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTutorial.swift; sourceTree = "<group>"; };
+		2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideItemView.swift; sourceTree = "<group>"; };
+		2AEC6E852AFBEF9300DB3194 /* GuideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideButton.swift; sourceTree = "<group>"; };
+		2AEC6E882AFBEFC800DB3194 /* GuideButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideButtonStyle.swift; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectedOverlay.swift; sourceTree = "<group>"; };
 		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macrow_ADHDApp.swift; sourceTree = "<group>"; };
 		3DB613772AC5C66F00F0A792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		3DFAD8C42B00C13100E0B079 /* ThoughtBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThoughtBubble.swift; sourceTree = "<group>"; };
 		542DD88B2AE58F4A0024387C /* Array+average.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+average.swift"; sourceTree = "<group>"; };
 		542DD88D2AE590D60024387C /* Report+GetFocusPause.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+GetFocusPause.swift"; sourceTree = "<group>"; };
 		542DD8972AE596D80024387C /* Report+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Report+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -532,8 +544,10 @@
 				26FF33D32AF10E9C00944F48 /* TouchButton.swift */,
 				B6B2D92A2AF0FFA000C64CAA /* SubheadingIntroductionText.swift */,
 				268DE2492ADF85500097E3F2 /* HomeItemView.swift */,
+				2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */,
 				268DE2452ADF786B0097E3F2 /* ButtonView.swift */,
 				3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */,
+				3DFAD8C42B00C13100E0B079 /* ThoughtBubble.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -700,6 +714,8 @@
 				B6ED95B12AF9510F00BEB9B0 /* TextButton.swift */,
 				B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */,
 				B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */,
+				2AEC6E852AFBEF9300DB3194 /* GuideButton.swift */,
+				2AEC6E882AFBEFC800DB3194 /* GuideButtonStyle.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
@@ -853,6 +869,7 @@
 				54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */,
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
 				B6257E862AF8FB45004C2F0D /* Decimal.swift in Sources */,
+				2AEC6E892AFBEFC800DB3194 /* GuideButtonStyle.swift in Sources */,
 				542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */,
 				B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */,
 				B6B4D6A12B0175FE006BE6C2 /* StatisticViewModel.swift in Sources */,
@@ -860,6 +877,7 @@
 				B64929332AF20A0900570802 /* SubheadingIntroductionText.swift in Sources */,
 				B6ED95B52AF9589A00BEB9B0 /* SymbolButtonStyle.swift in Sources */,
 				B6257E8C2AF8FE64004C2F0D /* TextTheme.swift in Sources */,
+				2AEC6E832AFBD23100DB3194 /* GuideItemView.swift in Sources */,
 				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
 				B615D0E22AFA78CE0085EFD9 /* FocusChart.swift in Sources */,
 				2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */,
@@ -867,6 +885,7 @@
 				542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */,
 				542DD88C2AE58F4A0024387C /* Array+average.swift in Sources */,
 				B6B4D6A42B01804D006BE6C2 /* EmptyChart.swift in Sources */,
+				2AEC6E862AFBEF9400DB3194 /* GuideButton.swift in Sources */,
 				B6257E822AF8FB2C004C2F0D /* AppLabel.swift in Sources */,
 				B69C52F62ACBD9CC009B3493 /* Homepage.swift in Sources */,
 				B616ADE52AF1896F00FC5DBE /* CustomSegmentedControl.swift in Sources */,
@@ -906,6 +925,7 @@
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				B615D0E52AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
 				B615D0E82AFA9A2B0085EFD9 /* SessionChart.swift in Sources */,
+				3DFAD8C52B00C13100E0B079 /* ThoughtBubble.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
 				B6257E7F2AF8FB16004C2F0D /* AppFont.swift in Sources */,
 				542DD88E2AE590D60024387C /* Report+GetFocusPause.swift in Sources */,
@@ -933,6 +953,7 @@
 				26F4FBEC2AF3766000F31E68 /* SplashScreen.swift in Sources */,
 				26F4FBE82AF3763200F31E68 /* GuideView.swift in Sources */,
 				B6257E872AF8FB45004C2F0D /* Decimal.swift in Sources */,
+				2AEC6E8A2AFBEFC800DB3194 /* GuideButtonStyle.swift in Sources */,
 				26F4FBE92AF3763700F31E68 /* NodeElement.swift in Sources */,
 				26F4FBE62AF3762400F31E68 /* Color+extension.swift in Sources */,
 				B6B4D6A22B0175FE006BE6C2 /* StatisticViewModel.swift in Sources */,
@@ -940,6 +961,7 @@
 				B64929472AF20D2A00570802 /* DataController.swift in Sources */,
 				B6ED95B62AF9589A00BEB9B0 /* SymbolButtonStyle.swift in Sources */,
 				B6257E8D2AF8FE64004C2F0D /* TextTheme.swift in Sources */,
+				2AEC6E842AFBD23100DB3194 /* GuideItemView.swift in Sources */,
 				B64929372AF20D0B00570802 /* Homepage.swift in Sources */,
 				B615D0E32AFA78CE0085EFD9 /* FocusChart.swift in Sources */,
 				B649293C2AF20D0B00570802 /* GameView.swift in Sources */,
@@ -947,6 +969,7 @@
 				26F4FBE42AF375FC00F31E68 /* GameInfo.swift in Sources */,
 				26F4FBEA2AF3763700F31E68 /* GameData.swift in Sources */,
 				B6B4D6A52B01804D006BE6C2 /* EmptyChart.swift in Sources */,
+				2AEC6E872AFBEF9400DB3194 /* GuideButton.swift in Sources */,
 				B6257E832AF8FB2C004C2F0D /* AppLabel.swift in Sources */,
 				B64929542AF20D4E00570802 /* AttentionPopup.swift in Sources */,
 				26E4B6A22AEFB16600434426 /* GameElementTutorial.swift in Sources */,
@@ -986,6 +1009,7 @@
 				B64929342AF20A0A00570802 /* SubheadingIntroductionText.swift in Sources */,
 				B615D0E62AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
 				B615D0E92AFA9A2B0085EFD9 /* SessionChart.swift in Sources */,
+				3DFAD8C62B00C14D00E0B079 /* ThoughtBubble.swift in Sources */,
 				B64929342AF20A0A00570802 /* SubheadingIntroductionText.swift in Sources */,
 				B6257E802AF8FB16004C2F0D /* AppFont.swift in Sources */,
 				B64929422AF20D1200570802 /* CustomSegmentedControl.swift in Sources */,
