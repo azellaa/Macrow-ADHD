@@ -11,5 +11,4 @@ import SwiftUI
 
 extension Color {
     static let brownColor = Color("brownGuideColor")
-    
 }

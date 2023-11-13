@@ -58,7 +58,6 @@ struct TextButtonStyle: ButtonStyle {
             .clipShape(RoundedRectangle(cornerRadius: 30))
             .mask {
                 RoundedRectangle(cornerRadius: 20)
-//                    .offset(y: configuration.isPressed ? 0 : -4)
             }
             .offset(y: configuration.isPressed ? 0 : -14)
             .background {
