@@ -14,7 +14,6 @@ struct ThoughtBubble: View {
     @State private var height: CGFloat = 80.5
     
     var position: xPosition
-    @State var xScale: CGFloat = 1.0
     
     private var changeScale: CGFloat {
         switch position {
@@ -29,12 +28,12 @@ struct ThoughtBubble: View {
         ZStack(alignment: .top) {
             // Shape
             ThoughtBubbleShape(cornerRadius: cornerRadius, width: width, height: height)
-                .fill(Color.blue)
-                .scaleEffect(CGSize(width: xScale, height: 1.0))
+                .fill(.white1)
+                .scaleEffect(CGSize(width: changeScale, height: 1.0))
                 .overlay(
                     ThoughtBubbleShape(cornerRadius: cornerRadius, width: width, height: height)
-                        .stroke(Color.black, lineWidth: 3)
-                        .scaleEffect(CGSize(width: xScale, height: 1.0))
+                        .stroke(.brown1, lineWidth: 3)
+                        .scaleEffect(CGSize(width: changeScale, height: 1.0))
                 )
             
             // Text
@@ -42,6 +41,7 @@ struct ThoughtBubble: View {
                 .font(.custom(AppFont.juaRegular, size: 24))
                 .frame(width: width - 40)
                 .padding(.top, 30)
+                .foregroundColor(.brown1)
                 .multilineTextAlignment(.center)
                 .background(
                     TextSizeReader(height: $height)
