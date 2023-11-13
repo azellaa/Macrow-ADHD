@@ -89,7 +89,6 @@ extension SymbolButtonStyle {
         case lightBrown
         case white
         case nonInteractable
-        case darkBrown
     }
 }
 

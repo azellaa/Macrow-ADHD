@@ -12,12 +12,15 @@ struct GuideView: View {
     @Environment(\.presentationMode) var presentationMode
     @State private var selectedImage: String = ResourcePath.notConnected
     @State private var selectedButton: GuideButtonType = .notConnected
+    @State private var isDeviceTutorialActive = false
+    
     
     @State private var notConnectedButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
     @State private var connecting1ButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
     @State private var connecting2ButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
     @State private var connecting3ButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
     @State private var connectedButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
+    
     @State private var imageName = ResourcePath.notConnected
     
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
@@ -33,16 +36,16 @@ struct GuideView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack {
-                Color(.cream2)
+                Color(.yellow1)
                     .ignoresSafeArea()
                 VStack{
                     ZStack {
                         CustomBoldHeading2(text: AppLabel.GuideView.guide)
                             .foregroundColor(Color.brownColor)
                         HStack{
-                            SymbolButton(action: {
+                            SymbolButton(type: .back, buttonStyle: .brown, action: {
                                 presentationMode.wrappedValue.dismiss()
-                            }, type: .back, buttonStyle: .brown)
+                            })
                             
                             Spacer()
                             
@@ -54,12 +57,18 @@ struct GuideView: View {
                                     .frame(width: 30, height: 26)
                             }
                             .buttonStyle(SymbolButtonStyle(style: .nonInteractable))
-
-                            SymbolButton(action: {
-                        
-                            }, type: .guide, buttonStyle: .brown)
                             
-                        } .padding()
+                            NavigationLink(destination: DeviceTutorial( opacity: 100), isActive: $isDeviceTutorialActive) {
+                                EmptyView()
+                            }
+                            .hidden()
+                            SymbolButton(type: .guide, buttonStyle: .brown, action: {
+                                isDeviceTutorialActive = true
+                            })
+                            .padding()
+                           
+                            
+                        } .frame(width: 1112, height: 73)
                         
                     } .navigationBarBackButtonHidden(true)
                     ZStack {
@@ -147,7 +156,7 @@ struct GuideView: View {
                 break
             }
         }
-    
+        
     }
 }
 

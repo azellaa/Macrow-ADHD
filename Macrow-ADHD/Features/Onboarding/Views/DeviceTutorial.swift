@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct DeviceTutorial: View {
+    @Environment(\.presentationMode) var presentationMode
     @AppStorage("firstLaunch") var firstLaunch: Bool = true
     @State private var currentView: Int = 0
     let maxView: Int = 10 // Set your maximum view count here
-    
+    var opacity: CGFloat
     
     var body: some View {
         ZStack{
-            Color("creamColor")
+            Color(.yellow1)
                 .edgesIgnoringSafeArea(.all)
                 .frame(maxWidth: .infinity, maxHeight: .infinity)
             
@@ -26,18 +27,24 @@ struct DeviceTutorial: View {
                     }
             } else {
                 VStack{
-                    HStack{
-//                        ButtonSymbol(dest: .constant(false), imageName: "IconClose")
-//                            .padding(.leading, -300)
-//                            .padding()
-//                            .opacity(0)
-                        
+                    ZStack{
                         Text("Device Tutorial")
                             .font(.custom("Jua-Regular", size: 72))
                             .foregroundColor(Color.brownColor)
                             .font(.largeTitle)
                             .fontWeight(.heavy)
-//                            .padding(.leading, 10)
+
+                        HStack{
+                           
+                            SymbolButton(type: .close, buttonStyle: .brown, action: {
+                                presentationMode.wrappedValue.dismiss()
+                            })
+                            .opacity(100)
+                            .padding(.horizontal)
+                            Spacer()
+                                
+                        }
+                  
                     } .padding(.top, 80)
                     
                     Spacer()
@@ -568,7 +575,7 @@ struct Subview11: View {
 
 struct DeviceTutorial_Previews: PreviewProvider {
     static var previews: some View {
-        DeviceTutorial()
+        DeviceTutorial( opacity: 0)
     }
 }
 
