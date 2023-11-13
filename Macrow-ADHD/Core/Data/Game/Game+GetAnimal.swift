@@ -20,4 +20,24 @@ extension Game {
         }
     }
     
+    public var getAllRabit: [Animal] {
+        let setOfAnimal = gameToAnimal
+        
+        if let setOfAnimal = setOfAnimal {
+            return setOfAnimal.filter{($0.animalToAnimalType!.animalTypeId == AnimalTypeEnum.rabbit.id)}
+        } else {
+            return []
+        }
+    }
+    
+    public var getAllFox: [Animal] {
+        let setOfAnimal = gameToAnimal
+        
+        if let setOfAnimal = setOfAnimal {
+            return setOfAnimal.filter{($0.animalToAnimalType!.animalTypeId == AnimalTypeEnum.fox.id)}
+        } else {
+            return []
+        }
+    }
+    
 }
