@@ -75,6 +75,7 @@ extension TextButtonStyle {
         case brown
         case lightBrown
         case white
+        case darkBrown
     }
     enum TextButtonSizeEnum {
         case big

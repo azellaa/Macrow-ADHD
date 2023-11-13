@@ -67,3 +67,16 @@ extension ResourcePath {
         }
     }
 }
+
+//MARK: Guide View
+extension ResourcePath {
+    struct GuideView {
+        static let nonInteractableContainer = "Non-Interactable Container"
+        static let bluetoothCream = "Bluetooth, Cream"
+        static let placeCream = "Place, Cream"
+        static let sensorCream = "Sensor, Cream"
+        static let headCream = "Head, Cream"
+        static let shadowRectangleBrown = "Shadow Rectangle, Brown"
+        static let onCream = "On, Cream"
+    }
+}
