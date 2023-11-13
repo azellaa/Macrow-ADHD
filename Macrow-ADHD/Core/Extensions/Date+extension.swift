@@ -24,6 +24,17 @@ extension Date {
 }
 
 extension Date {
+    
+    static func getHours(date: Date = Date()) -> (Date, Date)? {
+        let calendar = Calendar.current
+        let startOfDay = calendar.date(from: calendar.dateComponents([.day], from: date)) // Start of the current week
+        let endOfDay = calendar.date(byAdding: .day, value: 1, to: startOfDay!) // Start of the next week
+        if let startOfDay = startOfDay, let endOfDay = endOfDay {
+            return (startOfDay, endOfDay)
+        }else {
+            return nil
+        }
+    }
     static func getWeek(date: Date = Date()) -> (Date, Date)? {
         let calendar = Calendar.current
         let startOfWeek = calendar.date(from: calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date)) // Start of the current week
@@ -55,10 +66,8 @@ extension Date {
         calendar.dateComponents(components, from: self)
     }
     
-    func startOfMinute() -> Date?
+    func startOfMinute(using calendar: Calendar = .current) -> Date?
     {
-        let calendar = Calendar.current
-
         var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
 
 //        components.minute = 0
@@ -67,12 +76,10 @@ extension Date {
         return calendar.date(from: components)
     }
     
-    func startOfDay() -> Date?
+    func startOfDay(using calendar: Calendar = .current) -> Date?
     {
-        let calendar = Calendar.current
-
         var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
-
+        
         components.hour = 0
         components.minute = 0
         components.second = 0
@@ -83,9 +90,7 @@ extension Date {
     func startOfWeek(using calendar: Calendar = .current) -> Date {
         calendar.date(from: dateComponents([.yearForWeekOfYear, .weekOfYear], using: calendar))!
     }
-    func startOfMonth() -> Date? {
-        let calendar = Calendar.current
-
+    func startOfMonth(using calendar: Calendar = .current) -> Date? {
         var components = calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: self)
 
         components.day = 0
@@ -107,7 +112,7 @@ extension Date {
     }
     
     func hoursOfDay(using calendar: Calendar = .current) -> [Date] {
-        let startOfDay = self.startOfDay()
+        let startOfDay = self.startOfDay(using: calendar)
         let range = calendar.range(of: .hour, in: .day, for: startOfDay!)
         return range?.map({startOfDay?.byAdding(component: .hour, value: $0,using: calendar)!}) as! [Date]
 //        return (0...7).map { startOfWeek.byAdding(component: .day, value: $0, using: calendar)! }
@@ -118,12 +123,11 @@ extension Date {
         return (0...7).map { startOfWeek.byAdding(component: .day, value: $0, using: calendar)! }
     }
     func daysOfMonth(using calendar: Calendar = .current) -> [Date] {
-        let startOfMonth = self.startOfMonth()
+        let startOfMonth = self.startOfMonth(using: calendar)
         let range = calendar.range(of: .day, in: .month, for: startOfMonth!)
         return(range?.map({
             startOfMonth!.byAdding(component: .day, value: $0, using: calendar)!
         }))!
-//        return (0...range!.count).map { startOfMonth.byAdding(component: .day, value: $0, using: calendar)! }
     }
     
 }

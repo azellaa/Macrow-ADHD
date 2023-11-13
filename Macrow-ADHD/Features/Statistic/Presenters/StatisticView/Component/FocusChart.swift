@@ -9,25 +9,19 @@ import SwiftUI
 import Charts
 
 struct FocusChart: View {
-    var reports: [Report]
-    @State private var selectedReport: Report?
-    @State private var lineWidth = 2.0
-    @State private var lollipopColor: Color = .yellow1
-    @State private var showLollipop = true
-    var chartColor: Color = .brownColor
-    @State var interpolationMethod: InterpolationMethod = .linear
-    @Binding var filterDateTime: Date.FormatStyle
-    var strideFilter: Calendar.Component
+    @ObservedObject var statisticVm: StatisticViewModel
     
     var body: some View {
-        Chart(reports){ chartMarker in
-            let baselineMarker = getBaselineMarker(marker: chartMarker)
-            if CompareSelectedMarkerToChartMarker(selectedMarker: selectedReport, chartMarker: chartMarker) && showLollipop {
+        Chart(statisticVm.reports){ chartMarker in
+            PointMark(x: .value("Date", statisticVm.viewedDate), y: .value("test", 100))
+                .opacity(0)
+            let baselineMarker = getBaselineMarker(marker: chartMarker).opacity(1)
+            if CompareSelectedMarkerToChartMarker(selectedMarker: statisticVm.selectedReport, chartMarker: chartMarker) && statisticVm.showLollipop {
                 baselineMarker.symbol() {
-                    Circle().strokeBorder(chartColor, lineWidth: 2).background(Circle().foregroundColor(lollipopColor)).frame(width: 11)
+                    Circle().strokeBorder(statisticVm.chartColor, lineWidth: 2).background(Circle().foregroundColor(statisticVm.lollipopColor)).frame(width: 11)
                 }
             } else {
-                baselineMarker.symbol(Circle().strokeBorder(lineWidth: lineWidth))
+                baselineMarker.symbol(Circle().strokeBorder(lineWidth: statisticVm.lineWidth))
             }
         }
         .chartOverlay { proxy in
@@ -37,17 +31,17 @@ struct FocusChart: View {
                         SpatialTapGesture()
                             .onEnded { value in
                                 let element = findElement(location: value.location, proxy: proxy, geometry: geo)
-                                if selectedReport?.timestamp == element?.timestamp {
+                                if statisticVm.selectedReport?.timestamp == element?.timestamp {
                                     // If tapping the same element, clear the selection.
-                                    selectedReport = nil
+                                    statisticVm.selectedReport = nil
                                 } else {
-                                    selectedReport = element
+                                    statisticVm.selectedReport = element
                                 }
                             }
                             .exclusively(
                                 before: DragGesture()
                                     .onChanged { value in
-                                        selectedReport = findElement(location: value.location, proxy: proxy, geometry: geo)
+                                        statisticVm.selectedReport = findElement(location: value.location, proxy: proxy, geometry: geo)
                                     }
                             )
                     )
@@ -56,8 +50,8 @@ struct FocusChart: View {
         .chartBackground { proxy in
             ZStack(alignment: .topLeading) {
                 GeometryReader { geo in
-                    if showLollipop,
-                       let selectedReport {
+                    if statisticVm.showLollipop,
+                       let selectedReport = statisticVm.selectedReport {
                         let dateInterval = Calendar.current.dateInterval(of: .second, for: selectedReport.timestamp!)!
                         let startPositionX1 = proxy.position(forX: dateInterval.start) ?? 0
                         
@@ -107,35 +101,43 @@ struct FocusChart: View {
         
         .chartXAxis{
             
-            if filterDateTime == .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits) {
+            if statisticVm.filterDateTime == .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits) {
                 
-                AxisMarks(values: reports.first!.timestamp!.hoursOfDay(using: .gregorian)) { data in
-                    if let hour = data.as(Date.self).map({$0.dateComponents([.hour]).hour}) {
-                        if hour! == 0 || hour!%6 == 0 {
-                            AxisValueLabel(format: filterDateTime)
-                                .font(.caption1)
-                                .foregroundStyle(.brownGuide)
+                if let firstReport = statisticVm.reports.first {
+                    AxisMarks(values: firstReport.timestamp!.hoursOfDay(using: .gregorian)) { data in
+                        if let hour = data.as(Date.self).map({$0.dateComponents([.hour]).hour}) {
+                            if hour! == 0 || hour!%6 == 0{
+                                AxisValueLabel(format: statisticVm.filterDateTime)
+                                    .font(.caption1)
+                                    .foregroundStyle(.brownGuide)
+                            }
                         }
                     }
                 }
-            } else if filterDateTime == .dateTime.weekday() {
-                AxisMarks(values: reports.first!.timestamp!.daysOfWeek(using: .gregorian) ) { _ in
-                    AxisValueLabel(format: filterDateTime)
-                        .font(.caption1)
-                        .foregroundStyle(.brownGuide)
+            } else if statisticVm.filterDateTime == .dateTime.weekday() {
+                if let firstReport = statisticVm.reports.first {
+                    AxisMarks(values: firstReport.timestamp!.daysOfWeek(using: .gregorian) ) { _ in
+                        AxisValueLabel(format: statisticVm.filterDateTime)
+                            .font(.caption1)
+                            .foregroundStyle(.brownGuide)
+                    }
                 }
-            } else if filterDateTime == .dateTime.day(){
-                AxisMarks(values: reports.first!.timestamp!.daysOfMonth(using: .gregorian)) { data in
-                    if let day = data.as(Date.self).map({$0.dateComponents([.day]).day}) {
-//                        print(day)
-                        if day! == 1 || day!%7 == 1 {
-                            
-                            AxisValueLabel(format: filterDateTime)
-                                .font(.caption1)
-                                .foregroundStyle(.brownGuide)
+                
+            } else if statisticVm.filterDateTime == .dateTime.day(){
+                if let firstReport = statisticVm.reports.first {
+                    AxisMarks(values: firstReport.timestamp!.daysOfMonth(using: .gregorian)) { data in
+                        if let day = data.as(Date.self).map({$0.dateComponents([.day]).day}) {
+                            //                        print(day)
+                            if day! == 1 || day!%7 == 1 {
+                                
+                                AxisValueLabel(format: statisticVm.filterDateTime)
+                                    .font(.caption1)
+                                    .foregroundStyle(.brownGuide)
+                            }
                         }
                     }
                 }
+                
             }
             
         }
@@ -148,6 +150,7 @@ struct FocusChart: View {
             }
         }
         .frame(maxHeight: 472)
+        
     }
     
     private func getBaselineMarker (marker: Report) -> some ChartContent {
@@ -157,10 +160,10 @@ struct FocusChart: View {
         )
         //        .accessibilityLabel(marker.timestamp!.formatted(date: .complete, time: .omitted))
         //        .accessibilityValue("\(marker.avgAttention) sold")
-        .lineStyle(StrokeStyle(lineWidth: lineWidth))
-        .foregroundStyle(chartColor)
+        .lineStyle(StrokeStyle(lineWidth: statisticVm.lineWidth))
+        .foregroundStyle(statisticVm.chartColor)
         .opacity(0.5)
-        .interpolationMethod(interpolationMethod)
+        .interpolationMethod(statisticVm.interpolationMethod)
         .symbolSize(60)
     }
     private func CompareSelectedMarkerToChartMarker<T: Equatable>(selectedMarker: T, chartMarker: T) -> Bool {
@@ -173,21 +176,22 @@ struct FocusChart: View {
             // Find the closest date element.
             var minDistance: TimeInterval = .infinity
             var index: Int? = nil
-            for salesDataIndex in reports.indices {
-                let nthSalesDataDistance = reports[salesDataIndex].timestamp!.distance(to: date)
+            for salesDataIndex in statisticVm.reports.indices {
+                let nthSalesDataDistance = statisticVm.reports[salesDataIndex].timestamp!.distance(to: date)
                 if abs(nthSalesDataDistance) < minDistance {
                     minDistance = abs(nthSalesDataDistance)
                     index = salesDataIndex
                 }
             }
             if let index {
-                return reports[index]
+                return statisticVm.reports[index]
             }
+            
         }
         return nil
     }
 }
 
 #Preview {
-    FocusChart(reports: [Report](), filterDateTime: .constant(.dateTime.day()), strideFilter: .hour)
+    FocusChart(statisticVm: StatisticViewModel())
 }

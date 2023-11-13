@@ -10,18 +10,21 @@ import Charts
 
 struct StatisticViewSwift: View {
     
-    let calendar = Calendar.current
+    @StateObject var statisticVm = StatisticViewModel()
     
-    @State var reports: [Report] = []
-    
-    @State private var strideFilter: Calendar.Component = .hour
-    @State private var filterDateTime: Date.FormatStyle = .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits)
-    @State private var currentDate = Date()
-    @State private var focusAverage: Double = 0
-    
-    @State private var selectedIndex = 0
+    var viewedRangeProxy: Binding<Int> {
+        Binding<Int>(
+            get: {
+                statisticVm.viewedRange.rawValue
+            },
+            set: {
+                statisticVm.viewedRange = StatisticViewModel.ViewedRangeEnum(rawValue: $0) ?? StatisticViewModel.ViewedRangeEnum.day
+            }
+        )
+    }
     
     @Environment(\.dismiss) private var dismiss
+    
     var body: some View {
         GeometryReader { geo  in
             ZStack {
@@ -44,7 +47,7 @@ struct StatisticViewSwift: View {
                     CustomBoldHeading2(text: AppLabel.statistic)
                         .foregroundStyle(.brown1)
                         .padding(.top, Decimal.double41)
-                    CustomSegmentedControl(preselectedIndex: $selectedIndex, options: AppLabel.statisticOptions)
+                    CustomSegmentedControl(preselectedIndex: viewedRangeProxy, options: AppLabel.statisticOptions)
                         .frame(maxWidth: 540)
                         .foregroundStyle(.brown1)
                         .font(.body2)
@@ -52,29 +55,29 @@ struct StatisticViewSwift: View {
                         .padding(.bottom, 19)
                     VStack {
                         Group {
-                            if selectedIndex == 0 {
+                            if statisticVm.viewedRange == .day {
                                 HStack {
-                                    Text("\(currentDate.dMMMMFormat())")
+                                    Text("\(statisticVm.viewedDate.dMMMMFormat())")
                                         .font(.subHeading2)
                                     Spacer()
-                                    Text("\(AppLabel.focusAvg) \(focusAverage.isNaN ? "\(AppLabel.noFocusValue)" : focusAverage.truncated)")
+                                    Text("\(AppLabel.focusAvg) \(statisticVm.averageFocus()!.isNaN ? "\(AppLabel.noFocusValue)" : statisticVm.averageFocus()!.truncated)")
                                         .font(.subHeading2)
                                 }
                             }
-                            else if selectedIndex == 1 {
+                            else if statisticVm.viewedRange == .week {
                                 HStack {
-                                    Text("\(Date.getWeek(date: currentDate)!.0.dMMMMFormat()) - \(Date.getWeek(date: currentDate)!.1.dMMMMFormat())")
+                                    Text("\(Date.getWeek(date: statisticVm.viewedDate)!.0.dMMMMFormat()) - \(Date.getWeek(date: statisticVm.viewedDate)!.1.dMMMMFormat())")
                                         .font(.subHeading2)
                                     Spacer()
-                                    Text("\(AppLabel.focusAvg) \(focusAverage.isNaN ? "\(AppLabel.noFocusValue)" : focusAverage.truncated)")
+                                    Text("\(AppLabel.focusAvg) \(statisticVm.averageFocus()!.isNaN ? "\(AppLabel.noFocusValue)" : statisticVm.averageFocus()!.truncated)")
                                         .font(.subHeading2)
                                 }
-                            } else if selectedIndex == 2 {
+                            } else if statisticVm.viewedRange == .month {
                                 HStack {
-                                    Text("\(Date.getMonth(date: currentDate)!.0.formatToString("MMMM"))")
+                                    Text("\(Date.getMonth(date: statisticVm.viewedDate)!.0.formatToString("MMMM"))")
                                         .font(.subHeading2)
                                     Spacer()
-                                    Text("\(AppLabel.focusAvg) \(focusAverage.isNaN ? "\(AppLabel.noFocusValue)" : focusAverage.truncated)")
+                                    Text("\(AppLabel.focusAvg) \(statisticVm.averageFocus()!.isNaN ? "\(AppLabel.noFocusValue)" : statisticVm.averageFocus()!.truncated)")
                                         .font(.subHeading2)
                                 }
                             }
@@ -84,44 +87,49 @@ struct StatisticViewSwift: View {
                         .padding(.bottom, 94)
                         .foregroundStyle(.brown1)
                         
-                        
-                        if reports.count == 0 {
-                            // MARK: nanti diganti chart kosong
-                            VStack{
-                                Text(AppLabel.noStatisticText)
-                                    .font(.custom("Jua-Regular", size: 32))
-                                    .foregroundStyle(.brownGuide)
-                                    .padding()
-                            }
-                            .frame(maxHeight: 472)
-                            
+                        if statisticVm.reports.count == 0 {
+                            EmptyChart(statisticVm: self.statisticVm)
+                                .padding(.horizontal, 40)
+                                .padding(.bottom, 20)
                         } else {
-                            FocusChart(reports: self.reports, filterDateTime: $filterDateTime, strideFilter: self.strideFilter)
+                            FocusChart(statisticVm: self.statisticVm)
                                 .padding(.horizontal, 40)
                                 .padding(.bottom, 20)
                         }
+                        
+                        
+                        
                     }
                     .background(in: RoundedRectangle(cornerRadius: 25), fillStyle: FillStyle())
                     .frame(width: 972, height: 442)
                     .gesture(DragGesture()
                         .onEnded({ value in
-                            if selectedIndex == 0 {
+                            if statisticVm.viewedRange == .day {
                                 let threshold: CGFloat = 50
                                 if value.translation.width > threshold {
                                     withAnimation {
-                                        currentDate = calendar.date(byAdding: .day, value: -1, to: currentDate)!
-                                        self.reports = DataController.shared.fetchReportByDay(currentDate)
-                                        self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
+                                        statisticVm.viewedDate = Calendar.current.date(
+                                            byAdding: .day,
+                                            value: -1,
+                                            to: statisticVm.viewedDate
+                                        )!
+                                        statisticVm.reports = DataController.shared.fetchReportByDay(statisticVm.viewedDate)
+                                        statisticVm.selectedReport = nil
+                                        //                                        self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
                                     }
                                 } else if value.translation.width < -threshold {
                                     withAnimation {
-                                        currentDate = calendar.date(byAdding: .day, value: 1, to: currentDate)!
-                                        self.reports = DataController.shared.fetchReportByDay(currentDate)
-                                        self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
+                                        statisticVm.viewedDate = Calendar.current.date(
+                                            byAdding: .day,
+                                            value: 1,
+                                            to: statisticVm.viewedDate
+                                        )!
+                                        statisticVm.reports = DataController.shared.fetchReportByDay(statisticVm.viewedDate)
+                                        statisticVm.selectedReport = nil
+                                        //                                        self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
                                     }
                                 }
                             }
-                            
                         }))
                     AboutCard()
                         .padding(.top, 20)
@@ -132,36 +140,31 @@ struct StatisticViewSwift: View {
             .ignoresSafeArea()
             
         }
-        .onAppear{
-            selectedIndex = 0
-            currentDate = Date()
-            self.reports = DataController.shared.fetchReportByDay(currentDate)
-            self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
-        }
-        .onChange(of: self.selectedIndex, perform: { index in
-            if index == 0 {
+        .onAppear(perform: {
+            statisticVm.reports = DataController.shared.fetchReportByDay(statisticVm.viewedDate)
+        })
+        .onChange(of: statisticVm.viewedRange, perform: { index in
+            statisticVm.selectedReport = nil
+            if index == .day {
                 withAnimation {
-                    self.reports = DataController.shared.fetchReportByDay(currentDate)
-                    self.strideFilter = .hour
-                    self.filterDateTime = .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits)
-                    self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
+                    statisticVm.reports = DataController.shared.fetchReportByDay(statisticVm.viewedDate)
+                    statisticVm.strideFilter = .hour
+                    statisticVm.filterDateTime = .dateTime.hour(.twoDigits(amPM: .omitted)).minute(.twoDigits)
                 }
                 
             }
-            else if index == 1 {
+            else if index == .week {
                 withAnimation {
-                    self.reports = DataController.shared.fetchReportByWeek(currentDate)
-                    self.strideFilter = .day
-                    self.filterDateTime = .dateTime.weekday()
-                    self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
+                    statisticVm.reports = DataController.shared.fetchReportByWeek(statisticVm.viewedDate)
+                    statisticVm.strideFilter = .day
+                    statisticVm.filterDateTime = .dateTime.weekday()
                 }
             }
-            else if index == 2 {
+            else if index == .month {
                 withAnimation {
-                    self.reports = DataController.shared.fetchReportByMonth(currentDate)
-                    self.strideFilter = .day
-                    self.filterDateTime = .dateTime.day()
-                    self.focusAverage = averageFocus(reports: self.reports) ?? 0.0
+                    statisticVm.reports = DataController.shared.fetchReportByMonth(statisticVm.viewedDate)
+                    statisticVm.strideFilter = .day
+                    statisticVm.filterDateTime = .dateTime.day()
                 }
             }
         })
