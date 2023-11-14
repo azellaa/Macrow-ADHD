@@ -31,7 +31,7 @@ struct GameView: View{
                 #if targetEnvironment(simulator)
                 scene = HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), isEndGame: $isEndGame)
                 #else
-                scene = HideAndSeekSceneWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), isEndGame: $isEndGame)
+                scene = HideAndSeekWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), isEndGame: $isEndGame)
                 #endif
             }
         }
