@@ -382,6 +382,7 @@
 		B615D0CD2AFA136F0085EFD9 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				2AEC6E882AFBEFC800DB3194 /* GuideButtonStyle.swift */,
 				B6ED95AB2AF94C2000BEB9B0 /* TextButtonStyle.swift */,
 				B6ED95B42AF9589A00BEB9B0 /* SymbolButtonStyle.swift */,
 				B615D0D12AFA18080085EFD9 /* StatisticElementButtonStyle.swift */,
@@ -712,7 +713,6 @@
 				B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */,
 				B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */,
 				2AEC6E852AFBEF9300DB3194 /* GuideButton.swift */,
-				2AEC6E882AFBEFC800DB3194 /* GuideButtonStyle.swift */,
 			);
 			path = Buttons;
 			sourceTree = "<group>";
