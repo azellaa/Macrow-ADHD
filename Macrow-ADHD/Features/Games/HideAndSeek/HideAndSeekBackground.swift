@@ -8,14 +8,14 @@
 import SpriteKit
 
 class BackgroundHideAndSeek: SKNode {
+    private var land1 = PassThroughBackgroundNode()
+    private var land2 = PassThroughBackgroundNode()
+    private var land3 = PassThroughBackgroundNode()
+    private var land4 = PassThroughBackgroundNode()
     private var background = PassThroughBackgroundNode()
-    private var background1 = PassThroughBackgroundNode()
-    private var background2 = PassThroughBackgroundNode()
-    private var background3 = PassThroughBackgroundNode()
-    private var background4 = PassThroughBackgroundNode()
-    private var bush = PassThroughBackgroundNode()
-    private var bush1 = PassThroughBackgroundNode()
-    private var bush2 = PassThroughBackgroundNode()
+    private var bushLeft = PassThroughBackgroundNode()
+    private var bushRight = PassThroughBackgroundNode()
+    private var bushBack = PassThroughBackgroundNode()
     private var rocks = PassThroughBackgroundNode()
     private var wood = PassThroughBackgroundNode()
     
@@ -30,64 +30,65 @@ class BackgroundHideAndSeek: SKNode {
     }
     
     func addBackground() {
-        background = .init(imageNamed: "Background 1")
-        background.position = CGPoint(x: sceneFrame.width / 2 - 80, y: sceneFrame.height * 0.11)
+        land1 = .init(imageNamed: "Land 1")
+        land1.anchorPoint = CGPoint(x: 0, y: 0)
+        land1.position = CGPoint(x: 0, y: 0)
+        land1.setScale(1)
+        land1.zPosition = 5
+        
+        land2 = .init(imageNamed: "Land 2")
+        land2.position = CGPoint(x: sceneFrame.width / 2, y: land2.frame.height / 2)
+        land2.setScale(1)
+        land2.zPosition = 4
+        
+        land3 = .init(imageNamed: "Land 3")
+        land3.position = CGPoint(x: sceneFrame.width / 2, y: land3.frame.height / 2)
+        land3.setScale(1)
+        land3.zPosition = 2
+        
+        land4 = .init(imageNamed: "Land 4")
+        land4.position = CGPoint(x: sceneFrame.width - (land4.frame.width / 2), y: land4.frame.height / 2)
+        land4.setScale(1)
+        land4.zPosition = 1
+        
+        background = .init(imageNamed: "Background")
+        background.position = CGPoint(x: sceneFrame.width / 2, y: sceneFrame.height / 2)
         background.setScale(1)
-        background.zPosition = 5
+        background.zPosition = 0
         
-        background1 = .init(imageNamed: "Background 2")
-        background1.position = CGPoint(x: sceneFrame.width / 2 + 165, y: sceneFrame.height * 0.12)
-        background1.setScale(1)
-        background1.zPosition = 4
+        bushLeft = .init(imageNamed: "Bush Left")
+        bushLeft.position = CGPoint(x: bushLeft.frame.width / 2, y: bushLeft.frame.height / 2)
+        bushLeft.setScale(1)
+        bushLeft.zPosition = 7
         
-        background2 = .init(imageNamed: "Background 3")
-        background2.position = CGPoint(x: sceneFrame.width / 2 - 5, y: sceneFrame.height * 0.44)
-        background2.setScale(1)
-        background2.zPosition = 2
+        bushRight = .init(imageNamed: "Bush Right")
+        bushRight.position = CGPoint(x: sceneFrame.width - (bushRight.frame.width / 2), y: bushRight.frame.height / 2)
+        bushRight.setScale(1)
+        bushRight.zPosition = 6
         
-        background3 = .init(imageNamed: "Background 4")
-        background3.position = CGPoint(x: sceneFrame.width * 0.622, y: sceneFrame.height * 0.32)
-        background3.setScale(1)
-        background3.zPosition = 1
-        
-        background4 = .init(imageNamed: "Background 5")
-        background4.position = CGPoint(x: sceneFrame.width / 2, y: sceneFrame.height / 2)
-        background4.setScale(1)
-        background4.zPosition = 0
-        
-        bush = .init(imageNamed: "Bush 1")
-        bush.position = CGPoint(x: sceneFrame.width * 0.1, y: sceneFrame.height * 0.12)
-        bush.setScale(1)
-        bush.zPosition = 7
-        
-        bush1 = .init(imageNamed: "Bush 2")
-        bush1.position = CGPoint(x: sceneFrame.width * 0.83, y: sceneFrame.height * 0.11)
-        bush1.setScale(1)
-        bush1.zPosition = 6
-        
-        bush2 = .init(imageNamed: "Bush 3")
-        bush2.position = CGPoint(x: sceneFrame.width * 0.41, y: sceneFrame.height * 0.23)
-        bush2.setScale(1)
-        bush2.zPosition = 4
+        bushBack = .init(imageNamed: "Bush Back")
+        bushBack.position = CGPoint(x: sceneFrame.width * 0.418, y: sceneFrame.height * 0.245)
+        bushBack.setScale(1)
+        bushBack.zPosition = 4
         
         wood = .init(imageNamed: "Wood Log")
-        wood.position = CGPoint(x: sceneFrame.width * 0.64, y: sceneFrame.height * 0.17)
+        wood.position = CGPoint(x: sceneFrame.width * 0.66, y: sceneFrame.height * 0.16)
         wood.setScale(1)
         wood.zPosition = 5
         
         rocks = .init(imageNamed: "Rocks")
-        rocks.position = CGPoint(x: sceneFrame.width * 0.27 , y: sceneFrame.height * 0.18)
+        rocks.position = CGPoint(x: sceneFrame.width * 0.272 , y: sceneFrame.height * 0.171)
         rocks.setScale(1)
         rocks.zPosition = 6
         
+        addChild(land1)
+        addChild(land2)
+        addChild(land3)
+        addChild(land4)
         addChild(background)
-        addChild(background1)
-        addChild(background2)
-        addChild(background3)
-        addChild(background4)
-        addChild(bush)
-        addChild(bush1)
-        addChild(bush2)
+        addChild(bushLeft)
+        addChild(bushRight)
+        addChild(bushBack)
         addChild(wood)
         addChild(rocks)
     }

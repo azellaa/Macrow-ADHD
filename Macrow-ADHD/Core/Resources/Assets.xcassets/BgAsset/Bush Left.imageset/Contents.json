@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "Logs.png",
+      "filename" : "Bush Left.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "Logs@2x.png",
+      "filename" : "Bush Left@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "Logs@3x.png",
+      "filename" : "Bush Left@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
