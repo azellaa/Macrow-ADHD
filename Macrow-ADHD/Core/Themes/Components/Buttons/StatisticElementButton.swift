@@ -11,8 +11,9 @@ struct StatisticElementButton: View {
     var isActive: Bool = false
     let leftText: String
     let rightText: String
+    let action: () -> Void
     var body: some View {
-        Button(action: {}, label: {
+        Button(action: self.action, label: {
             HStack(content: {
                 Text(leftText)
                 Spacer()
@@ -26,5 +27,5 @@ struct StatisticElementButton: View {
 }
 
 #Preview {
-    StatisticElementButton(leftText: "Rabbit Count", rightText: "12")
+    StatisticElementButton(leftText: "Rabbit Count", rightText: "12", action: {})
 }

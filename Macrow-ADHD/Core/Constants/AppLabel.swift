@@ -51,6 +51,13 @@ extension AppLabel {
 extension AppLabel {
     struct StatisticView {
         static let aboutText = "About:\nThis visualization shows data captured by the Neurosky device during gameplay, tracking the child's focus level over time. Monitoring focus and providing session details, also give a deeper understanding of what influences the child's concentration." 
+        static let rabbitCount = "Rabbit Count"
+        static let foxCount = "Fox Count"
+        static let pauseCount = "Pause Count"
+        static let accumulation = "Accumulation"
+        static let highestFocus = "Highest Focus"
+        static let lowestFocus = "Lowest Focus"
+        static let averageFocus = "Average Focus"
     }
 }
 // MARK: Guide view

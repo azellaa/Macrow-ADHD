@@ -14,13 +14,6 @@ struct GuideView: View {
     @State private var selectedButton: GuideButtonType = .notConnected
     @State private var isDeviceTutorialActive = false
     
-    
-    @State private var notConnectedButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
-    @State private var connecting1ButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
-    @State private var connecting2ButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
-    @State private var connecting3ButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
-    @State private var connectedButtonStyle: GuideButtonStyle.GuideButtonStyleEnum = .darkBrown
-    
     @State private var imageName = ResourcePath.notConnected
     
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
@@ -130,9 +123,7 @@ struct GuideView: View {
                         }
                         .zIndex(1)
                         .padding(.leading, geo.size.width * 0.09)
-                        
                     }
-                    
                 }
             }
             

@@ -21,9 +21,12 @@ struct Decimal: Constants {
     static let double24 = 24.0
     static let double28 = 28.0
     static let double32 = 32.0
+    static let double36 = 36.0
     static let double40 = 40.0
     static let double41 = 41.0
+    static let double48 = 48.0
     static let double60 = 60.0
+    static let double64 = 64.0
     static let double72 = 72.0
     static let double80 = 80.0
     static let double86 = 86.0
