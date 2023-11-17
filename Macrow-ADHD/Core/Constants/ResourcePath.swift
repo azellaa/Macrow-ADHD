@@ -94,6 +94,5 @@ extension ResourcePath {
         static let bushBack = "Bush Back"
         static let rocks = "Rocks"
         static let wood = "Wood Log"
-        
     }
 }
