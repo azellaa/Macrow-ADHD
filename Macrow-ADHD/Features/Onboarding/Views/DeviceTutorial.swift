@@ -39,7 +39,8 @@ struct DeviceTutorial: View {
                             SymbolButton(type: .close, buttonStyle: .brown, action: {
                                 presentationMode.wrappedValue.dismiss()
                             })
-                            .opacity(100)
+                            //MARK: workaround for hiding back button on onboarding
+                            .opacity(opacity)
                             .padding(.horizontal)
                             Spacer()
                                 
