@@ -92,7 +92,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         addNodes()
         
-        bg.getSceneFrame(sceneFrame: frame)
+        bg.getSceneFrame(sceneFrame: self.frame)
         bg.addBackground()
         addChild(bg)
         

@@ -80,3 +80,20 @@ extension ResourcePath {
         static let onCream = "On, Cream"
     }
 }
+
+//MARK: - HideAndSeekBackground
+extension ResourcePath {
+    struct HideAndSeekBackground {
+        static let land1 = "Land 1"
+        static let land2 = "Land 2"
+        static let land3 = "Land 3"
+        static let land4 = "Land 4"
+        static let background = "Background"
+        static let bushLeft = "Bush Left"
+        static let bushRight = "Bush Right"
+        static let bushBack = "Bush Back"
+        static let rocks = "Rocks"
+        static let wood = "Wood Log"
+        
+    }
+}
