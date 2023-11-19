@@ -96,3 +96,12 @@ extension ResourcePath {
         static let wood = "Wood Log"
     }
 }
+
+extension ResourcePath {
+    struct SoundEffect {
+        static let buttonSound = "Button Sound"
+        static let gainStarSound = "Gain Star Sound"
+        static let loseStarSound = "Lose Star Sound"
+
+    }
+}

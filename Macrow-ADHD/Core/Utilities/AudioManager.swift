@@ -34,7 +34,7 @@ class AudioManager {
     }
     
     func playSoundEffect(fileName: String) {
-        guard let url = Bundle.main.url(forResource: fileName, withExtension: "wav") else {
+        guard let url = Bundle.main.url(forResource: fileName, withExtension: "mp3") else {
             print("Sound effect file not found.")
             return
         }

@@ -13,7 +13,10 @@ struct StatisticElementButton: View {
     let rightText: String
     let action: () -> Void
     var body: some View {
-        Button(action: self.action, label: {
+        Button(action: {
+            self.action()
+            AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.buttonSound)
+        }, label: {
             HStack(content: {
                 Text(leftText)
                 Spacer()

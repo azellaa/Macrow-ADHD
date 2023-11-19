@@ -34,6 +34,12 @@
 		26F4FBEB2AF3765600F31E68 /* AnimalTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */; };
 		26F4FBEC2AF3766000F31E68 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649292F2AF209C100570802 /* SplashScreen.swift */; };
 		26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
+		2A440FC22B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */; };
+		2A440FC32B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */; };
+		2A440FC42B0A7AEF0023270D /* Button Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */; };
+		2A440FC52B0A7AEF0023270D /* Button Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */; };
+		2A440FC62B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */; };
+		2A440FC72B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
 		2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
 		2AEC6E832AFBD23100DB3194 /* GuideItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */; };
@@ -187,6 +193,9 @@
 		26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElementTutorial.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		26FF33D32AF10E9C00944F48 /* TouchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchButton.swift; sourceTree = "<group>"; };
+		2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lose Star Sound.mp3"; sourceTree = "<group>"; };
+		2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Button Sound.mp3"; sourceTree = "<group>"; };
+		2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Gain Star Sound.mp3"; sourceTree = "<group>"; };
 		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTutorial.swift; sourceTree = "<group>"; };
 		2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideItemView.swift; sourceTree = "<group>"; };
@@ -283,6 +292,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A440FBE2B0A7A9C0023270D /* Sound Effect */ = {
+			isa = PBXGroup;
+			children = (
+				2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */,
+				2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */,
+				2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */,
+			);
+			path = "Sound Effect";
+			sourceTree = "<group>";
+		};
 		3D2B49852ACBD2C000DA8827 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +461,7 @@
 		B6257E6E2AF8966E004C2F0D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A440FBE2B0A7A9C0023270D /* Sound Effect */,
 				B64929642AF20FD200570802 /* Assets.xcassets */,
 				B64F1B442AF3BE2F00AB80D4 /* BGM */,
 				B61C40442ACF0AB3007CCC72 /* Fonts */,
@@ -827,11 +847,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A440FC22B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */,
 				B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */,
 				B624CC622AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
+				2A440FC62B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */,
 				B64F1B462AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */,
 				B64929652AF20FD200570802 /* Assets.xcassets in Resources */,
 				3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */,
+				2A440FC42B0A7AEF0023270D /* Button Sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,10 +862,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A440FC32B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */,
 				B624CC632AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
 				B64F1B472AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */,
 				B64929662AF20FD200570802 /* Assets.xcassets in Resources */,
 				B64929452AF20D1D00570802 /* Jua-Regular.ttf in Resources */,
+				2A440FC72B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */,
+				2A440FC52B0A7AEF0023270D /* Button Sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
