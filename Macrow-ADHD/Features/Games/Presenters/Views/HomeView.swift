@@ -132,7 +132,6 @@ struct HomeView: View {
             }
         }
         .onChange(of: centralManager.isBluetoothOn) { isBluetoothOn in
-            
             if isBluetoothOn && !mwmObject.isConnected{
                 print(isBluetoothOn)
                 mwmObject.mwmDevice?.scanDevice()
@@ -140,6 +139,9 @@ struct HomeView: View {
         }
         .onAppear{
             mwmObject.mwmDevice?.scanDevice()
+            #if targetEnvironment(simulator)
+            mwmObject.eSense()
+            #endif
         }
         .navigationBarBackButtonHidden(true)
         

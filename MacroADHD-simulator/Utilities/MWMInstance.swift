@@ -22,7 +22,7 @@ class MWMInstance: NSObject, ObservableObject {
     public var mfgID: String = ""
     public var deviceID: String = ""
     
-    var isConnected = false
+    var isConnected = true
     
     func deviceFound(_ devName: String!, mfgID: String!, deviceID: String!) {
 //        scannedDeviceDataSubject.send(scannedDevice)
@@ -35,8 +35,7 @@ class MWMInstance: NSObject, ObservableObject {
     
     func didConnect() {
         print("didConnect");
-//        scannedDevice.removeAll()
-//        self.mwmDevice?.enableLogging(withOptions: 1)
+        self.isConnected = true
         mwmDevice?.stopScanDevice()
         signalStatusSubject.send(1)
     }
@@ -47,25 +46,30 @@ class MWMInstance: NSObject, ObservableObject {
 //        mwmDevice?.scanDevice()
     }
     
-    func eSense(_ poorSignal: Int32, attention: Int32, meditation: Int32) {
-        let updatedData = MWMData(
-            poorSignal: poorSignal,
-            attention: attention,
-            meditation: meditation
-        )
-        switch updatedData.poorSignal {
-            case 133...199:
-            signalStatusSubject.send(1)
-            case 67...132:
-            signalStatusSubject.send(2)
-            case 1...66:
-            signalStatusSubject.send(3)
-            case 0:
-            signalStatusSubject.send(4)
-            default:
-            signalStatusSubject.send(0)
-            }
-        mwmDataSubject.send(updatedData)
+    func eSense() {
+        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] _ in
+            let updatedData = MWMData(
+                poorSignal: 0,
+                attention: Int32(Int.random(in: 0...100)),
+                meditation: 0
+            )
+            print(updatedData)
+            switch updatedData.poorSignal {
+                case 133...199:
+                signalStatusSubject.send(1)
+                case 67...132:
+                signalStatusSubject.send(2)
+                case 1...66:
+                signalStatusSubject.send(3)
+                case 0:
+                signalStatusSubject.send(4)
+                default:
+                signalStatusSubject.send(0)
+                }
+            mwmDataSubject.send(updatedData)
+        }
+        
+        
     }
     var mwmDataPublisher: AnyPublisher<MWMData, Never> {
         return mwmDataSubject.eraseToAnyPublisher()
@@ -74,18 +78,7 @@ class MWMInstance: NSObject, ObservableObject {
     var signalStatusPublisher: AnyPublisher<Int, Never> {
         return signalStatusSubject.eraseToAnyPublisher()
     }
-    
-//    var scannedMwmPublisher: AnyPublisher<Set<MWMModel>, Never> {
-//        return scannedDeviceDataSubject.eraseToAnyPublisher()
-//    }
-    
-    
-    
-//    func exceptionMessage(_ eventType: TGBleExceptionEvent) {
-//        print("Error: \(eventType.rawValue) ")
-//    }
-    
-    
+
 }
 
 class MWMData: ObservableObject {

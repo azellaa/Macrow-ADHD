@@ -14,7 +14,6 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     public var mwmDevice = MWMDevice.sharedInstance()
     
     private var mwmDataSubject = PassthroughSubject<MWMData, Never>()
-//    private var scannedDeviceDataSubject = PassthroughSubject<Set<MWMModel>, Never>()
     private var signalStatusSubject = PassthroughSubject<Int, Never>()
     
     public static let shared = MWMInstance()
@@ -30,7 +29,6 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
         mwmDevice?.delegate = self
     }
     func deviceFound(_ devName: String!, mfgID: String!, deviceID: String!) {
-//        scannedDeviceDataSubject.send(scannedDevice)
         mwmDevice?.connect(deviceID)
         
         self.devName = devName
@@ -41,7 +39,6 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     func didConnect() {
         print("didConnect");
         isConnected = true
-//        scannedDevice.removeAll()
         mwmDevice?.stopScanDevice()
         signalStatusSubject.send(1)
     }
