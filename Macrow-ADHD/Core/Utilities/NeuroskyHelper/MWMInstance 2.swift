@@ -1,17 +1,17 @@
 //
 //  MWMInstance.swift
-//  MacroADHD-simulator
+//  Macrow-ADHD
 //
-//  Created by Gregorius Yuristama Nugraha on 10/25/23.
+//  Created by Gregorius Yuristama Nugraha on 10/3/23.
 //
 
 import Foundation
 import Combine
 
-class MWMInstance: NSObject, ObservableObject {
+class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     
     
-    public var mwmDevice: MWMDevice? = MWMDevice.shared
+    public var mwmDevice = MWMDevice.sharedInstance()
     
     private var mwmDataSubject = PassthroughSubject<MWMData, Never>()
     private var signalStatusSubject = PassthroughSubject<Int, Never>()
@@ -22,10 +22,13 @@ class MWMInstance: NSObject, ObservableObject {
     public var mfgID: String = ""
     public var deviceID: String = ""
     
-    var isConnected = true
+    public var isConnected: Bool = false
     
+    override init() {
+        super.init()
+        mwmDevice?.delegate = self
+    }
     func deviceFound(_ devName: String!, mfgID: String!, deviceID: String!) {
-//        scannedDeviceDataSubject.send(scannedDevice)
         mwmDevice?.connect(deviceID)
         
         self.devName = devName
@@ -35,41 +38,35 @@ class MWMInstance: NSObject, ObservableObject {
     
     func didConnect() {
         print("didConnect");
-        self.isConnected = true
+        isConnected = true
         mwmDevice?.stopScanDevice()
         signalStatusSubject.send(1)
     }
     
     func didDisconnect() {
         signalStatusSubject.send(0)
+        isConnected = false
         print("didDisconnect");
-//        mwmDevice?.scanDevice()
+        mwmDevice?.scanDevice()
     }
     
-    func eSense() {
-        Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] _ in
-            let updatedData = MWMData(
-                poorSignal: 0,
-                attention: Int32(Int.random(in: 0...30)),
-                meditation: 0
-            )
-            print(updatedData)
-            switch updatedData.poorSignal {
-                case 133...199:
-                signalStatusSubject.send(1)
-                case 67...132:
-                signalStatusSubject.send(2)
-                case 1...66:
-                signalStatusSubject.send(3)
-                case 0:
-                signalStatusSubject.send(4)
-                default:
-                signalStatusSubject.send(0)
-                }
-            mwmDataSubject.send(updatedData)
-        }
-        
-        
+    func eSense(_ poorSignal: Int32, attention: Int32, meditation: Int32) {
+        let updatedData = MWMData(
+            poorSignal: poorSignal,
+            attention: attention,
+            meditation: meditation
+        )
+        switch updatedData.poorSignal {
+            case 133...200:
+            signalStatusSubject.send(1)
+            case 67...132:
+            signalStatusSubject.send(2)
+            case 1...66:
+            signalStatusSubject.send(3)
+            default:
+            signalStatusSubject.send(4)
+            }
+        mwmDataSubject.send(updatedData)
     }
     var mwmDataPublisher: AnyPublisher<MWMData, Never> {
         return mwmDataSubject.eraseToAnyPublisher()
@@ -78,7 +75,12 @@ class MWMInstance: NSObject, ObservableObject {
     var signalStatusPublisher: AnyPublisher<Int, Never> {
         return signalStatusSubject.eraseToAnyPublisher()
     }
-
+    
+    func exceptionMessage(_ eventType: TGBleExceptionEvent) {
+        print("Error: \(eventType.rawValue) ")
+    }
+    
+    
 }
 
 class MWMData: ObservableObject {
