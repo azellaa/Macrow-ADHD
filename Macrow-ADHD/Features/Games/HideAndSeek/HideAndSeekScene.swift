@@ -155,7 +155,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             self?.spawnNextEntity()
         }
         
-        if randomValue <= hideAndSeekLevel.levelModel.rabbitRatio {
+        if randomValue <= hideAndSeekLevel.levelModel.rabbitRatio{
             // Spawn a rabbit
             guard let randomRabbit = rabbitPos.randomElement() else { return }
             self.rabbit = .init(imageNamed: randomRabbit.textureName)
@@ -239,18 +239,18 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func addRabbitPosition() {
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.1 , y: -size.height * 0.13),  scale: 1 * 0.826, zIndex: 6))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.075 , y: -size.height * 0.12),  scale: 1 * 0.826, zIndex: 6))
         rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.28 , y: size.height * 0.06), scale: 0.6 * 0.826, zIndex: 3))
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.42 , y: size.height * 0.08), scale: 0.7 * 0.826, zIndex: 3))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.4307 , y: size.height * 0.135), scale: 0.54 * 0.826, zIndex: 3))
         rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.65 , y: size.height * 0.02), scale: 0.8 * 0.826, zIndex: 3))
         rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.93 , y: -size.height * 0.08), scale: 1 * 0.826, zIndex: 5))
     }
     
     func addFoxPosition() {
-        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.08 , y: -size.height * 0.16 ), scale: 1 * 0.7, zIndex: 6))
+        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.073 , y: -size.height * 0.1 ), scale: 0.7 * 0.7, zIndex: 6))
         foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.268 , y: size.height * 0.01 ), scale: 0.6 * 0.7, zIndex: 3))
-        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.42 , y: size.height * 0.03  ), scale: 0.7 * 0.7, zIndex: 3))
-        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.65 , y: size.height * 0.01), scale: 0.8 * 0.7, zIndex: 3))
+        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.431 , y: size.height * 0.15 ), scale: 0.45 * 0.7, zIndex: 3))//ini
+        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.65 , y: size.height * 0.01), scale: 0.7 * 0.7, zIndex: 3))
         foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.92 , y: -size.height * 0.15 ), scale: 1 * 0.7, zIndex: 5))
     }
     
