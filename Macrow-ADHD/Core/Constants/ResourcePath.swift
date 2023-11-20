@@ -96,3 +96,18 @@ extension ResourcePath {
         static let wood = "Wood Log"
     }
 }
+
+//MARK: HideAndSeekScene
+extension ResourcePath {
+    struct HideAndSeekScene {
+        static let rabbitTap = "Rabbit_Tap"
+        static let rabbitHide = "Rabbit_Hide"
+        static let foxSeek = "Fox_Seek"
+        static let foxTap = "Fox_Tap"
+        static let disconnectedPopUp = "disconnectedPopUp"
+        
+        struct Sounds {
+            static let backgroundMusic = "Jungle Song"
+        }
+    }
+}
