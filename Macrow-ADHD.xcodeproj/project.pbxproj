@@ -60,7 +60,6 @@
 		5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5491B13A2AE5C351004986A0 /* CentralManager.swift */; };
 		54A4217A2AE25E4200C51A6C /* AnimalTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */; };
 		54F6B0F32AE5B1F6003D874D /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */; };
-		54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54F6B0F22AE5B1F6003D874D /* MWMModel.swift */; };
 		B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */; };
 		B60B5B0F2AFDE6EE00C96689 /* Calendar+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B5B0E2AFDE6EE00C96689 /* Calendar+extension.swift */; };
 		B60B5B102AFDE6EE00C96689 /* Calendar+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B60B5B0E2AFDE6EE00C96689 /* Calendar+extension.swift */; };
@@ -154,7 +153,6 @@
 		B6B4D6A42B01804D006BE6C2 /* EmptyChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D6A32B01804D006BE6C2 /* EmptyChart.swift */; };
 		B6B4D6A52B01804D006BE6C2 /* EmptyChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D6A32B01804D006BE6C2 /* EmptyChart.swift */; };
 		B6D1C9622AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */; };
-		B6D1C9CB2AE83DF1003B4331 /* MWMModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9C92AE83DF1003B4331 /* MWMModel.swift */; };
 		B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9CA2AE83DF1003B4331 /* MWMInstance.swift */; };
 		B6D1C9CE2AE83E59003B4331 /* MWMDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9CD2AE83E59003B4331 /* MWMDevice.swift */; };
 		B6ED95A82AF9412C00BEB9B0 /* CustomBoldHeading2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95A72AF9412C00BEB9B0 /* CustomBoldHeading2.swift */; };
@@ -211,7 +209,6 @@
 		5491B13A2AE5C351004986A0 /* CentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManager.swift; sourceTree = "<group>"; };
 		54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeEnum.swift; sourceTree = "<group>"; };
 		54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
-		54F6B0F22AE5B1F6003D874D /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMModel.swift; sourceTree = "<group>"; };
 		B60864952AE62AE600424FCA /* MacroADHD-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacroADHD-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroADHD_simulatorApp.swift; sourceTree = "<group>"; };
 		B60B5B0E2AFDE6EE00C96689 /* Calendar+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+extension.swift"; sourceTree = "<group>"; };
@@ -256,7 +253,6 @@
 		B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMWMSDK.a; sourceTree = "<group>"; };
 		B6BFD4732AE139E400D3AAB1 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
 		B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideAndSeekWithHeadpiece.swift; sourceTree = "<group>"; };
-		B6D1C9C92AE83DF1003B4331 /* MWMModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MWMModel.swift; path = "MacroADHD-simulator/Utilities/MWMModel.swift"; sourceTree = SOURCE_ROOT; };
 		B6D1C9CA2AE83DF1003B4331 /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MWMInstance.swift; path = "MacroADHD-simulator/Utilities/MWMInstance.swift"; sourceTree = SOURCE_ROOT; };
 		B6D1C9CD2AE83E59003B4331 /* MWMDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MWMDevice.swift; path = "MacroADHD-simulator/Utilities/MWMDevice.swift"; sourceTree = SOURCE_ROOT; };
 		B6ED95A72AF9412C00BEB9B0 /* CustomBoldHeading2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBoldHeading2.swift; sourceTree = "<group>"; };
@@ -368,7 +364,6 @@
 			isa = PBXGroup;
 			children = (
 				54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */,
-				54F6B0F22AE5B1F6003D874D /* MWMModel.swift */,
 			);
 			path = NeuroskyHelper;
 			sourceTree = "<group>";
@@ -704,7 +699,6 @@
 			children = (
 				B6D1C9CD2AE83E59003B4331 /* MWMDevice.swift */,
 				B6D1C9CA2AE83DF1003B4331 /* MWMInstance.swift */,
-				B6D1C9C92AE83DF1003B4331 /* MWMModel.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -875,7 +869,6 @@
 				B6ED95AC2AF94C2000BEB9B0 /* TextButtonStyle.swift in Sources */,
 				26ECF09D2AE0CC71005F06E1 /* GameInfo.swift in Sources */,
 				B616ADE32AF16CD600FC5DBE /* Double+extension.swift in Sources */,
-				54F6B0F42AE5B1F6003D874D /* MWMModel.swift in Sources */,
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
 				B6257E862AF8FB45004C2F0D /* Decimal.swift in Sources */,
 				2AEC6E892AFBEFC800DB3194 /* GuideButtonStyle.swift in Sources */,
@@ -993,7 +986,6 @@
 				B64929402AF20D0B00570802 /* Hide&SeekIntroduction.swift in Sources */,
 				26F4FBE52AF3761C00F31E68 /* HideAndSeekBackground.swift in Sources */,
 				B64929522AF20D4300570802 /* CentralManager.swift in Sources */,
-				B6D1C9CB2AE83DF1003B4331 /* MWMModel.swift in Sources */,
 				B6F2EB542B0275F9003950D2 /* EmptySessionChart.swift in Sources */,
 				B60864982AE62AE600424FCA /* MacroADHD_simulatorApp.swift in Sources */,
 				B64929352AF20D0B00570802 /* HomeItemView.swift in Sources */,
