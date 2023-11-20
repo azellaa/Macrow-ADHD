@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		265BFE4E2B0B51B6007CB721 /* GameInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BFE4D2B0B51B6007CB721 /* GameInfoLabel.swift */; };
+		265BFE4F2B0B51F7007CB721 /* GameInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BFE4D2B0B51B6007CB721 /* GameInfoLabel.swift */; };
 		2684988E2AFA4A5A0057C8D1 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684988D2AFA4A5A0057C8D1 /* NavigationUtil.swift */; };
 		2684988F2AFA4A960057C8D1 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684988D2AFA4A5A0057C8D1 /* NavigationUtil.swift */; };
 		268DE2442ADF756C0097E3F2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268DE2432ADF756C0097E3F2 /* HomeView.swift */; };
@@ -177,6 +179,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		265BFE4D2B0B51B6007CB721 /* GameInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoLabel.swift; sourceTree = "<group>"; };
 		2684988D2AFA4A5A0057C8D1 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		268DE2432ADF756C0097E3F2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		268DE2452ADF786B0097E3F2 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -613,6 +616,7 @@
 				B6257E812AF8FB2C004C2F0D /* AppLabel.swift */,
 				B6257E852AF8FB45004C2F0D /* Decimal.swift */,
 				B6257E8E2AF907C3004C2F0D /* ResourcePath.swift */,
+				265BFE4D2B0B51B6007CB721 /* GameInfoLabel.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -899,6 +903,7 @@
 				B616ADE32AF16CD600FC5DBE /* Double+extension.swift in Sources */,
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
 				B6257E862AF8FB45004C2F0D /* Decimal.swift in Sources */,
+				265BFE4E2B0B51B6007CB721 /* GameInfoLabel.swift in Sources */,
 				2AEC6E892AFBEFC800DB3194 /* GuideButtonStyle.swift in Sources */,
 				542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */,
 				B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */,
@@ -1032,6 +1037,7 @@
 				B657430E2B037AEB006E390A /* SubheadingIntroductionText.swift in Sources */,
 				26F4FBEB2AF3765600F31E68 /* AnimalTypeEnum.swift in Sources */,
 				B615D0D62AFA20CC0085EFD9 /* StatisticElementButton.swift in Sources */,
+				265BFE4F2B0B51F7007CB721 /* GameInfoLabel.swift in Sources */,
 				B649294C2AF20D3300570802 /* Report+GetFocusPause.swift in Sources */,
 				B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */,
 				3D5330502AFA241B00300AF0 /* DisconnectedOverlay.swift in Sources */,
