@@ -374,6 +374,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 if rabbit.contains(location) {
                     // Change texture for the rabbit
                     rabbit.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.rabbitTap)
+                    AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.gainStarSound)
+
                     rabbit.removeAllActions()
                     rabbitCount += 1
                     
@@ -393,6 +395,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 if fox.contains(location) {
                     // Change texture for the fox
                     fox.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.foxTap)
+                    AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.loseStarSound)
                     fox.removeAllActions()
                     if rabbitCount - 1 <= 0 {
                         rabbitCount = 0

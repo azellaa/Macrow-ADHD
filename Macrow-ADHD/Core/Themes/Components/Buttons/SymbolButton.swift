@@ -17,7 +17,9 @@ struct SymbolButton: View {
         self.buttonStyle = buttonStyle
     }
     var body: some View {
-        Button(action: self.action, label: {
+        Button(action: {
+            self.action()
+        }, label: {
             switch self.type {
             case .back:
                 Image(ResourcePath.backWhite)

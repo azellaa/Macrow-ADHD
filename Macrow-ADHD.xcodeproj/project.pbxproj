@@ -34,8 +34,17 @@
 		26F4FBEB2AF3765600F31E68 /* AnimalTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */; };
 		26F4FBEC2AF3766000F31E68 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649292F2AF209C100570802 /* SplashScreen.swift */; };
 		26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
+		2A440FC22B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */; };
+		2A440FC32B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */; };
+		2A440FC42B0A7AEF0023270D /* Button Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */; };
+		2A440FC52B0A7AEF0023270D /* Button Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */; };
+		2A440FC62B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */; };
+		2A440FC72B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */; };
+		2A440FC92B0A90EE0023270D /* CustomBoldHeading1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A440FC82B0A90EE0023270D /* CustomBoldHeading1.swift */; };
+		2A440FCA2B0A90EE0023270D /* CustomBoldHeading1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A440FC82B0A90EE0023270D /* CustomBoldHeading1.swift */; };
+		2A440FCC2B0B0B3B0023270D /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A440FCB2B0B0B3B0023270D /* DeviceTutorial.swift */; };
+		2A440FCD2B0B0B3B0023270D /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A440FCB2B0B0B3B0023270D /* DeviceTutorial.swift */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
-		2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
 		2AEC6E832AFBD23100DB3194 /* GuideItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */; };
 		2AEC6E842AFBD23100DB3194 /* GuideItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */; };
 		2AEC6E862AFBEF9400DB3194 /* GuideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E852AFBEF9300DB3194 /* GuideButton.swift */; };
@@ -134,7 +143,6 @@
 		B64F1B382AF30D6600AB80D4 /* ScreenCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F1B372AF30D6600AB80D4 /* ScreenCapture.swift */; };
 		B64F1B392AF30D6600AB80D4 /* ScreenCapture.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F1B372AF30D6600AB80D4 /* ScreenCapture.swift */; };
 		B64F1B3C2AF38A0500AB80D4 /* ReportUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */; };
-		B64F1B3D2AF38A4400AB80D4 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
 		B64F1B462AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B64F1B452AF3BE4200AB80D4 /* Jungle Song.mp3 */; };
 		B64F1B472AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B64F1B452AF3BE4200AB80D4 /* Jungle Song.mp3 */; };
 		B64F1B492AF3BE9100AB80D4 /* AudioManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B64F1B482AF3BE9100AB80D4 /* AudioManager.swift */; };
@@ -187,8 +195,12 @@
 		26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElementTutorial.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		26FF33D32AF10E9C00944F48 /* TouchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchButton.swift; sourceTree = "<group>"; };
+		2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lose Star Sound.mp3"; sourceTree = "<group>"; };
+		2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Button Sound.mp3"; sourceTree = "<group>"; };
+		2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Gain Star Sound.mp3"; sourceTree = "<group>"; };
+		2A440FC82B0A90EE0023270D /* CustomBoldHeading1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBoldHeading1.swift; sourceTree = "<group>"; };
+		2A440FCB2B0B0B3B0023270D /* DeviceTutorial.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DeviceTutorial.swift; path = "Macrow-ADHD/Features/Onboarding/Views/DeviceTutorial.swift"; sourceTree = SOURCE_ROOT; };
 		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
-		2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTutorial.swift; sourceTree = "<group>"; };
 		2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideItemView.swift; sourceTree = "<group>"; };
 		2AEC6E852AFBEF9300DB3194 /* GuideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideButton.swift; sourceTree = "<group>"; };
 		2AEC6E882AFBEFC800DB3194 /* GuideButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideButtonStyle.swift; sourceTree = "<group>"; };
@@ -282,6 +294,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2A440FBE2B0A7A9C0023270D /* Sound Effect */ = {
+			isa = PBXGroup;
+			children = (
+				2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */,
+				2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */,
+				2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */,
+			);
+			path = "Sound Effect";
+			sourceTree = "<group>";
+		};
+		2A440FCE2B0B0B4B0023270D /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				2A440FCF2B0B0B5B0023270D /* Views */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		2A440FCF2B0B0B5B0023270D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				2A440FCB2B0B0B3B0023270D /* DeviceTutorial.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		3D2B49852ACBD2C000DA8827 /* Data */ = {
 			isa = PBXGroup;
 			children = (
@@ -430,7 +468,7 @@
 		B6257E6D2AF8957C004C2F0D /* Features */ = {
 			isa = PBXGroup;
 			children = (
-				B6ED95BA2AF9674B00BEB9B0 /* Onboarding */,
+				2A440FCE2B0B0B4B0023270D /* Onboarding */,
 				B6257E702AF8975C004C2F0D /* Games */,
 				B6257E6F2AF8971A004C2F0D /* Statistic */,
 			);
@@ -440,6 +478,7 @@
 		B6257E6E2AF8966E004C2F0D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2A440FBE2B0A7A9C0023270D /* Sound Effect */,
 				B64929642AF20FD200570802 /* Assets.xcassets */,
 				B64F1B442AF3BE2F00AB80D4 /* BGM */,
 				B61C40442ACF0AB3007CCC72 /* Fonts */,
@@ -707,6 +746,7 @@
 			isa = PBXGroup;
 			children = (
 				B6ED95A72AF9412C00BEB9B0 /* CustomBoldHeading2.swift */,
+				2A440FC82B0A90EE0023270D /* CustomBoldHeading1.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -721,22 +761,6 @@
 				2AEC6E852AFBEF9300DB3194 /* GuideButton.swift */,
 			);
 			path = Buttons;
-			sourceTree = "<group>";
-		};
-		B6ED95BA2AF9674B00BEB9B0 /* Onboarding */ = {
-			isa = PBXGroup;
-			children = (
-				B6ED95BB2AF9675300BEB9B0 /* Views */,
-			);
-			path = Onboarding;
-			sourceTree = "<group>";
-		};
-		B6ED95BB2AF9675300BEB9B0 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
-			);
-			path = Views;
 			sourceTree = "<group>";
 		};
 		B6ED95BC2AF9E9E800BEB9B0 /* Frameworks */ = {
@@ -833,11 +857,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A440FC22B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */,
 				B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */,
 				B624CC622AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
+				2A440FC62B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */,
 				B64F1B462AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */,
 				B64929652AF20FD200570802 /* Assets.xcassets in Resources */,
 				3DB6137D2AC5C67100F0A792 /* Preview Assets.xcassets in Resources */,
+				2A440FC42B0A7AEF0023270D /* Button Sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -845,10 +872,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A440FC32B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */,
 				B624CC632AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
 				B64F1B472AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */,
 				B64929662AF20FD200570802 /* Assets.xcassets in Resources */,
 				B64929452AF20D1D00570802 /* Jua-Regular.ttf in Resources */,
+				2A440FC72B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */,
+				2A440FC52B0A7AEF0023270D /* Button Sound.mp3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -859,11 +889,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A440FCC2B0B0B3B0023270D /* DeviceTutorial.swift in Sources */,
 				B6ED95A82AF9412C00BEB9B0 /* CustomBoldHeading2.swift in Sources */,
 				B64929302AF209C100570802 /* SplashScreen.swift in Sources */,
 				268DE2442ADF756C0097E3F2 /* HomeView.swift in Sources */,
 				268DE24C2ADF85FC0097E3F2 /* GameView.swift in Sources */,
-				B64F1B3D2AF38A4400AB80D4 /* DeviceTutorial.swift in Sources */,
 				268DE24A2ADF85500097E3F2 /* HomeItemView.swift in Sources */,
 				268DE2462ADF786B0097E3F2 /* ButtonView.swift in Sources */,
 				B6ED95AC2AF94C2000BEB9B0 /* TextButtonStyle.swift in Sources */,
@@ -925,6 +955,7 @@
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				B615D0E52AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
 				B615D0E82AFA9A2B0085EFD9 /* SessionChart.swift in Sources */,
+				2A440FC92B0A90EE0023270D /* CustomBoldHeading1.swift in Sources */,
 				3DFAD8C52B00C13100E0B079 /* ThoughtBubble.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
 				B6257E7F2AF8FB16004C2F0D /* AppFont.swift in Sources */,
@@ -944,10 +975,10 @@
 				B6ED95A92AF9412C00BEB9B0 /* CustomBoldHeading2.swift in Sources */,
 				B64929552AF20D4E00570802 /* HeadpieceIndicator.swift in Sources */,
 				B64929502AF20D4300570802 /* Double+extension.swift in Sources */,
+				2A440FCD2B0B0B3B0023270D /* DeviceTutorial.swift in Sources */,
 				26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */,
 				B64929582AF20D4E00570802 /* HideAndSeekWithHeadpiece.swift in Sources */,
 				B649295A2AF20D4E00570802 /* GameOverPage.swift in Sources */,
-				2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */,
 				B6ED95AD2AF94C2000BEB9B0 /* TextButtonStyle.swift in Sources */,
 				B649293E2AF20D0B00570802 /* ButtonView.swift in Sources */,
 				B649295B2AF20D4E00570802 /* ProgressBar.swift in Sources */,
@@ -998,6 +1029,7 @@
 				B649295C2AF20D4E00570802 /* HideAndSeekTutorialView.swift in Sources */,
 				B64F1B4A2AF3BE9100AB80D4 /* AudioManager.swift in Sources */,
 				B649294F2AF20D4000570802 /* Array+extension.swift in Sources */,
+				2A440FCA2B0A90EE0023270D /* CustomBoldHeading1.swift in Sources */,
 				B649294A2AF20D2F00570802 /* Game+CoreDataClass.swift in Sources */,
 				B649293A2AF20D0B00570802 /* HomeView.swift in Sources */,
 				B649294D2AF20D3300570802 /* Report+CoreDataClass.swift in Sources */,

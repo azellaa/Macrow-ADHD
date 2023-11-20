@@ -150,6 +150,7 @@ class TutorialView: SKNode {
                                     self.circleOverlaySmall.alpha = 0
                                     self.rabbitAlpha.texture = SKTexture(imageNamed: "Rabbit_Tap")
                                     if let rabbit = self.bg.childNode(withName: "rabbit") as? SKSpriteNode {
+                                        AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.gainStarSound)
                                         rabbit.texture = SKTexture(imageNamed: "Rabbit_Tap")
                                     }
                                     self.tapLabel.run(SKAction.fadeIn(withDuration: 1)){ [self] in
@@ -206,6 +207,7 @@ class TutorialView: SKNode {
                     isAnimationRunning = true
                     self.foxAlpha.texture = SKTexture(imageNamed: "Fox_Tap")
                     if let fox = self.bg.childNode(withName: "fox") as? SKSpriteNode {
+                        AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.loseStarSound)
                         fox.texture = SKTexture(imageNamed: "Fox_Tap")
                     }
                     circleOverlaySmall.removeFromParent()

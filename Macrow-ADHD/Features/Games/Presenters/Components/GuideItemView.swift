@@ -102,8 +102,6 @@ struct GuideItemView: View {
             return ResourcePath.connecting3
         case .connected:
             return ResourcePath.connected
-        default:
-            return ""
         }
     }
     var creams: [Cream] {
@@ -149,8 +147,6 @@ struct GuideItemView: View {
             return AppLabel.GuideView.HeadpieceLabel.connecting3Label
         case .connected:
             return AppLabel.GuideView.HeadpieceLabel.connectedLabel
-        default:
-            return ""
         }
     }
     
@@ -166,8 +162,6 @@ struct GuideItemView: View {
             return AppLabel.GuideView.HeadpieceInfo.connecting3Info
         case .connected:
             return AppLabel.GuideView.HeadpieceInfo.connectedInfo
-        default:
-            return ""
         }
     }
 }
