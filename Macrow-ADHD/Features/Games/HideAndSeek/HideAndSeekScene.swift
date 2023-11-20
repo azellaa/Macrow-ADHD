@@ -116,7 +116,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             }
         }
         AudioManager.shared.playBackgroundMusic(
-            fileName: "Jungle Song"
+            fileName: ResourcePath.HideAndSeekScene.Sounds.backgroundMusic
         )
         
     }
@@ -239,19 +239,19 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func addRabbitPosition() {
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.1 , y: -size.height * 0.13),  scale: 1 * 0.826, zIndex: 6))
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.28 , y: size.height * 0.06), scale: 0.6 * 0.826, zIndex: 3))
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.42 , y: size.height * 0.08), scale: 0.7 * 0.826, zIndex: 3))
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.65 , y: size.height * 0.02), scale: 0.8 * 0.826, zIndex: 3))
-        rabbitPos.append(NodeElement(name: "rabbit", textureName: "Rabbit_Hide", position: CGPoint(x: size.width * 0.93 , y: -size.height * 0.08), scale: 1 * 0.826, zIndex: 5))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.1 , y: -size.height * 0.13),  scale: 1 * 0.826, zIndex: 6))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.28 , y: size.height * 0.06), scale: 0.6 * 0.826, zIndex: 3))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.42 , y: size.height * 0.08), scale: 0.7 * 0.826, zIndex: 3))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.65 , y: size.height * 0.02), scale: 0.8 * 0.826, zIndex: 3))
+        rabbitPos.append(NodeElement(name: "rabbit", textureName: ResourcePath.HideAndSeekScene.rabbitHide, position: CGPoint(x: size.width * 0.93 , y: -size.height * 0.08), scale: 1 * 0.826, zIndex: 5))
     }
     
     func addFoxPosition() {
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.08 , y: -size.height * 0.16 ), scale: 1 * 0.7, zIndex: 6))
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.268 , y: size.height * 0.01 ), scale: 0.6 * 0.7, zIndex: 3))
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.42 , y: size.height * 0.03  ), scale: 0.7 * 0.7, zIndex: 3))
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.65 , y: size.height * 0.01), scale: 0.8 * 0.7, zIndex: 3))
-        foxPos.append(NodeElement(name: "fox", textureName: "Fox_Seek", position: CGPoint(x: size.width * 0.92 , y: -size.height * 0.15 ), scale: 1 * 0.7, zIndex: 5))
+        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.08 , y: -size.height * 0.16 ), scale: 1 * 0.7, zIndex: 6))
+        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.268 , y: size.height * 0.01 ), scale: 0.6 * 0.7, zIndex: 3))
+        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.42 , y: size.height * 0.03  ), scale: 0.7 * 0.7, zIndex: 3))
+        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.65 , y: size.height * 0.01), scale: 0.8 * 0.7, zIndex: 3))
+        foxPos.append(NodeElement(name: "fox", textureName: ResourcePath.HideAndSeekScene.foxSeek, position: CGPoint(x: size.width * 0.92 , y: -size.height * 0.15 ), scale: 1 * 0.7, zIndex: 5))
     }
     
     func addNodes() {
@@ -281,7 +281,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         pausedPopup.addChild(pausedLabel)
         
-        disconnectPopup = SKSpriteNode(imageNamed: "disconnectedPopUp")
+        disconnectPopup = SKSpriteNode(imageNamed: ResourcePath.HideAndSeekScene.disconnectedPopUp)
         disconnectPopup.setScale(1)
         disconnectPopup.zPosition = 26
         disconnectPopup.position = CGPoint(x: frame.midX, y: frame.midY)
@@ -301,7 +301,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func showPopupDisconnect() {
-        disconnectPopup.texture = updateIcon("disconnectedPopUp")
+        disconnectPopup.texture = updateIcon(ResourcePath.HideAndSeekScene.disconnectedPopUp)
         let moveAction = SKAction.moveTo(y: frame.midY , duration: 0.5)
         disconnectPopup.run(moveAction)
         disconnectPopup.alpha = 1
@@ -333,7 +333,11 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     func timesUpFunc() {
         isEndGame = true
-        dataController.editAvgAttentionReport(report: self.reportEntity, avgAttention: listFocusData.average(), context: self.context)
+        dataController.editAvgAttentionReport(
+            report: self.reportEntity,
+            avgAttention: listFocusData.average(),
+            context: self.context
+        )
         //        dataController.fetchAndPrintFocusData()
         
         let scene = GameOverPage(sceneFrame: self.frame)
@@ -369,7 +373,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             if !isTouched && attentionPopup.isHidden {
                 if rabbit.contains(location) {
                     // Change texture for the rabbit
-                    rabbit.texture = SKTexture(imageNamed: "Rabbit_Tap")
+                    rabbit.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.rabbitTap)
                     rabbit.removeAllActions()
                     rabbitCount += 1
                     
@@ -388,7 +392,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 
                 if fox.contains(location) {
                     // Change texture for the fox
-                    fox.texture = SKTexture(imageNamed: "Fox_Tap")
+                    fox.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.foxTap)
                     fox.removeAllActions()
                     if rabbitCount - 1 <= 0 {
                         rabbitCount = 0
