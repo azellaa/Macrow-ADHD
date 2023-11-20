@@ -22,7 +22,7 @@ struct GuideItemView: View {
             Rectangle()
                 .frame(width: 1003, height: 580)
                 .cornerRadius(30)
-                .foregroundColor(Color.brownGuide)
+                .foregroundColor(.brown1)
             VStack{
                 
                 VStack {
@@ -36,14 +36,14 @@ struct GuideItemView: View {
                     
                     Text(titleForImage())
                         .font(.subHeading1)
-                        .foregroundColor(.white)
+                        .foregroundColor(.white1)
                         .padding()
                     
                     Spacer()
                     
                     Text(explanationForImage())
                         .font(.body1)
-                        .foregroundColor(.white)
+                        .foregroundColor(.white1)
                         .padding()
                         .multilineTextAlignment(.center)
                     
@@ -65,7 +65,7 @@ struct GuideItemView: View {
                                                 .frame(width: 204, height: 50)
                                                 .multilineTextAlignment(.center)
                                                 .font(.body2)
-                                                .foregroundColor(.cream)
+                                                .foregroundColor(.cream1)
                                                 .padding(.bottom)
                                             
                                         }

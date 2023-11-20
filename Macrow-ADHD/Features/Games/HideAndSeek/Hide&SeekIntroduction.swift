@@ -38,7 +38,7 @@ struct Hide_SeekIntroduction: View {
 #else
     @State private var isDisconnected = true
 #endif
-    @State private var headpieceIndicator = ResourcePath.headpieceDisconnected
+    @State private var headpieceIndicator = ResourcePath.notConnected
     
     @State private var levels: [Level] = [
         Level(number: 1, isCompleted: true, text: AppLabel.IntroductionView.HideAndSeek.level1),
@@ -68,6 +68,9 @@ struct Hide_SeekIntroduction: View {
                             GuideView()
                         } label: {
                             Image(headpieceIndicator)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 40, height: 40)
                         }
                         .buttonStyle(SymbolButtonStyle(style: .brown))
 
@@ -79,7 +82,7 @@ struct Hide_SeekIntroduction: View {
                     VStack {
                         Text(AppLabel.IntroductionView.HideAndSeek.name)
                             .font(.custom(AppFont.juaRegular, size: 64))
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color.white1)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         
@@ -95,7 +98,7 @@ struct Hide_SeekIntroduction: View {
                         Text(AppLabel.IntroductionView.HideAndSeek.description)
                             .font(.custom(AppFont.juaRegular, size: 24))
                             .lineSpacing(5)
-                            .foregroundColor(Color.white)
+                            .foregroundColor(Color.white1)
                             .padding(.bottom, UIScreen.main.bounds.height * 0.125)
                             .multilineTextAlignment(.leading)
                     }
@@ -122,7 +125,7 @@ struct Hide_SeekIntroduction: View {
                     VStack {
                         Text("Level")
                             .font(.custom(AppFont.juaRegular, size: 45))
-                            .foregroundColor(Color.brownColor)
+                            .foregroundColor(Color.brown1)
                             .position(x: 190, y: 70)
                         
                         
@@ -135,7 +138,7 @@ struct Hide_SeekIntroduction: View {
                                             .frame(width: 50, height: 55)
                                         
                                         Text("\(levels[index].number)")
-                                            .foregroundColor(levels[index].isCompleted ? Color.white : Color("grey2Color"))
+                                            .foregroundColor(levels[index].isCompleted ? Color.white : .gray3)
                                             .font(.custom(AppFont.juaRegular, size: 28))
                                     }
                                     .padding(.top, 120)
@@ -149,7 +152,7 @@ struct Hide_SeekIntroduction: View {
                                 }
                                 Text(levels[index].text)
                                     .font(.custom(AppFont.juaRegular, size: 36))
-                                    .foregroundColor(Color("darkBrown"))
+                                    .foregroundColor(levels[index].isCompleted ? Color.brown1 : .gray3)
                                     .padding(.top, -60)
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     .padding(.leading, 250)
@@ -161,14 +164,14 @@ struct Hide_SeekIntroduction: View {
                             .frame(width: 9, height: 190)
                             .position(x: 170)
                             .padding(.top, -174)
-                            .foregroundColor(Color("greyColor"))
+                            .foregroundColor(.gray1)
                             .zIndex(0)
                         
                         Rectangle()
                             .frame(width: 9, height: 190)
                             .position(x: 170)
                             .padding(.top, -414)
-                            .foregroundColor(Color("greyColor"))
+                            .foregroundColor(.gray1)
                             .zIndex(0)
                         
                         TextButton(contentType: .play, buttonStyle: .brown, buttonSize: .small) {
@@ -188,19 +191,19 @@ struct Hide_SeekIntroduction: View {
         .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
             switch signalStatus {
             case 1:
-                self.headpieceIndicator = ResourcePath.headpiece1Bar
+                self.headpieceIndicator = ResourcePath.connecting1
                 isDisconnected = false
             case 2:
-                self.headpieceIndicator = ResourcePath.headpiece2Bar
+                self.headpieceIndicator = ResourcePath.connecting2
                 isDisconnected = false
             case 3:
-                self.headpieceIndicator = ResourcePath.headpiece3Bar
+                self.headpieceIndicator = ResourcePath.connecting3
                 isDisconnected = false
             case 4:
-                self.headpieceIndicator = ResourcePath.headpieceConnected
+                self.headpieceIndicator = ResourcePath.connected
                 isDisconnected = false
             default:
-                self.headpieceIndicator = ResourcePath.headpieceDisconnected
+                self.headpieceIndicator = ResourcePath.notConnected
                 isDisconnected = true
                 break
             }

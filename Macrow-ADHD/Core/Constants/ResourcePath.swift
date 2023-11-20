@@ -39,11 +39,6 @@ struct ResourcePath: Constants {
     static let shareWhite = "Share, White"
     static let statisticBrown = "Statistic, Brown"
     static let statisticWhite = "Statistic, White"
-    static let headpieceConnected = "headpieceLogo"
-    static let headpieceDisconnected = "headpieceDisconnect"
-    static let headpiece1Bar = "headpiece1Bar"
-    static let headpiece2Bar = "headpiece2Bar"
-    static let headpiece3Bar = "headpiece3Bar"
     
 }
 //MARK: HomeView
@@ -59,7 +54,7 @@ extension ResourcePath {
     struct IntroductionView {
         struct HideAndSeek {
             static let background = "HideNSeekIntroductionBackground"
-            static let subheadingBackgroundColor = "SubheadingIntroductionBackgroundColor"
+//            static let subheadingBackgroundColor = "SubheadingIntroductionBackgroundColor"
         }
         
         struct Game2 {

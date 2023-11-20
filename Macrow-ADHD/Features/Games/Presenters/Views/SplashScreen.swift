@@ -30,13 +30,13 @@ struct SplashScreen: View {
                     VStack {
                         Text(AppLabel.appNameLine1)
                             .font(.custom(AppFont.juaRegular, size: 125))
-                            .foregroundColor(Color.brownColor)
+                            .foregroundColor(Color.brown1)
                             .multilineTextAlignment(.center)
                             .padding(.top, UIScreen.main.bounds.height * 0.07)
                         
                         Text(AppLabel.appNameLine2)
                             .font(.custom(AppFont.juaRegular, size: 100))
-                            .foregroundColor(Color.brownColor)
+                            .foregroundColor(Color.brown1)
                             .multilineTextAlignment(.center)
                         
                         TextButton(contentType: .play, buttonStyle: .brown, buttonSize: .big) {

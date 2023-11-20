@@ -34,7 +34,7 @@ struct GuideView: View {
                 VStack{
                     ZStack {
                         CustomBoldHeading1(text: AppLabel.GuideView.guide)
-                            .foregroundColor(Color.brownColor)
+                            .foregroundColor(Color.brown1)
                         HStack{
                             SymbolButton(type: .back, buttonStyle: .brown, action: {
                                 presentationMode.wrappedValue.dismiss()

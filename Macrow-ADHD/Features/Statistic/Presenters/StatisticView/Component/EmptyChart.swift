@@ -44,7 +44,7 @@ struct EmptyChart: View {
                 AxisGridLine()
                 AxisValueLabel()
                     .font(.label)
-                    .foregroundStyle(.brownGuide)
+                    .foregroundStyle(.brown1)
             }
         }
         .chartXScale(
@@ -57,7 +57,7 @@ struct EmptyChart: View {
                         if hour! == 0 || hour!%6 == 0 {
                             AxisValueLabel(format: statisticVm.filterDateTime)
                                 .font(.label)
-                                .foregroundStyle(.brownGuide)
+                                .foregroundStyle(.brown1)
                         }
                     }
                 }
@@ -66,7 +66,7 @@ struct EmptyChart: View {
                 AxisMarks(values: .stride(by: .day)) { _ in
                     AxisValueLabel(format: statisticVm.filterDateTime)
                         .font(.label)
-                        .foregroundStyle(.brownGuide)
+                        .foregroundStyle(.brown1)
                 }
             }
             else if statisticVm.filterDateTime == .dateTime.day(){
@@ -77,7 +77,7 @@ struct EmptyChart: View {
                             
                             AxisValueLabel(format: statisticVm.filterDateTime)
                                 .font(.label)
-                                .foregroundStyle(.brownGuide)
+                                .foregroundStyle(.brown1)
                         }
                     }
                 }
