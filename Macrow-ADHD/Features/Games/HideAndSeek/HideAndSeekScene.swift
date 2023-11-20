@@ -27,7 +27,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     
     private var rabbitCount = 0
     private var isTouched = false
-
+    
     @AppStorage("tutorialOpened") public var isTutorialOpened = true
     
     public var focusCount = 80 // focus point
@@ -294,10 +294,10 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     }
     
     func showPopupConnecting() {
-//        pausedPopup.texture = updateIcon("defaultBg")
-//        let moveAction = SKAction.moveTo(y: frame.midY , duration: 0.5)
-//        pausedPopup.run(moveAction)
-//        pausedPopup.alpha = 1
+        //        pausedPopup.texture = updateIcon("defaultBg")
+        //        let moveAction = SKAction.moveTo(y: frame.midY , duration: 0.5)
+        //        pausedPopup.run(moveAction)
+        //        pausedPopup.alpha = 1
     }
     
     func showPopupDisconnect() {
@@ -338,8 +338,13 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             avgAttention: listFocusData.average(),
             context: self.context
         )
+        GameData.rabbitCount = rabbitCount
         //        dataController.fetchAndPrintFocusData()
         
+        self.fox.isPaused = true
+        self.rabbit.isPaused = true
+        attentionPopup.isHidden = true
+        attentionPopup.removeFromParent()
         let scene = GameOverPage(sceneFrame: self.frame)
         scene.position = CGPoint(x: self.frame.midX, y: self.frame.midY)
         
@@ -359,6 +364,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         listFocusData = [Double]()
         stopMWMPublisher()
+        
         isCompleted = true
         
         AudioManager.shared.stopBackgroundMusic()
@@ -375,7 +381,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                     // Change texture for the rabbit
                     rabbit.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.rabbitTap)
                     AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.gainStarSound)
-
+                    
                     rabbit.removeAllActions()
                     rabbitCount += 1
                     
@@ -477,8 +483,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             if self.focusCount < 50  {
                 self.fox.isPaused = true
                 self.rabbit.isPaused = true
+                attentionPopup.isHidden = false
                 if !attentionPopup.isShowing {
-                    attentionPopup.isHidden = false
                     attentionPopup.startShowPause(self)
                     if !isSavingPauseData {
                         pauseDataEntity = dataController.addPause(startTime: Date(), report: self.reportEntity, context: self.context)
@@ -493,7 +499,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                 attentionPopup.isHidden = true
             }
             
-            else {
+            else if self.focusCount >= 50 {
                 self.fox.isPaused = false
                 self.rabbit.isPaused = false
                 attentionPopup.isHidden = true

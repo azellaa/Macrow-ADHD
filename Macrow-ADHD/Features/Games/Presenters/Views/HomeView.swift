@@ -141,7 +141,9 @@ struct HomeView: View {
             }
         }
         .onAppear{
-            mwmObject.mwmDevice?.scanDevice()
+            if !mwmObject.isConnected {
+                mwmObject.mwmDevice?.scanDevice()
+            }
             #if targetEnvironment(simulator)
             mwmObject.eSense()
             #endif
