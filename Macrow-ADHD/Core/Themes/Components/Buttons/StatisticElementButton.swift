@@ -15,7 +15,6 @@ struct StatisticElementButton: View {
     var body: some View {
         Button(action: {
             self.action()
-            AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.buttonSound)
         }, label: {
             HStack(content: {
                 Text(leftText)

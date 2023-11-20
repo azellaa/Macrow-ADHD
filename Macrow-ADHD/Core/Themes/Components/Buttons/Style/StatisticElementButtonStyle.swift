@@ -34,6 +34,11 @@ struct StatisticElementButtonStyle: ButtonStyle {
                 .clipShape(RoundedRectangle(cornerRadius: 30))
                 .offset(y: configuration.isPressed ? 0 : -8)
                 .foregroundStyle(self.foregroundColor)
+                .onChange(of: configuration.isPressed) { newValue in
+                    if newValue {
+                        AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.buttonSound)
+                    }
+                }
         } else {
             configuration.label
                 .frame(width: 309, height: 62)
@@ -49,9 +54,6 @@ struct StatisticElementButtonStyle: ButtonStyle {
                 }
                 .foregroundStyle(self.foregroundColor)
         }
-        
-       
-        
     }
 }
 

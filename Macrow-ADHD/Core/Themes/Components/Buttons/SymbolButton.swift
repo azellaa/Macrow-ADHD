@@ -19,7 +19,6 @@ struct SymbolButton: View {
     var body: some View {
         Button(action: {
             self.action()
-            AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.buttonSound)
         }, label: {
             switch self.type {
             case .back:
