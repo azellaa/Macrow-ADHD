@@ -20,7 +20,7 @@ class StatisticViewModel: ObservableObject {
     @Published var lineWidth = 2.0
     @Published var lollipopColor: Color = .yellow1
     @Published var showLollipop = true
-    @Published var chartColor: Color = .brownColor
+    @Published var chartColor: Color = .brown1
     @Published var interpolationMethod: InterpolationMethod = .linear
     
     @Published var selectedElement: DetailStatisticViewSwift.SelectedElementEnum? = nil
