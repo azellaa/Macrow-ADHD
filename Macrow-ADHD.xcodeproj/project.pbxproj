@@ -255,6 +255,7 @@
 		B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AttentionPopup.swift; sourceTree = "<group>"; };
 		B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeadpieceIndicator.swift; sourceTree = "<group>"; };
 		B6B2B63C2B0A420A00B71509 /* GameLevelModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameLevelModel.swift; sourceTree = "<group>"; };
+		B6B2B63F2B0B2D6C00B71509 /* Macrow-ADHD.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Macrow-ADHD.entitlements"; sourceTree = "<group>"; };
 		B6B2D92A2AF0FFA000C64CAA /* SubheadingIntroductionText.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubheadingIntroductionText.swift; sourceTree = "<group>"; };
 		B6B2D92D2AF10CE600C64CAA /* ReportUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReportUtils.swift; sourceTree = "<group>"; };
 		B6B4D6A02B0175FE006BE6C2 /* StatisticViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticViewModel.swift; sourceTree = "<group>"; };
@@ -354,6 +355,7 @@
 		3DB613742AC5C66F00F0A792 /* Macrow-ADHD */ = {
 			isa = PBXGroup;
 			children = (
+				B6B2B63F2B0B2D6C00B71509 /* Macrow-ADHD.entitlements */,
 				B6257E6A2AF89442004C2F0D /* Application */,
 				B6257E6C2AF8956C004C2F0D /* Core */,
 				B6257E6D2AF8957C004C2F0D /* Features */,
@@ -1179,6 +1181,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Macrow-ADHD/Macrow-ADHD.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
@@ -1225,6 +1228,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Macrow-ADHD/Macrow-ADHD.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
