@@ -150,8 +150,10 @@ struct FocusChart: View {
     }
     
     private func getBaselineMarker (marker: Report) -> some ChartContent {
+        
         return LineMark(
-            x: .value("Date", marker.timestamp!),
+            //FIXME: workaround for timestamp bug
+            x: .value("Date", marker.timestamp ?? Date()),
             y: .value("Focus", marker.avgAttention)
         )
         //        .accessibilityLabel(marker.timestamp!.formatted(date: .complete, time: .omitted))
