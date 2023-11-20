@@ -61,7 +61,6 @@ struct HomeView: View {
                         .offset(x: CGFloat(index - currentIdx) * UIScreen.main.bounds.width * 0.9 + dragOffset, y: 0)
                 }
             }
-            
             .gesture(
                 DragGesture()
                     .onEnded({ value in
@@ -94,7 +93,6 @@ struct HomeView: View {
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
-            
             ZStack {
                 ForEach(0..<gameCount, id: \.self) { index in
                     Image(ResourcePath.HomeView.hideAndSeekHomeBackground).resizable()
@@ -102,6 +100,21 @@ struct HomeView: View {
                     .offset(x: CGFloat(index - currentIdx) * UIScreen.main.bounds.width + dragOffset, y: 0)
                 }
             }
+            .gesture(
+                DragGesture()
+                    .onEnded({ value in
+                        let threshold: CGFloat = 50
+                        if value.translation.width > threshold {
+                            withAnimation {
+                                currentIdx = max(0, currentIdx - 1)
+                            }
+                        } else if value.translation.width < -threshold {
+                            withAnimation {
+                                currentIdx = min(GameInfoLabel.games.count - 1, currentIdx + 1)
+                            }
+                        }
+                    })
+            )
         )
         .onReceive(mwmObject.signalStatusPublisher) { signalStatus in
             switch signalStatus {
