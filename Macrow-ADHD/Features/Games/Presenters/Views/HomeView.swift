@@ -31,13 +31,7 @@ struct HomeView: View {
                     Image(ResourcePath.statisticWhite)
                 }
                 .buttonStyle(SymbolButtonStyle(style: .brown))
-                .padding(.leading, UIScreen.main.bounds.width * 0.03)
                 
-                Spacer()
-                Text(AppLabel.appName)
-                    .font(.custom(AppFont.juaRegular, size: 86))
-                    .foregroundColor(.brown1)
-                    .padding(.leading, 6)
                 Spacer()
                 
                 NavigationLink {
@@ -49,11 +43,10 @@ struct HomeView: View {
                         .frame(width: 40, height: 40)
                 }
                 .buttonStyle(SymbolButtonStyle(style: .brown))
-                .padding(.trailing, UIScreen.main.bounds.width * 0.03)
-                
-                
             }
-            .padding(.vertical, UIScreen.main.bounds.height * 0.04)
+            .padding(.top, UIScreen.main.bounds.height * 0.048)
+            .padding(.horizontal, UIScreen.main.bounds .width * (32 / UIScreen.main.bounds.width))
+            Spacer()
             
             ZStack {
                 ForEach(0..<gameCount, id: \.self) { index in
@@ -76,6 +69,7 @@ struct HomeView: View {
                         }
                     })
             )
+            .padding(.bottom, UIScreen.main.bounds.height * (19.92 / UIScreen.main.bounds.height))
             
             HStack {
                 ForEach(0..<gameCount, id: \.self) { index in
@@ -90,31 +84,32 @@ struct HomeView: View {
                     }
                 }
             }
+            Spacer()
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             ZStack {
                 ForEach(0..<gameCount, id: \.self) { index in
                     Image(ResourcePath.HomeView.hideAndSeekHomeBackground).resizable()
-                    .aspectRatio( contentMode: .fill)
-                    .offset(x: CGFloat(index - currentIdx) * UIScreen.main.bounds.width + dragOffset, y: 0)
+                        .aspectRatio( contentMode: .fill)
+                        .offset(x: CGFloat(index - currentIdx) * UIScreen.main.bounds.width + dragOffset, y: 0)
                 }
             }
-            .gesture(
-                DragGesture()
-                    .onEnded({ value in
-                        let threshold: CGFloat = 50
-                        if value.translation.width > threshold {
-                            withAnimation {
-                                currentIdx = max(0, currentIdx - 1)
+                .gesture(
+                    DragGesture()
+                        .onEnded({ value in
+                            let threshold: CGFloat = 50
+                            if value.translation.width > threshold {
+                                withAnimation {
+                                    currentIdx = max(0, currentIdx - 1)
+                                }
+                            } else if value.translation.width < -threshold {
+                                withAnimation {
+                                    currentIdx = min(GameInfoLabel.games.count - 1, currentIdx + 1)
+                                }
                             }
-                        } else if value.translation.width < -threshold {
-                            withAnimation {
-                                currentIdx = min(GameInfoLabel.games.count - 1, currentIdx + 1)
-                            }
-                        }
-                    })
-            )
+                        })
+                )
         )
         .onReceive(mwmObject.signalStatusPublisher) { signalStatus in
             switch signalStatus {
@@ -148,7 +143,7 @@ struct HomeView: View {
 #endif
         }
         .navigationBarBackButtonHidden(true)
-        
+        .ignoresSafeArea()
     }
 }
 
