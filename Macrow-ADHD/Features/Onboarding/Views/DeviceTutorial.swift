@@ -37,7 +37,7 @@ struct DeviceTutorial: View {
                                 })
                                 //MARK: workaround for hiding back button on onboarding
                                 .opacity(opacity)
-                                .position(x: UIScreen.main.bounds.width * 0.1, y: UIScreen.main.bounds.height * 0.07)
+                                .position(x: UIScreen.main.bounds.width * 0.05, y: UIScreen.main.bounds.height * 0.07)
                                 .padding(.horizontal)
                             }
                         }
