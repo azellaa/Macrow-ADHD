@@ -97,6 +97,7 @@ extension ResourcePath {
     }
 }
 
+//MARK: - SoundEffect
 extension ResourcePath {
     struct SoundEffect {
         static let buttonSound = "Button Sound"
@@ -105,3 +106,24 @@ extension ResourcePath {
 
     }
 }
+
+//MARK: - DeviceTutorial
+extension ResourcePath {
+    struct DeviceTutorial {
+        struct willHalfBody {
+            static let willHalfBody1 = "Smiling=No, With Cat=No, Holding Bag=Yes, View=Half Body"
+            static let willHalfBody2 = "Smiling=Yes, With Cat=Yes, Holding Bag=No, View=Half Body"
+            static let willHalfBody3 = "Smiling=No, With Cat=Yes, Holding Bag=No, View=Half Body"
+            static let willHalfBody4 = "Smiling=No, With Cat=Yes, Holding Bag=Yes, View=Half Body"
+        }
+        
+        struct device {
+            static let deviceDefault = "Device-Default"
+            static let deviceDetailOn = "Device-Detail On"
+            static let deviceDetailOff = "Device-Detail Off"
+            static let deviceDetailSensor = "Device-Detail Sensor"
+            static let deviceDetailEarclip = "Device-Detail Earclip"
+        }
+    }
+}
+

@@ -33,7 +33,7 @@ struct GuideView: View {
                     .ignoresSafeArea()
                 VStack{
                     ZStack {
-                        CustomBoldHeading2(text: AppLabel.GuideView.guide)
+                        CustomBoldHeading1(text: AppLabel.GuideView.guide)
                             .foregroundColor(Color.brownColor)
                         HStack{
                             SymbolButton(type: .back, buttonStyle: .brown, action: {
@@ -58,7 +58,7 @@ struct GuideView: View {
                             SymbolButton(type: .guide, buttonStyle: .brown, action: {
                                 isDeviceTutorialActive = true
                             })
-                            .padding()
+                            .padding(.all)
                            
                             
                         } .frame(width: 1112, height: 73)

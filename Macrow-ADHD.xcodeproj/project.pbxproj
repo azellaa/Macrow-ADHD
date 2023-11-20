@@ -40,6 +40,8 @@
 		2A440FC52B0A7AEF0023270D /* Button Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */; };
 		2A440FC62B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */; };
 		2A440FC72B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */; };
+		2A440FC92B0A90EE0023270D /* CustomBoldHeading1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A440FC82B0A90EE0023270D /* CustomBoldHeading1.swift */; };
+		2A440FCA2B0A90EE0023270D /* CustomBoldHeading1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A440FC82B0A90EE0023270D /* CustomBoldHeading1.swift */; };
 		2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A563CFC2ADF86D800AFEF4C /* GuideView.swift */; };
 		2ABD3E252AEF952E00B80AD3 /* DeviceTutorial.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */; };
 		2AEC6E832AFBD23100DB3194 /* GuideItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */; };
@@ -196,6 +198,7 @@
 		2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lose Star Sound.mp3"; sourceTree = "<group>"; };
 		2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Button Sound.mp3"; sourceTree = "<group>"; };
 		2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Gain Star Sound.mp3"; sourceTree = "<group>"; };
+		2A440FC82B0A90EE0023270D /* CustomBoldHeading1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBoldHeading1.swift; sourceTree = "<group>"; };
 		2A563CFC2ADF86D800AFEF4C /* GuideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideView.swift; sourceTree = "<group>"; };
 		2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceTutorial.swift; sourceTree = "<group>"; };
 		2AEC6E822AFBD23100DB3194 /* GuideItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideItemView.swift; sourceTree = "<group>"; };
@@ -597,6 +600,7 @@
 				B6257E812AF8FB2C004C2F0D /* AppLabel.swift */,
 				B6257E852AF8FB45004C2F0D /* Decimal.swift */,
 				B6257E8E2AF907C3004C2F0D /* ResourcePath.swift */,
+				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -721,6 +725,7 @@
 			isa = PBXGroup;
 			children = (
 				B6ED95A72AF9412C00BEB9B0 /* CustomBoldHeading2.swift */,
+				2A440FC82B0A90EE0023270D /* CustomBoldHeading1.swift */,
 			);
 			path = Text;
 			sourceTree = "<group>";
@@ -748,7 +753,6 @@
 		B6ED95BB2AF9675300BEB9B0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				2ABD3E232AEF952E00B80AD3 /* DeviceTutorial.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -945,6 +949,7 @@
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
 				B615D0E52AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
 				B615D0E82AFA9A2B0085EFD9 /* SessionChart.swift in Sources */,
+				2A440FC92B0A90EE0023270D /* CustomBoldHeading1.swift in Sources */,
 				3DFAD8C52B00C13100E0B079 /* ThoughtBubble.swift in Sources */,
 				5491B13B2AE5C351004986A0 /* CentralManager.swift in Sources */,
 				B6257E7F2AF8FB16004C2F0D /* AppFont.swift in Sources */,
@@ -1018,6 +1023,7 @@
 				B649295C2AF20D4E00570802 /* HideAndSeekTutorialView.swift in Sources */,
 				B64F1B4A2AF3BE9100AB80D4 /* AudioManager.swift in Sources */,
 				B649294F2AF20D4000570802 /* Array+extension.swift in Sources */,
+				2A440FCA2B0A90EE0023270D /* CustomBoldHeading1.swift in Sources */,
 				B649294A2AF20D2F00570802 /* Game+CoreDataClass.swift in Sources */,
 				B649293A2AF20D0B00570802 /* HomeView.swift in Sources */,
 				B649294D2AF20D3300570802 /* Report+CoreDataClass.swift in Sources */,
