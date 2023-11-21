@@ -11,15 +11,11 @@ import SpriteKit
 
 struct Hide_SeekIntroduction: View {
     var currentGame: GameInfo
-    var width: CGFloat
-    var height: CGFloat
     
     @Environment(\.presentationMode) var presentationMode
     
-    init(currentGame: GameInfo, width: CGFloat, height: CGFloat) {
+    init(currentGame: GameInfo) {
         self.currentGame = currentGame
-        self.width = width
-        self.height = height
     }
     
     struct Level {
@@ -41,15 +37,15 @@ struct Hide_SeekIntroduction: View {
     @State private var headpieceIndicator = ResourcePath.notConnected
     
     @State private var levels: [Level] = [
-        Level(number: 1, isCompleted: true, text: AppLabel.IntroductionView.HideAndSeek.level1),
-        Level(number: 2, isCompleted: false, text:  AppLabel.IntroductionView.HideAndSeek.level2),
-        Level(number: 3, isCompleted: false, text:  AppLabel.IntroductionView.HideAndSeek.level3)
+        Level(number: 1, isCompleted: true, text: AppLabel.IntroductionView.level1),
+        Level(number: 2, isCompleted: false, text:  AppLabel.IntroductionView.level2),
+        Level(number: 3, isCompleted: false, text:  AppLabel.IntroductionView.level3)
         // Add more levels as needed
     ]
     
     var body: some View {
         ZStack{
-            Image(ResourcePath.IntroductionView.HideAndSeek.background)
+            Image(currentGame.gameIntroBg)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
@@ -80,14 +76,14 @@ struct Hide_SeekIntroduction: View {
                     Spacer().frame(height: 450)
                     
                     VStack {
-                        Text(AppLabel.IntroductionView.HideAndSeek.name)
+                        Text(currentGame.name)
                             .font(.custom(AppFont.juaRegular, size: 64))
                             .foregroundColor(Color.white1)
                             .frame(maxWidth: .infinity, alignment: .leading)
                         
                         
                         HStack {
-                            ForEach(AppLabel.IntroductionView.HideAndSeek.subheading, id: \.self) { subheading in
+                            ForEach(currentGame.mainFocus, id: \.self) { subheading in
                                 SubheadingIntroductionText(text: subheading)
                             }
                         }
@@ -95,7 +91,7 @@ struct Hide_SeekIntroduction: View {
                         .padding(.top, -20)
                         .padding(.bottom, UIScreen.main.bounds.height * 0.035)
                         
-                        Text(AppLabel.IntroductionView.HideAndSeek.description)
+                        Text(currentGame.description)
                             .font(.custom(AppFont.juaRegular, size: 24))
                             .lineSpacing(5)
                             .foregroundColor(Color.white1)
@@ -221,7 +217,7 @@ struct Hide_SeekIntroduction: View {
 
 
 #Preview {
-    Hide_SeekIntroduction(currentGame: GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, mainFocus: AppLabel.HomeView.game1MainFocus), width: 100, height: 100)
+    Hide_SeekIntroduction(currentGame: GameInfo(currentGame: .hideAndSeek))
 }
 
 

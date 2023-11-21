@@ -50,8 +50,14 @@ struct HomeView: View {
             
             ZStack {
                 ForEach(0..<gameCount, id: \.self) { index in
-                    HomeItemView(dest: Hide_SeekIntroduction(currentGame: GameInfoLabel.games[index], width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), gameName: GameInfoLabel.games[index].name, imageName: GameInfoLabel.games[index].imageName)
-                        .offset(x: CGFloat(index - currentIdx) * UIScreen.main.bounds.width * 0.9 + dragOffset, y: 0)
+                    HomeItemView(
+                            dest: Hide_SeekIntroduction(currentGame: GameInfoLabel.games[index]),
+                            gameName: GameInfoLabel.games[index].name,
+                            imageName: GameInfoLabel.games[index].imageName,
+                            mainFocus: GameInfoLabel.games[index].mainFocus,
+                            isLocked: GameInfoLabel.games[index].isLocked
+                        )
+                    .offset(x: CGFloat(index - currentIdx) * UIScreen.main.bounds.width * 0.9 + dragOffset, y: 0)
                 }
             }
             .gesture(
@@ -89,11 +95,8 @@ struct HomeView: View {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(
             ZStack {
-                ForEach(0..<gameCount, id: \.self) { index in
-                    Image(ResourcePath.HomeView.hideAndSeekHomeBackground).resizable()
-                        .aspectRatio( contentMode: .fill)
-                        .offset(x: CGFloat(index - currentIdx) * UIScreen.main.bounds.width + dragOffset, y: 0)
-                }
+                Image(ResourcePath.HomeView.homeBackground[currentIdx]).resizable()
+                    .aspectRatio( contentMode: .fill)
             }
                 .gesture(
                     DragGesture()

@@ -44,8 +44,9 @@ struct ResourcePath: Constants {
 //MARK: HomeView
 extension ResourcePath {
     struct HomeView {
-        static let hideAndSeekHomeBackground = "homeBg"
+        static let homeBackground = ["homeHideBg", "homeConnectBg"]
         static let homeHideAndSeek = "homeHideAndSeek"
+        static let homeConnectNumber = "homeConnectNumber"
     }
 }
 
