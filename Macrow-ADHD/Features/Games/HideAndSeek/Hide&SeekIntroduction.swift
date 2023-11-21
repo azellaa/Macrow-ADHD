@@ -64,6 +64,7 @@ struct Hide_SeekIntroduction: View {
                         
                         Spacer().frame(width: 500)
                         
+//                            .position(x: UIScreen.main.bounds.width * 0.015, y: UIScreen.main.bounds.height * 0.052)
                         NavigationLink {
                             GuideView()
                         } label: {
