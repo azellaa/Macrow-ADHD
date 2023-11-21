@@ -143,98 +143,105 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             return // If an entity is currently spawning, exit early
         }
         
-        let randomValue = Int.random(
-            in: 1...(
-                hideAndSeekLevel.levelModel.rabbitRatio
-                + hideAndSeekLevel.levelModel.foxRatio
-            )
-        ) // 5:1 ratio
-        isSpawning = true // Mark that an entity is spawning
+        let spawnValue = Int.random(
+            in: 1...( hideAndSeekLevel.levelModel.maximumSpawn)
+        )
         
-        let spawnCompletionAction = SKAction.run { [weak self] in
-            self?.spawnNextEntity()
-        }
-        
-        if randomValue <= hideAndSeekLevel.levelModel.rabbitRatio{
-            // Spawn a rabbit
-            guard let randomRabbit = rabbitPos.randomElement() else { return }
-            self.rabbit = .init(imageNamed: randomRabbit.textureName)
-            self.rabbit.name = randomRabbit.name
-            self.rabbit.position = randomRabbit.position
-            self.rabbit.setScale(randomRabbit.scale)
-            self.rabbit.zPosition = randomRabbit.zIndex
-            self.addChild(self.rabbit)
+        for _ in 0..<spawnValue {
             
-            // Define a slide-up action
-            let slideUpAction = SKAction.move(by: CGVector(dx: 0, dy: self.rabbit.size.height), duration: 1.0)
-            slideUpAction.timingMode = .easeIn
+            let randomValue = Int.random(
+                in: 1...(
+                    hideAndSeekLevel.levelModel.rabbitRatio
+                    + hideAndSeekLevel.levelModel.foxRatio
+                )
+            ) // 5:1 ratio
+            isSpawning = true // Mark that an entity is spawning
             
-            // Define a slide-down action
-            let slideDownAction = SKAction.move(by: CGVector(dx: 0, dy: -self.rabbit.size.height), duration: 1.0)
-            slideDownAction.timingMode = .easeIn
+            let spawnCompletionAction = SKAction.run { [weak self] in
+                self?.spawnNextEntity()
+            }
             
-            // Define a sequence of actions
-            let sequence = SKAction.sequence([
-                slideUpAction,
-                SKAction.wait(forDuration: 5.0),
-                slideDownAction,
-                SKAction.removeFromParent(),
-                spawnCompletionAction
-            ])
-            
-            self.rabbit.run(sequence)
-            
-            currentAnimalEntity = dataController.addAnimal(
-                appearTime: Date(),
-                animalTypeEnum: .rabbit,
-                game: self.gameEntity,
-                context: self.context
-            )
-            
-        } else {
-            // Spawn a fox
-            guard let randomFox = foxPos.randomElement() else { return }
-            self.fox = .init(imageNamed: randomFox.textureName)
-            self.fox.name = randomFox.name
-            self.fox.position = randomFox.position
-            self.fox.setScale(randomFox.scale)
-            self.fox.zPosition = randomFox.zIndex
-            self.addChild(self.fox)
-            
-            let slideUpAction = SKAction.move(
-                by: CGVector(
-                    dx: 0,
-                    dy: self.fox.size.height
-                ),
-                duration: 1.0)
-            slideUpAction.timingMode = .easeIn
-            
-            let slideDownAction = SKAction.move(
-                by: CGVector(
-                    dx: 0,
-                    dy: -self.fox.size.height
-                ),
-                duration: 1.0)
-            slideDownAction.timingMode = .easeIn
-            
-            // Define a sequence of actions
-            let sequence = SKAction.sequence([
-                slideUpAction,
-                SKAction.wait(forDuration: 5.0),
-                slideDownAction,
-                SKAction.removeFromParent(),
-                spawnCompletionAction
-            ])
-            
-            self.fox.run(sequence)
-            
-            currentAnimalEntity = dataController.addAnimal(
-                appearTime: Date(),
-                animalTypeEnum: .fox,
-                game: self.gameEntity,
-                context: self.context
-            )
-            
+            if randomValue <= hideAndSeekLevel.levelModel.rabbitRatio{
+                // Spawn a rabbit
+                guard let randomRabbit = rabbitPos.randomElement() else { return }
+                self.rabbit = .init(imageNamed: randomRabbit.textureName)
+                self.rabbit.name = randomRabbit.name
+                self.rabbit.position = randomRabbit.position
+                self.rabbit.setScale(randomRabbit.scale)
+                self.rabbit.zPosition = randomRabbit.zIndex
+                self.addChild(self.rabbit)
+                
+                // Define a slide-up action
+                let slideUpAction = SKAction.move(by: CGVector(dx: 0, dy: self.rabbit.size.height), duration: 1.0)
+                slideUpAction.timingMode = .easeIn
+                
+                // Define a slide-down action
+                let slideDownAction = SKAction.move(by: CGVector(dx: 0, dy: -self.rabbit.size.height), duration: 1.0)
+                slideDownAction.timingMode = .easeIn
+                
+                // Define a sequence of actions
+                let sequence = SKAction.sequence([
+                    slideUpAction,
+                    SKAction.wait(forDuration: 5.0),
+                    slideDownAction,
+                    SKAction.removeFromParent(),
+                    spawnCompletionAction
+                ])
+                
+                self.rabbit.run(sequence)
+                
+                currentAnimalEntity = dataController.addAnimal(
+                    appearTime: Date(),
+                    animalTypeEnum: .rabbit,
+                    game: self.gameEntity,
+                    context: self.context
+                )
+                
+            } else {
+                // Spawn a fox
+                guard let randomFox = foxPos.randomElement() else { return }
+                self.fox = .init(imageNamed: randomFox.textureName)
+                self.fox.name = randomFox.name
+                self.fox.position = randomFox.position
+                self.fox.setScale(randomFox.scale)
+                self.fox.zPosition = randomFox.zIndex
+                self.addChild(self.fox)
+                
+                let slideUpAction = SKAction.move(
+                    by: CGVector(
+                        dx: 0,
+                        dy: self.fox.size.height
+                    ),
+                    duration: 1.0)
+                slideUpAction.timingMode = .easeIn
+                
+                let slideDownAction = SKAction.move(
+                    by: CGVector(
+                        dx: 0,
+                        dy: -self.fox.size.height
+                    ),
+                    duration: 1.0)
+                slideDownAction.timingMode = .easeIn
+                
+                // Define a sequence of actions
+                let sequence = SKAction.sequence([
+                    slideUpAction,
+                    SKAction.wait(forDuration: 5.0),
+                    slideDownAction,
+                    SKAction.removeFromParent(),
+                    spawnCompletionAction
+                ])
+                
+                self.fox.run(sequence)
+                
+                currentAnimalEntity = dataController.addAnimal(
+                    appearTime: Date(),
+                    animalTypeEnum: .fox,
+                    game: self.gameEntity,
+                    context: self.context
+                )
+                
+            }
         }
     }
     

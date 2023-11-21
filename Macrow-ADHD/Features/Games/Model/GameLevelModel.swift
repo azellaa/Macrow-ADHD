@@ -35,7 +35,7 @@ struct GameLevelModel {
                 intRepresentation: 3,
                 levelDuration: 600,
                 spawnInteval: 1,
-                maximumSpawn: 5,
+                maximumSpawn: 4,
                 foxRatio: 3,
                 rabbitRatio: 2
             )
