@@ -33,6 +33,8 @@
 		26F4FBEB2AF3765600F31E68 /* AnimalTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */; };
 		26F4FBEC2AF3766000F31E68 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649292F2AF209C100570802 /* SplashScreen.swift */; };
 		26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
+		2A3B78EB2B0B855100A807F4 /* Game Over Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B78EA2B0B855100A807F4 /* Game Over Sound.mp3 */; };
+		2A3B78EC2B0B855100A807F4 /* Game Over Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B78EA2B0B855100A807F4 /* Game Over Sound.mp3 */; };
 		2A440FC22B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */; };
 		2A440FC32B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */; };
 		2A440FC42B0A7AEF0023270D /* Button Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */; };
@@ -193,6 +195,7 @@
 		26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElementTutorial.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		26FF33D32AF10E9C00944F48 /* TouchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchButton.swift; sourceTree = "<group>"; };
+		2A3B78EA2B0B855100A807F4 /* Game Over Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Game Over Sound.mp3"; sourceTree = "<group>"; };
 		2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lose Star Sound.mp3"; sourceTree = "<group>"; };
 		2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Button Sound.mp3"; sourceTree = "<group>"; };
 		2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Gain Star Sound.mp3"; sourceTree = "<group>"; };
@@ -295,6 +298,7 @@
 		2A440FBE2B0A7A9C0023270D /* Sound Effect */ = {
 			isa = PBXGroup;
 			children = (
+				2A3B78EA2B0B855100A807F4 /* Game Over Sound.mp3 */,
 				2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */,
 				2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */,
 				2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */,
@@ -855,6 +859,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A3B78EB2B0B855100A807F4 /* Game Over Sound.mp3 in Resources */,
 				2A440FC22B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */,
 				B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */,
 				B624CC622AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
@@ -873,6 +878,7 @@
 				2A440FC32B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */,
 				B624CC632AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
 				B64F1B472AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */,
+				2A3B78EC2B0B855100A807F4 /* Game Over Sound.mp3 in Resources */,
 				B64929662AF20FD200570802 /* Assets.xcassets in Resources */,
 				B64929452AF20D1D00570802 /* Jua-Regular.ttf in Resources */,
 				2A440FC72B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */,
@@ -1179,7 +1185,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1227,7 +1233,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
@@ -1274,7 +1280,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
@@ -1313,7 +1319,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";

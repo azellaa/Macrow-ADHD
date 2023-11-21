@@ -98,7 +98,7 @@ extension ResourcePath {
         static let buttonSound = "Button Sound"
         static let gainStarSound = "Gain Star Sound"
         static let loseStarSound = "Lose Star Sound"
-
+        static let gameOverSound = "Game Over Sound"
     }
 }
 

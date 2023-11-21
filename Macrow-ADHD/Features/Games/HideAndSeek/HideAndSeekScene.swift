@@ -67,7 +67,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     init(size: CGSize, isEndGame: Binding<Bool>, hideAndSeekLevel: GameLevelModel) {
         _isEndGame = isEndGame
         self.hideAndSeekLevel = hideAndSeekLevel
-        self.timerValue = hideAndSeekLevel.levelModel.levelDuration
+        self.timerValue = 5
+//        self.timerValue = hideAndSeekLevel.levelModel.levelDuration
         super.init(size: size)
     }
     
@@ -364,6 +365,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
         
         listFocusData = [Double]()
         stopMWMPublisher()
+        AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.gameOverSound)
         
         isCompleted = true
         
