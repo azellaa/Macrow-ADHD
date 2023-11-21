@@ -38,7 +38,7 @@ class MWMInstance: NSObject, MWMDelegate, ObservableObject {
     
     func didConnect() {
         print("didConnect");
-        isConnected = true
+        isConnected = false
         mwmDevice?.stopScanDevice()
         signalStatusSubject.send(1)
     }
