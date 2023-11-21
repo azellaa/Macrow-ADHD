@@ -55,18 +55,18 @@ class GameOverPage: SKNode {
             addChild(endImage)
             
             // Create the main label (text label)
-            let congratsLabel = SKLabelNode(fontNamed: "Jua-Regular")
+            let congratsLabel = SKLabelNode(fontNamed: AppFont.juaRegular)
             congratsLabel.fontSize = 48
             congratsLabel.text = "Congratulations!"
             congratsLabel.position = CGPoint(x: frame.width / 2, y: frame.height + 120 )
-            congratsLabel.fontColor = SKColor(named: "cream2Color")
+            congratsLabel.fontColor = SKColor(.cream1)
             congratsLabel.zPosition = 2
             addChild(congratsLabel)
             
-            let scoreLabel = SKLabelNode(fontNamed: "Jua-Regular")
+            let scoreLabel = SKLabelNode(fontNamed: AppFont.juaRegular)
             scoreLabel.fontSize = 64
             scoreLabel.text = "Your Score"
-            scoreLabel.fontColor = SKColor(named: "cream2Color")
+            scoreLabel.fontColor = SKColor(.cream1)
             scoreLabel.position = CGPoint(x: frame.width / 2, y: frame.height / 2 )
             scoreLabel.zPosition = 2
             addChild(scoreLabel)
@@ -84,20 +84,20 @@ class GameOverPage: SKNode {
             
 
             // Create the outline label
-            let outlineLabel = SKLabelNode(fontNamed: "Jua-Regular")
+            let outlineLabel = SKLabelNode(fontNamed: AppFont.juaRegular)
             outlineLabel.fontSize = congratsLabel.fontSize
             outlineLabel.text = congratsLabel.text
-            outlineLabel.fontColor = SKColor(named: "cream2Color")
+            outlineLabel.fontColor = SKColor(.cream1)
             outlineLabel.position = CGPoint(x: congratsLabel.position.x + 2, y: congratsLabel.position.y )
             outlineLabel.zPosition = 1
             addChild(outlineLabel)
 
             
             // Create and add a label to display the rabbit count
-            let starLabel = SKLabelNode(fontNamed: "Jua-Regular")
+            let starLabel = SKLabelNode(fontNamed: AppFont.juaRegular)
             starLabel.fontSize = 96
             starLabel.text = "\(sharedRabbitCount)"
-            starLabel.fontColor = SKColor(named: "cream2Color")
+            starLabel.fontColor = SKColor(.cream1)
             starLabel.position = CGPoint(x: frame.width / 2 + 50, y: frame.height / 2 - 140)
             starLabel.zPosition = 2
             addChild(starLabel)

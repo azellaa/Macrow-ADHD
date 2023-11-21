@@ -127,19 +127,19 @@ class AttentionPopup: SKNode {
                 }
             ]))
         }
-        
-        // Reset the focusCat position
-        
     }
     
     func stopShowPause() {
-        self.removeAllActions()
-        sceneNode.removeFromParent()
-        focusCatNoHand.removeFromParent()
-        startingPosition()
-        
-        self.isShowing = false
-        self.hasCapturedScreen = false
+//        if !isShowing {
+            self.removeAllActions()
+            sceneNode.removeFromParent()
+            focusCatNoHand.removeFromParent()
+            startingPosition()
+            
+            self.isShowing = false
+            self.hasCapturedScreen = false
+//        }
+
     }
     
     
