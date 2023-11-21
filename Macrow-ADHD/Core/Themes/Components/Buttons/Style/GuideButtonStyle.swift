@@ -10,32 +10,32 @@ import SwiftUI
 struct GuideButtonStyle: ButtonStyle {
     
     var style: GuideButtonStyleEnum = .brown
-    private var upperColor: Color = .brownGuide
-    private var belowColor: Color = .darkBrown
+    private var upperColor: Color = .brown1
+    private var belowColor: Color = .brown2
     private var foregroundColor: Color = .white
     init(style: GuideButtonStyleEnum) {
         self.style = style
         switch style {
         case .brown:
-            self.upperColor = .brownGuide
-            self.belowColor = .darkBrown
-            self.foregroundColor = .white
+            self.upperColor = .brown1
+            self.belowColor = .brown2
+            self.foregroundColor = .white1
         case .lightBrown:
-            self.upperColor = .lightBrown
-            self.belowColor = .brownColor
-            self.foregroundColor = .darkBrown
+            self.upperColor = .cream1
+            self.belowColor = .cream2
+            self.foregroundColor = .brown1
         case .white:
-            self.upperColor = .white
-            self.belowColor = .brownColor
-            self.foregroundColor = .darkBrown
+            self.upperColor = .white1
+            self.belowColor = .cream1
+            self.foregroundColor = .brown1
         case .nonInteractable:
-            self.upperColor = .brownGuide
-            self.belowColor = .brownColor
-            self.foregroundColor = .white
+            self.upperColor = .brown2
+            self.belowColor = .brown1
+            self.foregroundColor = .white1
         case .darkBrown:
             self.upperColor = .brown4
             self.belowColor = .brown5
-            self.foregroundColor = .white
+            self.foregroundColor = .white1
         }
     }
     

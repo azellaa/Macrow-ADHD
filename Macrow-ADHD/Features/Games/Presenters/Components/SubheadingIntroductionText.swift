@@ -13,11 +13,11 @@ struct SubheadingIntroductionText: View {
     var body: some View {
         Text(text)
             .font(.custom("Jua-Regular", size: 24))
-            .foregroundColor(Color.brownColor)
+            .foregroundColor(.brown1)
             .padding(10)
             .background(
                 RoundedRectangle(cornerRadius: 37)
-                    .fill(Color(ResourcePath.IntroductionView.HideAndSeek.subheadingBackgroundColor))
+                    .fill(.cream1)
                     .opacity(0.75)
                     .frame(height: 38)
             )

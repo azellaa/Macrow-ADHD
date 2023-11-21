@@ -87,12 +87,6 @@ struct FocusChart: View {
                         
                         .accessibilityElement(children: .combine)
                         .frame(width: boxWidth, alignment: .leading)
-                        //                        .background {
-                        //                            RoundedRectangle(cornerRadius: 8)
-                        //                                .fill(.brownGuide)
-                        //                                .padding(.horizontal, -8)
-                        //                                .padding(.vertical, -4)
-                        //                        }
                         .offset(x: boxOffset, y: -80)
                     }
                 }
@@ -109,7 +103,7 @@ struct FocusChart: View {
                             if hour! == 0 || hour!%6 == 0 {
                                 AxisValueLabel(format: statisticVm.filterDateTime)
                                     .font(.label)
-                                    .foregroundStyle(.brownGuide)
+                                    .foregroundStyle(.brown1)
                             }
                         }
                     }
@@ -121,7 +115,7 @@ struct FocusChart: View {
                     AxisMarks(values: firstReport.timestamp!.daysOfWeek(using: .gregorian) ) { _ in
                         AxisValueLabel(format: statisticVm.filterDateTime)
                             .font(.label)
-                            .foregroundStyle(.brownGuide)
+                            .foregroundStyle(.brown1)
                     }
                 }
                 
@@ -134,7 +128,7 @@ struct FocusChart: View {
                                 
                                 AxisValueLabel(format: statisticVm.filterDateTime)
                                     .font(.label)
-                                    .foregroundStyle(.brownGuide)
+                                    .foregroundStyle(.brown1)
                             }
                         }
                     }
@@ -148,7 +142,7 @@ struct FocusChart: View {
                 AxisGridLine()
                 AxisValueLabel()
                     .font(.label)
-                    .foregroundStyle(.brownGuide)
+                    .foregroundStyle(.brown1)
             }
         }
         .frame(maxHeight: 472)
@@ -156,8 +150,10 @@ struct FocusChart: View {
     }
     
     private func getBaselineMarker (marker: Report) -> some ChartContent {
+        
         return LineMark(
-            x: .value("Date", marker.timestamp!),
+            //FIXME: workaround for timestamp bug
+            x: .value("Date", marker.timestamp ?? Date()),
             y: .value("Focus", marker.avgAttention)
         )
         //        .accessibilityLabel(marker.timestamp!.formatted(date: .complete, time: .omitted))

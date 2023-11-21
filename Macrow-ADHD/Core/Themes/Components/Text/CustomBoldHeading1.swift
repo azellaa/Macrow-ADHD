@@ -26,5 +26,5 @@ struct CustomBoldHeading1: View {
 
 #Preview {
     CustomBoldHeading1(text: "Test")
-        .foregroundStyle(.darkBrown)
+        .foregroundStyle(.brown1)
 }

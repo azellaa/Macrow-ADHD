@@ -10,7 +10,7 @@ import SwiftUI
 struct CustomSegmentedControl: View {
     @Binding var preselectedIndex: Int
     var options: [String]
-    let color = Color.brownColor
+    let color = Color.brown1
     
     var body: some View {
         HStack(spacing: 0) {
@@ -18,7 +18,7 @@ struct CustomSegmentedControl: View {
                 let isSelected = preselectedIndex == index
                 ZStack {
                     Rectangle()
-                        .fill(.segmentedPickerBg)
+                        .fill(.white1)
                     
                     Rectangle()
                         .fill(color)
@@ -36,7 +36,7 @@ struct CustomSegmentedControl: View {
                 .overlay(
                     Text(options[index])
                         .fontWeight(isSelected ? .bold : .regular)
-                        .foregroundColor(isSelected ? .white : .brownColor)
+                        .foregroundColor(isSelected ? .white1 : .brown1)
                 )
             }
         }

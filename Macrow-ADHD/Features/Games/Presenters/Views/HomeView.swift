@@ -17,7 +17,7 @@ struct HomeView: View {
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
     @ObservedObject var centralManager = CentralManager()
-    @State private var headpieceIndicator = ResourcePath.headpieceDisconnected
+    @State private var headpieceIndicator = ResourcePath.notConnected
 //    @State private var symbol = "Symbol"
     
     
@@ -54,7 +54,7 @@ struct HomeView: View {
                     Spacer()
                     Text(AppLabel.appName)
                         .font(.custom(AppFont.juaRegular, size: 86))
-                        .foregroundColor(Color.brownColor)
+                        .foregroundColor(.brown1)
                         .padding(.leading, 6)
                     Spacer()
 
@@ -62,6 +62,9 @@ struct HomeView: View {
                         GuideView()
                     } label: {
                         Image(headpieceIndicator)
+                            .resizable()
+                            .scaledToFit()
+                            .frame(width: 40, height: 40)
                     }
                     .buttonStyle(SymbolButtonStyle(style: .brown))
                     .padding(.trailing, geo.size.width * 0.03)
@@ -115,19 +118,19 @@ struct HomeView: View {
         .onReceive(mwmObject.signalStatusPublisher) { signalStatus in
             switch signalStatus {
             case 1:
-                self.headpieceIndicator = ResourcePath.headpiece1Bar
+                self.headpieceIndicator = ResourcePath.connecting1
                 break
             case 2:
-                self.headpieceIndicator = ResourcePath.headpiece2Bar
+                self.headpieceIndicator = ResourcePath.connecting2
                 break
             case 3:
-                self.headpieceIndicator = ResourcePath.headpiece3Bar
+                self.headpieceIndicator = ResourcePath.connecting3
                 break
             case 4:
-                self.headpieceIndicator = ResourcePath.headpieceConnected
+                self.headpieceIndicator = ResourcePath.connected
                 break
             default:
-                self.headpieceIndicator = ResourcePath.headpieceDisconnected
+                self.headpieceIndicator = ResourcePath.notConnected
                 break
             }
         }
@@ -138,7 +141,9 @@ struct HomeView: View {
             }
         }
         .onAppear{
-            mwmObject.mwmDevice?.scanDevice()
+            if !mwmObject.isConnected {
+                mwmObject.mwmDevice?.scanDevice()
+            }
             #if targetEnvironment(simulator)
             mwmObject.eSense()
             #endif
