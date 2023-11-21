@@ -67,8 +67,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
     init(size: CGSize, isEndGame: Binding<Bool>, hideAndSeekLevel: GameLevelModel) {
         _isEndGame = isEndGame
         self.hideAndSeekLevel = hideAndSeekLevel
-        self.timerValue = 5
-//        self.timerValue = hideAndSeekLevel.levelModel.levelDuration
+        self.timerValue = hideAndSeekLevel.levelModel.levelDuration
         super.init(size: size)
     }
     
