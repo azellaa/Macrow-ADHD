@@ -141,4 +141,11 @@ extension ResourcePath {
     }
 }
 
+//MARK: SplashScreen
+extension ResourcePath {
+    struct SplashScreen {
+        static let mainLogo = "Main Logo"
+    }
+}
+
 
