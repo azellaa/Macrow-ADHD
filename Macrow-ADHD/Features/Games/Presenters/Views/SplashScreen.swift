@@ -17,7 +17,9 @@ struct SplashScreen: View {
                 if firstLaunch {
                     DeviceTutorial(opacity: 0)
                 } else {
-                    HomeView()
+//                    HomeView()
+                //MARK: for exhibition, the device tutorial will always showed
+                    DeviceTutorial(opacity: 0)
                 }
             } else {
                 ZStack {
@@ -45,14 +47,14 @@ struct SplashScreen: View {
                         .padding(.top, UIScreen.main.bounds.height * 0.2)
                         
                     }
+                    
                 }
+                .onAppear(perform: {
+                    AudioManager.shared.playBackgroundMusic(fileName: ResourcePath.Sound.BackgroundMusic.homeMusic)
+                })
+                
             }
         }
-        .onAppear(perform: {
-            AudioManager.shared.playBackgroundMusic(fileName: "Tropical Jungle")
-        })
-        
-        
     }
 }
 
