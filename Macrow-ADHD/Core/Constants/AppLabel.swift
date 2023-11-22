@@ -26,7 +26,7 @@ struct AppLabel: Constants {
 extension AppLabel {
     struct HomeView {
         static let game1Name = "Hide and Seek"
-        static let game1Description = "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus."
+        static let game1Description = "On his way in the forest, Will finds a rabbit that needs to hide from the fox. To safe the rabbit, you need to keep the rabbit hidden from the sly fox."
         static let game1MainFocus = ["Patience", "Selective Focus"]
         static let game2Name = "Connect Number"
         static let game2Description = ""
@@ -40,6 +40,9 @@ extension AppLabel {
         static let level1 = "Beginner"
         static let level2 = "Intermediate"
         static let level3 = "Advanced"
+        static let maxStarLevel1 = 300
+        static let maxStarLevel2 = 600
+        static let maxStarLevel3 = 900
     }
 }
 extension AppLabel {

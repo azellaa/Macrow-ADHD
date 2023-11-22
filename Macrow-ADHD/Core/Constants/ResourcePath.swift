@@ -137,3 +137,10 @@ extension ResourcePath {
         }
     }
 }
+
+//MARK: - Hide&SeekIntroduction
+extension ResourcePath {
+    struct HideAndSeekIntroduction {
+        static let starIcon = "starIcon"
+    }
+}

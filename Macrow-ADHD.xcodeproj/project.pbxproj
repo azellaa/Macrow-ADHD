@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		265BFE4E2B0B51B6007CB721 /* GameInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BFE4D2B0B51B6007CB721 /* GameInfoLabel.swift */; };
 		265BFE4F2B0B51F7007CB721 /* GameInfoLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 265BFE4D2B0B51B6007CB721 /* GameInfoLabel.swift */; };
+		266B869E2B0C66CA00118D08 /* ChoseLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B869D2B0C66CA00118D08 /* ChoseLevelComponent.swift */; };
+		266B86A02B0C7E8F00118D08 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B869F2B0C7E8F00118D08 /* Container.swift */; };
+		266B86A12B0C7EAE00118D08 /* Container.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B869F2B0C7E8F00118D08 /* Container.swift */; };
+		266B86A22B0CB6ED00118D08 /* ChoseLevelComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 266B869D2B0C66CA00118D08 /* ChoseLevelComponent.swift */; };
 		2684988E2AFA4A5A0057C8D1 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684988D2AFA4A5A0057C8D1 /* NavigationUtil.swift */; };
 		2684988F2AFA4A960057C8D1 /* NavigationUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2684988D2AFA4A5A0057C8D1 /* NavigationUtil.swift */; };
 		268DE2442ADF756C0097E3F2 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 268DE2432ADF756C0097E3F2 /* HomeView.swift */; };
@@ -180,6 +184,8 @@
 
 /* Begin PBXFileReference section */
 		265BFE4D2B0B51B6007CB721 /* GameInfoLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfoLabel.swift; sourceTree = "<group>"; };
+		266B869D2B0C66CA00118D08 /* ChoseLevelComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoseLevelComponent.swift; sourceTree = "<group>"; };
+		266B869F2B0C7E8F00118D08 /* Container.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Container.swift; sourceTree = "<group>"; };
 		2684988D2AFA4A5A0057C8D1 /* NavigationUtil.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUtil.swift; sourceTree = "<group>"; };
 		268DE2432ADF756C0097E3F2 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		268DE2452ADF786B0097E3F2 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
@@ -586,6 +592,7 @@
 				268DE2452ADF786B0097E3F2 /* ButtonView.swift */,
 				3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */,
 				3DFAD8C42B00C13100E0B079 /* ThoughtBubble.swift */,
+				266B869D2B0C66CA00118D08 /* ChoseLevelComponent.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -758,6 +765,7 @@
 			children = (
 				B615D0CD2AFA136F0085EFD9 /* Style */,
 				B6ED95B12AF9510F00BEB9B0 /* TextButton.swift */,
+				266B869F2B0C7E8F00118D08 /* Container.swift */,
 				B6ED95B72AF958DF00BEB9B0 /* SymbolButton.swift */,
 				B615D0D42AFA20CC0085EFD9 /* StatisticElementButton.swift */,
 				2AEC6E852AFBEF9300DB3194 /* GuideButton.swift */,
@@ -904,6 +912,7 @@
 				26A9C6682ACBCC2700117948 /* HideAndSeekTutorialView.swift in Sources */,
 				B6257E862AF8FB45004C2F0D /* Decimal.swift in Sources */,
 				265BFE4E2B0B51B6007CB721 /* GameInfoLabel.swift in Sources */,
+				266B869E2B0C66CA00118D08 /* ChoseLevelComponent.swift in Sources */,
 				2AEC6E892AFBEFC800DB3194 /* GuideButtonStyle.swift in Sources */,
 				542DD89A2AE596D80024387C /* Report+CoreDataProperties.swift in Sources */,
 				B64EFB622AE22B5A002190EA /* ReportModel.xcdatamodeld in Sources */,
@@ -956,6 +965,7 @@
 				3DB613762AC5C66F00F0A792 /* Macrow_ADHDApp.swift in Sources */,
 				3D53304F2AFA233000300AF0 /* DisconnectedOverlay.swift in Sources */,
 				26E4B6A12AEFB16600434426 /* GameElementTutorial.swift in Sources */,
+				266B86A02B0C7E8F00118D08 /* Container.swift in Sources */,
 				B615D0E52AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
 				B615D0E82AFA9A2B0085EFD9 /* SessionChart.swift in Sources */,
 				2A440FC92B0A90EE0023270D /* CustomBoldHeading1.swift in Sources */,
@@ -1000,6 +1010,7 @@
 				B64929362AF20D0B00570802 /* ContentView.swift in Sources */,
 				26F4FBE42AF375FC00F31E68 /* GameInfo.swift in Sources */,
 				26F4FBEA2AF3763700F31E68 /* GameData.swift in Sources */,
+				266B86A22B0CB6ED00118D08 /* ChoseLevelComponent.swift in Sources */,
 				B6B4D6A52B01804D006BE6C2 /* EmptyChart.swift in Sources */,
 				2AEC6E872AFBEF9400DB3194 /* GuideButton.swift in Sources */,
 				B6257E832AF8FB2C004C2F0D /* AppLabel.swift in Sources */,
@@ -1040,6 +1051,7 @@
 				265BFE4F2B0B51F7007CB721 /* GameInfoLabel.swift in Sources */,
 				B649294C2AF20D3300570802 /* Report+GetFocusPause.swift in Sources */,
 				B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */,
+				266B86A12B0C7EAE00118D08 /* Container.swift in Sources */,
 				3D5330502AFA241B00300AF0 /* DisconnectedOverlay.swift in Sources */,
 				B64929492AF20D2F00570802 /* Game+GetAnimal.swift in Sources */,
 				B615D0E62AFA894C0085EFD9 /* DetailStatisticViewSwift.swift in Sources */,
