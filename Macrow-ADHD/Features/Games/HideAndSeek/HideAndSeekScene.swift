@@ -392,7 +392,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
       
       listFocusData = [Double]()
       stopMWMPublisher()
-      AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.gameOverSound)
+       AudioManager.shared.playSoundEffect(fileName: ResourcePath.Sound.SoundEffect.gameOverSound)
       
       isCompleted = true
       
@@ -414,7 +414,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             if node.name == "rabbit" {
                // Change texture for the rabbit
                node.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.rabbitTap)
-               AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.gainStarSound)
+                AudioManager.shared.playSoundEffect(fileName: ResourcePath.Sound.SoundEffect.gainStarSound)
                
                node.removeAllActions()
                rabbitCount += 1
@@ -436,7 +436,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             if node.name == "fox" {
                // Change texture for the fox
                node.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.foxTap)
-               AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.loseStarSound)
+                AudioManager.shared.playSoundEffect(fileName: ResourcePath.Sound.SoundEffect.loseStarSound)
                node.removeAllActions()
                if rabbitCount - 1 <= 0 {
                   rabbitCount = 0
