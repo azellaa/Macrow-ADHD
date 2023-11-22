@@ -18,103 +18,102 @@ struct HomeView: View {
     @State private var mwmData: MWMData?
     @ObservedObject var centralManager = CentralManager()
     @State private var headpieceIndicator = ResourcePath.notConnected
-//    @State private var symbol = "Symbol"
     
-    
-#if targetEnvironment(simulator)
-    
-    private let games: [GameInfo] = [
-        GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, mainFocus: AppLabel.HomeView.game1MainFocus),
-        //        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-        //        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-    ]
-#else
-    private let games: [GameInfo] = [
-        GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, mainFocus: AppLabel.HomeView.game1MainFocus),
-        //        GameInfo(name: "Hide", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-        //        GameInfo(name: "Hide and ", description: "lorem ipsum dolores", imageName: "homeHideAndSeek", destination: HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)), mainFocus: "Focus    |    Waiting    |    Ignore Distraction"),
-    ]
-#endif
-    
+    var gameCount = GameInfoLabel.games.count
     
     var body: some View {
-        GeometryReader { geo in
-            VStack{
-                HStack {
-                    
-                    NavigationLink {
-                        StatisticViewSwift()
-                            .navigationBarBackButtonHidden()
-                    } label: {
-                        Image(ResourcePath.statisticWhite)
-                    }
-                    .buttonStyle(SymbolButtonStyle(style: .brown))
-                    .padding(.leading, geo.size.width * 0.03)
-                    
-                    Spacer()
-                    Text(AppLabel.appName)
-                        .font(.custom(AppFont.juaRegular, size: 86))
-                        .foregroundColor(.brown1)
-                        .padding(.leading, 6)
-                    Spacer()
-
-                    NavigationLink {
-                        GuideView()
-                    } label: {
-                        Image(headpieceIndicator)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 40, height: 40)
-                    }
-                    .buttonStyle(SymbolButtonStyle(style: .brown))
-                    .padding(.trailing, geo.size.width * 0.03)
-
-                
+        VStack{
+            HStack {
+                NavigationLink {
+                    StatisticViewSwift()
+                        .navigationBarBackButtonHidden()
+                } label: {
+                    Image(ResourcePath.statisticWhite)
                 }
-                .padding(.vertical, geo.size.height * 0.04)
+                .buttonStyle(SymbolButtonStyle(style: .brown))
                 
-                HStack {
-                    BackCarouselButton(backName: "chevron.backward", isbackButton: true, totalGames: games.count, currentIdx: $currentIdx)
-                        .frame(width: geo.size.width * 0.08)
-                        .opacity(currentIdx == 0 ? 0 : 1)
-                    
-                    Spacer()
-                    
-                    ZStack {
-                        ForEach(0..<games.count) { index in
-                            HomeItemView(dest: Hide_SeekIntroduction(currentGame: games[index], width: geo.size.width, height: geo.size.height), gameName: games[index].name, imageName: games[index].imageName)
-                                .offset(x: CGFloat(index - currentIdx) * geo.size.width * 0.9 + dragOffset, y: 0)
-                        }
-                    }
-                    
-                    .gesture(
-                        DragGesture()
-                            .onEnded({ value in
-                                let threshold: CGFloat = 50
-                                if value.translation.width > threshold {
-                                    withAnimation {
-                                        currentIdx = max(0, currentIdx - 1)
-                                    }
-                                } else if value.translation.width < -threshold {
-                                    withAnimation {
-                                        currentIdx = min(games.count - 1, currentIdx + 1)
-                                    }
-                                }
-                            })
-                    )
-                    
-                    Spacer()
-                    
-                    BackCarouselButton(backName: "chevron.forward", isbackButton: false, totalGames: games.count, currentIdx: $currentIdx)
-                        .frame(width: geo.size.width * 0.08)
-                        .opacity(currentIdx == games.count - 1 ? 0 : 1)
-                }
                 Spacer()
+                
+                NavigationLink {
+                    GuideView()
+                } label: {
+                    Image(headpieceIndicator)
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 40, height: 40)
+                }
+                .buttonStyle(SymbolButtonStyle(style: .brown))
             }
-            .frame(maxWidth: .infinity, maxHeight: .infinity)
-            .background(Image(ResourcePath.HomeView.hideAndSeekHomeBackground).resizable()
-                .aspectRatio( contentMode: .fill))
+            .padding(.top, UIScreen.main.bounds.height * 0.048)
+            .padding(.horizontal, UIScreen.main.bounds .width * (32 / UIScreen.main.bounds.width))
+            Spacer()
+            
+            ZStack {
+                ForEach(0..<gameCount, id: \.self) { index in
+                    HomeItemView(
+                            dest: Hide_SeekIntroduction(currentGame: GameInfoLabel.games[index]),
+                            gameName: GameInfoLabel.games[index].name,
+                            imageName: GameInfoLabel.games[index].imageName,
+                            mainFocus: GameInfoLabel.games[index].mainFocus,
+                            isLocked: GameInfoLabel.games[index].isLocked
+                        )
+                    .offset(x: CGFloat(index - currentIdx) * UIScreen.main.bounds.width * 0.9 + dragOffset, y: 0)
+                }
+            }
+            .gesture(
+                DragGesture()
+                    .onEnded({ value in
+                        let threshold: CGFloat = 50
+                        if value.translation.width > threshold {
+                            withAnimation {
+                                currentIdx = max(0, currentIdx - 1)
+                            }
+                        } else if value.translation.width < -threshold {
+                            withAnimation {
+                                currentIdx = min(GameInfoLabel.games.count - 1, currentIdx + 1)
+                            }
+                        }
+                    })
+            )
+            .padding(.bottom, UIScreen.main.bounds.height * (19.92 / UIScreen.main.bounds.height))
+            
+            HStack {
+                ForEach(0..<gameCount, id: \.self) { index in
+                    if index == currentIdx {
+                        RoundedRectangle(cornerRadius: 30)
+                            .fill(.yellow2)
+                            .frame(width: UIScreen.main.bounds.width * 0.05, height: UIScreen.main.bounds.height * 0.024)
+                    } else {
+                        Circle()
+                            .fill(.yellow3)
+                            .frame(height: UIScreen.main.bounds.height * 0.024)
+                    }
+                }
+            }
+            Spacer()
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(
+            ZStack {
+                Image(ResourcePath.HomeView.homeBackground[currentIdx]).resizable()
+                    .aspectRatio( contentMode: .fill)
+            }
+                .gesture(
+                    DragGesture()
+                        .onEnded({ value in
+                            let threshold: CGFloat = 50
+                            if value.translation.width > threshold {
+                                withAnimation {
+                                    currentIdx = max(0, currentIdx - 1)
+                                }
+                            } else if value.translation.width < -threshold {
+                                withAnimation {
+                                    currentIdx = min(GameInfoLabel.games.count - 1, currentIdx + 1)
+                                }
+                            }
+                        })
+                )
+        )
         .onReceive(mwmObject.signalStatusPublisher) { signalStatus in
             switch signalStatus {
             case 1:
@@ -146,10 +145,10 @@ struct HomeView: View {
             }
             #if targetEnvironment(simulator)
             mwmObject.eSense()
-            #endif
+#endif
         }
         .navigationBarBackButtonHidden(true)
-        
+        .ignoresSafeArea()
     }
 }
 

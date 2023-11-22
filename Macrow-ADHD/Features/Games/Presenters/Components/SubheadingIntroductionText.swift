@@ -12,14 +12,14 @@ struct SubheadingIntroductionText: View {
     
     var body: some View {
         Text(text)
-            .font(.custom("Jua-Regular", size: 24))
+            .font(.body1)
             .foregroundColor(.brown1)
-            .padding(10)
+            .padding(.horizontal, UIScreen.main.bounds.width * (20 / UIScreen.main.bounds.width))
+            .padding(.vertical, UIScreen.main.bounds.height * (5 / UIScreen.main.bounds.height))
             .background(
-                RoundedRectangle(cornerRadius: 37)
+                RoundedRectangle(cornerRadius: 30)
                     .fill(.cream1)
                     .opacity(0.75)
-                    .frame(height: 38)
             )
     }
 }
