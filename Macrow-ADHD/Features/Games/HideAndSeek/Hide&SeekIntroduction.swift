@@ -35,7 +35,7 @@ struct Hide_SeekIntroduction: View {
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
 #if targetEnvironment(simulator)
-    @State private var isDisconnected = false
+    @State private var isDisconnected = true
     
 #else
     @State private var isDisconnected = true
@@ -57,14 +57,13 @@ struct Hide_SeekIntroduction: View {
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             
+            
             HStack {
                 VStack{
                     HStack{
-                        SymbolButton(type: .back, buttonStyle: .brown, action: {presentationMode.wrappedValue.dismiss()})
                         
                         Spacer()
                         
-//                            .position(x: UIScreen.main.bounds.width * 0.015, y: UIScreen.main.bounds.height * 0.052)
                         NavigationLink {
                             GuideView()
                         } label: {
@@ -109,6 +108,7 @@ struct Hide_SeekIntroduction: View {
                 }
                 .padding(.horizontal, width * (32 / width))
                 
+                
                 ZStack (alignment: .leading) {
                     Image("LevelingBackground")
                         .resizable()
@@ -147,6 +147,24 @@ struct Hide_SeekIntroduction: View {
                 }
                 .frame(width: width * (487 / width))
             }
+                HStack(alignment: .top, content: {
+                    VStack(content: {
+                        
+                        SymbolButton(type: .back, buttonStyle: .brown, action: {presentationMode.wrappedValue.dismiss()})
+                        Spacer()
+                    })
+                    Spacer()
+                })
+                .padding(.top, height * (40 / height))
+                .padding(.horizontal, 32)
+                .zIndex(1)
+                .frame(height: UIScreen.main.bounds.height)
+                
+                Spacer()
+            
+            if isDisconnected{
+                DisconnectedOverlay()
+            }
         }
         .navigationBarBackButtonHidden(true)
         .onReceive(mwmObject.signalStatusPublisher, perform: { signalStatus in
@@ -169,13 +187,6 @@ struct Hide_SeekIntroduction: View {
                 break
             }
         })
-        .overlay(
-            Group {
-                if isDisconnected{
-                    DisconnectedOverlay()
-                }
-            }
-        )
         .onAppear {
             let reports = DataController.shared.fetchReports()
             var gameCount = 0
