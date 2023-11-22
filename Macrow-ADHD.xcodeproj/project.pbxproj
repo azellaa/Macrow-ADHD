@@ -207,7 +207,7 @@
 		2AEC6E882AFBEFC800DB3194 /* GuideButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideButtonStyle.swift; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectedOverlay.swift; sourceTree = "<group>"; };
-		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DB613722AC5C66F00F0A792 /* Will's Storyland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Will's Storyland.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macrow_ADHDApp.swift; sourceTree = "<group>"; };
 		3DB613772AC5C66F00F0A792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 		5491B13A2AE5C351004986A0 /* CentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManager.swift; sourceTree = "<group>"; };
 		54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeEnum.swift; sourceTree = "<group>"; };
 		54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
-		B60864952AE62AE600424FCA /* MacroADHD-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacroADHD-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60864952AE62AE600424FCA /* Will's Storyland-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Will's Storyland-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroADHD_simulatorApp.swift; sourceTree = "<group>"; };
 		B60B5B0E2AFDE6EE00C96689 /* Calendar+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+extension.swift"; sourceTree = "<group>"; };
 		B615D0C92AFA0C290085EFD9 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
@@ -347,8 +347,8 @@
 		3DB613732AC5C66F00F0A792 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */,
-				B60864952AE62AE600424FCA /* MacroADHD-simulator.app */,
+				3DB613722AC5C66F00F0A792 /* Will's Storyland.app */,
+				B60864952AE62AE600424FCA /* Will's Storyland-simulator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -783,9 +783,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3DB613712AC5C66F00F0A792 /* Macrow-ADHD */ = {
+		3DB613712AC5C66F00F0A792 /* Will's Storyland */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Macrow-ADHD" */;
+			buildConfigurationList = 3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Will's Storyland" */;
 			buildPhases = (
 				3DB6136E2AC5C66F00F0A792 /* Sources */,
 				3DB6136F2AC5C66F00F0A792 /* Frameworks */,
@@ -795,14 +795,14 @@
 			);
 			dependencies = (
 			);
-			name = "Macrow-ADHD";
+			name = "Will's Storyland";
 			productName = "Macrow-ADHD";
-			productReference = 3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */;
+			productReference = 3DB613722AC5C66F00F0A792 /* Will's Storyland.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B60864942AE62AE600424FCA /* MacroADHD-simulator */ = {
+		B60864942AE62AE600424FCA /* Will's Storyland-simulator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B60864A22AE62AE700424FCA /* Build configuration list for PBXNativeTarget "MacroADHD-simulator" */;
+			buildConfigurationList = B60864A22AE62AE700424FCA /* Build configuration list for PBXNativeTarget "Will's Storyland-simulator" */;
 			buildPhases = (
 				B60864912AE62AE600424FCA /* Sources */,
 				B60864922AE62AE600424FCA /* Frameworks */,
@@ -812,9 +812,9 @@
 			);
 			dependencies = (
 			);
-			name = "MacroADHD-simulator";
+			name = "Will's Storyland-simulator";
 			productName = "MacroADHD-simulator";
-			productReference = B60864952AE62AE600424FCA /* MacroADHD-simulator.app */;
+			productReference = B60864952AE62AE600424FCA /* Will's Storyland-simulator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -848,8 +848,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3DB613712AC5C66F00F0A792 /* Macrow-ADHD */,
-				B60864942AE62AE600424FCA /* MacroADHD-simulator */,
+				3DB613712AC5C66F00F0A792 /* Will's Storyland */,
+				B60864942AE62AE600424FCA /* Will's Storyland-simulator */,
 			);
 		};
 /* End PBXProject section */
@@ -1365,7 +1365,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Macrow-ADHD" */ = {
+		3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Will's Storyland" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3DB613812AC5C67100F0A792 /* Debug */,
@@ -1374,7 +1374,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B60864A22AE62AE700424FCA /* Build configuration list for PBXNativeTarget "MacroADHD-simulator" */ = {
+		B60864A22AE62AE700424FCA /* Build configuration list for PBXNativeTarget "Will's Storyland-simulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B60864A02AE62AE700424FCA /* Debug */,

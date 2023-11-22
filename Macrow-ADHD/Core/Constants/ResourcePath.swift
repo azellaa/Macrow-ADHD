@@ -94,11 +94,18 @@ extension ResourcePath {
 
 //MARK: - SoundEffect
 extension ResourcePath {
-    struct SoundEffect {
-        static let buttonSound = "Button Sound"
-        static let gainStarSound = "Gain Star Sound"
-        static let loseStarSound = "Lose Star Sound"
-        static let gameOverSound = "Game Over Sound"
+    struct Sound {
+        struct SoundEffect {
+            static let buttonSound = "Button Sound"
+            static let gainStarSound = "Gain Star Sound"
+            static let loseStarSound = "Lose Star Sound"
+            static let gameOverSound = "Game Over Sound"
+        }
+        
+        struct BackgroundMusic {
+            static let gameMusic = "Jungle Song"
+            static let homeMusic = "Tropical Jungle"
+        }
     }
 }
 
@@ -131,8 +138,14 @@ extension ResourcePath {
         static let foxTap = "Fox_Tap"
         static let disconnectedPopUp = "disconnectedPopUp"
         
-        struct Sounds {
-            static let backgroundMusic = "Jungle Song"
-        }
     }
 }
+
+//MARK: SplashScreen
+extension ResourcePath {
+    struct SplashScreen {
+        static let mainLogo = "Main Logo"
+    }
+}
+
+

@@ -117,7 +117,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
          }
       }
       AudioManager.shared.playBackgroundMusic(
-         fileName: ResourcePath.HideAndSeekScene.Sounds.backgroundMusic
+         fileName: ResourcePath.Sound.BackgroundMusic.gameMusic
       )
       
       openTutorial()

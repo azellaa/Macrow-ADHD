@@ -108,15 +108,15 @@ extension AppLabel {
 extension AppLabel {
     struct DeviceTutorial {
         static let deviceTutorial = "Device Tutorial"
-        static let deviceGuide1Label = "Hi! my name is Will and we will explore the forest together"
+        static let deviceGuide1Label = "Hi! my name is Will and we are going to explore the forest together"
         static let deviceGuide2Label = "Before we go, I’m gonna introduce you to MindWave"
-        static let deviceGuide3Label = "MindWave is a device that shows your their brainwave activity"
+        static let deviceGuide3Label = "MindWave is a device that shows your brainwave activity"
         static let deviceGuide4Label = "This is a must-have device in our journey, lets get into it"
         static let deviceGuide5Label = "First you need to turn on the MindWave by switching the ON/OFF button"
-        static let deviceGuide6Label = "If there is blue light, means device is on and ready to wear"
+        static let deviceGuide6Label = "If there is a blue light, it means device is on and ready to wear"
         //MARK: deviceGuide7Label skipped because there's no text in Device Guide 7
-        static let deviceGuide8Label = "This is Sensor Tip, where brainwave would be detected. So, make sure it attached to the forehead skin"
+        static let deviceGuide8Label = "This is Sensor Tip, where brainwave would be detected. So, make sure it attached to your forehead skin"
         static let deviceGuide9Label = "This is ear clip and you need to clip it to your ear"
-        static let deviceGuide10Label = "Now device is all set and we are ready to start our journey!"
+        static let deviceGuide10Label = "Now the device is all set and we are ready to start our journey!"
     }
 }
