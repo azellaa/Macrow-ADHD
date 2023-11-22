@@ -29,7 +29,7 @@ struct GameView: View{
         .onAppear {
             if currentGame.name == "Hide and Seek" {
                 #if targetEnvironment(simulator)
-                scene = HideAndSeekWithHeadpiece(
+                scene = HideAndSeekScene(
                     size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height),
                     isEndGame: $isEndGame,
                     hideAndSeekLevel: .init(
@@ -38,7 +38,7 @@ struct GameView: View{
                     )
                 )
                 #else
-                scene = HideAndSeekWithHeadpiece(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), isEndGame: $isEndGame,
+                scene = HideAndSeekScene(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height), isEndGame: $isEndGame,
                     hideAndSeekLevel: .init(
                          name: currentGame.name,
                          levelEnum: .beginner

@@ -140,7 +140,6 @@
 		B64929542AF20D4E00570802 /* AttentionPopup.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED102ACD3A610062D0C8 /* AttentionPopup.swift */; };
 		B64929552AF20D4E00570802 /* HeadpieceIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = B685ED122ACD447D0062D0C8 /* HeadpieceIndicator.swift */; };
 		B64929572AF20D4E00570802 /* HideAndSeekScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */; };
-		B64929582AF20D4E00570802 /* HideAndSeekWithHeadpiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */; };
 		B649295A2AF20D4E00570802 /* GameOverPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6712ACBCCC600117948 /* GameOverPage.swift */; };
 		B649295B2AF20D4E00570802 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6692ACBCC5F00117948 /* ProgressBar.swift */; };
 		B649295C2AF20D4E00570802 /* HideAndSeekTutorialView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */; };
@@ -166,7 +165,6 @@
 		B6B4D6A22B0175FE006BE6C2 /* StatisticViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D6A02B0175FE006BE6C2 /* StatisticViewModel.swift */; };
 		B6B4D6A42B01804D006BE6C2 /* EmptyChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D6A32B01804D006BE6C2 /* EmptyChart.swift */; };
 		B6B4D6A52B01804D006BE6C2 /* EmptyChart.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6B4D6A32B01804D006BE6C2 /* EmptyChart.swift */; };
-		B6D1C9622AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */; };
 		B6D1C9CC2AE83DF1003B4331 /* MWMInstance.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9CA2AE83DF1003B4331 /* MWMInstance.swift */; };
 		B6D1C9CE2AE83E59003B4331 /* MWMDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D1C9CD2AE83E59003B4331 /* MWMDevice.swift */; };
 		B6ED95A82AF9412C00BEB9B0 /* CustomBoldHeading2.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6ED95A72AF9412C00BEB9B0 /* CustomBoldHeading2.swift */; };
@@ -274,7 +272,6 @@
 		B6BFD4672AE139D300D3AAB1 /* MWMDevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MWMDevice.h; sourceTree = "<group>"; };
 		B6BFD4682AE139D300D3AAB1 /* libMWMSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMWMSDK.a; sourceTree = "<group>"; };
 		B6BFD4732AE139E400D3AAB1 /* Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Bridging-Header.h"; sourceTree = "<group>"; };
-		B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HideAndSeekWithHeadpiece.swift; sourceTree = "<group>"; };
 		B6D1C9CA2AE83DF1003B4331 /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MWMInstance.swift; path = "MacroADHD-simulator/Utilities/MWMInstance.swift"; sourceTree = SOURCE_ROOT; };
 		B6D1C9CD2AE83E59003B4331 /* MWMDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MWMDevice.swift; path = "MacroADHD-simulator/Utilities/MWMDevice.swift"; sourceTree = SOURCE_ROOT; };
 		B6ED95A72AF9412C00BEB9B0 /* CustomBoldHeading2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBoldHeading2.swift; sourceTree = "<group>"; };
@@ -522,7 +519,6 @@
 			isa = PBXGroup;
 			children = (
 				B64929312AF209EA00570802 /* Hide&SeekIntroduction.swift */,
-				B6D1C9612AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift */,
 				26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */,
 				26A9C6712ACBCCC600117948 /* GameOverPage.swift */,
 				26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */,
@@ -930,7 +926,6 @@
 				26A9C6662ACBCC0D00117948 /* HideAndSeekScene.swift in Sources */,
 				B615D0E22AFA78CE0085EFD9 /* FocusChart.swift in Sources */,
 				2A563CFD2ADF86D800AFEF4C /* GuideView.swift in Sources */,
-				B6D1C9622AE8396C003B4331 /* HideAndSeekWithHeadpiece.swift in Sources */,
 				542DD8A32AE59E5A0024387C /* Game+CoreDataClass.swift in Sources */,
 				542DD88C2AE58F4A0024387C /* Array+extension.swift in Sources */,
 				B6B4D6A42B01804D006BE6C2 /* EmptyChart.swift in Sources */,
@@ -995,7 +990,6 @@
 				B64929502AF20D4300570802 /* Double+extension.swift in Sources */,
 				2A440FCD2B0B0B3B0023270D /* DeviceTutorial.swift in Sources */,
 				26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */,
-				B64929582AF20D4E00570802 /* HideAndSeekWithHeadpiece.swift in Sources */,
 				B649295A2AF20D4E00570802 /* GameOverPage.swift in Sources */,
 				B6ED95AD2AF94C2000BEB9B0 /* TextButtonStyle.swift in Sources */,
 				B649293E2AF20D0B00570802 /* ButtonView.swift in Sources */,
@@ -1203,7 +1197,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
-				DEVELOPMENT_TEAM = 85KB4TP9CK;
+				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1251,7 +1245,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
-				DEVELOPMENT_TEAM = 85KB4TP9CK;
+				DEVELOPMENT_TEAM = U43A7X58YW;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";

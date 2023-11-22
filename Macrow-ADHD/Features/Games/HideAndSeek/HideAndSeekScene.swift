@@ -59,7 +59,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
    var isSavingPauseData = false
    var isSavingDisconnectData = false
    var isPublisherStarted = false
-   var firstAnimalSpawned = false
    
    @Binding var isEndGame: Bool
    let hideAndSeekLevel: GameLevelModel
@@ -120,19 +119,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
          fileName: ResourcePath.Sound.BackgroundMusic.gameMusic
       )
       
-      openTutorial()
-      
-      if !isTutorialOpened {
-         if !isPublisherStarted {
-            self.startMWMPublisher()
-            isPublisherStarted = true
-         }
-         
-         if !firstAnimalSpawned {
-            spawnEntity()
-            firstAnimalSpawned = true
-         }
-      }
    }
    
    func tutorialIsOpen(_ tutorialView: TutorialView, isTutorialOpened: Bool) {
@@ -153,7 +139,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
    
    
    func spawnEntity() {
-      if isSpawning {
+      if isSpawning || isTutorialOpened{
          return // If entities are currently spawning, exit early
       }
       
@@ -302,7 +288,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
       
       
       attentionPopup = AttentionPopup(sceneFrame: frame)
-      attentionPopup.isShowing = false
+//      attentionPopup.isShowing = false
       attentionPopup.isHidden = true
       attentionPopup.zPosition = 20
       addChild(attentionPopup)
@@ -484,15 +470,56 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
    }
    
    func startMWMPublisher() {
-      
+      mwmObject.mwmDataPublisher
+          .sink { mwmData in
+              // Handle the emitted MWMData here
+              self.handleMWMData(mwmData)
+              
+          }
+          .store(in: &cancellables)
+      mwmObject.signalStatusPublisher
+          .sink { signalStatus in
+              self.signalStatus = signalStatus
+              print("Signal: \(self.signalStatus)")
+              
+              if !self.isSavingDisconnectData && self.signalStatus != 4 {
+                  self.disconnectDataEntity = self.dataController.addDisconnect(startTime: Date(), report: self.reportEntity, context: self.context)
+                  self.isSavingDisconnectData = true
+              } else if self.isSavingDisconnectData && self.signalStatus == 4 {
+                  self.dataController.editDisconnectEndTime(disconnect: self.disconnectDataEntity, endTime: Date(), context: self.context)
+                  self.isSavingDisconnectData = false
+              }
+              
+              switch signalStatus {
+              case 1:
+//                    self?.headpieceStatus.texture = self?.updateIcon("poorSignalIcon")
+                  self.showPopupConnecting()
+              case 2:
+//                    self?.headpieceStatus.texture = self?.updateIcon("weakSignalIcon")
+                  self.showPopupConnecting()
+              case 3:
+//                    self?.headpieceStatus.texture = self?.updateIcon("connectingIcon")
+                  self.showPopupConnecting()
+              case 4:
+//                    self?.headpieceStatus.texture = self?.updateIcon("connectedIcon")
+                  self.hidePopupAnimation()
+              default:
+//                    self?.headpieceStatus.texture = self?.updateIcon("noSignalIcon")
+                  self.showPopupDisconnect()
+              }
+          }
+          .store(in: &cancellables)
    }
    
    func stopMWMPublisher() {
-      
+      cancellables.removeAll()
    }
    
    override func update(_ currentTime: TimeInterval) {
-      
+      if !isTutorialOpened && !isPublisherStarted {
+            self.startMWMPublisher()
+            isPublisherStarted = true
+      }
       if numOfSpawn < 1 {
          spawnNextEntity()
       }
@@ -508,12 +535,20 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             seconds),
          score: rabbitCount
       )
-      attentionPopup.update(currentTime)
-      if tutorialView.isHidden {
+      if !isTutorialOpened {
          if self.focusCount < 50  {
-            self.fox.isPaused = true
-            self.rabbit.isPaused = true
+            if let rabbit = self.childNode(withName: "rabbit"){
+               rabbit.isPaused = true
+               
+            }
+            if let fox = self.childNode(withName: "fox") {
+               fox.isPaused = true
+               
+            }
+//            self.fox.isPaused = true
+//            self.rabbit.isPaused = true
             attentionPopup.isHidden = false
+            attentionPopup.update(currentTime)
             if !attentionPopup.isShowing {
                attentionPopup.startShowPause(self)
                if !isSavingPauseData {
@@ -524,14 +559,26 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                
             }
          } else if self.signalStatus != 4 || !mwmObject.isConnected{
-            self.fox.isPaused = true
-            self.rabbit.isPaused = true
+            if let rabbit = self.childNode(withName: "rabbit") {
+               rabbit.isPaused = true
+            }
+            if let fox = self.childNode(withName: "fox") {
+               fox.isPaused = true
+            }
+//            self.fox.isPaused = true
+//            self.rabbit.isPaused = true
             attentionPopup.isHidden = true
          }
          
          else if self.focusCount >= 50 {
-            self.fox.isPaused = false
-            self.rabbit.isPaused = false
+            if let rabbit = self.childNode(withName: "rabbit"){
+               rabbit.isPaused = false
+            }
+            if let fox = self.childNode(withName: "fox") {
+               fox.isPaused = false
+            }
+//            self.fox.isPaused = false
+//            self.rabbit.isPaused = false
             attentionPopup.isHidden = true
             attentionPopup.stopShowPause()
             if isSavingPauseData {
@@ -540,6 +587,16 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
             }
          }
       }
+   }
+   private func handleMWMData(_ mwmData: MWMData) {
+       // Update your UI or perform other actions with the received data
+       print("Received MWMData: (Signal, Att, Med) \(mwmData.poorSignal), \(mwmData.attention), \(mwmData.meditation)")
+      self.focusCount = Int(mwmData.attention)
+       
+       if signalStatus == 4 && !isCompleted{
+           dataController.addFocus(value: Int16(self.focusCount), time: Date(), report: self.reportEntity, context: self.context)
+           listFocusData.append(Double(focusCount))
+       }
    }
 }
 

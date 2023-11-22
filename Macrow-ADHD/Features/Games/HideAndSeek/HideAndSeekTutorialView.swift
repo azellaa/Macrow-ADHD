@@ -247,8 +247,10 @@ class TutorialView: SKNode {
                             addChild(letStart)
                             letStart.run(SKAction.sequence([
                                 SKAction.fadeIn(withDuration: 2),
-                                SKAction.wait(forDuration: 1)
+                                SKAction.wait(forDuration: 1),
+                                SKAction.fadeOut(withDuration: 1)
                             ])){
+                                self.blackAlphaBackground.run(SKAction.fadeOut(withDuration: 0.5))
                                 self.delegate?.tutorialIsOpen(self, isTutorialOpened: false)
                             }
                         }
@@ -260,24 +262,6 @@ class TutorialView: SKNode {
                 print("Def")
             }
             
-            
-            
-            //            if let nodeName = touchedNode.name {
-            //                if nodeName == "button" {
-            //                    switch popUpIdx {
-            //                    case 1:
-            //                        self.popUp.texture = SKTexture(imageNamed: "Popup1")
-            //                        popUpButton.texture = SKTexture(imageNamed: "Button1")
-            //                    case 2:
-            //                        popUp.texture = SKTexture(imageNamed: "Popup2")
-            //                    default:
-            //                        popUp.texture = SKTexture(imageNamed: "Popup3")
-            //                        popUpButton.texture = SKTexture(imageNamed: "Button2")
-            //                    }
-            //
-            //                    popUpIdx += 1
-            //                }
-            //            }
         }
     }
     
