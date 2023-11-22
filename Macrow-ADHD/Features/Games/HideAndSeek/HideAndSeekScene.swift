@@ -33,6 +33,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
    public var focusCount = 80 // focus point
    public var isSpawning = false
    private var numOfSpawn = 0
+   var tappedNodes = Set<SKSpriteNode>()
    
    var cancellables: Set<AnyCancellable> = []
    
@@ -249,6 +250,8 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
          
          spot.remove(at: randomPos)
       }
+      
+      tappedNodes.removeAll() 
    }
    
    
@@ -392,56 +395,60 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
          let location = touch.location(in: self)
          
          if !isTouched && attentionPopup.isHidden {
-            //               ForEach(rabbit) { rabbit in
-            //                  rabbit.contains(location)
-            //
-            //               }
             let node = self.nodes(at: location).first as? SKSpriteNode ?? SKSpriteNode()
-            if node.name == "rabbit" {
-               // Change texture for the rabbit
-               node.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.rabbitTap)
-                AudioManager.shared.playSoundEffect(fileName: ResourcePath.Sound.SoundEffect.gainStarSound)
-               
-               node.removeAllActions()
-               rabbitCount += 1
-               
-               // Update rabbitCount in GameData
-               GameData.rabbitCount = rabbitCount
-               
-               //                    isTouched = true
-               
-               node.run(slideSequence(y: node.size.height))
-               
-               dataController.editAnimalTapTime(
-                  animal: self.currentAnimalEntity,
-                  tapTime: Date(),
-                  context: self.context
-               )
-            }
             
-            if node.name == "fox" {
-               // Change texture for the fox
-               node.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.foxTap)
-                AudioManager.shared.playSoundEffect(fileName: ResourcePath.Sound.SoundEffect.loseStarSound)
-               node.removeAllActions()
-               if rabbitCount - 1 <= 0 {
-                  rabbitCount = 0
-               } else {
-                  rabbitCount -= 1
+//            if let nodeName = node.name,
+            if !tappedNodes.contains(node) {
+               
+               if node.name == "rabbit" {
+                  // Change texture for the rabbit
+                  node.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.rabbitTap)
+                  AudioManager.shared.playSoundEffect(fileName: ResourcePath.Sound.SoundEffect.gainStarSound)
+                  
+                  node.removeAllActions()
+                  rabbitCount += 1
+                  
+                  // Update rabbitCount in GameData
+                  GameData.rabbitCount = rabbitCount
+                  
+                  //                    isTouched = true
+                  
+                  node.run(slideSequence(y: node.size.height))
+                  
+                  dataController.editAnimalTapTime(
+                     animal: self.currentAnimalEntity,
+                     tapTime: Date(),
+                     context: self.context
+                  )
                }
                
-               // Update rabbitCount in GameData
-               GameData.rabbitCount = rabbitCount
+               if node.name == "fox" {
+                  // Change texture for the fox
+                  node.texture = SKTexture(imageNamed: ResourcePath.HideAndSeekScene.foxTap)
+                  AudioManager.shared.playSoundEffect(fileName: ResourcePath.Sound.SoundEffect.loseStarSound)
+                  node.removeAllActions()
+                  if rabbitCount - 1 <= 0 {
+                     rabbitCount = 0
+                  } else {
+                     rabbitCount -= 1
+                  }
+                  
+                  // Update rabbitCount in GameData
+                  GameData.rabbitCount = rabbitCount
+                  
+                  //                    isTouched = true
+                  
+                  node.run(slideSequence(y: node.size.height))
+                  
+                  dataController.editAnimalTapTime(
+                     animal: self.currentAnimalEntity,
+                     tapTime: Date(),
+                     context: self.context
+                  )
+               }
                
-               //                    isTouched = true
-               
-               node.run(slideSequence(y: node.size.height))
-               
-               dataController.editAnimalTapTime(
-                  animal: self.currentAnimalEntity,
-                  tapTime: Date(),
-                  context: self.context
-               )
+               // Mark the node as tapped
+               tappedNodes.insert(node)
             }
             
             print(numOfSpawn)

@@ -15,6 +15,7 @@ struct ChoseLevelComponent: View {
     var isCompleted: Bool
     var text: String
     var maxStar: Int
+    var halfStar: CGFloat
     
     init(starCount: Int, isCompleted: Bool, text: String, maxStar: Int) {
         self.starCount = starCount
@@ -23,8 +24,20 @@ struct ChoseLevelComponent: View {
         self.maxStar = maxStar
         if !isCompleted {
             self.completionPercentage = 0
+            self.halfStar = (width * (22 / width) / 2)
         } else {
-            self.completionPercentage = CGFloat(integerLiteral: starCount) / CGFloat(integerLiteral: maxStar)
+            if starCount >= maxStar {
+                self.completionPercentage = 1
+                self.halfStar = width * (22 / width)
+            } 
+            else if starCount >= maxStar / 2 {
+                self.halfStar = width * (22 / width)
+                self.completionPercentage = CGFloat(integerLiteral: starCount) / CGFloat(integerLiteral: maxStar)
+            }
+            else {
+                self.completionPercentage = CGFloat(integerLiteral: starCount) / CGFloat(integerLiteral: maxStar)
+                self.halfStar = (width * (22 / width) / 2)
+            }
         }
     }
     
@@ -66,7 +79,7 @@ struct ChoseLevelComponent: View {
                         .scaledToFill()
                         .foregroundColor(isCompleted ? .yellow2 : .gray1)
                         .frame(width: width * (22 / width))
-                        .padding(.leading, width * (356.27 / width) * completionPercentage - (width * (22 / width) / 2))
+                        .padding(.leading, width * (356.27 / width) * completionPercentage - halfStar)
                 }
                 .padding(.top, height * (10 / height))
                 .padding(.bottom, height * (15 / height))
