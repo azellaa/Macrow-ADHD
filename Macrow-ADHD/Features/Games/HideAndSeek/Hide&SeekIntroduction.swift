@@ -13,19 +13,21 @@ struct Hide_SeekIntroduction: View {
     var currentGame: GameInfo
     var width: CGFloat
     var height: CGFloat
+    @State var totalStarCount: Int = 0
     
     @Environment(\.presentationMode) var presentationMode
     
-    init(currentGame: GameInfo, width: CGFloat, height: CGFloat) {
+    init(currentGame: GameInfo) {
         self.currentGame = currentGame
-        self.width = width
-        self.height = height
+        self.width = UIScreen.main.bounds.width
+        self.height = UIScreen.main.bounds.height
     }
     
     struct Level {
         var number: Int
         var isCompleted: Bool
         var text: String
+        var maxStar: Int
     }
     @State private var showGameView = false
     @State private var showGuideView = false
@@ -41,28 +43,26 @@ struct Hide_SeekIntroduction: View {
     @State private var headpieceIndicator = ResourcePath.notConnected
     
     @State private var levels: [Level] = [
-        Level(number: 1, isCompleted: true, text: AppLabel.IntroductionView.HideAndSeek.level1),
-        Level(number: 2, isCompleted: false, text:  AppLabel.IntroductionView.HideAndSeek.level2),
-        Level(number: 3, isCompleted: false, text:  AppLabel.IntroductionView.HideAndSeek.level3)
+        Level(number: 1, isCompleted: true, text: AppLabel.IntroductionView.level1, maxStar: AppLabel.IntroductionView.maxStarLevel1),
+        Level(number: 2, isCompleted: false, text:  AppLabel.IntroductionView.level2, maxStar: AppLabel.IntroductionView.maxStarLevel2),
+        Level(number: 3, isCompleted: false, text:  AppLabel.IntroductionView.level3, maxStar: AppLabel.IntroductionView.maxStarLevel3)
         // Add more levels as needed
     ]
     
     var body: some View {
         ZStack{
-            Image(ResourcePath.IntroductionView.HideAndSeek.background)
+            Image(currentGame.gameIntroBg)
                 .resizable()
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
                 .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
             
-            HStack{
+            HStack {
                 VStack{
                     HStack{
-                        Spacer().frame(width: 15)
-                        
                         SymbolButton(type: .back, buttonStyle: .brown, action: {presentationMode.wrappedValue.dismiss()})
                         
-                        Spacer().frame(width: 500)
+                        Spacer()
                         
 //                            .position(x: UIScreen.main.bounds.width * 0.015, y: UIScreen.main.bounds.height * 0.052)
                         NavigationLink {
@@ -76,116 +76,76 @@ struct Hide_SeekIntroduction: View {
                         .buttonStyle(SymbolButtonStyle(style: .brown))
 
                     }
-                    .padding(.top, 25)
+                    .padding(.top, height * (40 / height))
                     
-                    Spacer().frame(height: 450)
+                    Spacer()
                     
-                    VStack {
-                        Text(AppLabel.IntroductionView.HideAndSeek.name)
-                            .font(.custom(AppFont.juaRegular, size: 64))
+                    VStack (alignment: .leading, spacing: 0) {
+                        Text(currentGame.name)
+                            .font(.heading1)
                             .foregroundColor(Color.white1)
-                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .frame(height: height * (78 / height))
                         
                         
                         HStack {
-                            ForEach(AppLabel.IntroductionView.HideAndSeek.subheading, id: \.self) { subheading in
+                            ForEach(currentGame.mainFocus, id: \.self) { subheading in
                                 SubheadingIntroductionText(text: subheading)
                             }
                         }
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .padding(.top, -20)
-                        .padding(.bottom, UIScreen.main.bounds.height * 0.035)
+                        .padding(.leading, width * (3 / width))
+                        .padding(.bottom, height * (40 / height))
                         
-                        Text(AppLabel.IntroductionView.HideAndSeek.description)
-                            .font(.custom(AppFont.juaRegular, size: 24))
-                            .lineSpacing(5)
+                        Text(currentGame.description)
+                            .font(.body1)
+                            .lineSpacing(6)
                             .foregroundColor(Color.white1)
-                            .padding(.bottom, UIScreen.main.bounds.height * 0.125)
                             .multilineTextAlignment(.leading)
+                            .padding(.leading, width * (3 / width))
                     }
-//                    .padding(.bottom, height * 0.3)
+                    .padding(.leading, width * (20 / width))
+                    .padding(.trailing, width * (32 / width))
+                    .padding(.bottom, height * (135 / height))
                     
                 }
-                .frame(width: 600)
-                .padding(.leading, 45)
+                .padding(.horizontal, width * (32 / width))
                 
-                ZStack {
+                ZStack (alignment: .leading) {
                     Image("LevelingBackground")
-                        .frame(maxWidth: .infinity, alignment: .trailing)
+                        .resizable()
                     
-                    //                    Rectangle()
-                    //                        .frame(width: 487, height: 835)
-                    //                        .cornerRadius(50)
-                    //                        .offset(y: -2)
-                    //
-                    //                    Rectangle()
-                    //                        .frame(width: 487, height: 835)
-                    //                        .offset(x: 487 / 2, y: -2)
+                    Rectangle()
+                        .frame(width: width * (9 / width), height: height * (400 / height))
+                        .foregroundColor(.cream2)
+                        .padding(.leading, width * (70 / width))
                     
-                    
-                    VStack {
+                    VStack (alignment: .leading) {
                         Text("Level")
-                            .font(.custom(AppFont.juaRegular, size: 45))
+                            .font(.heading2)
                             .foregroundColor(Color.brown1)
-                            .position(x: 190, y: 70)
-                        
                         
                         VStack {
                             ForEach(levels.indices, id: \.self) { index in
-                                HStack {
-                                    ZStack {
-                                        Image(levels[index].isCompleted ? "levelPresent" : "levelUndone")
-                                            .resizable()
-                                            .frame(width: 50, height: 55)
-                                        
-                                        Text("\(levels[index].number)")
-                                            .foregroundColor(levels[index].isCompleted ? Color.white : .gray3)
-                                            .font(.custom(AppFont.juaRegular, size: 28))
-                                    }
-                                    .padding(.top, 120)
-                                    .padding(.trailing, 200)
-                                    .onTapGesture {
-                                        if levels[index].number == 1 {
-                                            // Set the isCompleted property to true for the number 1 level
-                                            //                                            levels[index].isCompleted
-                                        }
-                                    }
-                                }
-                                Text(levels[index].text)
-                                    .font(.custom(AppFont.juaRegular, size: 36))
-                                    .foregroundColor(levels[index].isCompleted ? Color.brown1 : .gray3)
-                                    .padding(.top, -60)
-                                    .frame(maxWidth: .infinity, alignment: .leading)
-                                    .padding(.leading, 250)
+                                ChoseLevelComponent(starCount: totalStarCount, isCompleted: levels[index].isCompleted, text: levels[index].text, maxStar: levels[index].maxStar)
+                                    .padding(.bottom, height * (60 / height))
                             }
                         }
-                        .zIndex(1)
+                        .padding(.top, height * (19 / height))
                         
-                        Rectangle()
-                            .frame(width: 9, height: 190)
-                            .position(x: 170)
-                            .padding(.top, -174)
-                            .foregroundColor(.gray1)
-                            .zIndex(0)
-                        
-                        Rectangle()
-                            .frame(width: 9, height: 190)
-                            .position(x: 170)
-                            .padding(.top, -414)
-                            .foregroundColor(.gray1)
-                            .zIndex(0)
-                        
-                        TextButton(contentType: .play, buttonStyle: .brown, buttonSize: .small) {
-                            showGameView = true
+                        HStack {
+                            Spacer()
+                            TextButton(contentType: .play, buttonStyle: .brown, buttonSize: .small) {
+                                showGameView = true
+                            }
+                            Spacer()
                         }
-                        .padding(.leading, 65)
-                        .padding(.bottom, 50)
                         .navigationDestination(isPresented: $showGameView, destination: {
                             GameElementTutorialView(currentGame: currentGame)
                         })
                         
                     }
+                    .padding(.leading, width * (50 / width))
                 }
+                .frame(width: width * (487 / width))
             }
         }
         .navigationBarBackButtonHidden(true)
@@ -216,13 +176,23 @@ struct Hide_SeekIntroduction: View {
                 }
             }
         )
+        .onAppear {
+            let reports = DataController.shared.fetchReports()
+            var gameCount = 0
+            for report in reports {
+                if let animalsCount = report.reportToGame?.animals.count {
+                    gameCount += animalsCount
+                }
+            }
+            totalStarCount = gameCount
+        }
     }
 }
 
 
 
 #Preview {
-    Hide_SeekIntroduction(currentGame: GameInfo(name: AppLabel.HomeView.game1Name, description: AppLabel.HomeView.game1Description, imageName: ResourcePath.HomeView.homeHideAndSeek, mainFocus: AppLabel.HomeView.game1MainFocus), width: 100, height: 100)
+    Hide_SeekIntroduction(currentGame: GameInfo(currentGame: .hideAndSeek))
 }
 
 

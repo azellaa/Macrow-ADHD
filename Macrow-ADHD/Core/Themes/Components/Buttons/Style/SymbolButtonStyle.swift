@@ -80,7 +80,7 @@ struct SymbolButtonStyle: ButtonStyle {
                 .foregroundStyle(self.foregroundColor)
                 .onChange(of: configuration.isPressed) { newValue in
                     if newValue {
-                        AudioManager.shared.playSoundEffect(fileName: ResourcePath.SoundEffect.buttonSound)
+                        AudioManager.shared.playSoundEffect(fileName: ResourcePath.Sound.SoundEffect.buttonSound)
                     }
                 }
         }

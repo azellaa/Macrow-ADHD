@@ -44,8 +44,9 @@ struct ResourcePath: Constants {
 //MARK: HomeView
 extension ResourcePath {
     struct HomeView {
-        static let hideAndSeekHomeBackground = "homeBg"
+        static let homeBackground = ["homeHideBg", "homeConnectBg"]
         static let homeHideAndSeek = "homeHideAndSeek"
+        static let homeConnectNumber = "homeConnectNumber"
     }
 }
 
@@ -94,11 +95,18 @@ extension ResourcePath {
 
 //MARK: - SoundEffect
 extension ResourcePath {
-    struct SoundEffect {
-        static let buttonSound = "Button Sound"
-        static let gainStarSound = "Gain Star Sound"
-        static let loseStarSound = "Lose Star Sound"
-        static let gameOverSound = "Game Over Sound"
+    struct Sound {
+        struct SoundEffect {
+            static let buttonSound = "Button Sound"
+            static let gainStarSound = "Gain Star Sound"
+            static let loseStarSound = "Lose Star Sound"
+            static let gameOverSound = "Game Over Sound"
+        }
+        
+        struct BackgroundMusic {
+            static let gameMusic = "Jungle Song"
+            static let homeMusic = "Tropical Jungle"
+        }
     }
 }
 
@@ -131,8 +139,20 @@ extension ResourcePath {
         static let foxTap = "Fox_Tap"
         static let disconnectedPopUp = "disconnectedPopUp"
         
-        struct Sounds {
-            static let backgroundMusic = "Jungle Song"
-        }
     }
 }
+
+//MARK: - Hide&SeekIntroduction
+extension ResourcePath {
+    struct HideAndSeekIntroduction {
+        static let starIcon = "starIcon"
+    }
+}
+//MARK: SplashScreen
+extension ResourcePath {
+    struct SplashScreen {
+        static let mainLogo = "Main Logo"
+    }
+}
+
+

@@ -55,5 +55,5 @@ struct GameView: View{
 }
 
 #Preview {
-    GameView(currentGame: GameInfo(name: "Hide and Seek", description: "This game will be going on for 10 minutes. The purpose of this game is to tap the rabbits and ignore the fox. \n \nThis game will teach child to be patient and learn to ignore distraction. This game will be paused when child lose focus. and to continue the game, the child must learn to regain focus.", imageName: "homeHideAndSeek", mainFocus: "Focus    |    Waiting    |    Ignore Distraction"))
+    GameView(currentGame: GameInfo(currentGame: .hideAndSeek))
 }

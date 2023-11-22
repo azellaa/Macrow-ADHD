@@ -15,8 +15,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "3DB613712AC5C66F00F0A792"
-               BuildableName = "Macrow-ADHD.app"
-               BlueprintName = "Macrow-ADHD"
+               BuildableName = "Will&apos;s Storyland.app"
+               BlueprintName = "Will&apos;s Storyland"
                ReferencedContainer = "container:Macrow-ADHD.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -44,8 +44,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3DB613712AC5C66F00F0A792"
-            BuildableName = "Macrow-ADHD.app"
-            BlueprintName = "Macrow-ADHD"
+            BuildableName = "Will&apos;s Storyland.app"
+            BlueprintName = "Will&apos;s Storyland"
             ReferencedContainer = "container:Macrow-ADHD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -61,8 +61,8 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "3DB613712AC5C66F00F0A792"
-            BuildableName = "Macrow-ADHD.app"
-            BlueprintName = "Macrow-ADHD"
+            BuildableName = "Will&apos;s Storyland.app"
+            BlueprintName = "Will&apos;s Storyland"
             ReferencedContainer = "container:Macrow-ADHD.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
