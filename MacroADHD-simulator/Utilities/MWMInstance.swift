@@ -49,7 +49,7 @@ class MWMInstance: NSObject, ObservableObject {
     func eSense() {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] _ in
             let updatedData = MWMData(
-                poorSignal: 0,
+                poorSignal: 200,
                 attention: Int32(Int.random(in: 51...100)),
                 meditation: 0
             )

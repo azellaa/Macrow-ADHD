@@ -15,13 +15,10 @@ struct DisconnectedOverlay: View {
             Color.black
                 .edgesIgnoringSafeArea(.all)
                 .opacity(0.5)
+                .zIndex(0)
             
             Image(ResourcePath.disconnectedPopUp)
-            
-            SymbolButton(type: .back, buttonStyle: .brown, action: {
-                presentationMode.wrappedValue.dismiss()
-            })
-            .position(x: UIScreen.main.bounds.width * 0.056, y: UIScreen.main.bounds.height * 0.077)
+                .zIndex(1)
         }
     }
 }
