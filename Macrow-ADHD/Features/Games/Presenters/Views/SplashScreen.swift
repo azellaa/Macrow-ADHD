@@ -17,7 +17,9 @@ struct SplashScreen: View {
                 if firstLaunch {
                     DeviceTutorial(opacity: 0)
                 } else {
-                    HomeView()
+//                    HomeView()
+                //MARK: for exhibition, the device tutorial will always showed
+                    DeviceTutorial(opacity: 0)
                 }
             } else {
                 ZStack {
@@ -28,16 +30,9 @@ struct SplashScreen: View {
                         .frame(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height)
                     
                     VStack {
-                        Text(AppLabel.appNameLine1)
-                            .font(.custom(AppFont.juaRegular, size: 125))
-                            .foregroundColor(Color.brown1)
-                            .multilineTextAlignment(.center)
-                            .padding(.top, UIScreen.main.bounds.height * 0.07)
-                        
-                        Text(AppLabel.appNameLine2)
-                            .font(.custom(AppFont.juaRegular, size: 100))
-                            .foregroundColor(Color.brown1)
-                            .multilineTextAlignment(.center)
+                        Image(ResourcePath.SplashScreen.mainLogo)
+                            .resizable()
+                            .frame(width: 630, height: 390)
                         
                         TextButton(contentType: .play, buttonStyle: .brown, buttonSize: .big) {
                             isSplashScreenShown = true
@@ -45,14 +40,14 @@ struct SplashScreen: View {
                         .padding(.top, UIScreen.main.bounds.height * 0.2)
                         
                     }
+                    
                 }
+                .onAppear(perform: {
+                    AudioManager.shared.playBackgroundMusic(fileName: ResourcePath.Sound.BackgroundMusic.homeMusic)
+                })
+                
             }
         }
-        .onAppear(perform: {
-            AudioManager.shared.playBackgroundMusic(fileName: "Tropical Jungle")
-        })
-        
-        
     }
 }
 

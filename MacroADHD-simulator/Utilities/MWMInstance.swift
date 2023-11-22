@@ -50,7 +50,7 @@ class MWMInstance: NSObject, ObservableObject {
         Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { [self] _ in
             let updatedData = MWMData(
                 poorSignal: 0,
-                attention: Int32(Int.random(in: 0...100)),
+                attention: Int32(Int.random(in: 51...100)),
                 meditation: 0
             )
             print(updatedData)

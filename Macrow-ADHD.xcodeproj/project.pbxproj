@@ -39,6 +39,8 @@
 		26F4FBEB2AF3765600F31E68 /* AnimalTypeEnum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */; };
 		26F4FBEC2AF3766000F31E68 /* SplashScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = B649292F2AF209C100570802 /* SplashScreen.swift */; };
 		26FF33D52AF10E9C00944F48 /* TouchButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 26FF33D32AF10E9C00944F48 /* TouchButton.swift */; };
+		2A3B78EB2B0B855100A807F4 /* Game Over Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B78EA2B0B855100A807F4 /* Game Over Sound.mp3 */; };
+		2A3B78EC2B0B855100A807F4 /* Game Over Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A3B78EA2B0B855100A807F4 /* Game Over Sound.mp3 */; };
 		2A440FC22B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */; };
 		2A440FC32B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */; };
 		2A440FC42B0A7AEF0023270D /* Button Sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */; };
@@ -191,7 +193,7 @@
 		268DE2452ADF786B0097E3F2 /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 		268DE2492ADF85500097E3F2 /* HomeItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeItemView.swift; sourceTree = "<group>"; };
 		268DE24B2ADF85FC0097E3F2 /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
-		26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideAndSeekScene.swift; sourceTree = "<group>"; };
+		26A9C6652ACBCC0D00117948 /* HideAndSeekScene.swift */ = {isa = PBXFileReference; indentWidth = 3; lastKnownFileType = sourcecode.swift; path = HideAndSeekScene.swift; sourceTree = "<group>"; };
 		26A9C6672ACBCC2700117948 /* HideAndSeekTutorialView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideAndSeekTutorialView.swift; sourceTree = "<group>"; };
 		26A9C6692ACBCC5F00117948 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		26A9C66B2ACBCC7B00117948 /* HideAndSeekBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HideAndSeekBackground.swift; sourceTree = "<group>"; };
@@ -202,6 +204,7 @@
 		26E4B6A02AEFB16600434426 /* GameElementTutorial.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameElementTutorial.swift; sourceTree = "<group>"; };
 		26ECF09C2AE0CC71005F06E1 /* GameInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameInfo.swift; sourceTree = "<group>"; };
 		26FF33D32AF10E9C00944F48 /* TouchButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TouchButton.swift; sourceTree = "<group>"; };
+		2A3B78EA2B0B855100A807F4 /* Game Over Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Game Over Sound.mp3"; sourceTree = "<group>"; };
 		2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Lose Star Sound.mp3"; sourceTree = "<group>"; };
 		2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Button Sound.mp3"; sourceTree = "<group>"; };
 		2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "Gain Star Sound.mp3"; sourceTree = "<group>"; };
@@ -213,7 +216,7 @@
 		2AEC6E882AFBEFC800DB3194 /* GuideButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GuideButtonStyle.swift; sourceTree = "<group>"; };
 		3D2B49892ACBD31100DA8827 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		3D53304E2AFA233000300AF0 /* DisconnectedOverlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisconnectedOverlay.swift; sourceTree = "<group>"; };
-		3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Macrow-ADHD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		3DB613722AC5C66F00F0A792 /* Will's Storyland.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Will's Storyland.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3DB613752AC5C66F00F0A792 /* Macrow_ADHDApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Macrow_ADHDApp.swift; sourceTree = "<group>"; };
 		3DB613772AC5C66F00F0A792 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3DB6137C2AC5C67100F0A792 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -228,7 +231,7 @@
 		5491B13A2AE5C351004986A0 /* CentralManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CentralManager.swift; sourceTree = "<group>"; };
 		54A421792AE25E4200C51A6C /* AnimalTypeEnum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalTypeEnum.swift; sourceTree = "<group>"; };
 		54F6B0F12AE5B1F6003D874D /* MWMInstance.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MWMInstance.swift; sourceTree = "<group>"; };
-		B60864952AE62AE600424FCA /* MacroADHD-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MacroADHD-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B60864952AE62AE600424FCA /* Will's Storyland-simulator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Will's Storyland-simulator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B60864972AE62AE600424FCA /* MacroADHD_simulatorApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacroADHD_simulatorApp.swift; sourceTree = "<group>"; };
 		B60B5B0E2AFDE6EE00C96689 /* Calendar+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Calendar+extension.swift"; sourceTree = "<group>"; };
 		B615D0C92AFA0C290085EFD9 /* Timestamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Timestamp.swift; sourceTree = "<group>"; };
@@ -304,6 +307,7 @@
 		2A440FBE2B0A7A9C0023270D /* Sound Effect */ = {
 			isa = PBXGroup;
 			children = (
+				2A3B78EA2B0B855100A807F4 /* Game Over Sound.mp3 */,
 				2A440FC02B0A7AEF0023270D /* Button Sound.mp3 */,
 				2A440FBF2B0A7AEF0023270D /* Lose Star Sound.mp3 */,
 				2A440FC12B0A7AEF0023270D /* Gain Star Sound.mp3 */,
@@ -352,8 +356,8 @@
 		3DB613732AC5C66F00F0A792 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */,
-				B60864952AE62AE600424FCA /* MacroADHD-simulator.app */,
+				3DB613722AC5C66F00F0A792 /* Will's Storyland.app */,
+				B60864952AE62AE600424FCA /* Will's Storyland-simulator.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -791,9 +795,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		3DB613712AC5C66F00F0A792 /* Macrow-ADHD */ = {
+		3DB613712AC5C66F00F0A792 /* Will's Storyland */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Macrow-ADHD" */;
+			buildConfigurationList = 3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Will's Storyland" */;
 			buildPhases = (
 				3DB6136E2AC5C66F00F0A792 /* Sources */,
 				3DB6136F2AC5C66F00F0A792 /* Frameworks */,
@@ -803,14 +807,14 @@
 			);
 			dependencies = (
 			);
-			name = "Macrow-ADHD";
+			name = "Will's Storyland";
 			productName = "Macrow-ADHD";
-			productReference = 3DB613722AC5C66F00F0A792 /* Macrow-ADHD.app */;
+			productReference = 3DB613722AC5C66F00F0A792 /* Will's Storyland.app */;
 			productType = "com.apple.product-type.application";
 		};
-		B60864942AE62AE600424FCA /* MacroADHD-simulator */ = {
+		B60864942AE62AE600424FCA /* Will's Storyland-simulator */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B60864A22AE62AE700424FCA /* Build configuration list for PBXNativeTarget "MacroADHD-simulator" */;
+			buildConfigurationList = B60864A22AE62AE700424FCA /* Build configuration list for PBXNativeTarget "Will's Storyland-simulator" */;
 			buildPhases = (
 				B60864912AE62AE600424FCA /* Sources */,
 				B60864922AE62AE600424FCA /* Frameworks */,
@@ -820,9 +824,9 @@
 			);
 			dependencies = (
 			);
-			name = "MacroADHD-simulator";
+			name = "Will's Storyland-simulator";
 			productName = "MacroADHD-simulator";
-			productReference = B60864952AE62AE600424FCA /* MacroADHD-simulator.app */;
+			productReference = B60864952AE62AE600424FCA /* Will's Storyland-simulator.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -856,8 +860,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				3DB613712AC5C66F00F0A792 /* Macrow-ADHD */,
-				B60864942AE62AE600424FCA /* MacroADHD-simulator */,
+				3DB613712AC5C66F00F0A792 /* Will's Storyland */,
+				B60864942AE62AE600424FCA /* Will's Storyland-simulator */,
 			);
 		};
 /* End PBXProject section */
@@ -867,6 +871,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2A3B78EB2B0B855100A807F4 /* Game Over Sound.mp3 in Resources */,
 				2A440FC22B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */,
 				B61C40462ACF0AC9007CCC72 /* Jua-Regular.ttf in Resources */,
 				B624CC622AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
@@ -885,6 +890,7 @@
 				2A440FC32B0A7AEF0023270D /* Lose Star Sound.mp3 in Resources */,
 				B624CC632AF4945900FC5636 /* Tropical Jungle.mp3 in Resources */,
 				B64F1B472AF3BE4200AB80D4 /* Jungle Song.mp3 in Resources */,
+				2A3B78EC2B0B855100A807F4 /* Game Over Sound.mp3 in Resources */,
 				B64929662AF20FD200570802 /* Assets.xcassets in Resources */,
 				B64929452AF20D1D00570802 /* Jua-Regular.ttf in Resources */,
 				2A440FC72B0A7AEF0023270D /* Gain Star Sound.mp3 in Resources */,
@@ -1197,7 +1203,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -1245,7 +1251,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "Macrow-ADHD/Preview\\ Content";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
@@ -1292,7 +1298,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
@@ -1331,7 +1337,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Macrow-ADHD/Preview Content\"";
-				DEVELOPMENT_TEAM = U43A7X58YW;
+				DEVELOPMENT_TEAM = 85KB4TP9CK;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Macrow-ADHD/Info.plist";
@@ -1377,7 +1383,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Macrow-ADHD" */ = {
+		3DB613802AC5C67100F0A792 /* Build configuration list for PBXNativeTarget "Will's Storyland" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				3DB613812AC5C67100F0A792 /* Debug */,
@@ -1386,7 +1392,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B60864A22AE62AE700424FCA /* Build configuration list for PBXNativeTarget "MacroADHD-simulator" */ = {
+		B60864A22AE62AE700424FCA /* Build configuration list for PBXNativeTarget "Will's Storyland-simulator" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B60864A02AE62AE700424FCA /* Debug */,
