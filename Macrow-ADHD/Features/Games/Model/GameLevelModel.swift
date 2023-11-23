@@ -15,7 +15,7 @@ struct GameLevelModel {
         case .beginner:
             HideAndSeekLevelModel(
                 intRepresentation: 1,
-                levelDuration: 300,
+                levelDuration: 120,
                 spawnInteval: 2,
                 maximumSpawn: 1,
                 foxRatio: 1,

@@ -7,7 +7,8 @@
 import SwiftUI
 
 struct SplashScreen: View {
-    @AppStorage("firstLaunch") var firstLaunch: Bool = true
+    //FIXME: for demo purposes delete appstorage wrapper
+    @State var firstLaunch: Bool = true
     @GestureState private var isButtonPressed = false
     @State var isSplashScreenShown = false
     

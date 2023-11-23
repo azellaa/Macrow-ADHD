@@ -9,7 +9,8 @@ import SwiftUI
 
 struct DeviceTutorial: View {
     @Environment(\.presentationMode) var presentationMode
-    @AppStorage("firstLaunch") var firstLaunch: Bool = true
+    //FIXME: for demo purposes delete appstorage wrapper
+    @State var firstLaunch: Bool = true
     @State private var currentView: Int = 0
     let maxView: Int = 10
     var opacity: CGFloat
