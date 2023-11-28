@@ -112,7 +112,7 @@ class ProgressBar: SKNode {
     }
     
     func updateProgressBar(_ progress: CGFloat, timeLeft: String, score: Int) {
-        progressBar.run(SKAction.resize(toWidth: CGFloat(progress / maxProgress) * maxProgressBarWidth, duration: 0.2))
+        self.progressBar.run(SKAction.resize(toWidth: CGFloat(progress / maxProgress) * maxProgressBarWidth, duration: 0.2))
         scoreLabel.text = String(score)
         timerLabel.text = timeLeft
     }
