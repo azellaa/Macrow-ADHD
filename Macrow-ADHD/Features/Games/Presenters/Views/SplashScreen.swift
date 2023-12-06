@@ -7,7 +7,7 @@
 import SwiftUI
 
 struct SplashScreen: View {
-    @AppStorage("firstLaunch") var firstLaunch: Bool = true
+    @AppStorage("firstLaunch") var firstLaunch: Bool = false
     @GestureState private var isButtonPressed = false
     @State var isSplashScreenShown = false
     
@@ -17,9 +17,9 @@ struct SplashScreen: View {
                 if firstLaunch {
                     DeviceTutorial(opacity: 0)
                 } else {
-//                    HomeView()
+                    HomeView()
                 //MARK: for exhibition, the device tutorial will always showed
-                    DeviceTutorial(opacity: 0)
+//                    DeviceTutorial(opacity: 0)
                 }
             } else {
                 ZStack {

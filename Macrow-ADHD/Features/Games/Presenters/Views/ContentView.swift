@@ -12,7 +12,9 @@ struct ContentView: View {
 //    @Environment (\.managedObjectContext) var managedObjContext
     var body: some View {
         NavigationStack {
-            SplashScreen()
+//            SplashScreen()
+            
+            Hide_SeekIntroduction(currentGame: GameInfoLabel.games[0])
         }
     }
 }

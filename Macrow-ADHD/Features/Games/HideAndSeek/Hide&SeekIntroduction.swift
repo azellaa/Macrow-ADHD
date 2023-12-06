@@ -35,7 +35,7 @@ struct Hide_SeekIntroduction: View {
     @ObservedObject var mwmObject: MWMInstance = MWMInstance.shared
     @State private var mwmData: MWMData?
 #if targetEnvironment(simulator)
-    @State private var isDisconnected = true
+    @State private var isDisconnected = false
     
 #else
     @State private var isDisconnected = true

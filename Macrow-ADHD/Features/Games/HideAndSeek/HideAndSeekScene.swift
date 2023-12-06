@@ -198,7 +198,6 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
                game: self.gameEntity,
                context: self.context
             )
-            
          } else {
             // Spawn a fox
             let randomFox = foxPos[spot[randomPos]]
