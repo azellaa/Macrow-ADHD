@@ -28,7 +28,7 @@ class HideAndSeekScene: SKScene, SKPhysicsContactDelegate, TutorialDelegate {
    private var rabbitCount = 0
    private var isTouched = false
    //FIXME: for demo purposes delete appstorage wrapper
-   var isTutorialOpened = true
+   @AppStorage("tutorialOpened") var isTutorialOpened = true
    
    public var focusCount = 80 // focus point
    public var isSpawning = false

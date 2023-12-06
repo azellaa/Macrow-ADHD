@@ -12,7 +12,7 @@ struct GameElementTutorialView: View {
     @State var idx: Int = 0
     @State var isPaused: Bool = false
     //FIXME: for demo purpose deleted AppStorage property
-    @State private var isActive: Bool = true
+    @AppStorage("isActive") private var isActive: Bool = true
     
     var currentGame: GameInfo
     let gameScene = GameElementTutorial(size: CGSize(width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height))
